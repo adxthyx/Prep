@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useStore, getItem } from '../store'
+import { useSearchParams } from 'react-router-dom'
 import { dsaProblems, dsaCompanies } from '../lib/registry'
 import { StatusPill, ItemDetails, ProgressBar, STATUS_META } from '../components/ui'
 import RoadmapGraph from '../components/RoadmapGraph'
@@ -146,6 +147,7 @@ function Companies({ highlight }) {
 
 export default function Dsa() {
   const { state } = useStore()
+  const [searchParams] = useSearchParams()
   const problems = dsaProblems.problems
   const [view, setView] = useState('topics')
   const [q, setQ] = useState('')
@@ -154,6 +156,21 @@ export default function Dsa() {
   const [source, setSource] = useState('all')
   const [highlight, setHighlight] = useState(null)
   const [showT3, setShowT3] = useState(false)
+
+  // Highlight problem from URL param on mount
+  useEffect(() => {
+    const highlightId = searchParams.get('highlight')
+    if (highlightId) {
+      setHighlight(highlightId)
+      setTimeout(() => {
+        const elem = document.getElementById(highlightId)
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          setView('topics') // ensure we're in topics view to show the problem
+        }
+      }, 100)
+    }
+  }, [searchParams])
 
   const filtered = useFiltered(problems, q, diff, status, source, state)
   const doneCount = problems.filter((p) => getItem(state, p.id).status === 'done').length

@@ -181,7 +181,7 @@ export default function Dashboard() {
                   {isDue && <span className="font-mono text-[10px] text-brand shrink-0">R{(itemState?.revisitStage ?? 0) + 1}</span>}
                   <span className="font-mono text-[10px] text-muted-foreground shrink-0">{i + 1}.</span>
                   <StatusPill id={id} size="xs" />
-                  <Link to={item.path} className="flex-1 text-sm truncate hover:text-brand" title={item.title}>{item.title}</Link>
+                  <Link to={item.module === 'dsa' ? `${item.path}?highlight=${id}` : item.path} className="flex-1 text-sm truncate hover:text-brand" title={item.title}>{item.title}</Link>
                   <span className="font-mono text-[10px] text-muted-foreground shrink-0">{item.moduleName}</span>
                   {isDue && (
                     <button

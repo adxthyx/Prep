@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useStore, getItem } from '../store'
 import { aiRoadmap } from '../lib/registry'
 import { SectionCard, ItemRow, ResourceLink, ProgressBar } from '../components/ui'
+import RoadmapGraph from '../components/RoadmapGraph'
 
 const STORY_FIELDS = [
   ['pitch', '2-min pitch', 4],
@@ -61,6 +62,19 @@ function Stories() {
 export default function AiRoadmap() {
   const { state } = useStore()
   const [openPhase, setOpenPhase] = useState(aiRoadmap.phases[0].id)
+  const [view, setView] = useState('accordion')
+
+  // Convert phases to graph node format with computed layout (horizontal chain)
+  const phaseGraphNodes = aiRoadmap.phases
+    .filter((p) => p.id !== 'ai-storytelling')
+    .map((p, i) => ({
+      id: p.id,
+      label: p.name,
+      prereqs: p.prereqs || [],
+      x: i * 200,
+      y: 0,
+    }))
+
   return (
     <div className="space-y-4">
       <header>
@@ -68,38 +82,56 @@ export default function AiRoadmap() {
         <p className="text-sm text-muted-foreground mt-1">{aiRoadmap.meta.desc}</p>
       </header>
 
-      {aiRoadmap.phases.map((p) => {
-        if (p.id === 'ai-storytelling') return <Stories key={p.id} />
-        const done = p.items.filter((it) => getItem(state, it.id).status === 'done').length
-        const open = openPhase === p.id
-        return (
-          <div key={p.id} className="rounded-lg border bg-card">
-            <button onClick={() => setOpenPhase(open ? null : p.id)} className="w-full text-left p-4">
-              <div className="flex items-center justify-between gap-4">
-                <h2 className="font-bold">{p.name}</h2>
-                <ProgressBar value={done} total={p.items.length} className="w-56" />
-              </div>
-              {!open && <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{p.desc}</p>}
-            </button>
-            {open && (
-              <div className="px-4 pb-4 space-y-3">
-                <p className="text-sm text-muted-foreground -mt-2">{p.desc}</p>
-                <div className="space-y-1.5">
-                  {p.items.map((it) => (
-                    <ItemRow key={it.id} id={it.id} title={it.title} resources={it.resources || []} />
-                  ))}
-                </div>
-                {p.resources?.length > 0 && (
-                  <div className="rounded-lg bg-background border p-3">
-                    <div className="font-mono text-[11px] uppercase text-muted-foreground mb-1">Phase resources</div>
-                    {p.resources.map((r, i) => <ResourceLink key={i} r={r} />)}
+      <div className="flex gap-2">
+        {['accordion', 'graph'].map((v) => (
+          <button
+            key={v}
+            onClick={() => setView(v)}
+            className={`rounded px-3 py-1 text-sm transition-colors ${view === v ? 'bg-brand text-white font-semibold' : 'border bg-card text-muted-foreground hover:text-foreground'}`}
+          >
+            {v === 'accordion' ? 'Accordion' : 'Phase Graph'}
+          </button>
+        ))}
+      </div>
+
+      {view === 'graph' && <div className="h-[400px] border rounded-lg bg-card"><RoadmapGraph patterns={phaseGraphNodes} showT3={false} type="ai" /></div>}
+
+      {view === 'accordion' && (
+        <div className="space-y-4">
+          {aiRoadmap.phases.map((p) => {
+            if (p.id === 'ai-storytelling') return <Stories key={p.id} />
+            const done = p.items.filter((it) => getItem(state, it.id).status === 'done').length
+            const open = openPhase === p.id
+            return (
+              <div key={p.id} className="rounded-lg border bg-card">
+                <button onClick={() => setOpenPhase(open ? null : p.id)} className="w-full text-left p-4">
+                  <div className="flex items-center justify-between gap-4">
+                    <h2 className="font-bold">{p.name}</h2>
+                    <ProgressBar value={done} total={p.items.length} className="w-56" />
+                  </div>
+                  {!open && <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{p.desc}</p>}
+                </button>
+                {open && (
+                  <div className="px-4 pb-4 space-y-3">
+                    <p className="text-sm text-muted-foreground -mt-2">{p.desc}</p>
+                    <div className="space-y-1.5">
+                      {p.items.map((it) => (
+                        <ItemRow key={it.id} id={it.id} title={it.title} resources={it.resources || []} hideTier={true} />
+                      ))}
+                    </div>
+                    {p.resources?.length > 0 && (
+                      <div className="rounded-lg bg-background border p-3">
+                        <div className="font-mono text-[11px] uppercase text-muted-foreground mb-1">Phase resources</div>
+                        {p.resources.map((r, i) => <ResourceLink key={i} r={r} />)}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-            )}
-          </div>
-        )
-      })}
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }

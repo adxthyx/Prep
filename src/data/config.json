@@ -3,6 +3,8 @@
  "interviewSeasonStart": "2026-08-01",
  "interviewSeasonEnd": "2026-10-31",
  "targetJoining": "2026-11-15",
+ "tier1Target": "2026-08-31",
+ "tier2Target": "2026-09-30",
  "spacedRepetitionDays": [3, 7, 21],
  "note": "Edit dates here. spacedRepetitionDays: an item marked 'revisit' resurfaces on the dashboard after 3 days, then 7, then 21, then every 21."
 }

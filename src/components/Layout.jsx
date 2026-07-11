@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { useStore, exportState, importState, config } from '../store'
 import { daysUntil } from '../lib/dates'
+import CommandPalette from './CommandPalette'
 
 const NAV = [
   { to: '/', label: 'Dashboard', icon: '◉', end: true },
@@ -11,6 +12,7 @@ const NAV = [
   { to: '/dsa', label: 'DSA', icon: '🧩' },
   { to: '/hld', label: 'HLD', icon: '🏗' },
   { to: '/lld', label: 'LLD', icon: '📐' },
+  { to: '/settings', label: 'Settings', icon: '⚙' },
 ]
 
 function phaseNow() {
@@ -121,6 +123,7 @@ export default function Layout() {
       <main className="ml-56 flex-1 p-6 max-w-6xl">
         <Outlet />
       </main>
+      <CommandPalette />
     </div>
   )
 }

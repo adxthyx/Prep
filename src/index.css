@@ -80,3 +80,13 @@
   pointer-events: none;
   animation: confetti-fall 2.4s ease-in forwards;
 }
+
+@keyframes node-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px hsl(18 100% 50%)); }
+  50% { filter: drop-shadow(0 0 12px hsl(18 100% 50%)); }
+}
+
+@keyframes edge-flow {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -20px; }
+}

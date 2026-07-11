@@ -19,6 +19,13 @@ const initial = {
   decisions: [], // extra decision-log entries {id,date,decision,why}
   archNotes: null, // markdown override (null = seed)
   activity: {}, // 'YYYY-MM-DD' -> count of touches
+  tierOverrides: {}, // problemId -> 1|2|3
+  settings: {
+    tier1Target: config.tier1Target || '2026-08-31',
+    tier2Target: config.tier2Target || '2026-09-30',
+    seasonEnd: config.interviewSeasonEnd,
+    showT3: false,
+  },
 }
 
 function load() {
@@ -87,6 +94,10 @@ function reducer(state, action) {
       return { ...state, decisions: [...state.decisions, { id: `dl-${Date.now()}`, date: todayKey(), ...action.entry }] }
     case 'archNotes':
       return { ...state, archNotes: action.text }
+    case 'tier':
+      return { ...state, tierOverrides: { ...state.tierOverrides, [action.id]: action.tier } }
+    case 'settings':
+      return { ...state, settings: { ...state.settings, ...action.patch } }
     case 'import':
       return { ...initial, ...action.state }
     default:

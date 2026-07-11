@@ -11,6 +11,7 @@ import AiRoadmap from './pages/AiRoadmap'
 import Dsa from './pages/Dsa'
 import Hld from './pages/Hld'
 import Lld from './pages/Lld'
+import Settings from './pages/Settings'
 
 const router = createHashRouter([
   {
@@ -23,6 +24,7 @@ const router = createHashRouter([
       { path: '/dsa', element: <Dsa /> },
       { path: '/hld', element: <Hld /> },
       { path: '/lld', element: <Lld /> },
+      { path: '/settings', element: <Settings /> },
     ],
   },
 ])

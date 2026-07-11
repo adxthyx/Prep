@@ -33,14 +33,9 @@ aiRoadmap.phases.forEach((p) =>
   p.items.forEach((it) => reg(it.id, it.title, 'ai', 'AI / FDE Roadmap', '/ai', p.name))
 )
 
-// 4. DSA — master problems, then company-only extras
+// 4. DSA — master problems only (company list is a display view, not a registry extension)
 dsaProblems.problems.forEach((p) =>
   reg(p.id, p.title, 'dsa', 'DSA', '/dsa', p.topic)
-)
-dsaCompanies.companies.forEach((c) =>
-  c.problems.forEach((p) =>
-    reg(`dsa-${p.slug}`, p.title, 'dsa', 'DSA', '/dsa', `${c.name} list`)
-  )
 )
 
 // 5. HLD — concepts + questions

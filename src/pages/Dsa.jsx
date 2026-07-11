@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react'
 import { useStore, getItem } from '../store'
 import { dsaProblems, dsaCompanies } from '../lib/registry'
 import { StatusPill, ItemDetails, ProgressBar, STATUS_META } from '../components/ui'
+import RoadmapGraph from '../components/RoadmapGraph'
+import dsaPatterns from '../data/dsa-patterns.json'
 
 const DIFF_CLS = { Easy: 'text-green-400', Medium: 'text-yellow-400', Hard: 'text-red-400' }
 const SOURCE_BADGE = {
@@ -151,6 +153,7 @@ export default function Dsa() {
   const [status, setStatus] = useState('all')
   const [source, setSource] = useState('all')
   const [highlight, setHighlight] = useState(null)
+  const [showT3, setShowT3] = useState(false)
 
   const filtered = useFiltered(problems, q, diff, status, source, state)
   const doneCount = problems.filter((p) => getItem(state, p.id).status === 'done').length
@@ -187,7 +190,7 @@ export default function Dsa() {
 
       <div className="flex flex-wrap items-center gap-2">
         <div className="flex gap-1 rounded-lg border bg-card p-1">
-          {[['topics', 'By topic (Striver)'], ['patterns', 'By pattern (NeetCode)'], ['companies', 'By company']].map(([k, label]) => (
+          {[['topics', 'By topic (Striver)'], ['patterns', 'By pattern (Graph)'], ['companies', 'By company']].map(([k, label]) => (
             <button
               key={k}
               onClick={() => { setView(k); setHighlight(null) }}
@@ -197,7 +200,7 @@ export default function Dsa() {
             </button>
           ))}
         </div>
-        {view !== 'companies' && (
+        {view !== 'companies' && view !== 'patterns' && (
           <>
             <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search…" className={`${sel} w-44`} />
             <select value={diff} onChange={(e) => setDiff(e.target.value)} className={sel}>
@@ -219,10 +222,16 @@ export default function Dsa() {
             <span className="font-mono text-xs text-muted-foreground ml-auto">{filtered.length} shown</span>
           </>
         )}
+        {view === 'patterns' && (
+          <label className="flex items-center gap-2 text-sm">
+            <input type="checkbox" checked={showT3} onChange={(e) => setShowT3(e.target.checked)} />
+            <span className="text-muted-foreground">show Tier 3</span>
+          </label>
+        )}
       </div>
 
       {view === 'topics' && <Grouped problems={filtered} groupKey="topic" orderKey="a2z" highlight={highlight} state={state} />}
-      {view === 'patterns' && <Grouped problems={filtered.filter((p) => p.pattern)} groupKey="pattern" orderKey="neetcode" highlight={highlight} state={state} />}
+      {view === 'patterns' && <div className="h-[600px] border rounded-lg bg-card"><RoadmapGraph patterns={dsaPatterns.patterns} showT3={showT3} /></div>}
       {view === 'companies' && <Companies highlight={highlight} />}
     </div>
   )

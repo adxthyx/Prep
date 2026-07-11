@@ -27,6 +27,27 @@ export function StatusPill({ id, size = 'sm' }) {
   )
 }
 
+export function TierChip({ id, hidden = false }) {
+  const { state, dispatch } = useStore()
+  if (hidden) return null
+  const nextTier = (t) => (t === 1 ? 2 : t === 2 ? 3 : 1)
+  const tier = state.tierOverrides?.[id] ?? 3
+  const onClick = () => {
+    const next = nextTier(tier)
+    dispatch({ type: 'tier', id, tier: next })
+  }
+  const tierCls = { 1: 'bg-purple-500/15 text-purple-400 border-purple-500/30', 2: 'bg-blue-500/15 text-blue-400 border-blue-500/30', 3: 'bg-muted/50 text-muted-foreground border-muted' }
+  return (
+    <button
+      onClick={onClick}
+      title="Click to cycle: T1 → T2 → T3"
+      className={`shrink-0 rounded-full font-mono px-2 py-0.5 text-xs border ${tierCls[tier]} hover:brightness-125 transition`}
+    >
+      T{tier}
+    </button>
+  )
+}
+
 export function ProgressBar({ value, total, className = '' }) {
   const pct = total ? Math.round((value / total) * 100) : 0
   return (
@@ -108,8 +129,8 @@ export function ItemDetails({ id }) {
   )
 }
 
-/** One trackable row: status pill + title + optional resources + expandable notes */
-export function ItemRow({ id, title, resources = [], right = null, mono = false }) {
+/** One trackable row: status pill + tier chip + title + optional resources + expandable notes */
+export function ItemRow({ id, title, resources = [], right = null, mono = false, hideTier = false }) {
   const { state } = useStore()
   const item = getItem(state, id)
   const [open, setOpen] = useState(false)
@@ -118,6 +139,7 @@ export function ItemRow({ id, title, resources = [], right = null, mono = false 
     <div className={`rounded-lg border bg-card px-3 py-2 ${item.status === 'done' ? 'opacity-60' : ''}`}>
       <div className="flex items-center gap-3">
         <StatusPill id={id} />
+        <TierChip id={id} hidden={hideTier} />
         <button onClick={() => setOpen(!open)} className={`flex-1 text-left text-sm leading-snug hover:text-brand transition-colors ${mono ? 'font-mono' : ''} ${item.status === 'done' ? 'line-through decoration-muted-foreground/50' : ''}`}>
           {title}
           {hasMeta && !open && <span className="ml-2 text-xs text-muted-foreground">✎</span>}

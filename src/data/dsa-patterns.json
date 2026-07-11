@@ -1,0 +1,130 @@
+{
+  "patterns": [
+    {
+      "id": "pattern-arrays-hashing",
+      "label": "Arrays & Hashing",
+      "prereqs": [],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "pattern-two-pointers",
+      "label": "Two Pointers",
+      "prereqs": ["pattern-arrays-hashing"],
+      "x": -300,
+      "y": 120
+    },
+    {
+      "id": "pattern-stack",
+      "label": "Stack",
+      "prereqs": ["pattern-arrays-hashing"],
+      "x": 0,
+      "y": 120
+    },
+    {
+      "id": "pattern-sliding-window",
+      "label": "Sliding Window",
+      "prereqs": ["pattern-two-pointers"],
+      "x": -400,
+      "y": 240
+    },
+    {
+      "id": "pattern-binary-search",
+      "label": "Binary Search",
+      "prereqs": ["pattern-two-pointers"],
+      "x": -200,
+      "y": 240
+    },
+    {
+      "id": "pattern-linked-list",
+      "label": "Linked List",
+      "prereqs": ["pattern-two-pointers"],
+      "x": -50,
+      "y": 240
+    },
+    {
+      "id": "pattern-trees",
+      "label": "Trees",
+      "prereqs": ["pattern-binary-search", "pattern-linked-list"],
+      "x": -150,
+      "y": 360
+    },
+    {
+      "id": "pattern-tries",
+      "label": "Tries",
+      "prereqs": ["pattern-trees"],
+      "x": -350,
+      "y": 480
+    },
+    {
+      "id": "pattern-heap-pq",
+      "label": "Heap / Priority Queue",
+      "prereqs": ["pattern-trees"],
+      "x": -150,
+      "y": 480
+    },
+    {
+      "id": "pattern-backtracking",
+      "label": "Backtracking",
+      "prereqs": ["pattern-trees"],
+      "x": 50,
+      "y": 480
+    },
+    {
+      "id": "pattern-intervals",
+      "label": "Intervals",
+      "prereqs": ["pattern-heap-pq"],
+      "x": -300,
+      "y": 600
+    },
+    {
+      "id": "pattern-greedy",
+      "label": "Greedy",
+      "prereqs": ["pattern-heap-pq"],
+      "x": -150,
+      "y": 600
+    },
+    {
+      "id": "pattern-advanced-graphs",
+      "label": "Advanced Graphs",
+      "prereqs": ["pattern-heap-pq", "pattern-backtracking"],
+      "x": 0,
+      "y": 600
+    },
+    {
+      "id": "pattern-graphs",
+      "label": "Graphs",
+      "prereqs": ["pattern-backtracking"],
+      "x": 150,
+      "y": 600
+    },
+    {
+      "id": "pattern-1d-dp",
+      "label": "1-D Dynamic Programming",
+      "prereqs": ["pattern-backtracking"],
+      "x": 300,
+      "y": 600
+    },
+    {
+      "id": "pattern-2d-dp",
+      "label": "2-D Dynamic Programming",
+      "prereqs": ["pattern-1d-dp", "pattern-graphs"],
+      "x": 200,
+      "y": 720
+    },
+    {
+      "id": "pattern-bit-manipulation",
+      "label": "Bit Manipulation",
+      "prereqs": ["pattern-1d-dp"],
+      "x": 350,
+      "y": 720
+    },
+    {
+      "id": "pattern-math-geometry",
+      "label": "Math & Geometry",
+      "prereqs": ["pattern-graphs"],
+      "x": 100,
+      "y": 720
+    }
+  ]
+}

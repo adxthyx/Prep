@@ -63,18 +63,29 @@ function Countdown({ n, unit, label, accent }) {
 
 export default function Dashboard() {
   const { state, dispatch } = useStore()
+
   const toApps = daysUntil(config.applicationsOpen)
   const seasonEnd = daysUntil(config.interviewSeasonEnd)
   const seasonDays = Math.max(seasonEnd, 0)
   const streak = streakFrom(state.activity)
-  const totalDone = Object.values(state.items).filter((i) => i.status === 'done').length
+  const totalDone = Object.values(state.items || {}).filter((i) => i.status === 'done').length
 
-  // Pacing engine
-  const milestone = activeMilestone(state, config)
-  const quota = dailyQuota(state, milestone)
-  const planItemIds = todaysPlan(state, milestone)
-  const burnUp = burnUpSeries(state, milestone)
+  // Pacing engine (with fallbacks)
+  let milestone, quota, planItemIds, burnUp
+  try {
+    milestone = activeMilestone(state, config)
+    quota = dailyQuota(state, milestone)
+    planItemIds = todaysPlan(state, milestone)
+    burnUp = burnUpSeries(state, milestone)
+  } catch (e) {
+    console.error('Pacing engine error:', e)
+    milestone = { label: 'Error', target: config.interviewSeasonEnd, items: [], tier: 3 }
+    quota = { quota: 0, remaining: 0, daysLeft: 1, target: config.interviewSeasonEnd }
+    planItemIds = []
+    burnUp = []
+  }
 
+  try {
   return (
     <div className="space-y-4">
       <header className="flex items-end justify-between">
@@ -110,7 +121,7 @@ export default function Dashboard() {
           label={daysUntil(config.interviewSeasonStart) > 0 ? 'of interview season (Aug–Oct) ahead' : seasonEnd >= 0 ? 'left in interview season' : 'season over — joining time'}
           accent="text-brand"
         />
-        <Countdown n={due.length} unit="DUE" label="revisits due today" accent={due.length ? 'text-yellow-400' : 'text-green-400'} />
+        <Countdown n={planItemIds.filter((id) => state.items?.[id]?.status === 'revisit' && state.items[id]?.revisitDue <= todayKey()).length} unit="DUE" label="revisits due today" accent="text-yellow-400" />
       </div>
 
       {/* per-module progress */}
@@ -207,5 +218,14 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
-  )
+    )
+  } catch (err) {
+    console.error('Dashboard render error:', err)
+    return (
+      <div className="p-6">
+        <h1 className="text-2xl font-bold text-red-400">Error loading dashboard</h1>
+        <p className="text-sm text-muted-foreground mt-2">{err?.message}</p>
+      </div>
+    )
+  }
 }

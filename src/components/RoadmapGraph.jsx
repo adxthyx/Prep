@@ -1,5 +1,5 @@
 import { useCallback, useState, useMemo } from 'react'
-import { ReactFlow, Background, Controls, Edge, Node } from '@xyflow/react'
+import { ReactFlow, Background, Controls } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { useStore, getItem } from '../store'
 import { dsaProblems, aiRoadmap } from '../lib/registry'

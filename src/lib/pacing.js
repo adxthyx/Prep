@@ -103,15 +103,23 @@ export function todaysPlan(state, milestone) {
 export function burnUpSeries(state, milestone) {
   const target = new Date(milestone.target)
   const today = new Date(todayKey())
-  const milestoneStart = new Date(milestone.target)
-  milestoneStart.setMonth(milestoneStart.getMonth() - 1) // rough estimate: milestone started a month before target
+
+  // Start from 30 days ago or milestone target - 30 days, whichever is more recent
+  const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000)
+  const milestoneStart = target < thirtyDaysAgo ? target : thirtyDaysAgo
 
   const series = []
   const dayMs = 24 * 60 * 60 * 1000
-  for (let d = new Date(milestoneStart); d <= target; d = new Date(d.getTime() + dayMs)) {
+
+  // Ensure we don't create infinite loops
+  const maxIterations = 100
+  let iterations = 0
+
+  for (let d = new Date(milestoneStart); d <= target && iterations < maxIterations; d = new Date(d.getTime() + dayMs)) {
+    iterations++
     const dateKey = d.toISOString().split('T')[0]
     const actual = milestone.items.filter((item) => {
-      const itemData = state.items[item.id]
+      const itemData = state.items?.[item.id]
       return itemData?.status === 'done' && itemData?.updatedAt && new Date(itemData.updatedAt).toISOString().split('T')[0] <= dateKey
     }).length
     series.push({ date: dateKey, actual })

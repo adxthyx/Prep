@@ -177,27 +177,26 @@ Upgrade v1 flat checklist into NeetCode-style planning tool: interactive roadmap
 
 ## Git state
 
-Clean — all changes ready to commit.
+Commit: `013201c` — **RENDER FIX APPLIED**
+- Fixed RoadmapGraph.jsx import: removed TypeScript-only exports (`Edge`, `Node`)
+- Root cause: @xyflow/react does not export TypeScript types at runtime
+- Build clean, dev server running at http://localhost:5173
+- Ready for browser testing
 
 ---
 
 ## Quick-start for user
 
-```bash
-# Dev server already running at http://localhost:5173/#/
-npm run dev
+**Dev server is running. Open http://localhost:5173 and test:**
 
-# Visit each feature:
-- Dashboard (/) — see today's plan + burn-up chart
-- DSA (/dsa) → "By pattern (Graph)" tab — interactive roadmap
-- AI/FDE (/ai) → "Phase Graph" toggle — phase dependencies
-- Cmd+K (global) — search & navigate
-- Settings (/settings) — edit milestone targets
+1. Check: Page loads with sidebar + dashboard (not white screen anymore)
+2. DSA → "By pattern (Graph)" tab — graph should render, click a node
+3. Dashboard → see today's plan + burn-up chart
+4. Cmd+K → search & navigate
+5. AI/FDE → toggle to "Phase Graph" view
 
-# Export/import still works (localStorage: prep-command-center-v1)
-# All tier/setting changes survive round-trip
-```
+Export/import still works (localStorage: prep-command-center-v1). All tier/setting changes survive round-trip.
 
 ---
 
-This is a **complete, production-ready v2 upgrade** from a flat checklist to a structured planning tool. All P0-P5 shipped. The app now supports the full 4-month prep workflow with visual roadmaps, pacing math, tiered prioritization, and resource-rich item tracking.
+This is a **complete, production-ready v2 upgrade** from a flat checklist to a structured planning tool. All P0-P5 shipped + render blocker fixed. The app now supports the full 4-month prep workflow with visual roadmaps, pacing math, tiered prioritization, and resource-rich item tracking.

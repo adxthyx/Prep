@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { useStore, getItem } from '../store'
 import { projectTil } from '../lib/registry'
-import { SectionCard, ResourceLink, ItemRow, ItemDetails, fireConfetti, StatusPill } from '../components/ui'
+import { SectionCard, ResourceLink, ItemRow, ItemDetails, fireConfetti } from '../components/ui'
 
 const COL_STATUS = { backlog: 'todo', inprogress: 'in-progress', blocked: 'todo', done: 'done' }
+const COL_CYCLE = ['backlog', 'inprogress', 'done', 'backlog'] // blocked skipped
 const COL_ACCENT = {
   backlog: 'border-t-muted-foreground/40',
   inprogress: 'border-t-downvote',
   blocked: 'border-t-yellow-500',
   done: 'border-t-green-500',
 }
+const COL_BADGE = { backlog: '◯', inprogress: '→', done: '✓' }
 
 function cardColumn(state, card) {
   return state.kanban[card.id] || card.column
@@ -22,17 +24,28 @@ function Kanban() {
   const [openCard, setOpenCard] = useState(null)
   const [adding, setAdding] = useState('')
 
+  const moveCard = (cardId, toCol) => {
+    const prevCol = cardColumn(state, cards.find((c) => c.id === cardId))
+    dispatch({ type: 'kanban', cardId, column: toCol })
+    dispatch({ type: 'item', id: cardId, patch: { status: COL_STATUS[toCol] } })
+    if (toCol === 'done' && prevCol !== 'done') {
+      const phase = cards.find((c) => c.id === cardId)?.phase
+      const phaseCards = cards.filter((c) => c.phase === phase)
+      const phaseDone = phaseCards.filter((c) => (c.id === cardId ? toCol : cardColumn(state, c)) === 'done').length
+      fireConfetti(phaseDone === phaseCards.length ? 160 : 25)
+    }
+  }
+
+  const cycleColumn = (cardId) => {
+    const currentCol = cardColumn(state, cards.find((c) => c.id === cardId))
+    const idx = COL_CYCLE.indexOf(currentCol)
+    const nextCol = COL_CYCLE[(idx + 1) % COL_CYCLE.length]
+    moveCard(cardId, nextCol)
+  }
+
   const drop = (col) => {
     if (!dragId) return
-    const prevCol = cardColumn(state, cards.find((c) => c.id === dragId))
-    dispatch({ type: 'kanban', cardId: dragId, column: col })
-    dispatch({ type: 'item', id: dragId, patch: { status: COL_STATUS[col] } })
-    if (col === 'done' && prevCol !== 'done') {
-      const phase = cards.find((c) => c.id === dragId)?.phase
-      const phaseCards = cards.filter((c) => c.phase === phase)
-      const phaseDone = phaseCards.filter((c) => (c.id === dragId ? col : cardColumn(state, c)) === 'done').length
-      fireConfetti(phaseDone === phaseCards.length ? 160 : 25) // big burst when a whole phase lands
-    }
+    moveCard(dragId, col)
     setDragId(null)
   }
 
@@ -62,7 +75,13 @@ function Kanban() {
                     className={`cursor-grab active:cursor-grabbing rounded-lg border bg-card p-2.5 text-sm leading-snug hover:border-brand/50 transition-colors ${col.id === 'done' ? 'opacity-60' : ''}`}
                   >
                     <div className="flex items-center gap-2 mb-1.5">
-                      <StatusPill id={c.id} size="xs" />
+                      <button
+                        onClick={(e) => { e.stopPropagation(); cycleColumn(c.id) }}
+                        className="rounded-full px-2 py-0.5 text-xs font-semibold bg-surface hover:bg-brand hover:text-white transition-colors border border-brand/30"
+                        title="Click to move through columns"
+                      >
+                        {COL_BADGE[col.id] || '—'}
+                      </button>
                       <span className="font-mono text-[10px] text-brand">{c.phase}</span>
                     </div>
                     <button onClick={() => setOpenCard(openCard === c.id ? null : c.id)} className="w-full text-left hover:text-brand transition-colors">

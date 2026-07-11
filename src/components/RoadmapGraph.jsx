@@ -14,16 +14,27 @@ export default function RoadmapGraph({ patterns, showT3 = false, type = 'dsa' })
   const [selectedPattern, setSelectedPattern] = useState(null)
   const [openSlide, setOpenSlide] = useState(false)
 
+  const patternMap = useMemo(
+    () => {
+      const map = {}
+      patterns.forEach((p) => {
+        map[p.id] = p.label
+      })
+      return map
+    },
+    [patterns]
+  )
+
   const nodes = useMemo(
     () =>
       patterns.map((p) => ({
         id: p.id,
-        data: { label: p.label, prereqs: p.prereqs },
+        data: { label: p.label, prereqs: p.prereqs, patternMap },
         position: { x: p.x, y: p.y },
         type: 'pattern',
         draggable: false,
       })),
-    [patterns]
+    [patterns, patternMap]
   )
 
   const edges = useMemo(

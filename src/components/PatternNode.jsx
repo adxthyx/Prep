@@ -12,11 +12,11 @@ function PatternNode({ data, isConnecting, selected }) {
   const pct = total > 0 ? Math.round((done / total) * 100) : 0
   const isComplete = pct === 100 && total > 0
   const prereqIds = data.prereqs || []
-  const allPrereqsDone = prereqIds.length === 0 || prereqIds.every((id) => {
-    const prereqPattern = state._patternCache?.[id]?.label
-    if (!prereqPattern) return false
-    const prereqProblems = dsaProblems.problems.filter((p) => p.pattern === prereqPattern)
-    return prereqProblems.every((p) => getItem(state, p.id).status === 'done')
+  const allPrereqsDone = prereqIds.length === 0 || prereqIds.every((prereqId) => {
+    const prereqLabel = data.patternMap?.[prereqId]
+    if (!prereqLabel) return true // if no map, assume prereq is met
+    const prereqProblems = dsaProblems.problems.filter((p) => p.pattern === prereqLabel)
+    return prereqProblems.length === 0 || prereqProblems.every((p) => getItem(state, p.id).status === 'done')
   })
 
   const fillStop = Math.max(30, pct)

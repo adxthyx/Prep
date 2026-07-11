@@ -1,0 +1,51 @@
+{
+ "meta": {
+  "name": "HLD — kept deliberately light",
+  "desc": "At ~1 YoE, HLD rounds are shallow: know the vocabulary, sketch 8 classics, don't over-invest. One page, done."
+ },
+ "concepts": [
+  { "id": "hld-c1", "title": "Vertical vs horizontal scaling" },
+  { "id": "hld-c2", "title": "Load balancers: L4 vs L7, round-robin vs least-connections, health checks" },
+  { "id": "hld-c3", "title": "Caching: cache-aside vs write-through vs write-back; eviction (LRU/LFU/TTL)" },
+  { "id": "hld-c4", "title": "Cache problems: stampede, hot keys, invalidation" },
+  { "id": "hld-c5", "title": "CDN: what it caches, push vs pull, when it matters" },
+  { "id": "hld-c6", "title": "DNS: resolution path, TTL, GeoDNS" },
+  { "id": "hld-c7", "title": "Sharding: hash vs range, resharding pain, consistent hashing" },
+  { "id": "hld-c8", "title": "Replication: leader-follower, sync vs async, replication lag" },
+  { "id": "hld-c9", "title": "SQL vs NoSQL: when each, document vs KV vs wide-column vs graph" },
+  { "id": "hld-c10", "title": "Indexes: what they cost on writes, composite indexes" },
+  { "id": "hld-c11", "title": "CAP theorem + PACELC in one breath; eventual vs strong consistency" },
+  { "id": "hld-c12", "title": "Message queues: Kafka vs RabbitMQ vs SQS mental model; pub/sub vs work queue" },
+  { "id": "hld-c13", "title": "Idempotency: idempotency keys, why retries demand it" },
+  { "id": "hld-c14", "title": "Rate limiting: token bucket, sliding window, where to enforce" },
+  { "id": "hld-c15", "title": "WebSockets vs long polling vs SSE" },
+  { "id": "hld-c16", "title": "API design: REST semantics, pagination, versioning, HTTP status codes" },
+  { "id": "hld-c17", "title": "API gateway vs reverse proxy vs load balancer (untangle the three)" },
+  { "id": "hld-c18", "title": "Microservices vs monolith: real tradeoffs at small-team scale" },
+  { "id": "hld-c19", "title": "Object storage (S3) vs block vs file; presigned URLs" },
+  { "id": "hld-c20", "title": "Blob/media pipeline: upload → transcode → CDN (the YouTube-lite spine)" },
+  { "id": "hld-c21", "title": "Back-of-envelope: QPS, storage, bandwidth — memorize the powers-of-ten table" },
+  { "id": "hld-c22", "title": "Availability math: 99.9 vs 99.99, SLA/SLO/SLI, single points of failure" },
+  { "id": "hld-c23", "title": "Distributed ID generation: auto-increment vs UUID vs Snowflake" },
+  { "id": "hld-c24", "title": "Transactions across services: sagas, outbox pattern (recognition level)" },
+  { "id": "hld-c25", "title": "Observability: metrics vs logs vs traces; what you'd alert on" }
+ ],
+ "questions": [
+  { "id": "hld-q1", "title": "URL shortener", "hint": "ID generation, 301 vs 302, read-heavy caching, analytics" },
+  { "id": "hld-q2", "title": "Rate limiter (distributed)", "hint": "Token bucket in Redis, race conditions, fail-open vs fail-closed" },
+  { "id": "hld-q3", "title": "Chat app (WhatsApp-lite)", "hint": "WebSockets, message ordering, delivery receipts, fan-out" },
+  { "id": "hld-q4", "title": "News feed", "hint": "Push vs pull fan-out, celebrity problem, ranking, pagination" },
+  { "id": "hld-q5", "title": "Notification system", "hint": "Multi-channel, dedupe, rate limits per user, retries + DLQ" },
+  { "id": "hld-q6", "title": "Uber-lite (ride matching)", "hint": "Geohashing/quadtree, driver location updates, matching, surge" },
+  { "id": "hld-q7", "title": "YouTube-lite", "hint": "Upload pipeline, transcoding queue, CDN, view counts" },
+  { "id": "hld-q8", "title": "Web crawler", "hint": "Frontier queue, politeness, dedupe (bloom filter), freshness" }
+ ],
+ "resources": [
+  { "title": "System Design Interview Vol 1 — Alex Xu", "type": "book", "url": "", "free": false, "note": "Chapters: 1 Scale to millions · 2 Back-of-envelope · 3 Framework · 4 Rate limiter · 5 Consistent hashing · 6 Key-value store · 7 Unique ID generator · 8 URL shortener · 9 Web crawler · 10 Notification system · 11 News feed · 12 Chat system · 13 Search autocomplete · 14 YouTube · 15 Google Drive", "verified": true },
+  { "title": "system-design-primer (donnemartin)", "type": "github", "url": "https://github.com/donnemartin/system-design-primer", "free": true, "note": "Reference, not a course — dip in per concept", "verified": true },
+  { "title": "ByteByteGo", "type": "yt", "url": "https://www.youtube.com/@ByteByteGo", "free": true, "note": "Alex Xu's channel — short visual explainers", "verified": true },
+  { "title": "Gaurav Sen — system design playlist", "type": "yt", "url": "https://www.youtube.com/@gkcs", "free": true, "note": "Classic Indian-interview-style HLD walkthroughs", "verified": true },
+  { "title": "Jordan Has No Life", "type": "yt", "url": "https://www.youtube.com/@jordanhasnolife5163", "free": true, "note": "Deeper than needed at 1 YoE — use for the 8 classics only", "verified": true },
+  { "title": "Hello Interview — system design in a hurry", "type": "docs", "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction", "free": true, "note": "Best free condensed guide; delivery framework + key technologies", "verified": true }
+ ]
+}

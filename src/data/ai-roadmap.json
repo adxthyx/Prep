@@ -1,0 +1,544 @@
+{
+ "meta": {
+  "name": "AI Engineer / Forward Deployed Engineer roadmap",
+  "desc": "Primary target track. Foundations \u2192 prompting/tools \u2192 RAG \u2192 agents \u2192 evals \u2192 serving \u2192 FDE craft \u2192 storytelling \u2192 design practice."
+ },
+ "phases": [
+  {
+   "id": "ai-foundations",
+   "name": "Foundations",
+   "desc": "Intuition for how LLMs actually work \u2014 enough to reason about context windows, tokens, sampling, finetuning claims.",
+   "items": [
+    {
+     "id": "ai-f1",
+     "title": "Karpathy \u2014 Intro to Large Language Models (1hr talk)",
+     "resources": [
+      {
+       "title": "Intro to Large Language Models",
+       "type": "yt",
+       "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+       "free": true,
+       "note": "The canonical 1-hour overview",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-f2",
+     "title": "Karpathy \u2014 Let's build GPT from scratch (code along, don't just watch)",
+     "resources": [
+      {
+       "title": "Let's build GPT: from scratch, in code, spelled out",
+       "type": "yt",
+       "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+       "free": true,
+       "note": "nanoGPT walkthrough",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-f3",
+     "title": "Karpathy \u2014 Neural Networks: Zero to Hero (at minimum: micrograd + makemore 1-2)",
+     "resources": [
+      {
+       "title": "Neural Networks: Zero to Hero",
+       "type": "course",
+       "url": "https://karpathy.ai/zero-to-hero.html",
+       "free": true,
+       "note": "Full playlist index",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-f4",
+     "title": "3Blue1Brown \u2014 neural networks series incl. transformers/attention chapters",
+     "resources": [
+      {
+       "title": "3Blue1Brown \u2014 Neural networks",
+       "type": "yt",
+       "url": "https://www.3blue1brown.com/topics/neural-networks",
+       "free": true,
+       "note": "Visual intuition, incl. 'But what is a GPT?'",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-f5",
+     "title": "Vocabulary check: tokens, embeddings, attention, temperature/top-p, context window, KV cache, LoRA \u2014 explain each in 2 sentences"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "ai-prompting",
+   "name": "Prompting & Tool Use",
+   "desc": "Production prompting patterns and function/tool calling \u2014 the daily bread of AI engineering.",
+   "items": [
+    {
+     "id": "ai-p1",
+     "title": "Anthropic prompt engineering docs end-to-end (system prompts, XML structure, few-shot, chain-of-thought)",
+     "resources": [
+      {
+       "title": "Anthropic \u2014 prompt engineering overview",
+       "type": "docs",
+       "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-p2",
+     "title": "Anthropic \u2014 'Building effective agents' essay (workflows vs agents taxonomy)",
+     "resources": [
+      {
+       "title": "Building effective agents",
+       "type": "blog",
+       "url": "https://www.anthropic.com/engineering/building-effective-agents",
+       "free": true,
+       "note": "The most-cited agent design essay; know the 5 workflow patterns",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-p3",
+     "title": "Anthropic cookbook: run 3+ notebooks (tool use, RAG, evaluations)",
+     "resources": [
+      {
+       "title": "Anthropic cookbook",
+       "type": "github",
+       "url": "https://github.com/anthropics/anthropic-cookbook",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-p4",
+     "title": "OpenAI cookbook: function calling + structured outputs recipes",
+     "resources": [
+      {
+       "title": "OpenAI cookbook",
+       "type": "docs",
+       "url": "https://cookbook.openai.com/",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-p5",
+     "title": "Build: one CLI tool-calling agent from scratch (no framework) \u2014 model + tools + loop"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "ai-rag",
+   "name": "RAG Deep-Dive",
+   "desc": "Chunking \u2192 embeddings \u2192 hybrid search \u2192 reranking \u2192 evals. The single most common AI-engineer interview topic.",
+   "items": [
+    {
+     "id": "ai-r1",
+     "title": "Chunking strategies: fixed, recursive, semantic, document-aware \u2014 tradeoffs"
+    },
+    {
+     "id": "ai-r2",
+     "title": "Embeddings: model choice, dimensions, cosine vs dot, when embeddings fail"
+    },
+    {
+     "id": "ai-r3",
+     "title": "Hybrid search: BM25 + dense vectors, Reciprocal Rank Fusion (RRF)"
+    },
+    {
+     "id": "ai-r4",
+     "title": "Rerankers: cross-encoders (Cohere/bge), when the extra hop pays for itself"
+    },
+    {
+     "id": "ai-r5",
+     "title": "RAG evals: recall@k, MRR, faithfulness, answer relevance \u2014 build one eval set for a toy corpus"
+    },
+    {
+     "id": "ai-r6",
+     "title": "Jason Liu \u2014 'Systematically improving RAG' (read twice; it is an FDE playbook in disguise)",
+     "resources": [
+      {
+       "title": "Systematically Improving Your RAG",
+       "type": "blog",
+       "url": "https://jxnl.co/writing/2024/05/22/systematically-improving-your-rag/",
+       "free": true,
+       "note": "Flywheel: synthetic questions \u2192 retrieval metrics \u2192 segment users \u2192 fix per-segment",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-r7",
+     "title": "DeepLearning.AI short courses: 'Building and Evaluating Advanced RAG' + 'Advanced Retrieval for AI with Chroma'",
+     "resources": [
+      {
+       "title": "DeepLearning.AI short courses index",
+       "type": "course",
+       "url": "https://www.deeplearning.ai/short-courses/",
+       "free": true,
+       "note": "Both are free, ~1hr each",
+       "verified": true
+      }
+     ]
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "ai-agents",
+   "name": "Agents",
+   "desc": "LangGraph properly, plus MCP basics. Your Morning TIL project is the lab for this phase.",
+   "items": [
+    {
+     "id": "ai-a1",
+     "title": "LangChain Academy \u2014 Introduction to LangGraph (all modules)",
+     "resources": [
+      {
+       "title": "Introduction to LangGraph",
+       "type": "course",
+       "url": "https://academy.langchain.com/courses/intro-to-langgraph",
+       "free": true,
+       "note": "State, memory, human-in-the-loop, subgraphs",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-a2",
+     "title": "LangGraph: state design, reducers, checkpointing \u2014 explain how your TIL project uses each"
+    },
+    {
+     "id": "ai-a3",
+     "title": "Human-in-the-loop: interrupts, approval gates \u2014 add one to a toy graph"
+    },
+    {
+     "id": "ai-a4",
+     "title": "Multi-agent patterns: supervisor vs swarm vs hierarchical \u2014 when each wins",
+     "resources": [
+      {
+       "title": "LangGraph multi-agent concepts",
+       "type": "docs",
+       "url": "https://langchain-ai.github.io/langgraph/concepts/multi_agent/",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-a5",
+     "title": "MCP basics: what problem it solves, servers/clients/tools \u2014 build or run one server",
+     "resources": [
+      {
+       "title": "Model Context Protocol docs",
+       "type": "docs",
+       "url": "https://modelcontextprotocol.io/",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    }
+   ],
+   "resources": [
+    {
+     "title": "LangGraph docs",
+     "type": "docs",
+     "url": "https://langchain-ai.github.io/langgraph/",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "ai-evals",
+   "name": "Evals & Observability",
+   "desc": "What separates seniors from tutorial-followers in interviews. Be the person who says 'here's how I'd measure that'.",
+   "items": [
+    {
+     "id": "ai-e1",
+     "title": "Hamel Husain \u2014 'Your AI product needs evals' (unit tests \u2192 LLM-judge \u2192 human review loop)",
+     "resources": [
+      {
+       "title": "Your AI Product Needs Evals",
+       "type": "blog",
+       "url": "https://hamel.dev/blog/posts/evals/",
+       "free": true,
+       "note": "The reference essay on eval systems",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-e2",
+     "title": "LLM-as-judge: rubrics, pairwise vs pointwise, judge drift and how to calibrate"
+    },
+    {
+     "id": "ai-e3",
+     "title": "Ragas: run it on a toy RAG app \u2014 faithfulness, context precision/recall",
+     "resources": [
+      {
+       "title": "Ragas docs",
+       "type": "docs",
+       "url": "https://docs.ragas.io/",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-e4",
+     "title": "LangSmith: tracing, datasets, eval runs \u2014 wire into TIL project (P5 milestone)",
+     "resources": [
+      {
+       "title": "LangSmith docs",
+       "type": "docs",
+       "url": "https://docs.smith.langchain.com/",
+       "free": true,
+       "note": "Free tier is enough",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-e5",
+     "title": "promptfoo: CI-style prompt regression testing \u2014 set up one config",
+     "resources": [
+      {
+       "title": "promptfoo docs",
+       "type": "docs",
+       "url": "https://www.promptfoo.dev/docs/intro/",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "ai-serving",
+   "name": "Serving / Local Models",
+   "desc": "Local-vs-API tradeoffs \u2014 you live this daily in the TIL project; turn it into crisp interview answers.",
+   "items": [
+    {
+     "id": "ai-s1",
+     "title": "Ollama: model lifecycle, quantization levels (q4/q8), context length limits, GPU/CPU split",
+     "resources": [
+      {
+       "title": "Ollama docs",
+       "type": "github",
+       "url": "https://github.com/ollama/ollama/blob/main/docs/README.md",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-s2",
+     "title": "vLLM basics: PagedAttention, continuous batching, why it beats naive serving",
+     "resources": [
+      {
+       "title": "vLLM docs",
+       "type": "docs",
+       "url": "https://docs.vllm.ai/",
+       "free": true,
+       "note": "Read the architecture overview, don't deploy",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-s3",
+     "title": "Local vs API decision matrix: cost, latency, privacy, capability, ops burden \u2014 write your own one-pager (use TIL numbers)"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "ai-fde",
+   "name": "FDE-Specific Craft",
+   "desc": "What the role actually is: embed with a customer, discover the real problem, scope it, demo fast, communicate up and down.",
+   "items": [
+    {
+     "id": "ai-fde1",
+     "title": "Read: what FDEs actually do (Palantir 'day in the life' + Dev vs Delta)",
+     "resources": [
+      {
+       "title": "A Day in the Life of a Palantir Forward Deployed Software Engineer",
+       "type": "blog",
+       "url": "https://blog.palantir.com/a-day-in-the-life-of-a-palantir-forward-deployed-software-engineer-45ef2de257b1",
+       "free": true,
+       "note": "",
+       "verified": true
+      },
+      {
+       "title": "Dev versus Delta: Demystifying engineering roles at Palantir",
+       "type": "blog",
+       "url": "https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87",
+       "free": true,
+       "note": "",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-fde2",
+     "title": "Read: why the role exploded in the AI era (Pragmatic Engineer + market view)",
+     "resources": [
+      {
+       "title": "What are Forward Deployed Engineers, and why are they so in demand?",
+       "type": "blog",
+       "url": "https://newsletter.pragmaticengineer.com/p/forward-deployed-engineers",
+       "free": true,
+       "note": "Pragmatic Engineer deep-dive",
+       "verified": true
+      },
+      {
+       "title": "WTF is a forward-deployed engineer?",
+       "type": "blog",
+       "url": "https://thomasotter.substack.com/p/wtf-is-a-forward-deployed-engineer",
+       "free": true,
+       "note": "Skeptical/practical take \u2014 good balance",
+       "verified": true
+      },
+      {
+       "title": "Forward-Deployed Engineer Role: Palantir & More",
+       "type": "blog",
+       "url": "https://www.paraform.com/blog/forward-deployed-engineer-palantir-runway-greptile",
+       "free": true,
+       "note": "How AI startups (Runway, Greptile) run the role today",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-fde3",
+     "title": "Discovery practice: for 3 imaginary customers, write the 5 questions that find the REAL problem behind the stated ask"
+    },
+    {
+     "id": "ai-fde4",
+     "title": "Scoping: practice cutting a vague ask into a 2-week demoable slice (write 2 examples)"
+    },
+    {
+     "id": "ai-fde5",
+     "title": "Demo craft: 10-min demo structure \u2014 hook with the pain, show the wow in 2 min, end with the roadmap"
+    },
+    {
+     "id": "ai-fde6",
+     "title": "Stakeholder communication: explain your TIL architecture twice \u2014 once to an engineer, once to a PM/exec (record + review both)"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "ai-storytelling",
+   "name": "Project Storytelling",
+   "desc": "One entry per portfolio project. Fill every field \u2014 these ARE your interview answers.",
+   "items": [],
+   "resources": []
+  },
+  {
+   "id": "ai-design",
+   "name": "AI System Design Practice",
+   "desc": "Whiteboard-style prompts. For each: requirements \u2192 architecture \u2192 data/models \u2192 evals \u2192 failure modes \u2192 cost. Write your answer in notes; mark revisit to drill again.",
+   "items": [
+    {
+     "id": "ai-d1",
+     "title": "Design a RAG system over a company's internal wiki (stale docs, permissions, 50k pages)"
+    },
+    {
+     "id": "ai-d2",
+     "title": "Design an eval pipeline for a customer-support bot before AND after launch"
+    },
+    {
+     "id": "ai-d3",
+     "title": "Design a document-processing agent: invoices in 12 formats \u2192 structured data, 99% accuracy needed"
+    },
+    {
+     "id": "ai-d4",
+     "title": "Design guardrails for an LLM feature in a fintech app (prompt injection, PII, hallucinated numbers)"
+    },
+    {
+     "id": "ai-d5",
+     "title": "Cut LLM cost of a summarization feature by 10x without killing quality (routing, caching, distillation)"
+    },
+    {
+     "id": "ai-d6",
+     "title": "Design semantic search + rerank for an e-commerce catalog (typos, synonyms, vernacular queries)"
+    },
+    {
+     "id": "ai-d7",
+     "title": "Design a code-review assistant for a 200-dev org (context, noise control, measuring usefulness)"
+    },
+    {
+     "id": "ai-d8",
+     "title": "Design a meeting-notes \u2192 action-items pipeline with human approval before task creation"
+    },
+    {
+     "id": "ai-d9",
+     "title": "Design a multi-tenant RAG SaaS: isolation, per-tenant evals, noisy-neighbor cost control"
+    },
+    {
+     "id": "ai-d10",
+     "title": "API model \u2192 local model migration plan for a chat feature (when does it make sense, rollout, rollback)"
+    }
+   ],
+   "resources": []
+  }
+ ],
+ "projectStories": [
+  {
+   "id": "story-til",
+   "name": "Morning TIL \u2014 multi-agent pipeline",
+   "pitch": "Every morning a LangGraph pipeline lands a fun-facts digest on my phone. A DeepSeek orchestrator plans topics and dispatches parallel workers running on a local 7B model via Ollama; workers web-search and draft TILs; DeepSeek ranks the drafts, steers rewrites, and assembles the digest. SQLite history dedupes against everything I've already learned; a fact-check pass re-searches every claim. Cost is near-zero because the high-token grunt work is local \u2014 the frontier model only plans and judges.",
+   "architectureLink": "",
+   "metrics": "(fill in: cost per digest, end-to-end latency, TILs/day, dedupe hit rate)",
+   "hardestBug": "(fill in when it happens \u2014 you'll know it when you see it)",
+   "whatIdChange": "(fill in after P2: e.g. swarm instead of supervisor? bigger local model? different search tool?)"
+  },
+  {
+   "id": "story-2",
+   "name": "",
+   "pitch": "",
+   "architectureLink": "",
+   "metrics": "",
+   "hardestBug": "",
+   "whatIdChange": ""
+  },
+  {
+   "id": "story-3",
+   "name": "",
+   "pitch": "",
+   "architectureLink": "",
+   "metrics": "",
+   "hardestBug": "",
+   "whatIdChange": ""
+  },
+  {
+   "id": "story-4",
+   "name": "",
+   "pitch": "",
+   "architectureLink": "",
+   "metrics": "",
+   "hardestBug": "",
+   "whatIdChange": ""
+  }
+ ]
+}

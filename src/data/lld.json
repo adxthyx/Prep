@@ -1,0 +1,271 @@
+{
+ "meta": {
+  "name": "LLD / Machine Coding",
+  "desc": "More relevant than HLD at 1 YoE \u2014 Indian product companies run 90-min machine-coding rounds at SDE1/2. Fundamentals \u2192 15 problems \u2192 timed mocks."
+ },
+ "fundamentals": [
+  {
+   "id": "lld-s1",
+   "title": "S \u2014 Single Responsibility Principle",
+   "resources": [
+    {
+     "title": "SRP (refactoring.guru book excerpt not free; use article)",
+     "type": "blog",
+     "url": "https://www.geeksforgeeks.org/system-design/single-responsibility-in-solid-design-principle/",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "lld-s2",
+   "title": "O \u2014 Open/Closed Principle"
+  },
+  {
+   "id": "lld-s3",
+   "title": "L \u2014 Liskov Substitution Principle"
+  },
+  {
+   "id": "lld-s4",
+   "title": "I \u2014 Interface Segregation Principle"
+  },
+  {
+   "id": "lld-s5",
+   "title": "D \u2014 Dependency Inversion Principle"
+  },
+  {
+   "id": "lld-p1",
+   "title": "Strategy pattern",
+   "resources": [
+    {
+     "title": "Strategy \u2014 refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/strategy",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "lld-p2",
+   "title": "Factory Method + Abstract Factory",
+   "resources": [
+    {
+     "title": "Factory Method \u2014 refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/factory-method",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "lld-p3",
+   "title": "Observer pattern",
+   "resources": [
+    {
+     "title": "Observer \u2014 refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/observer",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "lld-p4",
+   "title": "Singleton (thread-safe variants + why it's often an anti-pattern)",
+   "resources": [
+    {
+     "title": "Singleton \u2014 refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/singleton",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "lld-p5",
+   "title": "Builder pattern",
+   "resources": [
+    {
+     "title": "Builder \u2014 refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/builder",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "lld-p6",
+   "title": "Decorator pattern",
+   "resources": [
+    {
+     "title": "Decorator \u2014 refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/decorator",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
+  }
+ ],
+ "problems": [
+  {
+   "id": "lld-q1",
+   "title": "Parking lot",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/parking-lot.md",
+   "verified": true,
+   "note": "The canonical opener \u2014 do it first, untimed"
+  },
+  {
+   "id": "lld-q2",
+   "title": "Splitwise (expense sharing)",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/splitwise.md",
+   "verified": true,
+   "note": "Equal/exact/percent splits; simplify-debt graph as stretch"
+  },
+  {
+   "id": "lld-q3",
+   "title": "Snake & Ladder",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/snake-and-ladder.md",
+   "verified": true,
+   "note": "Board abstraction, dice strategy, multiple players"
+  },
+  {
+   "id": "lld-q4",
+   "title": "Elevator system",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/elevator-system.md",
+   "verified": true,
+   "note": "Scheduling strategy is the interview meat"
+  },
+  {
+   "id": "lld-q5",
+   "title": "LRU cache (then make it thread-safe)",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/lru-cache.md",
+   "verified": true,
+   "note": "Also a LeetCode hard-favorite (dsa module has it)"
+  },
+  {
+   "id": "lld-q6",
+   "title": "BookMyShow (movie ticket booking)",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/movie-ticket-booking-system.md",
+   "verified": true,
+   "note": "Seat locking / concurrency is the differentiator"
+  },
+  {
+   "id": "lld-q7",
+   "title": "Chess (move validation)",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/chess-game.md",
+   "verified": true,
+   "note": "Piece polymorphism; don't build AI, build validation"
+  },
+  {
+   "id": "lld-q8",
+   "title": "Logging framework",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/logging-framework.md",
+   "verified": true,
+   "note": "Levels, appenders, chain of responsibility"
+  },
+  {
+   "id": "lld-q9",
+   "title": "Rate limiter (class-level, in-process)",
+   "referenceUrl": "",
+   "verified": true,
+   "note": "Token bucket + sliding window as pluggable strategies; no good single reference \u2014 build from HLD concept + Strategy pattern"
+  },
+  {
+   "id": "lld-q10",
+   "title": "Vending machine",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/vending-machine.md",
+   "verified": true,
+   "note": "State pattern showcase"
+  },
+  {
+   "id": "lld-q11",
+   "title": "Tic-tac-toe",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/tic-tac-toe.md",
+   "verified": true,
+   "note": "Warm-up; generalize to NxN"
+  },
+  {
+   "id": "lld-q12",
+   "title": "Live cricket scorecard (CricInfo)",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/cricinfo.md",
+   "verified": true,
+   "note": "Observer pattern in the wild"
+  },
+  {
+   "id": "lld-q13",
+   "title": "Notification service",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/pub-sub-system.md",
+   "verified": true,
+   "note": "Reference is pub-sub \u2014 extend with channels (email/SMS/push), retries, dedupe"
+  },
+  {
+   "id": "lld-q14",
+   "title": "Task scheduler (cron-like)",
+   "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/task-management-system.md",
+   "verified": true,
+   "note": "Reference is task management; for scheduler add priority queue + worker pool"
+  },
+  {
+   "id": "lld-q15",
+   "title": "In-memory KV store (with TTL, then transactions)",
+   "referenceUrl": "",
+   "verified": true,
+   "note": "No single reference \u2014 classic machine-coding ask; levels: get/set \u2192 TTL \u2192 nested transactions (begin/commit/rollback)"
+  }
+ ],
+ "resources": [
+  {
+   "title": "ashishps1/awesome-low-level-design",
+   "type": "github",
+   "url": "https://github.com/ashishps1/awesome-low-level-design",
+   "free": true,
+   "note": "Reference solutions in Java/C++/Python for nearly every problem above",
+   "verified": true
+  },
+  {
+   "title": "workat.tech \u2014 machine coding practice",
+   "type": "docs",
+   "url": "https://workat.tech/machine-coding/practice",
+   "free": true,
+   "note": "Timed problems with evaluation rubrics \u2014 the Indian machine-coding standard",
+   "verified": true
+  },
+  {
+   "title": "Concept && Coding (Shrayansh Jain) \u2014 LLD playlist",
+   "type": "yt",
+   "url": "https://www.youtube.com/@ConceptandCoding",
+   "free": true,
+   "note": "Full LLD interview playlist on the channel",
+   "verified": true
+  },
+  {
+   "title": "refactoring.guru \u2014 design patterns index",
+   "type": "docs",
+   "url": "https://refactoring.guru/design-patterns",
+   "free": true,
+   "note": "",
+   "verified": true
+  }
+ ],
+ "mockLog": [],
+ "mockLogColumns": [
+  "date",
+  "problem",
+  "minutes",
+  "review"
+ ],
+ "mockTarget": "90-minute mocks. Rubric: does it run? \u00b7 requirements covered? \u00b7 extensible (could you add feature X in 10 min)? \u00b7 naming/structure clean?"
+}

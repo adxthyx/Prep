@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Reddit-orange theme, mirrored from the portfolio.
+  Layered surfaces: canvas < card < surface (hover).
+*/
+@layer base {
+  @font-face {
+    font-family: 'Reddit Sans';
+    src: url('/fonts/reddit-sans-latin.woff2') format('woff2');
+    font-weight: 200 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Reddit Mono';
+    src: url('/fonts/reddit-mono-latin.woff2') format('woff2');
+    font-weight: 200 900;
+    font-display: swap;
+  }
+
+  :root {
+    --canvas: 210 17% 88%;
+    --background: 0 0% 100%;
+    --foreground: 210 11% 11%;
+    --card: 0 0% 100%;
+    --surface: 210 17% 95%;
+    --muted: 210 17% 95%;
+    --muted-foreground: 215 9% 42%;
+    --border: 214 15% 85%;
+  }
+  .dark {
+    /* canvas #0b1416 < card #14181c < surface #1b2226 */
+    --canvas: 200 33% 6%;
+    --background: 200 33% 6%;
+    --foreground: 210 17% 91%;
+    --card: 204 17% 9%;
+    --surface: 206 14% 13%;
+    --muted: 206 14% 13%;
+    --muted-foreground: 210 8% 62%;
+    --border: 199 13% 19%;
+  }
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply bg-canvas text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-brand-gradient {
+    background-image: linear-gradient(to right, #ff4500, #ff6b35);
+  }
+  .text-brand-gradient {
+    background-image: linear-gradient(to right, #ff4500, #ff6b35);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.dark ::-webkit-scrollbar { width: 8px; height: 8px; }
+.dark ::-webkit-scrollbar-track { background: hsl(206 14% 13%); }
+.dark ::-webkit-scrollbar-thumb { background: hsl(199 13% 25%); border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb:hover { background: hsl(199 13% 32%); }
+
+/* confetti */
+@keyframes confetti-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(90vh) rotate(720deg); opacity: 0; }
+}
+.confetti-piece {
+  position: fixed;
+  top: 0;
+  width: 8px;
+  height: 12px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: confetti-fall 2.4s ease-in forwards;
+}

@@ -1,0 +1,395 @@
+{
+ "meta": {
+  "name": "SDE1 interview roadmap",
+  "basedOn": "Sequence adapted from Tech Interview Handbook (yangshun) and takeUforward's interview roadmap: resume/profiles first, CS core + DSA in parallel, behavioral bank before applications open, applications + OA tracking from Aug 1.",
+  "sources": [
+   {
+    "title": "Tech Interview Handbook",
+    "type": "docs",
+    "url": "https://www.techinterviewhandbook.org/software-engineering-interview-guide/",
+    "free": true,
+    "note": "The master flow this roadmap follows",
+    "verified": true
+   },
+   {
+    "title": "takeUforward \u2014 Striver's SDE Sheet page",
+    "type": "docs",
+    "url": "https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/",
+    "free": true,
+    "note": "Reference for the Indian-market interview loop",
+    "verified": true
+   }
+  ]
+ },
+ "phases": [
+  {
+   "id": "sde-cs",
+   "name": "CS Core",
+   "desc": "OS, DBMS, CN, OOP \u2014 enough depth for SDE1 theory rounds and viva-style questions. Last-minute notes + one playlist per subject.",
+   "items": [
+    {
+     "id": "sde-os-1",
+     "title": "OS: processes vs threads, scheduling, context switching",
+     "resources": []
+    },
+    {
+     "id": "sde-os-2",
+     "title": "OS: synchronization \u2014 mutex/semaphore, deadlock (conditions, prevention)",
+     "resources": []
+    },
+    {
+     "id": "sde-os-3",
+     "title": "OS: memory \u2014 paging, segmentation, virtual memory, thrashing",
+     "resources": []
+    },
+    {
+     "id": "sde-dbms-1",
+     "title": "DBMS: normalization (1NF\u2192BCNF), keys, ER model",
+     "resources": []
+    },
+    {
+     "id": "sde-dbms-2",
+     "title": "DBMS: transactions \u2014 ACID, isolation levels, concurrency control, locks",
+     "resources": []
+    },
+    {
+     "id": "sde-dbms-3",
+     "title": "DBMS: indexing \u2014 B+ trees, clustered vs non-clustered",
+     "resources": []
+    },
+    {
+     "id": "sde-cn-1",
+     "title": "CN: OSI vs TCP/IP layers, what happens when you type a URL",
+     "resources": []
+    },
+    {
+     "id": "sde-cn-2",
+     "title": "CN: TCP vs UDP, 3-way handshake, congestion control basics",
+     "resources": []
+    },
+    {
+     "id": "sde-cn-3",
+     "title": "CN: HTTP/HTTPS, DNS, TLS handshake, cookies vs sessions",
+     "resources": []
+    },
+    {
+     "id": "sde-oop-1",
+     "title": "OOP: 4 pillars with real code examples in your main language",
+     "resources": []
+    },
+    {
+     "id": "sde-oop-2",
+     "title": "OOP: interfaces vs abstract classes, composition vs inheritance",
+     "resources": []
+    },
+    {
+     "id": "sde-oop-3",
+     "title": "OOP: common follow-ups \u2014 static/final, overloading vs overriding, virtual functions",
+     "resources": []
+    }
+   ],
+   "resources": [
+    {
+     "title": "GFG Last Minute Notes \u2014 Operating Systems",
+     "type": "blog",
+     "url": "https://www.geeksforgeeks.org/operating-systems/last-minute-notes-operating-systems/",
+     "free": true,
+     "note": "Revision sheet",
+     "verified": true
+    },
+    {
+     "title": "GFG Last Minute Notes \u2014 DBMS",
+     "type": "blog",
+     "url": "https://www.geeksforgeeks.org/dbms/last-minute-notes-dbms/",
+     "free": true,
+     "note": "Revision sheet",
+     "verified": true
+    },
+    {
+     "title": "GFG Last Minute Notes \u2014 Computer Networks",
+     "type": "blog",
+     "url": "https://www.geeksforgeeks.org/computer-networks/last-minute-notes-computer-network/",
+     "free": true,
+     "note": "Revision sheet",
+     "verified": true
+    },
+    {
+     "title": "Gate Smashers \u2014 YouTube channel",
+     "type": "yt",
+     "url": "https://www.youtube.com/@GateSmashers",
+     "free": true,
+     "note": "OS / DBMS / CN one-shot playlists \u2014 search subject name on channel",
+     "verified": true
+    },
+    {
+     "title": "CodeHelp by Babbar \u2014 YouTube channel",
+     "type": "yt",
+     "url": "https://www.youtube.com/@CodeHelp",
+     "free": true,
+     "note": "Love Babbar's channel \u2014 OS/DBMS/CN playlists aimed at placements",
+     "verified": true
+    },
+    {
+     "title": "GFG \u2014 Top OS interview questions",
+     "type": "blog",
+     "url": "https://www.geeksforgeeks.org/operating-systems/operating-systems-interview-questions/",
+     "free": true,
+     "note": "Per-subject top-questions list; also search 'GFG top DBMS/CN interview questions'",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "sde-sql",
+   "name": "SQL",
+   "desc": "LeetCode SQL 50 study plan, category by category. Free, and covers everything SDE1 OAs ask.",
+   "items": [
+    {
+     "id": "sde-sql-1",
+     "title": "SQL 50: Select (5 problems)"
+    },
+    {
+     "id": "sde-sql-2",
+     "title": "SQL 50: Basic Joins (9 problems)"
+    },
+    {
+     "id": "sde-sql-3",
+     "title": "SQL 50: Basic Aggregate Functions (8 problems)"
+    },
+    {
+     "id": "sde-sql-4",
+     "title": "SQL 50: Sorting and Grouping (7 problems)"
+    },
+    {
+     "id": "sde-sql-5",
+     "title": "SQL 50: Advanced Select and Joins (7 problems)"
+    },
+    {
+     "id": "sde-sql-6",
+     "title": "SQL 50: Subqueries (7 problems)"
+    },
+    {
+     "id": "sde-sql-7",
+     "title": "SQL 50: Advanced String Functions / Regex / Clause (7 problems)"
+    },
+    {
+     "id": "sde-sql-8",
+     "title": "Revision: window functions (RANK, ROW_NUMBER, LAG/LEAD) beyond SQL 50"
+    }
+   ],
+   "resources": [
+    {
+     "title": "LeetCode SQL 50 study plan",
+     "type": "leetcode",
+     "url": "https://leetcode.com/studyplan/top-sql-50/",
+     "free": true,
+     "note": "The whole phase",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "sde-dsa",
+   "name": "DSA",
+   "desc": "Lives entirely in the DSA module (sidebar) \u2014 Striver A2Z + SDE sheet + NeetCode 150 deduped, with company-wise lists. Nothing duplicated here.",
+   "items": [
+    {
+     "id": "sde-dsa-1",
+     "title": "\u2192 Work through the DSA module daily; this item is just the pointer"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "sde-resume",
+   "name": "Resume & Profiles",
+   "desc": "One-page tech resume + every Indian job platform optimized before Aug 1.",
+   "items": [
+    {
+     "id": "sde-res-1",
+     "title": "One-page resume in Jake's template style: quantified bullets (X \u2192 Y by Z), tech keywords, no photo/objective",
+     "resources": [
+      {
+       "title": "Jake's Resume template (Overleaf)",
+       "type": "docs",
+       "url": "https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs",
+       "free": true,
+       "note": "The standard one-page LaTeX template",
+       "verified": true
+      },
+      {
+       "title": "Tech Interview Handbook \u2014 resume guide",
+       "type": "docs",
+       "url": "https://www.techinterviewhandbook.org/resume/",
+       "free": true,
+       "note": "What to write in each bullet",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "sde-res-2",
+     "title": "LinkedIn: headline with target role + stack, About with metrics, featured projects, open-to-work (recruiters only)",
+     "resources": []
+    },
+    {
+     "id": "sde-res-3",
+     "title": "Naukri: complete profile to 100%, headline keywords, \u27f3 REFRESH WEEKLY (resurfaces you in recruiter search \u2014 mark revisit to auto-remind)",
+     "resources": []
+    },
+    {
+     "id": "sde-res-4",
+     "title": "Instahyre: profile + preferences set to target roles/CTC",
+     "resources": []
+    },
+    {
+     "id": "sde-res-5",
+     "title": "Cutshort: profile, skill quizzes if they gate visibility",
+     "resources": []
+    },
+    {
+     "id": "sde-res-6",
+     "title": "Wellfound (AngelList): startup-facing profile, AI/agent projects front and center",
+     "resources": []
+    },
+    {
+     "id": "sde-res-7",
+     "title": "GitHub: pin Morning TIL + best repos, each README with demo GIF and architecture diagram",
+     "resources": []
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "sde-behavioral",
+   "name": "Behavioral \u2014 STAR bank",
+   "desc": "Write answers as Situation-Task-Action-Result. Notes field on each question = your answer. Rehearse aloud once a week from mid-Aug.",
+   "items": [
+    {
+     "id": "sde-beh-1",
+     "title": "Tell me about yourself (90-second version)"
+    },
+    {
+     "id": "sde-beh-2",
+     "title": "Most challenging project / hardest technical problem you solved"
+    },
+    {
+     "id": "sde-beh-3",
+     "title": "A time you disagreed with a teammate or senior \u2014 how did you resolve it?"
+    },
+    {
+     "id": "sde-beh-4",
+     "title": "A mistake or failure \u2014 what did you learn and change?"
+    },
+    {
+     "id": "sde-beh-5",
+     "title": "A time you had to learn something quickly to deliver"
+    },
+    {
+     "id": "sde-beh-6",
+     "title": "A time you took ownership beyond your role"
+    },
+    {
+     "id": "sde-beh-7",
+     "title": "Handling a tight deadline / multiple priorities"
+    },
+    {
+     "id": "sde-beh-8",
+     "title": "A time you received hard feedback \u2014 how did you respond?"
+    },
+    {
+     "id": "sde-beh-9",
+     "title": "Why are you leaving your current company? (never negative)"
+    },
+    {
+     "id": "sde-beh-10",
+     "title": "Why this company / role? (research template: product, stack, one specific thing)"
+    },
+    {
+     "id": "sde-beh-11",
+     "title": "Questions to ask the interviewer (prepare 3 per round type)"
+    }
+   ],
+   "resources": [
+    {
+     "title": "Tech Interview Handbook \u2014 behavioral section",
+     "type": "docs",
+     "url": "https://www.techinterviewhandbook.org/behavioral-interview/",
+     "free": true,
+     "note": "STAR framework + rubrics",
+     "verified": true
+    },
+    {
+     "title": "Tech Interview Handbook \u2014 30 common behavioral questions",
+     "type": "docs",
+     "url": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
+     "free": true,
+     "note": "Expand the bank from here",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "id": "sde-apps",
+   "name": "Applications & OA tracker",
+   "desc": "Every application from Aug 1 goes in the table below (in the app). Statuses: applied \u2192 OA \u2192 phone \u2192 onsite \u2192 offer / rejected / ghosted.",
+   "items": [
+    {
+     "id": "sde-app-1",
+     "title": "Build target-company list (30+): product companies, funded startups, AI-first teams"
+    },
+    {
+     "id": "sde-app-2",
+     "title": "Line up referrals: ex-colleagues, alumni, LinkedIn warm intros \u2014 referral > cold apply"
+    },
+    {
+     "id": "sde-app-3",
+     "title": "OA practice: 2 timed mock OAs before first real one (LeetCode contests work)"
+    }
+   ],
+   "resources": [
+    {
+     "title": "Tech Interview Handbook \u2014 applying + cold email templates",
+     "type": "docs",
+     "url": "https://www.techinterviewhandbook.org/resume/",
+     "free": true,
+     "note": "Also see 'choosing between companies'",
+     "verified": true
+    }
+   ]
+  }
+ ],
+ "applicationColumns": [
+  "company",
+  "role",
+  "source",
+  "referral",
+  "status",
+  "appliedDate",
+  "nextDate",
+  "notes"
+ ],
+ "applicationStatuses": [
+  "wishlist",
+  "applied",
+  "OA",
+  "phone",
+  "onsite",
+  "offer",
+  "rejected",
+  "ghosted"
+ ],
+ "applications": [
+  {
+   "id": "app-example",
+   "company": "(example \u2014 edit or delete me)",
+   "role": "SDE1",
+   "source": "Instahyre",
+   "referral": "yes \u2014 R. Sharma",
+   "status": "wishlist",
+   "appliedDate": "",
+   "nextDate": "",
+   "notes": "Applications open Aug 1"
+  }
+ ]
+}

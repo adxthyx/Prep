@@ -1,0 +1,67 @@
+{
+ "meta": {
+  "name": "Morning TIL — multi-agent pipeline",
+  "oneLiner": "Every morning, a LangGraph pipeline generates fun-fact/TIL content. Ollama 7B workers do web research; DeepSeek orchestrates — plans topics, dispatches workers, ranks/edits drafts, assembles the digest.",
+  "note": "This app only TRACKS the project. The project itself lives in its own repo."
+ },
+ "kanban": {
+  "columns": [
+   { "id": "backlog", "title": "Backlog" },
+   { "id": "inprogress", "title": "In progress" },
+   { "id": "blocked", "title": "Blocked" },
+   { "id": "done", "title": "Done" }
+  ],
+  "cards": [
+   { "id": "til-c1", "title": "Create repo + Python env (uv/venv), pin deps", "phase": "P0", "column": "backlog" },
+   { "id": "til-c2", "title": "Install Ollama, pull a 7B model (qwen2.5:7b / mistral:7b), verify local inference", "phase": "P0", "column": "backlog" },
+   { "id": "til-c3", "title": "Get DeepSeek API key, hello-world chat call, note pricing", "phase": "P0", "column": "backlog" },
+   { "id": "til-c4", "title": "LangGraph hello-world: 2-node graph with state", "phase": "P0", "column": "backlog" },
+   { "id": "til-c5", "title": "Pick + wire search tool (Tavily free tier / DuckDuckGo / SearxNG)", "phase": "P1", "column": "backlog" },
+   { "id": "til-c6", "title": "Single worker agent: topic in → search → summarized TIL out", "phase": "P1", "column": "backlog" },
+   { "id": "til-c7", "title": "Prompt-tune worker for TIL tone (surprising, source-cited, 3-5 sentences)", "phase": "P1", "column": "backlog" },
+   { "id": "til-c8", "title": "Orchestrator node: DeepSeek plans N topics for the day", "phase": "P2", "column": "backlog" },
+   { "id": "til-c9", "title": "Fan-out: parallel Ollama workers research + draft (LangGraph Send API)", "phase": "P2", "column": "backlog" },
+   { "id": "til-c10", "title": "DeepSeek ranks drafts, sends weak ones back with steering notes", "phase": "P2", "column": "backlog" },
+   { "id": "til-c11", "title": "Digest assembler: final markdown digest with sources", "phase": "P2", "column": "backlog" },
+   { "id": "til-c12", "title": "SQLite history store + dedupe new TILs against past topics (embeddings or keyword)", "phase": "P3", "column": "backlog" },
+   { "id": "til-c13", "title": "Fact-check pass: second search to verify each claim", "phase": "P3", "column": "backlog" },
+   { "id": "til-c14", "title": "Interestingness scoring rubric (novelty, surprise, credibility)", "phase": "P3", "column": "backlog" },
+   { "id": "til-c15", "title": "Morning schedule: cron (macOS launchd) job at 7am", "phase": "P4", "column": "backlog" },
+   { "id": "til-c16", "title": "Delivery: Telegram bot (or email / markdown file to Obsidian)", "phase": "P4", "column": "backlog" },
+   { "id": "til-c17", "title": "LangSmith tracing on all runs", "phase": "P5", "column": "backlog" },
+   { "id": "til-c18", "title": "Token + cost log per run (DeepSeek $ vs local $0)", "phase": "P5", "column": "backlog" },
+   { "id": "til-c19", "title": "Graceful failures: Ollama down → skip worker; search rate-limited → backoff + retry", "phase": "P5", "column": "backlog" },
+   { "id": "til-c20", "title": "Retries with jitter on all external calls", "phase": "P5", "column": "backlog" }
+  ]
+ },
+ "milestones": [
+  { "id": "til-p0", "phase": "P0", "name": "Scaffold", "goal": "Repo, Python env, Ollama serving a 7B model, DeepSeek API access, LangGraph hello-world" },
+  { "id": "til-p1", "phase": "P1", "name": "Single agent", "goal": "One worker → web search tool (Tavily / DuckDuckGo / SearxNG) → summarized TIL" },
+  { "id": "til-p2", "phase": "P2", "name": "Multi-agent", "goal": "Orchestrator-worker graph — DeepSeek plans N topics → parallel Ollama workers research + draft → DeepSeek ranks, steers rewrites, assembles digest" },
+  { "id": "til-p3", "phase": "P3", "name": "Quality", "goal": "History store (SQLite) to dedupe against past TILs, fact-check pass, interestingness scoring" },
+  { "id": "til-p4", "phase": "P4", "name": "Ship", "goal": "Morning schedule (cron / Task Scheduler) + delivery (Telegram bot / email / markdown file)" },
+  { "id": "til-p5", "phase": "P5", "name": "Hardening", "goal": "LangSmith tracing, token/cost log, graceful failure handling (Ollama down, search rate-limited), retries" }
+ ],
+ "demoChecklist": [
+  { "id": "til-d1", "title": "5-min live demo possible end-to-end (one command, digest appears)" },
+  { "id": "til-d2", "title": "Architecture diagram exists (orchestrator, workers, tools, store)" },
+  { "id": "til-d3", "title": "Can explain every failure mode + what the system does about it" },
+  { "id": "til-d4", "title": "Know cost per digest (DeepSeek tokens) and end-to-end latency numbers" },
+  { "id": "til-d5", "title": "Can justify architecture choices vs alternatives (why orchestrator-worker, why local workers, why DeepSeek as steerer)" },
+  { "id": "til-d6", "title": "2-min pitch rehearsed (matches Project Storytelling entry in AI roadmap)" }
+ ],
+ "architectureNotes": "## Architecture (draft — edit me)\n\n```\n            ┌─────────────────────────────┐\n            │  DeepSeek (orchestrator)    │\n            │  plan topics → dispatch →   │\n            │  rank/steer → assemble      │\n            └──────┬─────────────┬────────┘\n         Send API  │             │  rank / rewrite loop\n     ┌─────────────┼─────────────┐\n     ▼             ▼             ▼\n ┌────────┐   ┌────────┐   ┌────────┐\n │worker 1│   │worker 2│   │worker N│   (Ollama 7B, parallel)\n │search+ │   │search+ │   │search+ │\n │draft   │   │draft   │   │draft   │\n └───┬────┘   └───┬────┘   └───┬────┘\n     └───────────┬┴────────────┘\n                 ▼\n          SQLite history (dedupe)\n                 ▼\n          Morning digest → Telegram/email/markdown\n```\n\n**State shape:** topics[], drafts[], rankings[], final_digest\n\n**Key decisions to make:** worker model choice, search tool, dedupe strategy (embeddings vs keywords), rewrite loop depth (cap at 1-2 to bound cost/latency).",
+ "decisionLog": [
+  { "id": "til-dl1", "date": "2026-07-11", "decision": "Frontier model (DeepSeek) steers, local 7B models do grunt work", "why": "Cost: research/drafting is high-token, low-difficulty — local is free. Planning/ranking is low-token, high-difficulty — worth API spend. Also a great interview talking point about model routing." },
+  { "id": "til-dl2", "date": "2026-07-11", "decision": "LangGraph over raw asyncio orchestration", "why": "Checkpointing, retries, and the Send API for fan-out come free; graph is self-documenting for the demo; LangGraph experience is directly interview-relevant." }
+ ],
+ "resources": [
+  { "title": "LangGraph docs", "type": "docs", "url": "https://langchain-ai.github.io/langgraph/", "free": true, "note": "Core reference — state, nodes, edges, Send API", "verified": true },
+  { "title": "LangChain Academy — Introduction to LangGraph", "type": "course", "url": "https://academy.langchain.com/courses/intro-to-langgraph", "free": true, "note": "Free official course, ~6 modules incl. multi-agent", "verified": true },
+  { "title": "LangGraph multi-agent supervisor tutorial", "type": "docs", "url": "https://langchain-ai.github.io/langgraph/tutorials/multi_agent/agent_supervisor/", "free": true, "note": "The exact orchestrator-worker pattern this project uses", "verified": true },
+  { "title": "Ollama docs", "type": "github", "url": "https://github.com/ollama/ollama/blob/main/docs/api.md", "free": true, "note": "API reference for serving local models", "verified": true },
+  { "title": "DeepSeek API docs", "type": "docs", "url": "https://api-docs.deepseek.com/", "free": true, "note": "Auth, chat completions, pricing", "verified": true },
+  { "title": "Tavily docs", "type": "docs", "url": "https://docs.tavily.com/", "free": true, "note": "Search API with free tier — easiest worker search tool", "verified": true },
+  { "title": "SearxNG docs", "type": "docs", "url": "https://docs.searxng.org/", "free": true, "note": "Self-hosted metasearch — zero-cost, no rate limits, more setup", "verified": true }
+ ]
+}

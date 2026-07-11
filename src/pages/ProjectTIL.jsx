@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useStore, getItem } from '../store'
 import { projectTil } from '../lib/registry'
-import { SectionCard, ResourceLink, ItemRow, ItemDetails, fireConfetti } from '../components/ui'
+import { SectionCard, ResourceLink, ItemRow, ItemDetails, fireConfetti, StatusPill } from '../components/ui'
 
 const COL_STATUS = { backlog: 'todo', inprogress: 'in-progress', blocked: 'todo', done: 'done' }
 const COL_ACCENT = {
@@ -59,12 +59,16 @@ function Kanban() {
                     key={c.id}
                     draggable
                     onDragStart={() => setDragId(c.id)}
-                    onClick={() => setOpenCard(openCard === c.id ? null : c.id)}
                     className={`cursor-grab active:cursor-grabbing rounded-lg border bg-card p-2.5 text-sm leading-snug hover:border-brand/50 transition-colors ${col.id === 'done' ? 'opacity-60' : ''}`}
                   >
-                    <span className="font-mono text-[10px] text-brand mr-1.5">{c.phase}</span>
-                    {c.title}
-                    {notes && <span className="ml-1 text-xs text-muted-foreground">✎</span>}
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <StatusPill id={c.id} size="xs" />
+                      <span className="font-mono text-[10px] text-brand">{c.phase}</span>
+                    </div>
+                    <button onClick={() => setOpenCard(openCard === c.id ? null : c.id)} className="w-full text-left hover:text-brand transition-colors">
+                      {c.title}
+                      {notes && <span className="ml-1 text-xs text-muted-foreground">✎</span>}
+                    </button>
                     {openCard === c.id && (
                       <div onClick={(e) => e.stopPropagation()}>
                         <ItemDetails id={c.id} />

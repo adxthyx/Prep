@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import { StoreProvider } from './store'
 import Layout from './components/Layout'
@@ -14,7 +14,7 @@ import Hld from './pages/Hld'
 import Lld from './pages/Lld'
 import Settings from './pages/Settings'
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
@@ -29,7 +29,9 @@ const router = createHashRouter([
       { path: '/settings', element: <Settings /> },
     ],
   },
-])
+], {
+  basename: '/prep',
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

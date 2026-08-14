@@ -75,4 +75,4 @@ Every resource URL was checked with HTTP requests at build time. Anything marked
 
 ## Stack
 
-React 18 + Vite 5 + Tailwind 3, hash-based routing, zero backend. Theme mirrors the Reddit-orange portfolio design system (Reddit Sans/Mono served locally from `public/fonts`). Dark mode default, light toggle in the sidebar.
+React 18 + Vite 5 + Tailwind 3, browser-history routing mounted at `/prep`, zero backend. Theme mirrors the Reddit-orange portfolio design system (Reddit Sans/Mono served locally from `public/fonts`). Dark mode default, light toggle in the sidebar.

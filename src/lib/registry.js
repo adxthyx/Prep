@@ -4,6 +4,7 @@
 import projectTil from '../data/project-til.json'
 import sdeRoadmap from '../data/sde-roadmap.json'
 import aiRoadmap from '../data/ai-roadmap.json'
+import aiPapers from '../data/ai-papers.json'
 import dsaProblems from '../data/dsa-problems.json'
 import dsaCompanies from '../data/dsa-companies.json'
 import hld from '../data/hld.json'
@@ -33,16 +34,21 @@ aiRoadmap.phases.forEach((p) =>
   p.items.forEach((it) => reg(it.id, it.title, 'ai', 'AI / FDE Roadmap', '/ai', p.name))
 )
 
-// 4. DSA — master problems only (company list is a display view, not a registry extension)
+// 4. AI papers — curated reading list
+aiPapers.categories.forEach((category) =>
+  category.papers.forEach((paper) => reg(paper.id, paper.title, 'ai-papers', 'AI Papers', '/ai-papers', category.name))
+)
+
+// 5. DSA — master problems only (company list is a display view, not a registry extension)
 dsaProblems.problems.forEach((p) =>
   reg(p.id, p.title, 'dsa', 'DSA', '/dsa', p.topic)
 )
 
-// 5. HLD — concepts + questions
+// 6. HLD — concepts + questions
 hld.concepts.forEach((c) => reg(c.id, c.title, 'hld', 'HLD', '/hld', 'Concepts'))
 hld.questions.forEach((q) => reg(q.id, q.title, 'hld', 'HLD', '/hld', 'Classic questions'))
 
-// 6. LLD — fundamentals + problems
+// 7. LLD — fundamentals + problems
 lld.fundamentals.forEach((f) => reg(f.id, f.title, 'lld', 'LLD', '/lld', 'Fundamentals'))
 lld.problems.forEach((p) => reg(p.id, p.title, 'lld', 'LLD', '/lld', 'Problems'))
 
@@ -52,6 +58,7 @@ export const MODULES = [
   { key: 'project', name: 'Morning TIL', path: '/project' },
   { key: 'sde', name: 'SDE1 Roadmap', path: '/sde' },
   { key: 'ai', name: 'AI / FDE Roadmap', path: '/ai' },
+  { key: 'ai-papers', name: 'AI Papers', path: '/ai-papers' },
   { key: 'dsa', name: 'DSA', path: '/dsa' },
   { key: 'hld', name: 'HLD', path: '/hld' },
   { key: 'lld', name: 'LLD', path: '/lld' },
@@ -63,4 +70,4 @@ export function moduleItemIds(moduleKey) {
   return ids
 }
 
-export { projectTil, sdeRoadmap, aiRoadmap, dsaProblems, dsaCompanies, hld, lld }
+export { projectTil, sdeRoadmap, aiRoadmap, aiPapers, dsaProblems, dsaCompanies, hld, lld }

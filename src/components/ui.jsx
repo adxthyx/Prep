@@ -60,7 +60,7 @@ export function ProgressBar({ value, total, className = '' }) {
   )
 }
 
-const TYPE_ICON = { yt: '▶', udemy: '🎓', leetcode: '🧩', github: '⌥', blog: '✍', book: '📕', course: '🎓', docs: '📄' }
+const TYPE_ICON = { yt: '▶', udemy: '🎓', leetcode: '🧩', github: '⌥', blog: '✍', book: '📕', course: '🎓', docs: '📄', paper: '▤' }
 
 export function ResourceLink({ r }) {
   const inner = (

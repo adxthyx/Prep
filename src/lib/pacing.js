@@ -1,5 +1,5 @@
 import { todayKey, daysUntil, addDays, DAY } from './dates'
-import { dsaProblems, sdeRoadmap, hld, aiRoadmap } from './registry'
+import { dsaProblems, sdeRoadmap, hld, aiRoadmap, aiPapers } from './registry'
 
 export function activeMilestone(state, config) {
   const today = todayKey()
@@ -45,6 +45,11 @@ export function activeMilestone(state, config) {
     ...dsaProblems.problems.map((p) => ({ id: p.id, module: 'dsa' })),
     ...sdeRoadmap.phases.flatMap((ph) => ph.items.map((it) => ({ id: it.id, module: 'sde' }))),
     ...aiRoadmap.phases.flatMap((ph) => ph.items.map((it) => ({ id: it.id, module: 'ai' }))),
+    ...aiPapers.categories.flatMap((category) =>
+      category.papers
+        .filter((paper) => !['optional', 'selected-sections'].includes(paper.priority))
+        .map((paper) => ({ id: paper.id, module: 'ai-papers' }))
+    ),
     ...hld.concepts.map((c) => ({ id: c.id, module: 'hld' })),
     ...hld.questions.map((q) => ({ id: q.id, module: 'hld' })),
   ]

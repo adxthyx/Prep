@@ -9,6 +9,7 @@ const NAV = [
   { to: '/project', label: 'Morning TIL', icon: '🌅' },
   { to: '/sde', label: 'SDE1 Roadmap', icon: '🛠' },
   { to: '/ai', label: 'AI / FDE', icon: '🤖' },
+  { to: '/ai-papers', label: 'AI Papers', icon: '📚' },
   { to: '/dsa', label: 'DSA', icon: '🧩' },
   { to: '/hld', label: 'HLD', icon: '🏗' },
   { to: '/lld', label: 'LLD', icon: '📐' },
@@ -41,7 +42,7 @@ export default function Layout() {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
       if (e.key === 'g') { pendingG = true; setTimeout(() => (pendingG = false), 800); return }
       if (!pendingG) return
-      const map = { d: '/', p: '/project', s: '/sde', a: '/ai', q: '/dsa', h: '/hld', l: '/lld' }
+      const map = { d: '/', p: '/project', s: '/sde', a: '/ai', r: '/ai-papers', q: '/dsa', h: '/hld', l: '/lld' }
       if (map[e.key]) navigate(map[e.key])
       pendingG = false
     }

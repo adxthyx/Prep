@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "name": "AI Papers",
+    "desc": "A prioritized paper library for AI engineers: foundations, post-training, reasoning, agents, retrieval, serving, and evaluation.",
+    "curatedAt": "2026-08-14",
+    "selectionNote": "Must-read, core, and very useful papers form the main path; selected sections and optional papers are supplemental. Links point to primary arXiv records."
+  },
+  "categories": [
+    {
+      "id": "papers-foundations",
+      "name": "Architecture & Scaling",
+      "desc": "Start here: transformer mechanics, in-context learning, compute-aware scaling, and a modern end-to-end model stack.",
+      "papers": [
+        {
+          "id": "paper-attention-is-all-you-need",
+          "order": 1,
+          "priority": "must-read",
+          "title": "Attention Is All You Need",
+          "authors": "Vaswani et al.",
+          "year": 2017,
+          "readingMinutes": 90,
+          "why": "Introduces the Transformer architecture that underpins modern LLMs.",
+          "concepts": ["self-attention", "multi-head attention", "positional encoding"],
+          "paperUrl": "https://arxiv.org/abs/1706.03762"
+        },
+        {
+          "id": "paper-gpt3-few-shot",
+          "order": 2,
+          "priority": "selected-sections",
+          "title": "Language Models are Few-Shot Learners",
+          "authors": "Brown et al.",
+          "year": 2020,
+          "readingMinutes": 45,
+          "why": "Read the abstract, Sections 1–3, and limitations rather than every appendix; it establishes in-context learning as an LLM interface.",
+          "concepts": ["in-context learning", "few-shot prompting", "emergent behavior"],
+          "paperUrl": "https://arxiv.org/abs/2005.14165"
+        },
+        {
+          "id": "paper-scaling-laws",
+          "order": 3,
+          "priority": "optional",
+          "title": "Scaling Laws for Neural Language Models",
+          "authors": "Kaplan et al.",
+          "year": 2020,
+          "readingMinutes": 75,
+          "why": "Historically important scaling intuition; optional once you have read Chinchilla carefully.",
+          "concepts": ["power laws", "compute budgets", "sample efficiency"],
+          "paperUrl": "https://arxiv.org/abs/2001.08361"
+        },
+        {
+          "id": "paper-chinchilla",
+          "order": 4,
+          "priority": "must-read",
+          "title": "Training Compute-Optimal Large Language Models",
+          "authors": "Hoffmann et al.",
+          "year": 2022,
+          "readingMinutes": 75,
+          "why": "Revises the scaling recipe and shows why training tokens must grow with model size.",
+          "concepts": ["Chinchilla scaling", "data-model balance", "compute optimality"],
+          "paperUrl": "https://arxiv.org/abs/2203.15556"
+        },
+        {
+          "id": "paper-llama-3",
+          "order": 5,
+          "priority": "core",
+          "title": "The Llama 3 Herd of Models",
+          "authors": "Grattafiori et al.",
+          "year": 2024,
+          "readingMinutes": 120,
+          "why": "A modern, unusually complete account of data, pretraining, post-training, safety, evaluation, and production model design.",
+          "concepts": ["foundation models", "post-training", "tool use"],
+          "paperUrl": "https://arxiv.org/abs/2407.21783"
+        },
+        {
+          "id": "paper-deepseek-v3",
+          "order": 6,
+          "priority": "must-read",
+          "title": "DeepSeek-V3 Technical Report",
+          "authors": "DeepSeek-AI et al.",
+          "year": 2024,
+          "readingMinutes": 105,
+          "why": "A dense modern blueprint for efficient large-scale training: MoE, MLA, auxiliary-loss-free load balancing, multi-token prediction, and FP8.",
+          "concepts": ["Mixture-of-Experts", "MLA", "multi-token prediction"],
+          "paperUrl": "https://arxiv.org/abs/2412.19437"
+        },
+        {
+          "id": "paper-qwen3",
+          "order": 7,
+          "priority": "must-read",
+          "title": "Qwen3 Technical Report",
+          "authors": "Yang et al.",
+          "year": 2025,
+          "readingMinutes": 90,
+          "why": "A practical account of unified thinking and non-thinking modes, reasoning budgets, MoE variants, multilingual training, and distillation.",
+          "concepts": ["hybrid reasoning", "thinking budgets", "distillation"],
+          "paperUrl": "https://arxiv.org/abs/2505.09388"
+        },
+        {
+          "id": "paper-kimi-k2",
+          "order": 8,
+          "priority": "very-useful",
+          "title": "Kimi K2: Open Agentic Intelligence",
+          "authors": "Kimi Team et al.",
+          "year": 2025,
+          "readingMinutes": 90,
+          "why": "Connects a one-trillion-parameter MoE, the MuonClip optimizer, agentic data synthesis, and environment-based reinforcement learning.",
+          "concepts": ["agentic training", "MuonClip", "large-scale MoE"],
+          "paperUrl": "https://arxiv.org/abs/2507.20534"
+        }
+      ]
+    },
+    {
+      "id": "papers-adaptation",
+      "name": "Adaptation & Alignment",
+      "desc": "How base models become useful assistants, and how to adapt them without retraining every parameter.",
+      "papers": [
+        {
+          "id": "paper-instructgpt",
+          "order": 9,
+          "priority": "must-read",
+          "title": "Training Language Models to Follow Instructions with Human Feedback",
+          "authors": "Ouyang et al.",
+          "year": 2022,
+          "readingMinutes": 90,
+          "why": "The clearest end-to-end account of supervised instruction tuning, reward modeling, and RLHF.",
+          "concepts": ["RLHF", "reward models", "human preferences"],
+          "paperUrl": "https://arxiv.org/abs/2203.02155"
+        },
+        {
+          "id": "paper-lora",
+          "order": 10,
+          "priority": "core",
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "authors": "Hu et al.",
+          "year": 2021,
+          "readingMinutes": 60,
+          "why": "Introduces the parameter-efficient adapter technique used throughout practical LLM fine-tuning.",
+          "concepts": ["low-rank updates", "PEFT", "adapter serving"],
+          "paperUrl": "https://arxiv.org/abs/2106.09685"
+        },
+        {
+          "id": "paper-qlora",
+          "order": 11,
+          "priority": "core",
+          "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+          "authors": "Dettmers et al.",
+          "year": 2023,
+          "readingMinutes": 75,
+          "why": "Combines quantization and LoRA to make high-quality fine-tuning possible on far less memory.",
+          "concepts": ["4-bit quantization", "NF4", "paged optimizers"],
+          "paperUrl": "https://arxiv.org/abs/2305.14314"
+        },
+        {
+          "id": "paper-dpo",
+          "order": 12,
+          "priority": "must-read",
+          "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+          "authors": "Rafailov et al.",
+          "year": 2023,
+          "readingMinutes": 75,
+          "why": "Derives a simpler preference-training objective that avoids a separate reward model and online RL loop.",
+          "concepts": ["preference optimization", "implicit rewards", "alignment"],
+          "paperUrl": "https://arxiv.org/abs/2305.18290"
+        },
+        {
+          "id": "paper-deepseek-r1",
+          "order": 13,
+          "priority": "must-read",
+          "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+          "authors": "DeepSeek-AI et al.",
+          "year": 2025,
+          "readingMinutes": 90,
+          "why": "Connects reinforcement learning, cold-start data, distillation, and the emergence of reasoning behavior in a modern model family.",
+          "concepts": ["reasoning RL", "GRPO", "distillation"],
+          "paperUrl": "https://arxiv.org/abs/2501.12948"
+        },
+        {
+          "id": "paper-s1-test-time-scaling",
+          "order": 14,
+          "priority": "must-read",
+          "title": "s1: Simple Test-Time Scaling",
+          "authors": "Muennighoff et al.",
+          "year": 2025,
+          "readingMinutes": 60,
+          "why": "A clean bridge from standard LLMs to reasoning models, showing how budget forcing and extra inference-time compute affect performance.",
+          "concepts": ["test-time compute", "budget forcing", "reasoning traces"],
+          "paperUrl": "https://arxiv.org/abs/2501.19393"
+        }
+      ]
+    },
+    {
+      "id": "papers-agents",
+      "name": "Prompting, Reasoning & Agents",
+      "desc": "The ideas behind deliberate reasoning, tool loops, and agents that can interact with external systems.",
+      "papers": [
+        {
+          "id": "paper-chain-of-thought",
+          "order": 15,
+          "priority": "core",
+          "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+          "authors": "Wei et al.",
+          "year": 2022,
+          "readingMinutes": 45,
+          "why": "Demonstrates how intermediate reasoning examples can unlock multi-step problem solving.",
+          "concepts": ["reasoning traces", "few-shot prompting", "GSM8K"],
+          "paperUrl": "https://arxiv.org/abs/2201.11903"
+        },
+        {
+          "id": "paper-react",
+          "order": 16,
+          "priority": "core",
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "authors": "Yao et al.",
+          "year": 2022,
+          "readingMinutes": 60,
+          "why": "Provides the core reason-act-observe loop used by many production agent systems.",
+          "concepts": ["agent loops", "tool use", "reasoning and acting"],
+          "paperUrl": "https://arxiv.org/abs/2210.03629"
+        },
+        {
+          "id": "paper-swe-agent",
+          "order": 17,
+          "priority": "core",
+          "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+          "authors": "Yang et al.",
+          "year": 2024,
+          "readingMinutes": 60,
+          "why": "Shows that an agent's tools and interface design can matter as much as its prompt or base model.",
+          "concepts": ["agent-computer interfaces", "coding agents", "SWE-bench"],
+          "paperUrl": "https://arxiv.org/abs/2405.15793"
+        },
+        {
+          "id": "paper-tau2-bench",
+          "order": 18,
+          "priority": "must-read",
+          "title": "τ²-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+          "authors": "Barres et al.",
+          "year": 2025,
+          "readingMinutes": 60,
+          "why": "Tests production-like coordination where both the user and agent use tools to change shared state, exposing reasoning and communication failures.",
+          "concepts": ["dual control", "agent evaluation", "user-tool coordination"],
+          "paperUrl": "https://arxiv.org/abs/2506.07982"
+        }
+      ]
+    },
+    {
+      "id": "papers-retrieval",
+      "name": "Retrieval & Long Context",
+      "desc": "The retrieval stack behind grounded applications, plus the failure modes that matter in production.",
+      "papers": [
+        {
+          "id": "paper-rag",
+          "order": 19,
+          "priority": "must-read",
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "authors": "Lewis et al.",
+          "year": 2020,
+          "readingMinutes": 75,
+          "why": "Introduces the canonical architecture for combining parametric models with retrievable knowledge.",
+          "concepts": ["RAG", "parametric memory", "provenance"],
+          "paperUrl": "https://arxiv.org/abs/2005.11401"
+        },
+        {
+          "id": "paper-lost-in-the-middle",
+          "order": 20,
+          "priority": "core",
+          "title": "Lost in the Middle: How Language Models Use Long Contexts",
+          "authors": "Liu et al.",
+          "year": 2023,
+          "readingMinutes": 45,
+          "why": "Shows that a large context window does not guarantee reliable use of information throughout that window.",
+          "concepts": ["long context", "position bias", "context evaluation"],
+          "paperUrl": "https://arxiv.org/abs/2307.03172"
+        },
+        {
+          "id": "paper-self-rag",
+          "order": 21,
+          "priority": "optional",
+          "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+          "authors": "Asai et al.",
+          "year": 2023,
+          "readingMinutes": 75,
+          "why": "Explores adaptive retrieval and self-critique instead of blindly retrieving a fixed number of chunks.",
+          "concepts": ["adaptive retrieval", "reflection tokens", "citation quality"],
+          "paperUrl": "https://arxiv.org/abs/2310.11511"
+        },
+        {
+          "id": "paper-ragas",
+          "order": 22,
+          "priority": "optional",
+          "title": "RAGAS: Automated Evaluation of Retrieval Augmented Generation",
+          "authors": "Es et al.",
+          "year": 2023,
+          "readingMinutes": 45,
+          "why": "Separates retrieval quality, faithfulness, and answer quality into practical reference-free RAG metrics.",
+          "concepts": ["RAG evaluation", "faithfulness", "reference-free metrics"],
+          "paperUrl": "https://arxiv.org/abs/2309.15217"
+        },
+        {
+          "id": "paper-long-context-vs-rag",
+          "order": 23,
+          "priority": "very-useful",
+          "title": "Long Context vs. RAG for LLMs: An Evaluation and Revisits",
+          "authors": "Li et al.",
+          "year": 2025,
+          "readingMinutes": 60,
+          "why": "Directly compares long-context prompting with retrieval and clarifies when each approach wins across different query and corpus types.",
+          "concepts": ["long context vs RAG", "retrieval tradeoffs", "context relevance"],
+          "paperUrl": "https://arxiv.org/abs/2501.01880"
+        },
+        {
+          "id": "paper-graphrag",
+          "order": 24,
+          "priority": "optional",
+          "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+          "authors": "Edge et al.",
+          "year": 2024,
+          "readingMinutes": 60,
+          "why": "Useful for enterprise corpora that need global sensemaking through entity graphs, communities, and hierarchical summaries.",
+          "concepts": ["GraphRAG", "community summaries", "global questions"],
+          "paperUrl": "https://arxiv.org/abs/2404.16130"
+        }
+      ]
+    },
+    {
+      "id": "papers-systems",
+      "name": "Serving & Evaluation",
+      "desc": "The systems ideas that make LLM applications fast and affordable, and the evaluation discipline that keeps them honest.",
+      "papers": [
+        {
+          "id": "paper-flashattention",
+          "order": 25,
+          "priority": "core",
+          "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+          "authors": "Dao et al.",
+          "year": 2022,
+          "readingMinutes": 75,
+          "why": "Shows why memory movement, not just FLOPs, determines real attention performance on GPUs.",
+          "concepts": ["IO awareness", "tiling", "GPU memory hierarchy"],
+          "paperUrl": "https://arxiv.org/abs/2205.14135"
+        },
+        {
+          "id": "paper-pagedattention",
+          "order": 26,
+          "priority": "must-read",
+          "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+          "authors": "Kwon et al.",
+          "year": 2023,
+          "readingMinutes": 75,
+          "why": "Explains vLLM's KV-cache paging design and the throughput mechanics of modern LLM serving.",
+          "concepts": ["KV cache", "continuous batching", "PagedAttention"],
+          "paperUrl": "https://arxiv.org/abs/2309.06180"
+        },
+        {
+          "id": "paper-llm-as-judge",
+          "order": 27,
+          "priority": "very-useful",
+          "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+          "authors": "Zheng et al.",
+          "year": 2023,
+          "readingMinutes": 60,
+          "why": "Introduces scalable LLM-based evaluation while making position, verbosity, self-enhancement, and reasoning biases explicit.",
+          "concepts": ["LLM-as-a-judge", "evaluation bias", "human preference"],
+          "paperUrl": "https://arxiv.org/abs/2306.05685"
+        },
+        {
+          "id": "paper-helm",
+          "order": 28,
+          "priority": "optional",
+          "title": "Holistic Evaluation of Language Models",
+          "authors": "Liang et al.",
+          "year": 2022,
+          "readingMinutes": 90,
+          "why": "Historically important framework for evaluation across scenarios, metrics, risks, and tradeoffs; optional after modern application-eval papers.",
+          "concepts": ["multi-metric evaluation", "robustness", "benchmark transparency"],
+          "paperUrl": "https://arxiv.org/abs/2211.09110"
+        }
+      ]
+    }
+  ]
+}

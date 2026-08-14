@@ -14,6 +14,18 @@ import Hld from './pages/Hld'
 import Lld from './pages/Lld'
 import Settings from './pages/Settings'
 
+const BASE_PATH = '/prep'
+
+// Keep direct Vercel deployment URLs usable as well as the public /prep proxy.
+if (window.location.pathname !== BASE_PATH && !window.location.pathname.startsWith(`${BASE_PATH}/`)) {
+  const routePath = window.location.pathname === '/' ? '/' : window.location.pathname
+  window.history.replaceState(
+    window.history.state,
+    '',
+    `${BASE_PATH}${routePath}${window.location.search}${window.location.hash}`
+  )
+}
+
 const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -30,7 +42,7 @@ const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: '/prep',
+  basename: BASE_PATH,
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(

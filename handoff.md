@@ -26,7 +26,7 @@ Migrate Prep from browser-only localStorage persistence to authenticated Supabas
 - No test script/tests exist; `npm test --if-present` skipped.
 - Production `npm audit` reports two moderate React Router advisories in the existing `react-router-dom` dependency; no unrelated major-version upgrade was applied.
 - In-app browser was unavailable, so no visual click-through was possible.
-- No commit or push was made.
+- Implementation commit `262f69d` was pushed to `origin/main`.
 
 ## Active files
 
@@ -51,8 +51,7 @@ Migrate Prep from browser-only localStorage persistence to authenticated Supabas
 
 ## Concrete next steps
 
-1. User reviews the diff.
-2. Run `supabase/schema.sql` in the Supabase SQL Editor.
-3. Configure Auth Site URL/redirects from `SUPABASE_SETUP.md` and add the two Vite variables in Vercel.
+1. Run `supabase/schema.sql` in the Supabase SQL Editor.
+2. Configure Auth Site URL/redirects from `SUPABASE_SETUP.md` and add the two Vite variables in Vercel.
+3. Redeploy from `main` if the connected hosting project does not deploy automatically.
 4. Test sign-up/sign-in, first legacy migration, two-device conflict, offline retry, import restore, and history restore against the configured project.
-5. Commit/deploy only after user approval.

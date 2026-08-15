@@ -51,7 +51,7 @@ export function TierChip({ id, hidden = false }) {
 export function ProgressBar({ value, total, className = '' }) {
   const pct = total ? Math.round((value / total) * 100) : 0
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex min-w-0 max-w-full items-center gap-2 ${className}`}>
       <div className="h-1.5 flex-1 rounded-full bg-surface overflow-hidden">
         <div className="h-full bg-brand-gradient rounded-full transition-all" style={{ width: `${pct}%` }} />
       </div>
@@ -66,7 +66,7 @@ export function ResourceLink({ r }) {
   const inner = (
     <>
       <span className="text-muted-foreground">{TYPE_ICON[r.type] || '↗'}</span>
-      <span className="group-hover:text-brand transition-colors">{r.title}</span>
+      <span className="break-words group-hover:text-brand transition-colors">{r.title}</span>
       {r.free === false && <span className="text-[10px] font-mono text-yellow-500/80 border border-yellow-500/30 rounded px-1">paid</span>}
       {r.verified === false && (
         <span className="text-[10px] font-mono text-yellow-500/80 border border-yellow-500/30 rounded px-1" title="URL not verified at build time — double-check">unverified</span>
@@ -75,11 +75,11 @@ export function ResourceLink({ r }) {
     </>
   )
   return r.url ? (
-    <a href={r.url} target="_blank" rel="noreferrer" className="group flex items-baseline gap-2 text-sm py-0.5">
+    <a href={r.url} target="_blank" rel="noreferrer" className="group flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm py-0.5">
       {inner}
     </a>
   ) : (
-    <div className="flex items-baseline gap-2 text-sm py-0.5">{inner}</div>
+    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm py-0.5">{inner}</div>
   )
 }
 
@@ -115,13 +115,13 @@ export function ItemDetails({ id }) {
             dispatch({ type: 'item', id, patch: { links: [...(item.links || []), url] } })
             setNewLink('')
           }}
-          className="flex items-center gap-1"
+          className="flex w-full min-w-0 items-center gap-1 sm:w-auto"
         >
           <input
             value={newLink}
             onChange={(e) => setNewLink(e.target.value)}
             placeholder="+ add link"
-            className="w-32 rounded bg-card border px-2 py-0.5 text-xs focus:outline-none focus:border-brand/60"
+            className="min-w-0 flex-1 rounded bg-card border px-2 py-0.5 text-xs focus:outline-none focus:border-brand/60 sm:w-32 sm:flex-none"
           />
         </form>
       </div>
@@ -137,10 +137,10 @@ export function ItemRow({ id, title, resources = [], right = null, mono = false,
   const hasMeta = item.notes || (item.links || []).length > 0
   return (
     <div className={`rounded-lg border bg-card px-3 py-2 ${item.status === 'done' ? 'opacity-60' : ''}`}>
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-start gap-2 sm:items-center sm:gap-3">
         <StatusPill id={id} />
         <TierChip id={id} hidden={hideTier} />
-        <button onClick={() => setOpen(!open)} className={`flex-1 text-left text-sm leading-snug hover:text-brand transition-colors ${mono ? 'font-mono' : ''} ${item.status === 'done' ? 'line-through decoration-muted-foreground/50' : ''}`}>
+        <button onClick={() => setOpen(!open)} className={`min-w-0 flex-1 text-left text-sm leading-snug hover:text-brand transition-colors ${mono ? 'font-mono' : ''} ${item.status === 'done' ? 'line-through decoration-muted-foreground/50' : ''}`}>
           {title}
           {hasMeta && !open && <span className="ml-2 text-xs text-muted-foreground">✎</span>}
         </button>
@@ -162,10 +162,10 @@ export function ItemRow({ id, title, resources = [], right = null, mono = false,
 
 export function SectionCard({ title, desc, children, right = null }) {
   return (
-    <section className="rounded-lg border bg-card p-4">
-      <div className="flex items-start justify-between gap-4 mb-1">
+    <section className="rounded-lg border bg-card p-3 sm:p-4">
+      <div className="mb-1 flex flex-col items-start justify-between gap-2 sm:flex-row sm:gap-4">
         <h2 className="font-bold text-base">{title}</h2>
-        {right}
+        {right && <div className="max-w-full sm:shrink-0">{right}</div>}
       </div>
       {desc && <p className="text-sm text-muted-foreground mb-3">{desc}</p>}
       {children}

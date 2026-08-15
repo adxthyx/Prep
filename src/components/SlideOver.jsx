@@ -20,7 +20,7 @@ export default function SlideOver({ open, onClose, title, children }) {
         ref={backRef}
         tabIndex={-1}
         className={`
-          fixed inset-y-0 right-0 w-96 bg-card border-l border-border z-50
+          fixed inset-y-0 right-0 w-full bg-card border-l border-border z-50 sm:w-96
           transform transition-transform duration-300 ease-out
           flex flex-col
           ${open ? 'translate-x-0' : 'translate-x-full'}

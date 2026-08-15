@@ -15,9 +15,9 @@ export default function BurnUpChart({ series }) {
 
   const today = todayKey()
   return (
-    <div className="w-full bg-card rounded-lg border p-4">
+    <div className="min-w-0 w-full rounded-lg border bg-card p-4">
       <h3 className="text-sm font-semibold mb-4">Burn-up progress</h3>
-      <div className="overflow-x-auto">
+      <div className="max-w-full overflow-x-auto">
         <svg viewBox={`0 0 ${width} ${height}`} className="w-full min-w-[500px]" style={{ fontFamily: 'monospace', fontSize: '11px' }}>
           {/* Grid lines */}
           {[0.25, 0.5, 0.75].map((frac) => (

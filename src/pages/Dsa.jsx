@@ -90,10 +90,10 @@ function Grouped({ problems, groupKey, orderKey, highlight, state }) {
         const open = openGroups.has(g) || (highlight && arr.some((p) => p.id === highlight))
         return (
           <div key={g}>
-            <button onClick={() => toggle(g)} className="w-full flex items-center gap-3 rounded-lg border bg-surface/60 px-3 py-2 hover:border-brand/40 transition-colors">
+            <button onClick={() => toggle(g)} className="flex w-full flex-wrap items-center gap-2 rounded-lg border bg-surface/60 px-3 py-2 hover:border-brand/40 transition-colors sm:gap-3">
               <span className="text-muted-foreground text-xs">{open ? '▼' : '▶'}</span>
               <span className="font-semibold text-sm flex-1 text-left">{g}</span>
-              <ProgressBar value={done} total={arr.length} className="w-48" />
+              <ProgressBar value={done} total={arr.length} className="w-full sm:w-48" />
             </button>
             {open && <div className="mt-1.5 mb-3 space-y-1 pl-2">{arr.map((p) => <ProblemRow key={p.id} p={p} highlight={highlight} />)}</div>}
           </div>
@@ -122,11 +122,11 @@ function Companies({ highlight }) {
           </button>
         ))}
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
         <span className="text-xs text-muted-foreground">
           Top {c.problems.length} by LeetCode frequency · window: <span className="font-mono">{c.window}</span> · status syncs with the master list
         </span>
-        <ProgressBar value={done} total={c.problems.length} className="w-56" />
+        <ProgressBar value={done} total={c.problems.length} className="w-full sm:w-56" />
       </div>
       <div className="space-y-1">
         {c.problems.map((p, i) => {
@@ -185,11 +185,11 @@ export default function Dsa() {
     setTimeout(() => document.getElementById(pick.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100)
   }
 
-  const sel = 'rounded-lg border bg-card px-2 py-1.5 text-sm focus:outline-none focus:border-brand/60'
+  const sel = 'w-full rounded-lg border bg-card px-2 py-1.5 text-sm focus:outline-none focus:border-brand/60 sm:w-auto'
   return (
     <div className="space-y-4">
-      <header className="flex items-end justify-between gap-4">
-        <div>
+      <header className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end sm:gap-4">
+        <div className="min-w-0">
           <h1 className="text-2xl font-bold">DSA</h1>
           <p className="text-sm text-muted-foreground mt-1">
             Striver A2Z + SDE sheet + NeetCode 150, deduped into {problems.length} problems · {doneCount} done
@@ -198,7 +198,7 @@ export default function Dsa() {
         <button
           onClick={randomRevisit}
           disabled={!revisits.length}
-          className="rounded-lg bg-brand text-white text-sm font-semibold px-4 py-2 hover:bg-brand-hover disabled:opacity-40 disabled:cursor-not-allowed"
+          className="w-full rounded-lg bg-brand text-white text-sm font-semibold px-4 py-2 hover:bg-brand-hover disabled:opacity-40 disabled:cursor-not-allowed sm:w-auto"
           title={revisits.length ? `${revisits.length} problems marked revisit` : 'Mark problems as revisit first'}
         >
           🎲 random revisit ({revisits.length})
@@ -206,12 +206,12 @@ export default function Dsa() {
       </header>
 
       <div className="flex flex-wrap items-center gap-2">
-        <div className="flex gap-1 rounded-lg border bg-card p-1">
+        <div className="flex w-full gap-1 overflow-x-auto rounded-lg border bg-card p-1 sm:w-auto">
           {[['topics', 'By topic (Striver)'], ['patterns', 'By pattern (Graph)'], ['companies', 'By company']].map(([k, label]) => (
             <button
               key={k}
               onClick={() => { setView(k); setHighlight(null) }}
-              className={`rounded px-3 py-1 text-sm transition-colors ${view === k ? 'bg-brand text-white font-semibold' : 'text-muted-foreground hover:text-foreground'}`}
+              className={`shrink-0 whitespace-nowrap rounded px-3 py-1 text-sm transition-colors ${view === k ? 'bg-brand text-white font-semibold' : 'text-muted-foreground hover:text-foreground'}`}
             >
               {label}
             </button>
@@ -219,7 +219,7 @@ export default function Dsa() {
         </div>
         {view !== 'companies' && view !== 'patterns' && (
           <>
-            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search…" className={`${sel} w-44`} />
+            <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search…" className={`${sel} sm:w-44`} />
             <select value={diff} onChange={(e) => setDiff(e.target.value)} className={sel}>
               <option value="all">difficulty: all</option>
               {['Easy', 'Medium', 'Hard'].map((d) => <option key={d}>{d}</option>)}
@@ -248,7 +248,7 @@ export default function Dsa() {
       </div>
 
       {view === 'topics' && <Grouped problems={filtered} groupKey="topic" orderKey="a2z" highlight={highlight} state={state} />}
-      {view === 'patterns' && <div className="h-[600px] border rounded-lg bg-card"><RoadmapGraph patterns={dsaPatterns.patterns} showT3={showT3} /></div>}
+      {view === 'patterns' && <div className="h-[70vh] min-h-[420px] border rounded-lg bg-card sm:h-[600px]"><RoadmapGraph patterns={dsaPatterns.patterns} showT3={showT3} /></div>}
       {view === 'companies' && <Companies highlight={highlight} />}
     </div>
   )

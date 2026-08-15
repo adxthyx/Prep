@@ -50,7 +50,7 @@ function Kanban() {
   }
 
   return (
-    <div className="grid grid-cols-4 gap-3">
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
       {projectTil.kanban.columns.map((col) => {
         const colCards = cards.filter((c) => cardColumn(state, c) === col.id)
         return (
@@ -154,16 +154,16 @@ export default function ProjectTIL() {
   return (
     <div className="space-y-4">
       <header>
-        <h1 className="text-2xl font-bold">Morning TIL <span className="text-muted-foreground font-normal text-lg">— LangGraph multi-agent</span></h1>
+        <h1 className="text-2xl font-bold">Morning TIL <span className="block text-muted-foreground font-normal text-lg sm:inline">— LangGraph multi-agent</span></h1>
         <p className="text-sm text-muted-foreground max-w-3xl mt-1">{projectTil.meta.oneLiner}</p>
       </header>
 
-      <div className="flex gap-1 border-b">
+      <div className="flex gap-1 overflow-x-auto border-b pb-px">
         {[['board', 'Board'], ['milestones', 'Milestones'], ['arch', 'Architecture'], ['decisions', 'Decision log'], ['demo', 'Demo readiness'], ['resources', 'Resources']].map(([k, label]) => (
           <button
             key={k}
             onClick={() => setTab(k)}
-            className={`px-3 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${tab === k ? 'border-brand text-brand' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
+            className={`shrink-0 whitespace-nowrap px-3 py-2 text-sm font-medium border-b-2 -mb-px transition-colors ${tab === k ? 'border-brand text-brand' : 'border-transparent text-muted-foreground hover:text-foreground'}`}
           >
             {label}
           </button>
@@ -212,14 +212,14 @@ export default function ProjectTIL() {
               placeholder="Decision…"
               className="w-full rounded-lg border bg-card px-3 py-2 text-sm focus:outline-none focus:border-brand/60"
             />
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2 sm:flex-row">
               <input
                 value={newDecision.why}
                 onChange={(e) => setNewDecision({ ...newDecision, why: e.target.value })}
                 placeholder="Why…"
                 className="flex-1 rounded-lg border bg-card px-3 py-2 text-sm focus:outline-none focus:border-brand/60"
               />
-              <button className="rounded-lg bg-brand text-white text-sm font-semibold px-4 hover:bg-brand-hover">Log it</button>
+              <button className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-hover">Log it</button>
             </div>
           </form>
         </SectionCard>

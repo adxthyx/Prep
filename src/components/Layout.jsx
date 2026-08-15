@@ -30,10 +30,24 @@ export default function Layout() {
   const navigate = useNavigate()
   const [dark, setDark] = useState(true)
   const [importErr, setImportErr] = useState('')
+  const [navOpen, setNavOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)
   }, [dark])
+
+  useEffect(() => {
+    if (!navOpen) return undefined
+    const onKey = (e) => {
+      if (e.key === 'Escape') setNavOpen(false)
+    }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [navOpen])
 
   // keyboard shortcuts: g then key
   useEffect(() => {
@@ -54,19 +68,57 @@ export default function Layout() {
 
   return (
     <div className="flex min-h-screen">
-      <aside className="fixed inset-y-0 left-0 w-56 border-r bg-card flex flex-col">
-        <div className="p-4 border-b">
-          <div className="font-bold text-lg leading-tight">
-            <span className="text-brand-gradient">Prep</span> Command
-          </div>
-          <div className={`font-mono text-[11px] mt-1 ${phase.color}`}>{phase.label}</div>
+      <header className="fixed inset-x-0 top-0 z-40 flex h-14 items-center gap-3 border-b bg-card px-4 lg:hidden">
+        <button
+          type="button"
+          onClick={() => setNavOpen(true)}
+          className="flex h-10 w-10 items-center justify-center rounded-lg border text-xl"
+          aria-label="Open navigation"
+          aria-expanded={navOpen}
+        >
+          ☰
+        </button>
+        <div className="min-w-0 flex-1 font-bold leading-tight">
+          <span className="text-brand-gradient">Prep</span> Command
         </div>
-        <nav className="flex-1 p-2 space-y-0.5">
+        <div className={`hidden shrink-0 font-mono text-[9px] sm:block ${phase.color}`}>{phase.label}</div>
+      </header>
+
+      {navOpen && (
+        <button
+          type="button"
+          onClick={() => setNavOpen(false)}
+          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          aria-label="Close navigation"
+        />
+      )}
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 flex w-72 max-w-[85vw] flex-col border-r bg-card transition-transform duration-200 lg:w-56 lg:max-w-none lg:translate-x-0 ${navOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className="flex items-start justify-between border-b p-4">
+          <div>
+            <div className="font-bold text-lg leading-tight">
+              <span className="text-brand-gradient">Prep</span> Command
+            </div>
+            <div className={`font-mono text-[11px] mt-1 ${phase.color}`}>{phase.label}</div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setNavOpen(false)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-xl text-muted-foreground lg:hidden"
+            aria-label="Close navigation"
+          >
+            ×
+          </button>
+        </div>
+        <nav className="flex-1 overflow-y-auto p-2 space-y-0.5">
           {NAV.map((n) => (
             <NavLink
               key={n.to}
               to={n.to}
               end={n.end}
+              onClick={() => setNavOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-colors ${
                   isActive ? 'bg-brand-subtle text-brand font-semibold border border-brand/30' : 'hover:bg-surface text-foreground/80'
@@ -121,7 +173,7 @@ export default function Layout() {
           </div>
         </div>
       </aside>
-      <main className="ml-56 flex-1 p-6 max-w-6xl">
+      <main className="w-full min-w-0 flex-1 px-4 pb-6 pt-20 sm:px-6 lg:ml-56 lg:max-w-6xl lg:p-6">
         <Outlet />
       </main>
       {/* <CommandPalette /> */}

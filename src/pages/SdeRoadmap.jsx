@@ -74,7 +74,7 @@ export default function SdeRoadmap() {
       <header>
         <h1 className="text-2xl font-bold">SDE1 Roadmap</h1>
         <p className="text-sm text-muted-foreground max-w-3xl mt-1">{sdeRoadmap.meta.basedOn}</p>
-        <div className="flex gap-4 mt-2">
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
           {sdeRoadmap.meta.sources.map((r, i) => <ResourceLink key={i} r={r} />)}
         </div>
       </header>
@@ -85,9 +85,9 @@ export default function SdeRoadmap() {
         return (
           <div key={p.id} className="rounded-lg border bg-card">
             <button onClick={() => setOpenPhase(open ? null : p.id)} className="w-full text-left p-4">
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-4">
                 <h2 className="font-bold">{p.name}</h2>
-                <ProgressBar value={done} total={p.items.length} className="w-56" />
+                <ProgressBar value={done} total={p.items.length} className="w-full sm:w-56" />
               </div>
               {!open && <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{p.desc}</p>}
             </button>

@@ -78,7 +78,7 @@ export default function AiRoadmap() {
   return (
     <div className="space-y-4">
       <header>
-        <h1 className="text-2xl font-bold">AI Engineer / FDE Roadmap <span className="text-brand text-sm font-mono align-middle">PRIMARY TRACK</span></h1>
+        <h1 className="text-2xl font-bold">AI Engineer / FDE Roadmap <span className="block text-brand text-sm font-mono sm:inline sm:align-middle">PRIMARY TRACK</span></h1>
         <p className="text-sm text-muted-foreground mt-1">{aiRoadmap.meta.desc}</p>
       </header>
 
@@ -105,9 +105,9 @@ export default function AiRoadmap() {
             return (
               <div key={p.id} className="rounded-lg border bg-card">
                 <button onClick={() => setOpenPhase(open ? null : p.id)} className="w-full text-left p-4">
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center sm:gap-4">
                     <h2 className="font-bold">{p.name}</h2>
-                    <ProgressBar value={done} total={p.items.length} className="w-56" />
+                    <ProgressBar value={done} total={p.items.length} className="w-full sm:w-56" />
                   </div>
                   {!open && <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{p.desc}</p>}
                 </button>

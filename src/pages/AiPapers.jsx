@@ -15,7 +15,7 @@ function PaperTitle({ paper }) {
   const priority = PRIORITY_META[paper.priority] || PRIORITY_META.core
   return (
     <span className="block">
-      <span className="flex items-baseline gap-2">
+      <span className="flex flex-wrap items-baseline gap-2">
         <span className="font-mono text-xs text-brand">{String(paper.order).padStart(2, '0')}</span>
         <span className={`rounded-full border px-1.5 py-0.5 font-mono text-[9px] uppercase ${priority.cls}`}>{priority.label}</span>
         <span className="font-semibold">{paper.title}</span>
@@ -64,29 +64,29 @@ export default function AiPapers() {
     )
   })
   const filteredIds = new Set(filtered.map((paper) => paper.id))
-  const controlClass = 'rounded-lg border bg-card px-3 py-2 text-sm focus:outline-none focus:border-brand/60'
+  const controlClass = 'w-full rounded-lg border bg-card px-3 py-2 text-sm focus:outline-none focus:border-brand/60 sm:w-auto'
 
   return (
     <div className="space-y-4">
       <header className="flex flex-wrap items-end justify-between gap-4">
-        <div className="max-w-3xl">
+        <div className="min-w-0 max-w-3xl">
           <h1 className="text-2xl font-bold">AI Papers</h1>
           <p className="mt-1 text-sm text-muted-foreground">{aiPapers.meta.desc}</p>
           <p className="mt-1 font-mono text-[11px] text-muted-foreground/80">{aiPapers.meta.selectionNote}</p>
         </div>
-        <div>
-          <div className="mb-1 text-right font-mono text-[10px] text-muted-foreground">main path</div>
-          <ProgressBar value={mainDone} total={mainPapers.length} className="w-64" />
+        <div className="w-full sm:w-auto">
+          <div className="mb-1 font-mono text-[10px] text-muted-foreground sm:text-right">main path</div>
+          <ProgressBar value={mainDone} total={mainPapers.length} className="w-full sm:w-64" />
         </div>
       </header>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-        <div className="rounded-lg border bg-card p-3">
+        <div className="min-w-0 rounded-lg border bg-card p-3">
           <div className="font-mono text-xl font-bold text-brand">{papers.length}</div>
-          <div className="text-xs text-muted-foreground">{mainPapers.length} main · {papers.length - mainPapers.length} supplemental · ~{Math.round(totalMinutes / 60)}h</div>
+          <div className="break-words text-xs text-muted-foreground">{mainPapers.length} main · {papers.length - mainPapers.length} supplemental · ~{Math.round(totalMinutes / 60)}h</div>
         </div>
         {Object.entries(STATUS_META).map(([key, meta]) => (
-          <div key={key} className="rounded-lg border bg-card p-3">
+          <div key={key} className="min-w-0 rounded-lg border bg-card p-3">
             <div className="font-mono text-xl font-bold">{counts[key]}</div>
             <div className="text-xs text-muted-foreground">{meta.label}</div>
           </div>
@@ -98,7 +98,7 @@ export default function AiPapers() {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search titles, authors, or concepts…"
-          className={`${controlClass} min-w-64 flex-1`}
+          className={`${controlClass} min-w-0 flex-1 sm:min-w-64`}
         />
         <select value={category} onChange={(event) => setCategory(event.target.value)} className={controlClass}>
           <option value="all">category: all</option>
@@ -125,7 +125,7 @@ export default function AiPapers() {
             key={group.id}
             title={group.name}
             desc={group.desc}
-            right={<ProgressBar value={done} total={categoryPapers.length} className="w-48" />}
+            right={<ProgressBar value={done} total={categoryPapers.length} className="w-full sm:w-48" />}
           >
             <div className="space-y-1.5">
               {visiblePapers.map((paper) => (
@@ -168,7 +168,7 @@ export default function AiPapers() {
           <SectionCard
             title="Optional papers"
             desc="Historical context and specialized techniques to read after the main path, or when a project makes them relevant."
-            right={<ProgressBar value={done} total={optionalPapers.length} className="w-48" />}
+            right={<ProgressBar value={done} total={optionalPapers.length} className="w-full sm:w-48" />}
           >
             <div className="space-y-1.5">
               {visibleOptionalPapers.map((paper) => (

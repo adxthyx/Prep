@@ -28,7 +28,7 @@ Open the URL Vite prints (default `http://localhost:5173`). That's it.
 | `src/data/lld.json` | SOLID + patterns, 15 machine-coding problems with reference solutions, mock-log config |
 | `src/data/config.json` | Key dates + spaced-repetition intervals |
 
-**Your progress** (statuses, notes, links, kanban positions, applications, mocks, stories, activity/streak) lives in `localStorage` under the key `prep-command-center-v1`. Seeds and progress are separate — you can edit/re-order seed files without losing progress, as long as item `id`s stay stable.
+**Your progress** (statuses, notes, links, kanban positions, applications, mocks, stories, activity/streak) is stored per user in Supabase Postgres. `localStorage` key `prep-command-center-v1` remains a fast/offline cache; cloud writes use optimistic revision checks and automatic server-side history. Seeds and progress remain separate, so seed files can be edited or reordered without losing progress as long as item `id`s stay stable. See [`SUPABASE_SETUP.md`](SUPABASE_SETUP.md) for setup and recovery behavior.
 
 ## Backup: Export / Import
 

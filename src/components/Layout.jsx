@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { useStore, exportState, importState, config } from '../store'
+import { useStore, exportState, parseBackupFile, config } from '../store'
+import { useAuth } from '../auth'
 import { daysUntil } from '../lib/dates'
 // import CommandPalette from './CommandPalette'
 
@@ -25,11 +26,13 @@ function phaseNow() {
 }
 
 export default function Layout() {
-  const { state, dispatch } = useStore()
+  const { state, sync, flushPending, retrySync, acceptCloudState, restoreBackup } = useStore()
+  const { user, signOut } = useAuth()
   const fileRef = useRef(null)
   const navigate = useNavigate()
   const [dark, setDark] = useState(true)
   const [importErr, setImportErr] = useState('')
+  const [importMsg, setImportMsg] = useState('')
   const [navOpen, setNavOpen] = useState(false)
 
   useEffect(() => {
@@ -65,6 +68,28 @@ export default function Layout() {
   }, [navigate])
 
   const phase = phaseNow()
+
+  const handleImport = async (file) => {
+    try {
+      const backup = await parseBackupFile(file)
+      const when = backup.exportedAt ? new Date(backup.exportedAt).toLocaleString() : 'an unknown date'
+      const confirmed = window.confirm(
+        `Restore the backup from ${when}? This is a recovery action. The current cloud state will be saved in server history and the restore will create a new revision.`
+      )
+      if (!confirmed) return
+      await restoreBackup(backup.state)
+      setImportErr('')
+      setImportMsg('Backup restore accepted. Check the sync status for cloud confirmation.')
+    } catch (error) {
+      setImportMsg('')
+      setImportErr(String(error?.message || error))
+    }
+  }
+
+  const handleSignOut = async () => {
+    await flushPending()
+    await signOut()
+  }
 
   return (
     <div className="flex min-h-screen">
@@ -153,20 +178,28 @@ export default function Layout() {
               className="hidden"
               onChange={(e) => {
                 const f = e.target.files?.[0]
-                if (f)
-                  importState(f, dispatch)
-                    .then(() => setImportErr(''))
-                    .catch((err) => setImportErr(String(err.message || err)))
+                if (f) void handleImport(f)
                 e.target.value = ''
               }}
             />
           </div>
           {importErr && <div className="text-[11px] text-red-400">{importErr}</div>}
+          {importMsg && <div className="text-[11px] text-green-400">{importMsg}</div>}
           <button
             onClick={() => setDark(!dark)}
             className="w-full rounded-lg border text-xs py-1.5 text-muted-foreground hover:bg-surface transition-colors"
           >
             {dark ? '☀ light mode' : '● dark mode'}
+          </button>
+          <div className="truncate text-center font-mono text-[10px] text-muted-foreground" title={user.email}>
+            {user.email}
+          </div>
+          <button
+            type="button"
+            onClick={() => void handleSignOut()}
+            className="w-full rounded-lg border py-1.5 text-xs text-muted-foreground transition-colors hover:bg-surface"
+          >
+            Sign out
           </button>
           <div className="font-mono text-[10px] text-muted-foreground/60 text-center">
             g+d dash · g+q dsa · g+p til
@@ -174,6 +207,36 @@ export default function Layout() {
         </div>
       </aside>
       <main className="w-full min-w-0 flex-1 px-4 pb-6 pt-20 sm:px-6 lg:ml-56 lg:max-w-6xl lg:p-6">
+        {sync.status !== 'synced' && (
+          <div className={`mb-4 rounded-lg border px-3 py-2 text-sm ${sync.status === 'conflict' ? 'border-red-500/50 bg-red-500/10' : 'bg-card'}`}>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span>
+                <strong className="capitalize">{sync.status}.</strong>{' '}
+                {sync.error || (sync.status === 'saving' ? 'Saving to Supabase…' : 'Local changes are retained.')}
+              </span>
+              <div className="flex gap-2">
+                {sync.status === 'conflict' && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (window.confirm('Use the newer cloud state? Your unsynced local changes will be replaced. Export first if you want to keep a copy.')) {
+                        acceptCloudState()
+                      }
+                    }}
+                    className="rounded-md bg-brand px-2.5 py-1 text-xs font-semibold text-white"
+                  >
+                    Use cloud revision {sync.conflict?.revision}
+                  </button>
+                )}
+                {sync.status !== 'conflict' && sync.status !== 'saving' && (
+                  <button type="button" onClick={() => void retrySync()} className="rounded-md border px-2.5 py-1 text-xs font-semibold">
+                    Retry sync
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
         <Outlet />
       </main>
       {/* <CommandPalette /> */}

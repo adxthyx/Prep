@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import { StoreProvider } from './store'
+import { AuthGate, AuthProvider, useAuth } from './auth'
 import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import ProjectTIL from './pages/ProjectTIL'
@@ -45,10 +46,21 @@ const router = createBrowserRouter([
   basename: BASE_PATH,
 })
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <StoreProvider>
+function PrepApplication() {
+  const { user } = useAuth()
+  return (
+    <StoreProvider key={user.id} user={user}>
       <RouterProvider router={router} />
     </StoreProvider>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <AuthGate>
+        <PrepApplication />
+      </AuthGate>
+    </AuthProvider>
   </React.StrictMode>
 )

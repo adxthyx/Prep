@@ -18,10 +18,10 @@ function reg(id, title, module_, moduleName, path, group) {
 
 // 1. Project TIL — kanban cards + demo checklist
 projectTil.kanban.cards.forEach((c) =>
-  reg(c.id, c.title, 'project', 'Morning TIL', '/project', c.phase)
+  reg(c.id, c.title, 'project', 'Anchor', '/project', c.phase)
 )
 projectTil.demoChecklist.forEach((c) =>
-  reg(c.id, c.title, 'project', 'Morning TIL', '/project', 'Demo readiness')
+  reg(c.id, c.title, 'project', 'Anchor', '/project', 'MVP readiness')
 )
 
 // 2. SDE roadmap — all phase items
@@ -55,7 +55,7 @@ lld.problems.forEach((p) => reg(p.id, p.title, 'lld', 'LLD', '/lld', 'Problems')
 export const ITEMS = registry
 
 export const MODULES = [
-  { key: 'project', name: 'Morning TIL', path: '/project' },
+  { key: 'project', name: 'Anchor', path: '/project' },
   { key: 'sde', name: 'SDE1 Roadmap', path: '/sde' },
   { key: 'ai', name: 'AI / FDE Roadmap', path: '/ai' },
   { key: 'ai-papers', name: 'AI Papers', path: '/ai-papers' },

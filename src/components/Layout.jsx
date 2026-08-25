@@ -7,7 +7,7 @@ import { daysUntil } from '../lib/dates'
 
 const NAV = [
   { to: '/', label: 'Dashboard', icon: '◉', end: true },
-  { to: '/project', label: 'Morning TIL', icon: '🌅' },
+  { to: '/project', label: 'Anchor', icon: '⚓' },
   { to: '/sde', label: 'SDE1 Roadmap', icon: '🛠' },
   { to: '/ai', label: 'AI / FDE', icon: '🤖' },
   { to: '/ai-papers', label: 'AI Papers', icon: '📚' },
@@ -27,7 +27,7 @@ function phaseNow() {
 
 export default function Layout() {
   const { state, sync, flushPending, retrySync, acceptCloudState, restoreBackup } = useStore()
-  const { user, signOut } = useAuth()
+  const { user, signOut, isLocalMode } = useAuth()
   const fileRef = useRef(null)
   const navigate = useNavigate()
   const [dark, setDark] = useState(true)
@@ -194,20 +194,24 @@ export default function Layout() {
           <div className="truncate text-center font-mono text-[10px] text-muted-foreground" title={user.email}>
             {user.email}
           </div>
-          <button
-            type="button"
-            onClick={() => void handleSignOut()}
-            className="w-full rounded-lg border py-1.5 text-xs text-muted-foreground transition-colors hover:bg-surface"
-          >
-            Sign out
-          </button>
+          {isLocalMode ? (
+            <div className="text-center font-mono text-[10px] text-muted-foreground">local mode · no account</div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => void handleSignOut()}
+              className="w-full rounded-lg border py-1.5 text-xs text-muted-foreground transition-colors hover:bg-surface"
+            >
+              Sign out
+            </button>
+          )}
           <div className="font-mono text-[10px] text-muted-foreground/60 text-center">
             g+d dash · g+q dsa · g+p til
           </div>
         </div>
       </aside>
       <main className="w-full min-w-0 flex-1 px-4 pb-6 pt-20 sm:px-6 lg:ml-56 lg:max-w-6xl lg:p-6">
-        {sync.status !== 'synced' && (
+        {sync.status !== 'synced' && sync.status !== 'local' && (
           <div className={`mb-4 rounded-lg border px-3 py-2 text-sm ${sync.status === 'conflict' ? 'border-red-500/50 bg-red-500/10' : 'bg-card'}`}>
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span>

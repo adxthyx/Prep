@@ -147,14 +147,14 @@ function Milestones() {
 export default function ProjectTIL() {
   const { state, dispatch } = useStore()
   const [tab, setTab] = useState('board')
-  const arch = state.archNotes ?? projectTil.architectureNotes
+  const arch = (state.archNotes ?? projectTil.architectureNotes).replaceAll('Personal OS', 'Anchor')
   const decisions = [...projectTil.decisionLog, ...state.decisions]
   const [newDecision, setNewDecision] = useState({ decision: '', why: '' })
 
   return (
     <div className="space-y-4">
       <header>
-        <h1 className="text-2xl font-bold">Morning TIL <span className="block text-muted-foreground font-normal text-lg sm:inline">— LangGraph multi-agent</span></h1>
+        <h1 className="text-2xl font-bold">Anchor <span className="block text-muted-foreground font-normal text-lg sm:inline">— MVP implementation plan</span></h1>
         <p className="text-sm text-muted-foreground max-w-3xl mt-1">{projectTil.meta.oneLiner}</p>
       </header>
 
@@ -174,7 +174,7 @@ export default function ProjectTIL() {
       {tab === 'milestones' && <Milestones />}
 
       {tab === 'arch' && (
-        <SectionCard title="Architecture notes" desc="Markdown-ish scratchpad. Auto-saved.">
+        <SectionCard title="Architecture notes" desc="Living implementation blueprint from the Anchor MVP architecture. Auto-saved.">
           <textarea
             value={arch}
             onChange={(e) => dispatch({ type: 'archNotes', text: e.target.value })}
@@ -185,7 +185,7 @@ export default function ProjectTIL() {
       )}
 
       {tab === 'decisions' && (
-        <SectionCard title="Decision log" desc="Every non-obvious choice + why. This is interview gold — 'walk me through a tradeoff you made'.">
+        <SectionCard title="Decision log" desc="Record the tradeoffs that keep Anchor local-first, deterministic and safe.">
           <div className="space-y-2 mb-4">
             {decisions.map((d) => (
               <div key={d.id} className="rounded-lg border bg-background p-3">
@@ -226,7 +226,7 @@ export default function ProjectTIL() {
       )}
 
       {tab === 'demo' && (
-        <SectionCard title="Interview demo readiness" desc="If all six are green, this project is interview-weaponized.">
+        <SectionCard title="MVP readiness" desc="Use this checklist to verify the Anchor MVP is safe to run and explain.">
           <div className="space-y-1.5">
             {projectTil.demoChecklist.map((c) => (
               <ItemRow key={c.id} id={c.id} title={c.title} />

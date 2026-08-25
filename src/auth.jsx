@@ -2,14 +2,22 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import { supabase, supabaseConfigError } from './lib/supabase'
 
 const AuthContext = createContext(null)
+const LOCAL_MODE = import.meta.env.DEV || import.meta.env.VITE_LOCAL_MODE === 'true'
+const LOCAL_SESSION = {
+  user: {
+    id: 'local-dev-user',
+    email: 'local@localhost',
+  },
+}
 
 export function AuthProvider({ children }) {
-  const [session, setSession] = useState(null)
-  const [status, setStatus] = useState(supabase ? 'loading' : 'auth-error')
-  const [error, setError] = useState(supabaseConfigError)
+  const [session, setSession] = useState(LOCAL_MODE ? LOCAL_SESSION : null)
+  const [status, setStatus] = useState(LOCAL_MODE ? 'signed-in' : supabase ? 'loading' : 'auth-error')
+  const [error, setError] = useState(LOCAL_MODE ? null : supabaseConfigError)
   const [message, setMessage] = useState('')
 
   useEffect(() => {
+    if (LOCAL_MODE) return undefined
     if (!supabase) return undefined
 
     let active = true
@@ -40,6 +48,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   const signIn = useCallback(async (email, password) => {
+    if (LOCAL_MODE) return
     if (!supabase) return
     setStatus('signing-in')
     setError(null)
@@ -52,6 +61,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   const signUp = useCallback(async (email, password) => {
+    if (LOCAL_MODE) return
     if (!supabase) return
     setStatus('signing-in')
     setError(null)
@@ -69,6 +79,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   const signOut = useCallback(async () => {
+    if (LOCAL_MODE) return
     if (!supabase) return
     const { error: signOutError } = await supabase.auth.signOut({ scope: 'local' })
     if (signOutError) {
@@ -88,6 +99,7 @@ export function AuthProvider({ children }) {
         signIn,
         signUp,
         signOut,
+        isLocalMode: LOCAL_MODE,
       }}
     >
       {children}

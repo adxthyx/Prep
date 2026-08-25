@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import config from './data/config.json'
-import { sdeRoadmap } from './lib/registry'
+import { projectTil, sdeRoadmap } from './lib/registry'
 import { todayKey, addDays } from './lib/dates'
 import {
   fetchCloudState,
@@ -18,12 +18,15 @@ import {
 
 const CLOUD_SAVE_DEBOUNCE_MS = 750
 const SR = config.spacedRepetitionDays // [3, 7, 21]
+const PROJECT_CONTENT_VERSION = projectTil.meta.contentVersion || 1
+const LOCAL_MODE = import.meta.env.DEV || import.meta.env.VITE_LOCAL_MODE === 'true'
 
 export const STATUSES = ['todo', 'in-progress', 'done', 'revisit']
 
 export function createInitialState() {
   return {
     version: 1,
+    projectContentVersion: PROJECT_CONTENT_VERSION,
     items: {}, // id -> { status, notes, links[], revisitStage, revisitDue, updatedAt }
     kanban: {}, // cardId -> columnId (overrides seed column)
     customCards: [], // user-added kanban cards {id,title,phase,column}
@@ -46,11 +49,22 @@ export function createInitialState() {
 function normalizeState(value) {
   const defaults = createInitialState()
   if (!isValidPrepState(value)) return defaults
-  return {
+  const next = {
     ...defaults,
     ...value,
     settings: { ...defaults.settings, ...(value.settings || {}) },
   }
+  if (value.projectContentVersion !== PROJECT_CONTENT_VERSION) {
+    next.projectContentVersion = PROJECT_CONTENT_VERSION
+    next.items = Object.fromEntries(
+      Object.entries(next.items || {}).filter(([id]) => !id.startsWith('til-') && !id.startsWith('pos-'))
+    )
+    next.kanban = {}
+    next.customCards = []
+    next.decisions = []
+    next.archNotes = null
+  }
+  return next
 }
 
 function touch(state) {
@@ -259,6 +273,7 @@ export function StoreProvider({ user, children }) {
   const flushPending = useCallback(async () => {
     if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current)
     debounceTimerRef.current = null
+    if (LOCAL_MODE) return null
     if (!readyRef.current || !dirtyRef.current || conflictRef.current) return null
     if (!Number.isSafeInteger(revisionRef.current)) return null
     if (inFlightRef.current) {
@@ -333,16 +348,16 @@ export function StoreProvider({ user, children }) {
     const normalized = normalizeState(nextState)
     stateRef.current = normalized
     setState(normalized)
-    dirtyRef.current = true
+    dirtyRef.current = !LOCAL_MODE
     changeSequenceRef.current += 1
     cacheState(normalized)
     updateSync((current) => ({
       ...current,
       ready: true,
-      status: conflictRef.current ? 'conflict' : isOffline() ? 'offline' : 'unsynced',
+      status: LOCAL_MODE ? 'local' : conflictRef.current ? 'conflict' : isOffline() ? 'offline' : 'unsynced',
       error: conflictRef.current ? current.error : null,
     }))
-    if (readyRef.current && !conflictRef.current) scheduleSave()
+    if (readyRef.current && !LOCAL_MODE && !conflictRef.current) scheduleSave()
   }, [cacheState, scheduleSave, updateSync])
 
   const dispatch = useCallback((action) => {
@@ -352,6 +367,13 @@ export function StoreProvider({ user, children }) {
 
   const syncFromCloud = useCallback(async () => {
     if (loadingCloudRef.current) return
+    if (LOCAL_MODE) {
+      readyRef.current = true
+      dirtyRef.current = false
+      cacheState()
+      updateSync({ ready: true, status: 'local', realtime: 'disabled', error: null })
+      return
+    }
     if (isOffline()) {
       readyRef.current = true
       updateSync({ ready: true, status: 'offline', error: 'Offline. Using the local cache.' })
@@ -408,6 +430,10 @@ export function StoreProvider({ user, children }) {
   }, [syncFromCloud])
 
   useEffect(() => {
+    if (LOCAL_MODE) {
+      updateSync({ realtime: 'disabled' })
+      return undefined
+    }
     let active = true
     let channel = null
     try {
@@ -501,6 +527,10 @@ export function StoreProvider({ user, children }) {
   }, [commitLocalState])
 
   const refreshHistory = useCallback(async () => {
+    if (LOCAL_MODE) {
+      setHistory({ rows: [], loading: false, error: null })
+      return []
+    }
     setHistory((current) => ({ ...current, loading: true, error: null }))
     try {
       const rows = await fetchStateHistory(20)
@@ -513,6 +543,7 @@ export function StoreProvider({ user, children }) {
   }, [])
 
   const restoreHistory = useCallback(async (historyId) => {
+    if (LOCAL_MODE) throw new Error('Cloud history is unavailable in local mode.')
     if (!Number.isSafeInteger(revisionRef.current)) throw new Error('Cloud revision is not available yet.')
     if (inFlightRef.current) throw new Error('Wait for the current cloud save to finish, then retry the restore.')
     if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current)

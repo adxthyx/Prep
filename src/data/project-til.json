@@ -1,67 +1,132 @@
 {
- "meta": {
-  "name": "Morning TIL — multi-agent pipeline",
-  "oneLiner": "Every morning, a LangGraph pipeline generates fun-fact/TIL content. Ollama 7B workers do web research; DeepSeek orchestrates — plans topics, dispatches workers, ranks/edits drafts, assembles the digest.",
-  "note": "This app only TRACKS the project. The project itself lives in its own repo."
- },
- "kanban": {
-  "columns": [
-   { "id": "backlog", "title": "Backlog" },
-   { "id": "inprogress", "title": "In progress" },
-   { "id": "blocked", "title": "Blocked" },
-   { "id": "done", "title": "Done" }
+  "meta": {
+    "contentVersion": 2,
+    "name": "Anchor MVP",
+    "oneLiner": "A local-first Android personal operating system for attention, food, fitness, pantry, productivity, learning and finance - with deterministic state and selective AI reasoning.",
+    "note": "This tracker turns the architecture blueprint into an executable Anchor build plan. Target device: Pixel 9. Platform: native Android with Kotlin and Jetpack Compose.",
+    "coreRule": "The LLM may reason, rank, explain and extract. It never owns truth, money, timers, balances, macro arithmetic, pantry quantities or app-block state."
+  },
+  "kanban": {
+    "columns": [
+      { "id": "backlog", "title": "Backlog" },
+      { "id": "inprogress", "title": "In progress" },
+      { "id": "blocked", "title": "Blocked" },
+      { "id": "done", "title": "Done" }
+    ],
+    "cards": [
+      { "id": "pos-p0-01", "title": "Create the native Android Kotlin + Compose app shell for Pixel 9", "phase": "P0", "column": "backlog" },
+      { "id": "pos-p0-02", "title": "Set strict single-module package boundaries: core, feature and integration", "phase": "P0", "column": "backlog" },
+      { "id": "pos-p0-03", "title": "Add Room, SQLite schema versioning, migrations and event_log", "phase": "P0", "column": "backlog" },
+      { "id": "pos-p0-04", "title": "Add DataStore for typed settings and Hilt dependency injection", "phase": "P0", "column": "backlog" },
+      { "id": "pos-p0-05", "title": "Define domain models, repositories and use-case boundaries for every feature", "phase": "P0", "column": "backlog" },
+
+      { "id": "pos-p1-01", "title": "Add DeviceAdminReceiver and a development-only device-owner provisioning guide", "phase": "P1", "column": "backlog" },
+      { "id": "pos-p1-02", "title": "Implement blocked-app rules and DevicePolicyManager suspend/unsuspend", "phase": "P1", "column": "backlog" },
+      { "id": "pos-p1-03", "title": "Implement fixed-duration exception timers and expiry recovery", "phase": "P1", "column": "backlog" },
+      { "id": "pos-p1-04", "title": "Ingest UsageStats sessions and persist app-session outcomes", "phase": "P1", "column": "backlog" },
+      { "id": "pos-p1-05", "title": "Add deterministic Guardian policy checks, cooldowns and commitment contracts", "phase": "P1", "column": "backlog" },
+      { "id": "pos-p1-06", "title": "Add Bayesian-style reliability scoring and an emergency allowlist/recovery path", "phase": "P1", "column": "backlog" },
+
+      { "id": "pos-p2-01", "title": "Create FastAPI POST /v1/reason gateway with request limits and no prompt logging", "phase": "P2", "column": "backlog" },
+      { "id": "pos-p2-02", "title": "Add DeepSeek V4 Flash routing with Groq GPT-OSS 120B fallback", "phase": "P2", "column": "backlog" },
+      { "id": "pos-p2-03", "title": "Implement ContextBuilder with feature, intent, risk and bounded memory selection", "phase": "P2", "column": "backlog" },
+      { "id": "pos-p2-04", "title": "Define typed AI outputs: UnlockDecisionV1, FinanceUpdateCandidateV1 and MealRecommendationV1", "phase": "P2", "column": "backlog" },
+      { "id": "pos-p2-05", "title": "Validate model output and fail closed before any policy, finance or commerce action", "phase": "P2", "column": "backlog" },
+
+      { "id": "pos-p3-01", "title": "Add canonical orders and order-items schema for food and grocery history", "phase": "P3", "column": "backlog" },
+      { "id": "pos-p3-02", "title": "Build provider import adapters for Swiggy, Zomato, Blinkit, Zepto and Instamart exports", "phase": "P3", "column": "backlog" },
+      { "id": "pos-p3-03", "title": "Add meals, body snapshots, daily nutrition and deterministic MacroEngine", "phase": "P3", "column": "backlog" },
+      { "id": "pos-p3-04", "title": "Implement PreferenceEngine with explicit likes, reorders, ratings and confidence decay", "phase": "P3", "column": "backlog" },
+      { "id": "pos-p3-05", "title": "Add anonymized provider fixtures and golden-file importer tests", "phase": "P3", "column": "backlog" },
+
+      { "id": "pos-p4-01", "title": "Create pantry items, purchase/consume events and manual quantity correction", "phase": "P4", "column": "backlog" },
+      { "id": "pos-p4-02", "title": "Implement PantryEngine days-left forecast with smoothed daily use", "phase": "P4", "column": "backlog" },
+      { "id": "pos-p4-03", "title": "Add low-stock and low-confidence check-quantity notifications", "phase": "P4", "column": "backlog" },
+      { "id": "pos-p4-04", "title": "Add barcode scanning and optional receipt/document capture", "phase": "P4", "column": "backlog" },
+      { "id": "pos-p4-05", "title": "Generate a local proposed grocery list from predicted depletion", "phase": "P4", "column": "backlog" },
+
+      { "id": "pos-p5-01", "title": "Implement Swiggy OAuth 2.1 PKCE with Keystore-backed token storage", "phase": "P5", "column": "backlog" },
+      { "id": "pos-p5-02", "title": "Add official Kotlin MCP clients for Swiggy Food and Instamart", "phase": "P5", "column": "backlog" },
+      { "id": "pos-p5-03", "title": "Build CommerceCoordinator for candidate search, cart, coupons and tracking", "phase": "P5", "column": "backlog" },
+      { "id": "pos-p5-04", "title": "Add final cart, total, macro/budget impact and explicit payment confirmation screen", "phase": "P5", "column": "backlog" },
+      { "id": "pos-p5-05", "title": "Handle non-idempotent order failures by checking status/history before retry", "phase": "P5", "column": "backlog" },
+
+      { "id": "pos-p6-01", "title": "Add goals, learning units, sessions and daily commitments", "phase": "P6", "column": "backlog" },
+      { "id": "pos-p6-02", "title": "Implement productive debt and deterministic schedule/commitment state", "phase": "P6", "column": "backlog" },
+      { "id": "pos-p6-03", "title": "Add validated PlanPatch updates for adaptive learning plans", "phase": "P6", "column": "backlog" },
+      { "id": "pos-p6-04", "title": "Couple unfinished commitments to Guardian exception rules", "phase": "P6", "column": "backlog" },
+
+      { "id": "pos-p7-01", "title": "Expose read-only Reconcile ContentProvider with signature-level permission", "phase": "P7", "column": "backlog" },
+      { "id": "pos-p7-02", "title": "Sync transaction, monthly-summary and category-summary deltas incrementally", "phase": "P7", "column": "backlog" },
+      { "id": "pos-p7-03", "title": "Add asset accounts, balance snapshots, net-worth snapshots and budgets", "phase": "P7", "column": "backlog" },
+      { "id": "pos-p7-04", "title": "Add screenshot/text finance candidate extraction with a diff-before-commit flow", "phase": "P7", "column": "backlog" },
+      { "id": "pos-p7-05", "title": "Implement FinanceEngine for spend, budget state and net-worth arithmetic", "phase": "P7", "column": "backlog" },
+
+      { "id": "pos-p8-01", "title": "Build Today screen with morning check-in and cross-feature state cards", "phase": "P8", "column": "backlog" },
+      { "id": "pos-p8-02", "title": "Show blockers, macros, pantry warnings, finance state and next commitment", "phase": "P8", "column": "backlog" },
+      { "id": "pos-p8-03", "title": "Add one global assistant action routed through the shared ContextBuilder", "phase": "P8", "column": "backlog" },
+      { "id": "pos-p8-04", "title": "Add compact weekly reflection from aggregated statistics only", "phase": "P8", "column": "backlog" },
+
+      { "id": "pos-p9-01", "title": "Add deterministic WorkManager jobs and notification channels", "phase": "P9", "column": "backlog" },
+      { "id": "pos-p9-02", "title": "Add export/backup, audit trail and safe database migration recovery", "phase": "P9", "column": "backlog" },
+      { "id": "pos-p9-03", "title": "Automate Guardian, pantry, macro, finance, schema and migration tests", "phase": "P9", "column": "backlog" },
+      { "id": "pos-p9-04", "title": "Test offline mode, model failures, process death, clock changes and provider outages", "phase": "P9", "column": "backlog" },
+      { "id": "pos-p9-05", "title": "Run Pixel 9 daily-driver hardening and verify critical-app recovery", "phase": "P9", "column": "backlog" }
+    ]
+  },
+  "milestones": [
+    { "id": "pos-p0", "phase": "P0", "name": "Foundation", "goal": "A native Compose shell persists versioned local state through Room/DataStore and exposes testable repository boundaries.", "exit": "App reloads state, migrations run, and event_log records meaningful changes." },
+    { "id": "pos-p1", "phase": "P1", "name": "Guardian core", "goal": "Device Owner enforcement suspends distracting packages, records usage and re-blocks after a fixed exception.", "exit": "Reddit/YouTube can be suspended and safely restored without stranding the phone." },
+    { "id": "pos-p2", "phase": "P2", "name": "AI decision layer", "goal": "Typed, bounded AI reasoning sits behind deterministic policy and a resilient FastAPI gateway.", "exit": "An unlock reason produces a validated decision or a conservative local fallback." },
+    { "id": "pos-p3", "phase": "P3", "name": "Health and imports", "goal": "Provider history becomes canonical orders, meals, macro totals and explainable preference signals.", "exit": "An anonymized import produces normalized items and reproducible nutrition calculations." },
+    { "id": "pos-p4", "phase": "P4", "name": "Pantry", "goal": "Inventory changes, depletion forecasts and low-confidence checks are locally reproducible.", "exit": "Manual correction, meal consumption and delivered groceries update stock correctly." },
+    { "id": "pos-p5", "phase": "P5", "name": "Commerce", "goal": "Swiggy Food and Instamart MCP capabilities can build candidate carts behind an explicit confirmation boundary.", "exit": "The user reviews the final cart and confirms payment before any order tool executes." },
+    { "id": "pos-p6", "phase": "P6", "name": "Productivity", "goal": "Goals, learning units, sessions, commitments and productive debt become structured state.", "exit": "An overdue commitment deterministically affects an entertainment exception." },
+    { "id": "pos-p7", "phase": "P7", "name": "Finance", "goal": "Read-only Reconcile data, balances and candidate updates feed deterministic budgets and net worth.", "exit": "Spend and net worth update without model-owned arithmetic or unreviewed writes." },
+    { "id": "pos-p8", "phase": "P8", "name": "Today orchestration", "goal": "One daily surface combines Focus, Health, Pantry, Finance and Productivity state.", "exit": "A morning check-in produces a compact, explainable cross-feature view." },
+    { "id": "pos-p9", "phase": "P9", "name": "Hardening", "goal": "Background jobs, recovery, auditability and failure handling make the app safe for daily use.", "exit": "Network/model/provider failures cannot corrupt state or lock critical phone functions." }
   ],
-  "cards": [
-   { "id": "til-c1", "title": "Create repo + Python env (uv/venv), pin deps", "phase": "P0", "column": "backlog" },
-   { "id": "til-c2", "title": "Install Ollama, pull a 7B model (qwen2.5:7b / mistral:7b), verify local inference", "phase": "P0", "column": "backlog" },
-   { "id": "til-c3", "title": "Get DeepSeek API key, hello-world chat call, note pricing", "phase": "P0", "column": "backlog" },
-   { "id": "til-c4", "title": "LangGraph hello-world: 2-node graph with state", "phase": "P0", "column": "backlog" },
-   { "id": "til-c5", "title": "Pick + wire search tool (Tavily free tier / DuckDuckGo / SearxNG)", "phase": "P1", "column": "backlog" },
-   { "id": "til-c6", "title": "Single worker agent: topic in → search → summarized TIL out", "phase": "P1", "column": "backlog" },
-   { "id": "til-c7", "title": "Prompt-tune worker for TIL tone (surprising, source-cited, 3-5 sentences)", "phase": "P1", "column": "backlog" },
-   { "id": "til-c8", "title": "Orchestrator node: DeepSeek plans N topics for the day", "phase": "P2", "column": "backlog" },
-   { "id": "til-c9", "title": "Fan-out: parallel Ollama workers research + draft (LangGraph Send API)", "phase": "P2", "column": "backlog" },
-   { "id": "til-c10", "title": "DeepSeek ranks drafts, sends weak ones back with steering notes", "phase": "P2", "column": "backlog" },
-   { "id": "til-c11", "title": "Digest assembler: final markdown digest with sources", "phase": "P2", "column": "backlog" },
-   { "id": "til-c12", "title": "SQLite history store + dedupe new TILs against past topics (embeddings or keyword)", "phase": "P3", "column": "backlog" },
-   { "id": "til-c13", "title": "Fact-check pass: second search to verify each claim", "phase": "P3", "column": "backlog" },
-   { "id": "til-c14", "title": "Interestingness scoring rubric (novelty, surprise, credibility)", "phase": "P3", "column": "backlog" },
-   { "id": "til-c15", "title": "Morning schedule: cron (macOS launchd) job at 7am", "phase": "P4", "column": "backlog" },
-   { "id": "til-c16", "title": "Delivery: Telegram bot (or email / markdown file to Obsidian)", "phase": "P4", "column": "backlog" },
-   { "id": "til-c17", "title": "LangSmith tracing on all runs", "phase": "P5", "column": "backlog" },
-   { "id": "til-c18", "title": "Token + cost log per run (DeepSeek $ vs local $0)", "phase": "P5", "column": "backlog" },
-   { "id": "til-c19", "title": "Graceful failures: Ollama down → skip worker; search rate-limited → backoff + retry", "phase": "P5", "column": "backlog" },
-   { "id": "til-c20", "title": "Retries with jitter on all external calls", "phase": "P5", "column": "backlog" }
+  "demoChecklist": [
+    { "id": "pos-demo-01", "title": "Compose app boots on a Pixel 9 and survives process death with state intact" },
+    { "id": "pos-demo-02", "title": "Guardian suspends a distracting app, grants a bounded exception and re-blocks it on expiry" },
+    { "id": "pos-demo-03", "title": "A bad or unavailable model response fails closed and never executes a policy action" },
+    { "id": "pos-demo-04", "title": "One order-history fixture becomes canonical orders, meal signals and preference confidence" },
+    { "id": "pos-demo-05", "title": "Pantry purchase/consume events produce a reproducible days-left forecast and alert" },
+    { "id": "pos-demo-06", "title": "Swiggy/Instamart candidates become a reviewed cart; no order happens without confirmation" },
+    { "id": "pos-demo-07", "title": "Reconcile data updates spend and budgets through read-only IPC" },
+    { "id": "pos-demo-08", "title": "Screenshot/text finance extraction shows a diff before writing a snapshot" },
+    { "id": "pos-demo-09", "title": "Today combines blockers, macros, pantry, finance and the next learning commitment" },
+    { "id": "pos-demo-10", "title": "Offline mode, provider failures, backup/restore and critical-app recovery are demonstrated" }
+  ],
+  "architectureNotes": "## Personal OS MVP architecture\n\n### Core rule\n\nThe phone owns policy, truth and long-term memory. The LLM may reason, rank, explain and extract, but it never owns money, timers, balances, macro arithmetic, pantry quantities or app-block state.\n\n### System shape\n\n```\nPixel 9 Android app\n  Compose UI -> ViewModel -> UseCase / Engine -> Repository -> Room / Android API / MCP\n\n  Room + SQLite + FTS\n    profile facts | current state | bounded recent events | raw history | event log\n\n  Deterministic engines\n    Guardian | Macro | Pantry | Productivity | Finance | CommerceCoordinator\n\n  AI orchestration\n    Tier 0 deterministic -> Tier 1 Gemini Nano -> Tier 2 DeepSeek V4 Flash -> Tier 3 Groq GPT-OSS 120B\n\n  External capabilities\n    FastAPI /v1/reason | Swiggy Food MCP | Instamart MCP | Reconcile read-only ContentProvider\n```\n\n### Android package boundaries\n\n```\ncom.personalos\n  app/                 # Application, MainActivity, navigation\n  core/database/       # Room, DAOs, migrations\n  core/model/          # Shared domain models\n  core/ai/             # ContextBuilder, ModelRouter, schemas\n  core/policy/         # Deterministic rules and calculators\n  core/network/        # Gateway and MCP clients\n  core/security/       # Keystore and auth helpers\n  core/notifications/  # Channels and notification builders\n  feature/today/       # Cross-feature daily view\n  feature/guardian/    # Blocking and exceptions\n  feature/health/      # Meals, macros and preferences\n  feature/pantry/      # Inventory and depletion\n  feature/productivity/# Goals, learning and commitments\n  feature/finance/     # Budgets, assets and net worth\n  feature/settings/    # Targets and notification windows\n  integration/reconcile/\n  integration/swiggy/\n  integration/imports/\n```\n\n### Local memory hierarchy\n\n- Hard profile: restrictions, goals, app categories and hard budget rules.\n- Derived profile: preference confidence, typical spend and unlock reliability.\n- Current state: today's macros, current block mode, pantry warnings and cash available.\n- Recent events: a small bounded window such as the last three unlocks or meals.\n- Raw history: all orders, transactions, usage sessions and pantry events; never dump wholesale to a model.\n- Free text: notes and commitment reasons retrieved through SQLite FTS. No vector database in MVP.\n\n### AI request contract\n\n1. Classify feature, intent and risk.\n2. Fetch relevant current state and global hard constraints.\n3. Fetch at most 10 ranked memory facts and 5 recent events.\n4. Add the request and expected JSON schema.\n5. Validate schema and policy before accepting the result.\n\n`AIRequestContext` carries `feature`, `currentState`, `hardRules`, `relevantMemory`, `recentEvents`, `request` and the expected typed schema.\n\n### Guardian contract\n\nDevice Owner plus `DevicePolicyManager.setPackagesSuspended()` enforces blocks; `UsageStatsManager` measures outcomes. A request captures reason and duration, then deterministic cooldown/sleep/commitment/max-exception checks run before any model call. A validated `UnlockDecisionV1` may unsuspend a package and schedule expiry. The app then re-suspends it, records the commitment outcome and updates a Beta-style reliability score. Emergency communication, navigation, authenticator, password-manager, maps and payment-critical packages stay allowlisted.\n\n### Health, pantry and commerce\n\nCanonical order imports normalize Swiggy, Zomato, Blinkit, Zepto, Instamart and other exports. Macro arithmetic, preference evidence, inventory deltas and depletion forecasts are local calculations. A predicted grocery list becomes live Instamart candidates only after the local state is ready. Commerce uses official Kotlin MCP clients with OAuth 2.1 PKCE and Keystore tokens. The user reviews candidates, cart, total, address and macro/budget impact before payment/order execution.\n\n### Finance boundary\n\nReconcile remains responsible for SMS parsing and transaction normalization. Personal OS reads incremental data through a signature-protected, read-only ContentProvider. Finance updates from text/screenshots become candidates, show a diff, pass validation and only then write local snapshots. Net worth, spend, budgets and food-budget pressure are deterministic.\n\n### MVP schema\n\n`profile_fact`, `event_log`, `blocked_app_rule`, `unlock_request`, `unlock_decision`, `commitment`, `usage_session`, `reliability_score`, `order`, `order_item`, `food_preference`, `meal`, `daily_nutrition`, `pantry_item`, `pantry_event`, `goal`, `learning_unit`, `learning_session`, `transaction_cache`, `asset_account`, `asset_snapshot`, `networth_snapshot` and `budget`. Every JSON payload has a schema version and every meaningful current value has an event or snapshot behind it.\n\n### Jobs and safety\n\nGuardian expiry, usage aggregation, pantry forecast, low-stock notifications, Reconcile sync and daily finance aggregation are deterministic WorkManager/system jobs. Gemini Nano runs only while the app is foreground. If the gateway or network fails, local state and calculations continue; if model JSON is invalid, the action fails closed; if an order placement is ambiguous, status/history is checked before retry; if a migration fails, backup happens before destructive work.\n\n### Explicit MVP non-goals\n\nNo perfect lie detector, invasive content surveillance, automatic financial transactions, autonomous purchases, cloud-first sync, embeddings/vector memory, extra live commerce providers or voice-first ambient agent. Browser/VPN enforcement, automatic replenishment, predictive cashflow and fine-grained tutorial verification move to V2.\n\n### Reference stack\n\nKotlin, Jetpack Compose, Material 3, MVVM, use cases, repositories, Hilt, Room, DataStore, kotlinx.serialization, Ktor or OkHttp, WorkManager, Android Keystore, DevicePolicyManager, UsageStatsManager, ML Kit GenAI/Barcode/Document Scanner, FastAPI/Pydantic, DeepSeek V4 Flash, Groq GPT-OSS 120B and official MCP Kotlin SDK.",
+  "decisionLog": [
+    { "id": "pos-dl-01", "date": "2026-08-23", "decision": "Start a native Android app rather than extending the old web project", "why": "The target is Pixel 9 and the core capabilities require Android Device Owner, UsageStatsManager, Room, WorkManager, Keystore and ContentProvider APIs." },
+    { "id": "pos-dl-02", "date": "2026-08-23", "decision": "Keep one Gradle app module with strict package boundaries", "why": "It keeps the MVP fast to build while preserving seams for later module extraction when build time or ownership justifies it." },
+    { "id": "pos-dl-03", "date": "2026-08-23", "decision": "Phone-local state is authoritative", "why": "Blocking, finance, health, pantry and commitments must continue safely without network access or a model provider." },
+    { "id": "pos-dl-04", "date": "2026-08-23", "decision": "Deterministic engines own all high-consequence state transitions", "why": "Models can produce useful reasoning but must not directly write balances, timers, quantities, arithmetic or DevicePolicyManager actions." },
+    { "id": "pos-dl-05", "date": "2026-08-23", "decision": "Use tiered AI routing with bounded context", "why": "Deterministic logic handles predictable work, Gemini Nano handles foreground extraction, DeepSeek handles harder reasoning and Groq provides fallback." },
+    { "id": "pos-dl-06", "date": "2026-08-23", "decision": "Use structured retrieval and SQLite FTS before embeddings", "why": "The MVP needs explainable profile facts, current state and bounded event windows; a vector database adds complexity before a real retrieval failure exists." },
+    { "id": "pos-dl-07", "date": "2026-08-23", "decision": "Require explicit final confirmation for food and grocery orders", "why": "The assistant may find candidates and build a cart, but it must never autonomously spend money or retry a non-idempotent order blindly." },
+    { "id": "pos-dl-08", "date": "2026-08-23", "decision": "Keep Reconcile integration read-only", "why": "Reconcile remains the transaction-normalization authority; Anchor consumes incremental summaries through protected Android IPC." },
+    { "id": "pos-dl-09", "date": "2026-08-23", "decision": "Use light event sourcing for important values", "why": "Current state plus the event or snapshot that changed it makes pantry, finance, usage and commitment behavior explainable and recoverable." },
+    { "id": "pos-dl-10", "date": "2026-08-23", "decision": "Build in the order Foundation -> Guardian -> AI -> Health -> Pantry -> Commerce -> Productivity -> Finance -> Today -> Hardening", "why": "The smart surface should sit on stable state machines, imports and arithmetic rather than becoming the source of truth." }
+  ],
+  "resources": [
+    { "title": "Anchor MVP technical architecture", "type": "source", "url": "Personal_OS_MVP_Technical_Architecture.pdf", "free": true, "note": "Project baseline and implementation blueprint", "verified": true },
+    { "title": "DevicePolicyManager API", "type": "docs", "url": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager", "free": true, "note": "Package suspension and uninstall-blocking constraints", "verified": true },
+    { "title": "Android Enterprise dedicated devices", "type": "docs", "url": "https://developer.android.com/work/guide", "free": true, "note": "Fully managed/device-owner provisioning", "verified": true },
+    { "title": "UsageStatsManager", "type": "docs", "url": "https://developer.android.com/reference/android/app/usage/UsageStatsManager", "free": true, "note": "Usage history/events and usage access", "verified": true },
+    { "title": "ML Kit GenAI APIs", "type": "docs", "url": "https://developers.google.com/ml-kit/genai", "free": true, "note": "Gemini Nano support and foreground inference constraint", "verified": true },
+    { "title": "ML Kit Prompt API for Android", "type": "docs", "url": "https://developers.google.com/ml-kit/genai/prompt/android", "free": true, "note": "Structured text and image extraction", "verified": true },
+    { "title": "Android ContentProvider basics", "type": "docs", "url": "https://developer.android.com/guide/topics/providers/content-provider-basics", "free": true, "note": "Read-only IPC boundary for Reconcile", "verified": true },
+    { "title": "Android security checklist", "type": "docs", "url": "https://developer.android.com/privacy-and-security/security-tips", "free": true, "note": "Signature permission guidance", "verified": true },
+    { "title": "Swiggy Food MCP", "type": "docs", "url": "https://mcp.swiggy.com/builders/docs/reference/food/", "free": true, "note": "Food discovery, cart, order and tracking tools", "verified": true },
+    { "title": "Official MCP Kotlin SDK", "type": "github", "url": "https://github.com/modelcontextprotocol/kotlin-sdk", "free": true, "note": "Kotlin client and Streamable HTTP transport", "verified": true },
+    { "title": "Swiggy Instamart MCP", "type": "docs", "url": "https://mcp.swiggy.com/builders/docs/reference/instamart/", "free": true, "note": "Grocery search, cart and order-history tools", "verified": true },
+    { "title": "Swiggy OAuth and PKCE", "type": "docs", "url": "https://mcp.swiggy.com/builders/docs/start/authenticate/", "free": true, "note": "Secure commerce authentication and token storage", "verified": true },
+    { "title": "DeepSeek API pricing", "type": "docs", "url": "https://api-docs.deepseek.com/quick_start/pricing/", "free": true, "note": "Primary remote reasoning model", "verified": true },
+    { "title": "Groq rate limits", "type": "docs", "url": "https://console.groq.com/docs/rate-limits", "free": true, "note": "Fallback GPT-OSS 120B availability", "verified": true },
+    { "title": "ML Kit Barcode Scanning", "type": "docs", "url": "https://developers.google.com/ml-kit/vision/barcode-scanning/android", "free": true, "note": "Pantry item identification", "verified": true },
+    { "title": "ML Kit Document Scanner", "type": "docs", "url": "https://developers.google.com/ml-kit/vision/doc-scanner/android", "free": true, "note": "Receipt and document capture", "verified": true }
   ]
- },
- "milestones": [
-  { "id": "til-p0", "phase": "P0", "name": "Scaffold", "goal": "Repo, Python env, Ollama serving a 7B model, DeepSeek API access, LangGraph hello-world" },
-  { "id": "til-p1", "phase": "P1", "name": "Single agent", "goal": "One worker → web search tool (Tavily / DuckDuckGo / SearxNG) → summarized TIL" },
-  { "id": "til-p2", "phase": "P2", "name": "Multi-agent", "goal": "Orchestrator-worker graph — DeepSeek plans N topics → parallel Ollama workers research + draft → DeepSeek ranks, steers rewrites, assembles digest" },
-  { "id": "til-p3", "phase": "P3", "name": "Quality", "goal": "History store (SQLite) to dedupe against past TILs, fact-check pass, interestingness scoring" },
-  { "id": "til-p4", "phase": "P4", "name": "Ship", "goal": "Morning schedule (cron / Task Scheduler) + delivery (Telegram bot / email / markdown file)" },
-  { "id": "til-p5", "phase": "P5", "name": "Hardening", "goal": "LangSmith tracing, token/cost log, graceful failure handling (Ollama down, search rate-limited), retries" }
- ],
- "demoChecklist": [
-  { "id": "til-d1", "title": "5-min live demo possible end-to-end (one command, digest appears)" },
-  { "id": "til-d2", "title": "Architecture diagram exists (orchestrator, workers, tools, store)" },
-  { "id": "til-d3", "title": "Can explain every failure mode + what the system does about it" },
-  { "id": "til-d4", "title": "Know cost per digest (DeepSeek tokens) and end-to-end latency numbers" },
-  { "id": "til-d5", "title": "Can justify architecture choices vs alternatives (why orchestrator-worker, why local workers, why DeepSeek as steerer)" },
-  { "id": "til-d6", "title": "2-min pitch rehearsed (matches Project Storytelling entry in AI roadmap)" }
- ],
- "architectureNotes": "## Architecture (draft — edit me)\n\n```\n            ┌─────────────────────────────┐\n            │  DeepSeek (orchestrator)    │\n            │  plan topics → dispatch →   │\n            │  rank/steer → assemble      │\n            └──────┬─────────────┬────────┘\n         Send API  │             │  rank / rewrite loop\n     ┌─────────────┼─────────────┐\n     ▼             ▼             ▼\n ┌────────┐   ┌────────┐   ┌────────┐\n │worker 1│   │worker 2│   │worker N│   (Ollama 7B, parallel)\n │search+ │   │search+ │   │search+ │\n │draft   │   │draft   │   │draft   │\n └───┬────┘   └───┬────┘   └───┬────┘\n     └───────────┬┴────────────┘\n                 ▼\n          SQLite history (dedupe)\n                 ▼\n          Morning digest → Telegram/email/markdown\n```\n\n**State shape:** topics[], drafts[], rankings[], final_digest\n\n**Key decisions to make:** worker model choice, search tool, dedupe strategy (embeddings vs keywords), rewrite loop depth (cap at 1-2 to bound cost/latency).",
- "decisionLog": [
-  { "id": "til-dl1", "date": "2026-07-11", "decision": "Frontier model (DeepSeek) steers, local 7B models do grunt work", "why": "Cost: research/drafting is high-token, low-difficulty — local is free. Planning/ranking is low-token, high-difficulty — worth API spend. Also a great interview talking point about model routing." },
-  { "id": "til-dl2", "date": "2026-07-11", "decision": "LangGraph over raw asyncio orchestration", "why": "Checkpointing, retries, and the Send API for fan-out come free; graph is self-documenting for the demo; LangGraph experience is directly interview-relevant." }
- ],
- "resources": [
-  { "title": "LangGraph docs", "type": "docs", "url": "https://langchain-ai.github.io/langgraph/", "free": true, "note": "Core reference — state, nodes, edges, Send API", "verified": true },
-  { "title": "LangChain Academy — Introduction to LangGraph", "type": "course", "url": "https://academy.langchain.com/courses/intro-to-langgraph", "free": true, "note": "Free official course, ~6 modules incl. multi-agent", "verified": true },
-  { "title": "LangGraph multi-agent supervisor tutorial", "type": "docs", "url": "https://langchain-ai.github.io/langgraph/tutorials/multi_agent/agent_supervisor/", "free": true, "note": "The exact orchestrator-worker pattern this project uses", "verified": true },
-  { "title": "Ollama docs", "type": "github", "url": "https://github.com/ollama/ollama/blob/main/docs/api.md", "free": true, "note": "API reference for serving local models", "verified": true },
-  { "title": "DeepSeek API docs", "type": "docs", "url": "https://api-docs.deepseek.com/", "free": true, "note": "Auth, chat completions, pricing", "verified": true },
-  { "title": "Tavily docs", "type": "docs", "url": "https://docs.tavily.com/", "free": true, "note": "Search API with free tier — easiest worker search tool", "verified": true },
-  { "title": "SearxNG docs", "type": "docs", "url": "https://docs.searxng.org/", "free": true, "note": "Self-hosted metasearch — zero-cost, no rate limits, more setup", "verified": true }
- ]
 }

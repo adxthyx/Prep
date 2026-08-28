@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useStore, getItem } from '../store'
+import { useStore, getItem, config } from '../store'
 import { sdeRoadmap } from '../lib/registry'
 import { SectionCard, ItemRow, ResourceLink, ProgressBar } from '../components/ui'
-import { todayKey } from '../lib/dates'
+import { todayKey, formatDate } from '../lib/dates'
 
 const STATUS_COLORS = {
   wishlist: 'text-muted-foreground', applied: 'text-downvote', OA: 'text-yellow-400',
@@ -60,7 +60,7 @@ function Applications() {
             ))}
           </tbody>
         </table>
-        {rows.length === 0 && <div className="text-sm text-muted-foreground py-4 text-center">No applications yet — Aug 1 is coming.</div>}
+        {rows.length === 0 && <div className="text-sm text-muted-foreground py-4 text-center">No applications yet — job search starts {formatDate(config.jobSearchStart)}.</div>}
       </div>
     </SectionCard>
   )

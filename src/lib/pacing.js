@@ -21,9 +21,9 @@ export function activeMilestone(state, config) {
   const hldItems = [...(hld.concepts || []), ...(hld.questions || [])].map((x) => ({ id: x.id, tier: 2, module: 'hld' }))
   const t2Items = [...dsa2.map((p) => ({ id: p.id, tier: 2, module: 'dsa' })), ...hldItems]
 
-  const t1Target = settings.tier1Target || config.applicationsOpen
-  const t2Target = settings.tier2Target || '2026-09-30'
-  const seasonEnd = settings.seasonEnd || config.interviewSeasonEnd
+  const t1Target = settings.tier1Target || config.tier1Target
+  const t2Target = settings.tier2Target || config.tier2Target
+  const studyDeadline = settings.studyDeadline || settings.seasonEnd || config.studyDeadline
 
   // Check which milestone is active (first not done and not past target)
   const t1Done = t1Items.filter((item) => state.items[item.id]?.status === 'done').length
@@ -53,7 +53,7 @@ export function activeMilestone(state, config) {
     ...hld.concepts.map((c) => ({ id: c.id, module: 'hld' })),
     ...hld.questions.map((q) => ({ id: q.id, module: 'hld' })),
   ]
-  return { label: 'Season end', target: seasonEnd, items: allItems, tier: 3 }
+  return { label: 'Study deadline', target: studyDeadline, items: allItems, tier: 3 }
 }
 
 export function dailyQuota(state, milestone) {

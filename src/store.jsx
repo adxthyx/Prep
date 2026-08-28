@@ -19,6 +19,7 @@ import {
 const CLOUD_SAVE_DEBOUNCE_MS = 750
 const SR = config.spacedRepetitionDays // [3, 7, 21]
 const PROJECT_CONTENT_VERSION = projectTil.meta.contentVersion || 1
+const SCHEDULE_VERSION = 2
 const LOCAL_MODE = import.meta.env.DEV || import.meta.env.VITE_LOCAL_MODE === 'true'
 
 export const STATUSES = ['todo', 'in-progress', 'done', 'revisit']
@@ -26,6 +27,7 @@ export const STATUSES = ['todo', 'in-progress', 'done', 'revisit']
 export function createInitialState() {
   return {
     version: 1,
+    scheduleVersion: SCHEDULE_VERSION,
     projectContentVersion: PROJECT_CONTENT_VERSION,
     items: {}, // id -> { status, notes, links[], revisitStage, revisitDue, updatedAt }
     kanban: {}, // cardId -> columnId (overrides seed column)
@@ -38,9 +40,9 @@ export function createInitialState() {
     activity: {}, // 'YYYY-MM-DD' -> count of touches
     tierOverrides: {}, // problemId -> 1|2|3
     settings: {
-      tier1Target: config.tier1Target || '2026-08-31',
-      tier2Target: config.tier2Target || '2026-09-30',
-      seasonEnd: config.interviewSeasonEnd,
+      tier1Target: config.tier1Target,
+      tier2Target: config.tier2Target,
+      studyDeadline: config.studyDeadline,
       showT3: false,
     },
   }
@@ -53,6 +55,26 @@ function normalizeState(value) {
     ...defaults,
     ...value,
     settings: { ...defaults.settings, ...(value.settings || {}) },
+  }
+  if (value.scheduleVersion !== SCHEDULE_VERSION) {
+    const legacyDefaults = {
+      tier1Target: '2026-08-31',
+      tier2Target: '2026-09-30',
+      seasonEnd: '2026-10-31',
+    }
+    const oldSettings = value.settings || {}
+    const migratedSettings = { ...next.settings }
+    if (!oldSettings.tier1Target || oldSettings.tier1Target === legacyDefaults.tier1Target) migratedSettings.tier1Target = defaults.settings.tier1Target
+    if (!oldSettings.tier2Target || oldSettings.tier2Target === legacyDefaults.tier2Target) migratedSettings.tier2Target = defaults.settings.tier2Target
+    if (!oldSettings.studyDeadline) {
+      migratedSettings.studyDeadline = oldSettings.seasonEnd && oldSettings.seasonEnd !== legacyDefaults.seasonEnd
+        ? oldSettings.seasonEnd
+        : defaults.settings.studyDeadline
+    } else if (oldSettings.studyDeadline === legacyDefaults.seasonEnd) {
+      migratedSettings.studyDeadline = defaults.settings.studyDeadline
+    }
+    next.settings = migratedSettings
+    next.scheduleVersion = SCHEDULE_VERSION
   }
   if (value.projectContentVersion !== PROJECT_CONTENT_VERSION) {
     next.projectContentVersion = PROJECT_CONTENT_VERSION

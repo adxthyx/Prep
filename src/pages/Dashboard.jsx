@@ -9,16 +9,18 @@ import { StatusPill } from '../components/ui'
 
 /** Signature element: the Launch Rail — the whole 4-month sprint as one burn line. */
 function LaunchRail({ state }) {
-  const start = '2026-07-01'
+  const start = config.studyStart
+  const shortDate = (date) => new Date(`${date}T00:00:00`).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' }).toUpperCase()
   const marks = [
-    { key: start, label: 'prep', short: 'JUL' },
-    { key: config.applicationsOpen, label: 'applications open', short: 'AUG 1' },
-    { key: state.settings?.tier1Target || '2026-08-31', label: 'T1 target', short: 'AUG 31' },
-    { key: state.settings?.tier2Target || '2026-09-30', label: 'T2 target', short: 'SEP 30' },
-    { key: config.interviewSeasonEnd, label: 'season ends', short: 'OCT 31' },
-    { key: config.targetJoining, label: 'joining', short: 'NOV' },
+    { key: start, label: 'study starts', short: shortDate(start) },
+    { key: state.settings?.tier1Target || config.tier1Target, label: 'T1 target', short: shortDate(state.settings?.tier1Target || config.tier1Target) },
+    { key: state.settings?.tier2Target || config.tier2Target, label: 'T2 target', short: shortDate(state.settings?.tier2Target || config.tier2Target) },
+    { key: config.hikesDeadline, label: `${config.hikesTarget} hikes`, short: shortDate(config.hikesDeadline) },
+    { key: config.studyDeadline, label: 'study complete', short: shortDate(config.studyDeadline) },
+    { key: config.jobSearchStart, label: 'job search starts', short: shortDate(config.jobSearchStart) },
+    { key: config.jobSearchEnd, label: 'search window ends', short: shortDate(config.jobSearchEnd) },
   ]
-  const total = parseDay(config.targetJoining) - parseDay(start)
+  const total = parseDay(config.jobSearchEnd) - parseDay(start)
   const done = Math.min(Math.max(parseDay(todayKey()) - parseDay(start), 0), total)
   const pct = (done / total) * 100
   return (
@@ -65,9 +67,10 @@ function Countdown({ n, unit, label, accent }) {
 export default function Dashboard() {
   const { state, dispatch } = useStore()
 
-  const toApps = daysUntil(config.applicationsOpen)
-  const seasonEnd = daysUntil(config.interviewSeasonEnd)
-  const seasonDays = Math.max(seasonEnd, 0)
+  const toStudy = daysUntil(config.studyDeadline)
+  const toHikes = daysUntil(config.hikesDeadline)
+  const toJobSearch = daysUntil(config.jobSearchStart)
+  const jobSearchOpen = daysUntil(config.jobSearchEnd) >= 0 && toJobSearch <= 0
   const streak = streakFrom(state.activity)
   const totalDone = Object.values(state.items || {}).filter((i) => i.status === 'done').length
 
@@ -80,8 +83,8 @@ export default function Dashboard() {
     burnUp = burnUpSeries(state, milestone)
   } catch (e) {
     console.error('Pacing engine error:', e)
-    milestone = { label: 'Error', target: config.interviewSeasonEnd, items: [], tier: 3 }
-    quota = { quota: 0, remaining: 0, daysLeft: 1, target: config.interviewSeasonEnd }
+    milestone = { label: 'Error', target: config.studyDeadline, items: [], tier: 3 }
+    quota = { quota: 0, remaining: 0, daysLeft: 1, target: config.studyDeadline }
     planItemIds = []
     burnUp = []
   }
@@ -109,17 +112,23 @@ export default function Dashboard() {
 
       <LaunchRail state={state} />
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4">
         <Countdown
-          n={toApps > 0 ? toApps : 0}
+          n={toStudy > 0 ? toStudy : 0}
           unit="DAYS"
-          label={toApps > 0 ? 'until applications open (Aug 1)' : 'applications are OPEN — go'}
-          accent={toApps > 14 ? 'text-downvote' : 'text-brand'}
+          label={toStudy > 0 ? `until study deadline (${formatDate(config.studyDeadline)})` : 'study deadline reached'}
+          accent={toStudy > 14 ? 'text-downvote' : 'text-brand'}
         />
         <Countdown
-          n={seasonDays}
+          n={toHikes > 0 ? toHikes : 0}
           unit="DAYS"
-          label={daysUntil(config.interviewSeasonStart) > 0 ? 'of interview season (Aug–Oct) ahead' : seasonEnd >= 0 ? 'left in interview season' : 'season over — joining time'}
+          label={toHikes > 0 ? `${config.hikesTarget} hikes by ${formatDate(config.hikesDeadline)}` : `${config.hikesTarget} hikes deadline reached`}
+          accent={toHikes > 14 ? 'text-brand' : 'text-yellow-400'}
+        />
+        <Countdown
+          n={toJobSearch > 0 ? toJobSearch : 0}
+          unit="DAYS"
+          label={toJobSearch > 0 ? `until job search starts (${formatDate(config.jobSearchStart)})` : jobSearchOpen ? 'job search window is open' : 'job search window ended'}
           accent="text-brand"
         />
         <Countdown n={planItemIds.filter((id) => state.items?.[id]?.status === 'revisit' && state.items[id]?.revisitDue <= todayKey()).length} unit="DUE" label="revisits due today" accent="text-yellow-400" />
@@ -211,7 +220,8 @@ export default function Dashboard() {
             <Heatmap activity={state.activity} />
             <div className="mt-4 space-y-1 text-xs text-muted-foreground font-mono">
               <div>revisit intervals: {config.spacedRepetitionDays.join('d → ')}d → repeat</div>
-              <div>applications open: {formatDate(config.applicationsOpen)} · season ends: {formatDate(config.interviewSeasonEnd)}</div>
+              <div>study deadline: {formatDate(config.studyDeadline)} · {config.hikesTarget} hikes by: {formatDate(config.hikesDeadline)}</div>
+              <div>job search: {formatDate(config.jobSearchStart)} – {formatDate(config.jobSearchEnd)}</div>
             </div>
           </div>
 

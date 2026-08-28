@@ -1,10 +1,12 @@
 {
- "applicationsOpen": "2026-08-01",
- "interviewSeasonStart": "2026-08-01",
- "interviewSeasonEnd": "2026-10-31",
- "targetJoining": "2026-11-15",
- "tier1Target": "2026-08-31",
- "tier2Target": "2026-09-30",
+ "studyStart": "2026-08-28",
+ "tier1Target": "2026-10-31",
+ "tier2Target": "2026-12-15",
+ "hikesTarget": 2,
+ "hikesDeadline": "2026-12-31",
+ "studyDeadline": "2027-01-07",
+ "jobSearchStart": "2027-01-08",
+ "jobSearchEnd": "2027-02-28",
  "spacedRepetitionDays": [3, 7, 21],
- "note": "Edit dates here. spacedRepetitionDays: an item marked 'revisit' resurfaces on the dashboard after 3 days, then 7, then 21, then every 21."
+ "note": "Edit dates here. The current plan finishes study on Jan 7, 2027, completes two hikes by Dec 31, 2026, and starts the job search on Jan 8, 2027. spacedRepetitionDays: an item marked 'revisit' resurfaces on the dashboard after 3 days, then 7, then 21, then every 21."
 }

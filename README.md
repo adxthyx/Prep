@@ -1,6 +1,6 @@
 # Prep Command Center 🚀
 
-Local, single-user mission control for the Jul → Nov 2026 job-switch sprint: Morning TIL project tracking, SDE1 + AI/FDE roadmaps, DSA (Striver A2Z + SDE sheet + NeetCode 150 deduped), HLD, LLD — with streaks, spaced repetition, and one-click backup.
+Local, single-user mission control for the Aug 2026 → Feb 2027 study-to-job-search plan: Anchor project tracking, SDE1 + AI/FDE roadmaps, DSA (Striver A2Z + SDE sheet + NeetCode 150 deduped), HLD, LLD — with study complete by Jan 7, two hikes by Dec 31, and one-click backup.
 
 No auth, no cloud, no API keys. Everything runs and stays on this machine.
 
@@ -21,12 +21,12 @@ Open the URL Vite prints (default `http://localhost:5173`). That's it.
 |---|---|
 | `src/data/dsa-problems.json` | 559 deduped problems (Striver A2Z 434 + SDE 183 + NeetCode 150 + Blind 75 flags + 30 Claude picks), with topic/pattern/difficulty/orders/companies |
 | `src/data/dsa-companies.json` | Top-50-by-frequency LeetCode lists for 10 companies |
-| `src/data/project-til.json` | Morning TIL kanban cards, milestones P0–P5, demo checklist, architecture notes, decision log, resources |
+| `src/data/project-til.json` | Anchor kanban cards, milestones P0–P9, demo checklist, architecture notes, decision log, resources |
 | `src/data/sde-roadmap.json` | CS core / SQL / resume / behavioral / applications phases |
 | `src/data/ai-roadmap.json` | AI-FDE track: foundations → RAG → agents → evals → serving → FDE craft → storytelling → design prompts |
 | `src/data/hld.json` | 25 concepts + 8 classic questions + resources |
 | `src/data/lld.json` | SOLID + patterns, 15 machine-coding problems with reference solutions, mock-log config |
-| `src/data/config.json` | Key dates + spaced-repetition intervals |
+| `src/data/config.json` | Study, hike and job-search dates + spaced-repetition intervals |
 
 **Your progress** (statuses, notes, links, kanban positions, applications, mocks, stories, activity/streak) is stored per user in Supabase Postgres. `localStorage` key `prep-command-center-v1` remains a fast/offline cache; cloud writes use optimistic revision checks and automatic server-side history. Seeds and progress remain separate, so seed files can be edited or reordered without losing progress as long as item `id`s stay stable. See [`SUPABASE_SETUP.md`](SUPABASE_SETUP.md) for setup and recovery behavior.
 

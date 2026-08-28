@@ -1,43 +1,44 @@
-# Handoff - Anchor project tracker
+# Handoff - Prep schedule
 
 ## Current goal
 
-Replace the old Morning TIL/LangGraph project tracker with the Anchor MVP implementation plan from `Personal_OS_MVP_Technical_Architecture.pdf`.
+Keep the entire Prep Command Center aligned to the new study, fitness and job-search schedule.
 
-## Just completed (2026-08-24)
+## Just completed (2026-08-28)
 
-- Replaced TIL seed data with 49 Anchor cards across P0 Foundation through P9 Hardening.
-- Added 10 milestones, 10 MVP readiness checks, 10 architecture decisions, 16 source resources, and a full local-first architecture note.
-- Renamed the visible tracker to Anchor.
-- Updated the tracker metadata, decision log, source label and architecture display to use Anchor.
-- Added dev-only local mode: `npm run dev` uses a synthetic local user and local cache without Supabase auth, cloud sync, Realtime or server history.
-- Added a one-time state migration that clears stale old TIL cards, notes and decisions while preserving unrelated Prep progress.
+- Set the shared plan to finish study on Jan 7, 2027.
+- Added the target of two hikes by Dec 31, 2026.
+- Set the job-search window to Jan 8–Feb 28, 2027.
+- Updated dashboard countdowns, mission rail, sidebar phase, pacing fallback, Settings, SDE application copy and README.
+- Added schedule version migration so old saved Aug–Oct defaults are replaced while custom legacy dates are preserved where possible.
 
 ## Current state
 
-- `npm run build` passes; only the existing Vite large-chunk warning remains.
+- `npm run build` passes.
 - `git diff --check` passes.
-- Production builds still require Supabase authentication; `VITE_LOCAL_MODE=true` can be used only for an intentional local preview build.
-- The rest of the Prep roadmaps and app behavior were left unchanged.
+- JSON validation passes for the edited seed files.
+- Only the existing Vite large-chunk warning remains.
+- The date source of truth is `src/data/config.json`.
 
 ## Active files
 
-- `src/data/project-til.json`
-- `src/pages/ProjectTIL.jsx`
-- `src/lib/registry.js`
+- `src/data/config.json`
+- `src/lib/pacing.js`
 - `src/components/Layout.jsx`
+- `src/pages/Dashboard.jsx`
+- `src/pages/Settings.jsx`
+- `src/pages/SdeRoadmap.jsx`
+- `src/data/sde-roadmap.json`
+- `README.md`
 - `src/store.jsx`
-- `src/auth.jsx`
-- `.env.example`
 
 ## Known failures / dead ends
 
-- This repository is still the existing React web tracker; the PDF's native Android app is represented as the execution plan only.
-- No Android project or FastAPI gateway was created in this scoped tracker update.
+- The two-hike target is represented in the schedule UI; no separate hike-completion tracker was added.
+- This repository remains the React tracker; the native Android Anchor app and FastAPI gateway are still only represented by the project plan.
 
 ## Concrete next steps
 
-1. Run `npm run dev` to test the tracker without an account.
-2. Decide whether the separate Anchor Android repository should use the `com.anchor` package namespace.
-2. Move cards across the tracker as implementation progresses.
-3. Revisit the PDF's platform/API links before implementing integrations.
+1. Run `npm run dev` and visually verify the new timeline and countdowns.
+2. If desired, add a dedicated hike progress counter or checklist.
+3. Commit and push after the local visual check.

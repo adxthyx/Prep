@@ -18,11 +18,11 @@ const NAV = [
 ]
 
 function phaseNow() {
-  const toApps = daysUntil(config.applicationsOpen)
-  const toEnd = daysUntil(config.interviewSeasonEnd)
-  if (toApps > 0) return { label: 'PHASE: PREP', color: 'text-downvote' }
-  if (toEnd >= 0) return { label: 'PHASE: INTERVIEW SEASON', color: 'text-brand' }
-  return { label: 'PHASE: JOINING', color: 'text-green-400' }
+  const toStudyDeadline = daysUntil(config.studyDeadline)
+  const toJobSearchEnd = daysUntil(config.jobSearchEnd)
+  if (toStudyDeadline >= 0) return { label: 'PHASE: STUDY', color: 'text-downvote' }
+  if (toJobSearchEnd >= 0) return { label: 'PHASE: JOB SEARCH', color: 'text-brand' }
+  return { label: 'PHASE: POST-SEARCH', color: 'text-green-400' }
 }
 
 export default function Layout() {

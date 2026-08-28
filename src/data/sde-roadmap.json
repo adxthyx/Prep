@@ -1,7 +1,7 @@
 {
  "meta": {
   "name": "SDE1 interview roadmap",
-  "basedOn": "Sequence adapted from Tech Interview Handbook (yangshun) and takeUforward's interview roadmap: resume/profiles first, CS core + DSA in parallel, behavioral bank before applications open, applications + OA tracking from Aug 1.",
+  "basedOn": "Sequence adapted from Tech Interview Handbook (yangshun) and takeUforward's interview roadmap: resume/profiles first, CS core + DSA in parallel, behavioral bank before the Jan 8 job-search start, applications + OA tracking through the Jan–Feb 2027 search window.",
   "sources": [
    {
     "title": "Tech Interview Handbook",
@@ -203,7 +203,7 @@
   {
    "id": "sde-resume",
    "name": "Resume & Profiles",
-   "desc": "One-page tech resume + every Indian job platform optimized before Aug 1.",
+   "desc": "One-page tech resume + every Indian job platform optimized before the Jan 8 job-search start.",
    "items": [
     {
      "id": "sde-res-1",
@@ -332,7 +332,7 @@
   {
    "id": "sde-apps",
    "name": "Applications & OA tracker",
-   "desc": "Every application from Aug 1 goes in the table below (in the app). Statuses: applied \u2192 OA \u2192 phone \u2192 onsite \u2192 offer / rejected / ghosted.",
+   "desc": "Every application from Jan 8 goes in the table below (in the app). Statuses: applied \u2192 OA \u2192 phone \u2192 onsite \u2192 offer / rejected / ghosted.",
    "items": [
     {
      "id": "sde-app-1",
@@ -389,7 +389,7 @@
    "status": "wishlist",
    "appliedDate": "",
    "nextDate": "",
-   "notes": "Applications open Aug 1"
+   "notes": "Job search starts Jan 8, 2027"
   }
  ]
 }

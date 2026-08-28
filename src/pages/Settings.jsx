@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useStore, config } from '../store'
+import { formatDate } from '../lib/dates'
 
 export default function Settings() {
   const { state, dispatch, sync, history, retrySync, refreshHistory, restoreHistory } = useStore()
@@ -31,7 +32,7 @@ export default function Settings() {
     <div className="space-y-6">
       <header>
         <h1 className="text-2xl font-bold">Settings</h1>
-        <p className="text-sm text-muted-foreground mt-1">Edit your prep timeline and preferences.</p>
+        <p className="text-sm text-muted-foreground mt-1">Edit your study timeline and preferences.</p>
       </header>
 
       <div className="bg-card border rounded-lg p-6 space-y-6">
@@ -39,7 +40,7 @@ export default function Settings() {
           <label className="block text-sm font-semibold mb-1">Tier 1 target (DSA + CS core)</label>
           <input
             type="date"
-            value={settings.tier1Target || config.tier1Target || '2026-08-31'}
+            value={settings.tier1Target || config.tier1Target}
             onChange={(e) => updateSetting('tier1Target', e.target.value)}
             className="w-full max-w-xs rounded-lg border bg-background px-3 py-2"
           />
@@ -50,7 +51,7 @@ export default function Settings() {
           <label className="block text-sm font-semibold mb-1">Tier 2 target (DSA + HLD)</label>
           <input
             type="date"
-            value={settings.tier2Target || config.tier2Target || '2026-09-30'}
+            value={settings.tier2Target || config.tier2Target}
             onChange={(e) => updateSetting('tier2Target', e.target.value)}
             className="w-full max-w-xs rounded-lg border bg-background px-3 py-2"
           />
@@ -58,14 +59,28 @@ export default function Settings() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold mb-1">Interview season end</label>
+          <label className="block text-sm font-semibold mb-1">Study deadline</label>
           <input
             type="date"
-            value={settings.seasonEnd || config.interviewSeasonEnd || '2026-10-31'}
-            onChange={(e) => updateSetting('seasonEnd', e.target.value)}
+            value={settings.studyDeadline || settings.seasonEnd || config.studyDeadline}
+            onChange={(e) => updateSetting('studyDeadline', e.target.value)}
             className="w-full max-w-xs rounded-lg border bg-background px-3 py-2"
           />
-          <p className="text-xs text-muted-foreground mt-1">Last day before prep winds down.</p>
+          <p className="text-xs text-muted-foreground mt-1">Finish the study plan by this date. Current target: {formatDate(config.studyDeadline)}.</p>
+        </div>
+
+        <div className="border-t pt-4 space-y-3">
+          <h2 className="text-sm font-semibold">Next season</h2>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className="rounded-lg bg-surface p-3">
+              <div className="text-xs text-muted-foreground">Fitness target</div>
+              <div className="mt-1 font-semibold">{config.hikesTarget} hikes by {new Date(`${config.hikesDeadline}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
+            </div>
+            <div className="rounded-lg bg-surface p-3">
+              <div className="text-xs text-muted-foreground">Job search window</div>
+              <div className="mt-1 font-semibold">{new Date(`${config.jobSearchStart}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })} – {new Date(`${config.jobSearchEnd}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
+            </div>
+          </div>
         </div>
 
         <div className="border-t pt-4">

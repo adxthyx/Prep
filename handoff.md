@@ -19,6 +19,7 @@ Keep the entire Prep Command Center aligned to the new study, fitness and job-se
 - JSON validation passes for the edited seed files.
 - Only the existing Vite large-chunk warning remains.
 - The date source of truth is `src/data/config.json`.
+- Schedule migration is committed and pushed as `082b7ed` on `origin/main`.
 
 ## Active files
 
@@ -41,4 +42,3 @@ Keep the entire Prep Command Center aligned to the new study, fitness and job-se
 
 1. Run `npm run dev` and visually verify the new timeline and countdowns.
 2. If desired, add a dedicated hike progress counter or checklist.
-3. Commit and push after the local visual check.

@@ -9,13 +9,13 @@ export default function Hld() {
   return (
     <div className="space-y-4">
       <header>
-        <h1 className="text-2xl font-bold">HLD <span className="text-muted-foreground text-base font-normal">— deliberately light</span></h1>
+        <h1 className="text-2xl font-bold">HLD <span className="text-muted-foreground text-base font-normal">— systems & failure handling</span></h1>
         <p className="text-sm text-muted-foreground mt-1">{hld.meta.desc}</p>
       </header>
 
       <SectionCard
         title="Concepts checklist"
-        desc="Know each well enough to speak for 60 seconds and draw one diagram."
+        desc="Explain the design choice, concurrency behavior, failure modes and growth trade-offs. Go deeper for SDE2/backend."
         right={<ProgressBar value={cDone} total={hld.concepts.length} className="w-48" />}
       >
         <div className="grid md:grid-cols-2 gap-1.5">
@@ -34,6 +34,8 @@ export default function Hld() {
           ))}
         </div>
       </SectionCard>
+
+      <SectionCard title="Service-level extension" desc={hld.extension} />
 
       <SectionCard title="Resources">
         <div className="space-y-1">

@@ -1,44 +1,28 @@
-# Handoff - Prep schedule
+# Handoff — SDE curriculum
 
 ## Current goal
+Expand the existing curriculum for SDE1/SDE2 using explicit practical subtopics; remove the scrapped Anchor page.
 
-Keep the entire Prep Command Center aligned to the new study, fitness and job-search schedule.
+## Completed (2026-09-11)
+- Removed Anchor page, seed data, navigation/shortcut, registry/search/progress entries and project-only store initialization/actions. Old `/project` URLs redirect to the dashboard.
+- Preserved inert legacy project fields in imported/saved backups; existing study IDs and progress remain intact.
+- Added dedicated language-depth (choose one branch), concurrency, security and testing/debugging/lifecycle sections; expanded database correctness/performance and SDE2 ownership.
+- Added DSA pattern verification guidance without adding problems; expanded HLD failure semantics and LLD modeling. Retained eight HLD designs and 15 LLD problems, with an optional service-level reservation extension.
+- Removed exhaustive SQL 50 coverage claim and updated roadmap labels/README.
 
-## Just completed (2026-08-28)
-
-- Set the shared plan to finish study on Jan 7, 2027.
-- Added the target of two hikes by Dec 31, 2026.
-- Set the job-search window to Jan 8–Feb 28, 2027.
-- Updated dashboard countdowns, mission rail, sidebar phase, pacing fallback, Settings, SDE application copy and README.
-- Added schedule version migration so old saved Aug–Oct defaults are replaced while custom legacy dates are preserved where possible.
-
-## Current state
-
-- `npm run build` passes.
-- `git diff --check` passes.
-- JSON validation passes for the edited seed files.
-- Only the existing Vite large-chunk warning remains.
-- The date source of truth is `src/data/config.json`.
-- Schedule migration is committed and pushed as `082b7ed` on `origin/main`.
+## Current state / validation
+- Production build passes; existing Vite large-chunk warning remains.
+- Seed JSON validation, ID uniqueness/preservation checks and git diff --check pass.
+- Store checks confirm clean new state and preservation of legacy backups/study progress.
+- Browser visual QA has not been performed. Delivery branch: `codex/sde-curriculum-remove-anchor`. No deployment performed.
+- Schedule remains unchanged: study ends Jan 7, 2027; two hikes by Dec 31, 2026; job search Jan 8–Feb 28, 2027.
 
 ## Active files
+- src/data/{sde-roadmap,hld,lld,dsa-patterns}.json
+- src/pages/{SdeRoadmap,Hld,Lld,Dsa}.jsx
+- src/components/Layout.jsx, src/lib/registry.js, src/main.jsx, src/store.jsx
+- README.md
 
-- `src/data/config.json`
-- `src/lib/pacing.js`
-- `src/components/Layout.jsx`
-- `src/pages/Dashboard.jsx`
-- `src/pages/Settings.jsx`
-- `src/pages/SdeRoadmap.jsx`
-- `src/data/sde-roadmap.json`
-- `README.md`
-- `src/store.jsx`
-
-## Known failures / dead ends
-
-- The two-hike target is represented in the schedule UI; no separate hike-completion tracker was added.
-- This repository remains the React tracker; the native Android Anchor app and FastAPI gateway are still only represented by the project plan.
-
-## Concrete next steps
-
-1. Run `npm run dev` and visually verify the new timeline and countdowns.
-2. If desired, add a dedicated hike progress counter or checklist.
+## Known limitations / next steps
+- Verify expanded sections and legacy URL redirect in the browser before deployment.
+- No additional courses or sheets were added. Role-dependent material remains optional.

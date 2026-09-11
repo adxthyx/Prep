@@ -1,7 +1,6 @@
 // Flattens every trackable item across all seed JSONs into one registry:
 // id -> { title, module, moduleName, path, group }
 // Used by the dashboard (Today queue, revisit queue, progress bars) and search.
-import projectTil from '../data/project-til.json'
 import sdeRoadmap from '../data/sde-roadmap.json'
 import aiRoadmap from '../data/ai-roadmap.json'
 import aiPapers from '../data/ai-papers.json'
@@ -16,17 +15,9 @@ function reg(id, title, module_, moduleName, path, group) {
   if (!registry.has(id)) registry.set(id, { id, title, module: module_, moduleName, path, group })
 }
 
-// 1. Project TIL — kanban cards + demo checklist
-projectTil.kanban.cards.forEach((c) =>
-  reg(c.id, c.title, 'project', 'Anchor', '/project', c.phase)
-)
-projectTil.demoChecklist.forEach((c) =>
-  reg(c.id, c.title, 'project', 'Anchor', '/project', 'MVP readiness')
-)
-
 // 2. SDE roadmap — all phase items
 sdeRoadmap.phases.forEach((p) =>
-  p.items.forEach((it) => reg(it.id, it.title, 'sde', 'SDE1 Roadmap', '/sde', p.name))
+  p.items.forEach((it) => reg(it.id, it.title, 'sde', 'SDE1 / SDE2 Roadmap', '/sde', p.name))
 )
 
 // 3. AI roadmap — all phase items
@@ -55,8 +46,7 @@ lld.problems.forEach((p) => reg(p.id, p.title, 'lld', 'LLD', '/lld', 'Problems')
 export const ITEMS = registry
 
 export const MODULES = [
-  { key: 'project', name: 'Anchor', path: '/project' },
-  { key: 'sde', name: 'SDE1 Roadmap', path: '/sde' },
+  { key: 'sde', name: 'SDE1 / SDE2 Roadmap', path: '/sde' },
   { key: 'ai', name: 'AI / FDE Roadmap', path: '/ai' },
   { key: 'ai-papers', name: 'AI Papers', path: '/ai-papers' },
   { key: 'dsa', name: 'DSA', path: '/dsa' },
@@ -70,4 +60,4 @@ export function moduleItemIds(moduleKey) {
   return ids
 }
 
-export { projectTil, sdeRoadmap, aiRoadmap, aiPapers, dsaProblems, dsaCompanies, hld, lld }
+export { sdeRoadmap, aiRoadmap, aiPapers, dsaProblems, dsaCompanies, hld, lld }

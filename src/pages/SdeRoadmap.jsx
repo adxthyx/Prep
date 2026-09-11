@@ -72,7 +72,7 @@ export default function SdeRoadmap() {
   return (
     <div className="space-y-4">
       <header>
-        <h1 className="text-2xl font-bold">SDE1 Roadmap</h1>
+        <h1 className="text-2xl font-bold">SDE1 / SDE2 Roadmap</h1>
         <p className="text-sm text-muted-foreground max-w-3xl mt-1">{sdeRoadmap.meta.basedOn}</p>
         <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
           {sdeRoadmap.meta.sources.map((r, i) => <ResourceLink key={i} r={r} />)}
@@ -99,6 +99,12 @@ export default function SdeRoadmap() {
                     <ItemRow key={it.id} id={it.id} title={it.title} resources={it.resources || []} />
                   ))}
                 </div>
+                {p.branches && (
+                  <div className="rounded-lg border bg-background p-3 space-y-2">
+                    <p className="text-sm font-semibold">Choose one language branch</p>
+                    {p.branches.map((branch) => <p key={branch.name} className="text-sm text-muted-foreground"><strong className="text-foreground">{branch.name}: </strong>{branch.detail}</p>)}
+                  </div>
+                )}
                 {p.resources?.length > 0 && (
                   <div className="rounded-lg bg-background border p-3">
                     <div className="font-mono text-[11px] uppercase text-muted-foreground mb-1">Phase resources</div>

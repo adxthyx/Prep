@@ -1,7 +1,7 @@
 {
  "meta": {
-  "name": "SDE1 interview roadmap",
-  "basedOn": "Sequence adapted from Tech Interview Handbook (yangshun) and takeUforward's interview roadmap: resume/profiles first, CS core + DSA in parallel, behavioral bank before the Jan 8 job-search start, applications + OA tracking through the Jan–Feb 2027 search window.",
+  "name": "SDE1 / SDE2 interview roadmap",
+  "basedOn": "Sequence adapted from Tech Interview Handbook (yangshun) and takeUforward's interview roadmap: resume/profiles first, CS core + DSA in parallel, behavioral bank before the Jan 8 job-search start, applications + OA tracking through the Jan–Feb 2027 search window. Prioritize main-language depth, concurrency basics, database correctness, testing/debugging and security for both levels. SDE2/backend adds database performance, distributed failures and operational ownership. Android, frontend, framework internals, advanced algorithms and AI/FDE are role-dependent.",
   "sources": [
    {
     "title": "Tech Interview Handbook",
@@ -12,7 +12,7 @@
     "verified": true
    },
    {
-    "title": "takeUforward \u2014 Striver's SDE Sheet page",
+    "title": "takeUforward — Striver's SDE Sheet page",
     "type": "docs",
     "url": "https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/",
     "free": true,
@@ -25,7 +25,7 @@
   {
    "id": "sde-cs",
    "name": "CS Core",
-   "desc": "OS, DBMS, CN, OOP \u2014 enough depth for SDE1 theory rounds and viva-style questions. Last-minute notes + one playlist per subject.",
+   "desc": "OS, DBMS, networking and OOP foundations for both levels. Apply these through the dedicated concurrency, language, security and testing sections; extend database depth for SDE2/backend.",
    "items": [
     {
      "id": "sde-os-1",
@@ -34,27 +34,27 @@
     },
     {
      "id": "sde-os-2",
-     "title": "OS: synchronization \u2014 mutex/semaphore, deadlock (conditions, prevention)",
+     "title": "OS: synchronization — mutex/semaphore, deadlock (conditions, prevention)",
      "resources": []
     },
     {
      "id": "sde-os-3",
-     "title": "OS: memory \u2014 paging, segmentation, virtual memory, thrashing",
+     "title": "OS: memory — paging, segmentation, virtual memory, thrashing",
      "resources": []
     },
     {
      "id": "sde-dbms-1",
-     "title": "DBMS: normalization (1NF\u2192BCNF), keys, ER model",
+     "title": "DBMS: normalization (1NF→BCNF), keys, ER model",
      "resources": []
     },
     {
      "id": "sde-dbms-2",
-     "title": "DBMS: transactions \u2014 ACID, isolation levels, concurrency control, locks",
+     "title": "DBMS: transactions — ACID, isolation levels, concurrency control, locks",
      "resources": []
     },
     {
      "id": "sde-dbms-3",
-     "title": "DBMS: indexing \u2014 B+ trees, clustered vs non-clustered",
+     "title": "DBMS: indexing — B+ trees, clustered vs non-clustered",
      "resources": []
     },
     {
@@ -84,13 +84,49 @@
     },
     {
      "id": "sde-oop-3",
-     "title": "OOP: common follow-ups \u2014 static/final, overloading vs overriding, virtual functions",
+     "title": "OOP: common follow-ups — static/final, overloading vs overriding, virtual functions",
      "resources": []
+    },
+    {
+     "id": "sde-db-depth-1",
+     "title": "Database correctness: unique, foreign-key and check constraints; enforce invariants in the database"
+    },
+    {
+     "id": "sde-db-depth-2",
+     "title": "Transaction anomalies: dirty, non-repeatable and phantom reads, lost updates and write skew; compare behavior in your database at each isolation level"
+    },
+    {
+     "id": "sde-db-depth-3",
+     "title": "Locking strategies: optimistic version columns and conditional updates versus pessimistic row locks"
+    },
+    {
+     "id": "sde-db-depth-4",
+     "title": "Index design: composite column order, selectivity, covering indexes, read benefits and write costs"
+    },
+    {
+     "id": "sde-db-depth-5",
+     "title": "Query execution: read an execution plan; compare scans, index access, expensive joins and sorts"
+    },
+    {
+     "id": "sde-db-depth-6",
+     "title": "Application/database boundaries: N+1 queries, connection pools, transaction boundaries and long transactions"
+    },
+    {
+     "id": "sde-db-depth-7",
+     "title": "Pagination: offset versus keyset, stable ordering and concurrent inserts"
+    },
+    {
+     "id": "sde-db-depth-8",
+     "title": "SDE2/backend — MVCC: row versions, reader snapshots and interaction with locking"
+    },
+    {
+     "id": "sde-db-depth-9",
+     "title": "SDE2/backend — recovery: write-ahead logging and crash recovery conceptually"
     }
    ],
    "resources": [
     {
-     "title": "GFG Last Minute Notes \u2014 Operating Systems",
+     "title": "GFG Last Minute Notes — Operating Systems",
      "type": "blog",
      "url": "https://www.geeksforgeeks.org/operating-systems/last-minute-notes-operating-systems/",
      "free": true,
@@ -98,7 +134,7 @@
      "verified": true
     },
     {
-     "title": "GFG Last Minute Notes \u2014 DBMS",
+     "title": "GFG Last Minute Notes — DBMS",
      "type": "blog",
      "url": "https://www.geeksforgeeks.org/dbms/last-minute-notes-dbms/",
      "free": true,
@@ -106,7 +142,7 @@
      "verified": true
     },
     {
-     "title": "GFG Last Minute Notes \u2014 Computer Networks",
+     "title": "GFG Last Minute Notes — Computer Networks",
      "type": "blog",
      "url": "https://www.geeksforgeeks.org/computer-networks/last-minute-notes-computer-network/",
      "free": true,
@@ -114,23 +150,23 @@
      "verified": true
     },
     {
-     "title": "Gate Smashers \u2014 YouTube channel",
+     "title": "Gate Smashers — YouTube channel",
      "type": "yt",
      "url": "https://www.youtube.com/@GateSmashers",
      "free": true,
-     "note": "OS / DBMS / CN one-shot playlists \u2014 search subject name on channel",
+     "note": "OS / DBMS / CN one-shot playlists — search subject name on channel",
      "verified": true
     },
     {
-     "title": "CodeHelp by Babbar \u2014 YouTube channel",
+     "title": "CodeHelp by Babbar — YouTube channel",
      "type": "yt",
      "url": "https://www.youtube.com/@CodeHelp",
      "free": true,
-     "note": "Love Babbar's channel \u2014 OS/DBMS/CN playlists aimed at placements",
+     "note": "Love Babbar's channel — OS/DBMS/CN playlists aimed at placements",
      "verified": true
     },
     {
-     "title": "GFG \u2014 Top OS interview questions",
+     "title": "GFG — Top OS interview questions",
      "type": "blog",
      "url": "https://www.geeksforgeeks.org/operating-systems/operating-systems-interview-questions/",
      "free": true,
@@ -140,9 +176,159 @@
    ]
   },
   {
+   "id": "sde-language",
+   "name": "Main-language depth",
+   "desc": "Essential for both levels. Choose one main language and use its branch below as a guide; the common checklist applies only to that language.",
+   "items": [
+    {
+     "id": "sde-language-1",
+     "title": "Equality and hashing contracts; mutability, copying, references and parameter passing"
+    },
+    {
+     "id": "sde-language-2",
+     "title": "Collection internals and operation costs; comparators and ordering"
+    },
+    {
+     "id": "sde-language-3",
+     "title": "Exceptions and resource cleanup; generics and type-system basics"
+    },
+    {
+     "id": "sde-language-4",
+     "title": "Memory management: garbage collection or ownership/lifetimes in your language"
+    },
+    {
+     "id": "sde-language-5",
+     "title": "Concurrency and async model: explain execution, synchronization and cancellation in your language"
+    }
+   ],
+   "resources": [],
+   "branches": [
+    {
+     "name": "Java / Kotlin",
+     "detail": "equals/hashCode, collections, generics, garbage collection and synchronization; Kotlin nullability and coroutines."
+    },
+    {
+     "name": "Python",
+     "detail": "Mutability, hashability, iterators/generators, exceptions, GIL implications for your runtime, threading versus multiprocessing versus asyncio."
+    },
+    {
+     "name": "JavaScript / TypeScript",
+     "detail": "Closures, event loop/microtasks, promises, reference equality, runtime versus static types."
+    },
+    {
+     "name": "C++",
+     "detail": "RAII, ownership, smart pointers, copy/move semantics, STL complexity and iterator invalidation."
+    }
+   ]
+  },
+  {
+   "id": "sde-concurrency",
+   "name": "Practical concurrency",
+   "desc": "Both levels: races, locking, deadlocks and producer–consumer. SDE2/backend: visibility, atomics, pools, cancellation and service-level correctness.",
+   "items": [
+    {
+     "id": "sde-concurrency-1",
+     "title": "Race conditions and atomicity: demonstrate why a safe check followed by a safe update can still race"
+    },
+    {
+     "id": "sde-concurrency-2",
+     "title": "Locks, mutexes, semaphores and producer–consumer with a bounded queue"
+    },
+    {
+     "id": "sde-concurrency-3",
+     "title": "Deadlock, starvation, livelock and lock contention; consistent lock ordering"
+    },
+    {
+     "id": "sde-concurrency-4",
+     "title": "Async I/O versus parallel execution: what each solves and what it does not"
+    },
+    {
+     "id": "sde-concurrency-5",
+     "title": "SDE2/backend — visibility and ordering: the memory-model guarantees in your language"
+    },
+    {
+     "id": "sde-concurrency-6",
+     "title": "SDE2/backend — read/write locks, atomics, compare-and-swap and condition variables"
+    },
+    {
+     "id": "sde-concurrency-7",
+     "title": "SDE2/backend — thread pools, futures/promises, cancellation and timeouts"
+    },
+    {
+     "id": "sde-concurrency-8",
+     "title": "Last-seat exercise: protect check-and-reserve in one process, then across multiple servers using database transactions or conditional updates"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "sde-security",
+   "name": "Application security",
+   "desc": "Essential for both levels; go deeper for backend/full-stack. Explain how an ordinary application protects accounts, APIs and data.",
+   "items": [
+    {
+     "id": "sde-security-1",
+     "title": "Authentication versus authorization; object-level checks so users cannot access another user’s resource"
+    },
+    {
+     "id": "sde-security-2",
+     "title": "Sessions versus tokens; JWT expiry, validation and revocation trade-offs"
+    },
+    {
+     "id": "sde-security-3",
+     "title": "OAuth 2.0 versus OpenID Connect conceptually"
+    },
+    {
+     "id": "sde-security-4",
+     "title": "Password hashing versus encryption"
+    },
+    {
+     "id": "sde-security-5",
+     "title": "SQL injection and parameterized queries"
+    },
+    {
+     "id": "sde-security-6",
+     "title": "XSS, CSRF and what CORS does and does not protect"
+    },
+    {
+     "id": "sde-security-7",
+     "title": "Secrets management, least privilege and keeping sensitive data out of logs"
+    }
+   ],
+   "resources": []
+  },
+  {
+   "id": "sde-engineering",
+   "name": "Testing, debugging & engineering lifecycle",
+   "desc": "Essential testing/debugging for both levels. Apply failure-path reasoning independently of timed practice; deepen operational delivery for SDE2.",
+   "items": [
+    {
+     "id": "sde-engineering-1",
+     "title": "Unit, integration and end-to-end tests; test doubles, mocks and dependency boundaries"
+    },
+    {
+     "id": "sde-engineering-2",
+     "title": "Boundary-value and failure-path testing, including dependency failures"
+    },
+    {
+     "id": "sde-engineering-3",
+     "title": "Debug with logs, stack traces, metrics and profiling"
+    },
+    {
+     "id": "sde-engineering-4",
+     "title": "Diagnose slow APIs, slow queries and memory growth"
+    },
+    {
+     "id": "sde-engineering-5",
+     "title": "CI/CD basics, backward-compatible changes, rollback and feature flags"
+    }
+   ],
+   "resources": []
+  },
+  {
    "id": "sde-sql",
    "name": "SQL",
-   "desc": "LeetCode SQL 50 study plan, category by category. Free, and covers everything SDE1 OAs ask.",
+   "desc": "LeetCode SQL 50 is a solid foundation, not an exhaustive guarantee of OA coverage. Keep joins, aggregations, subqueries and window functions; connect them to query plans and indexes in CS Core.",
    "items": [
     {
      "id": "sde-sql-1",
@@ -191,11 +377,11 @@
   {
    "id": "sde-dsa",
    "name": "DSA",
-   "desc": "Lives entirely in the DSA module (sidebar) \u2014 Striver A2Z + SDE sheet + NeetCode 150 deduped, with company-wise lists. Nothing duplicated here.",
+   "desc": "Lives entirely in the DSA module (sidebar) — Striver A2Z + SDE sheet + NeetCode 150 deduped, with company-wise lists. Nothing duplicated here.",
    "items": [
     {
      "id": "sde-dsa-1",
-     "title": "\u2192 Work through the DSA module daily; this item is just the pointer"
+     "title": "→ Work through the DSA module daily; this item is just the pointer"
     }
    ],
    "resources": []
@@ -207,7 +393,7 @@
    "items": [
     {
      "id": "sde-res-1",
-     "title": "One-page resume in Jake's template style: quantified bullets (X \u2192 Y by Z), tech keywords, no photo/objective",
+     "title": "One-page resume in Jake's template style: quantified bullets (X → Y by Z), tech keywords, no photo/objective",
      "resources": [
       {
        "title": "Jake's Resume template (Overleaf)",
@@ -218,7 +404,7 @@
        "verified": true
       },
       {
-       "title": "Tech Interview Handbook \u2014 resume guide",
+       "title": "Tech Interview Handbook — resume guide",
        "type": "docs",
        "url": "https://www.techinterviewhandbook.org/resume/",
        "free": true,
@@ -234,7 +420,7 @@
     },
     {
      "id": "sde-res-3",
-     "title": "Naukri: complete profile to 100%, headline keywords, \u27f3 REFRESH WEEKLY (resurfaces you in recruiter search \u2014 mark revisit to auto-remind)",
+     "title": "Naukri: complete profile to 100%, headline keywords, ⟳ REFRESH WEEKLY (resurfaces you in recruiter search — mark revisit to auto-remind)",
      "resources": []
     },
     {
@@ -254,7 +440,7 @@
     },
     {
      "id": "sde-res-7",
-     "title": "GitHub: pin Morning TIL + best repos, each README with demo GIF and architecture diagram",
+     "title": "GitHub: pin your strongest active repos, each README with demo GIF and architecture diagram",
      "resources": []
     }
    ],
@@ -262,7 +448,7 @@
   },
   {
    "id": "sde-behavioral",
-   "name": "Behavioral \u2014 STAR bank",
+   "name": "Behavioral — STAR bank",
    "desc": "Write answers as Situation-Task-Action-Result. Notes field on each question = your answer. Rehearse aloud once a week from mid-Aug.",
    "items": [
     {
@@ -275,11 +461,11 @@
     },
     {
      "id": "sde-beh-3",
-     "title": "A time you disagreed with a teammate or senior \u2014 how did you resolve it?"
+     "title": "A time you disagreed with a teammate or senior — how did you resolve it?"
     },
     {
      "id": "sde-beh-4",
-     "title": "A mistake or failure \u2014 what did you learn and change?"
+     "title": "A mistake or failure — what did you learn and change?"
     },
     {
      "id": "sde-beh-5",
@@ -295,7 +481,7 @@
     },
     {
      "id": "sde-beh-8",
-     "title": "A time you received hard feedback \u2014 how did you respond?"
+     "title": "A time you received hard feedback — how did you respond?"
     },
     {
      "id": "sde-beh-9",
@@ -308,11 +494,23 @@
     {
      "id": "sde-beh-11",
      "title": "Questions to ask the interviewer (prepare 3 per round type)"
+    },
+    {
+     "id": "sde-ownership-1",
+     "title": "SDE2 — clarify ambiguous requirements and explain the trade-offs you chose"
+    },
+    {
+     "id": "sde-ownership-2",
+     "title": "SDE2 — handle an operational incident: diagnosis, mitigation, recovery and prevention"
+    },
+    {
+     "id": "sde-ownership-3",
+     "title": "SDE2 — coordinate across teams and help other engineers through reviews or mentoring"
     }
    ],
    "resources": [
     {
-     "title": "Tech Interview Handbook \u2014 behavioral section",
+     "title": "Tech Interview Handbook — behavioral section",
      "type": "docs",
      "url": "https://www.techinterviewhandbook.org/behavioral-interview/",
      "free": true,
@@ -320,7 +518,7 @@
      "verified": true
     },
     {
-     "title": "Tech Interview Handbook \u2014 30 common behavioral questions",
+     "title": "Tech Interview Handbook — 30 common behavioral questions",
      "type": "docs",
      "url": "https://www.techinterviewhandbook.org/behavioral-interview-questions/",
      "free": true,
@@ -332,7 +530,7 @@
   {
    "id": "sde-apps",
    "name": "Applications & OA tracker",
-   "desc": "Every application from Jan 8 goes in the table below (in the app). Statuses: applied \u2192 OA \u2192 phone \u2192 onsite \u2192 offer / rejected / ghosted.",
+   "desc": "Every application from Jan 8 goes in the table below (in the app). Statuses: applied → OA → phone → onsite → offer / rejected / ghosted.",
    "items": [
     {
      "id": "sde-app-1",
@@ -340,7 +538,7 @@
     },
     {
      "id": "sde-app-2",
-     "title": "Line up referrals: ex-colleagues, alumni, LinkedIn warm intros \u2014 referral > cold apply"
+     "title": "Line up referrals: ex-colleagues, alumni, LinkedIn warm intros — referral > cold apply"
     },
     {
      "id": "sde-app-3",
@@ -349,7 +547,7 @@
    ],
    "resources": [
     {
-     "title": "Tech Interview Handbook \u2014 applying + cold email templates",
+     "title": "Tech Interview Handbook — applying + cold email templates",
      "type": "docs",
      "url": "https://www.techinterviewhandbook.org/resume/",
      "free": true,
@@ -382,10 +580,10 @@
  "applications": [
   {
    "id": "app-example",
-   "company": "(example \u2014 edit or delete me)",
+   "company": "(example — edit or delete me)",
    "role": "SDE1",
    "source": "Instahyre",
-   "referral": "yes \u2014 R. Sharma",
+   "referral": "yes — R. Sharma",
    "status": "wishlist",
    "appliedDate": "",
    "nextDate": "",

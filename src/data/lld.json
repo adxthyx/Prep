@@ -1,12 +1,12 @@
 {
  "meta": {
   "name": "LLD / Machine Coding",
-  "desc": "More relevant than HLD at 1 YoE \u2014 Indian product companies run 90-min machine-coding rounds at SDE1/2. Fundamentals \u2192 15 problems \u2192 timed mocks."
+  "desc": "Model correct, testable behavior for SDE1/2: fundamentals, 15 machine-coding problems and timed mocks. Make invariants and concurrency boundaries explicit."
  },
  "fundamentals": [
   {
    "id": "lld-s1",
-   "title": "S \u2014 Single Responsibility Principle",
+   "title": "S — Single Responsibility Principle",
    "resources": [
     {
      "title": "SRP (refactoring.guru book excerpt not free; use article)",
@@ -20,26 +20,26 @@
   },
   {
    "id": "lld-s2",
-   "title": "O \u2014 Open/Closed Principle"
+   "title": "O — Open/Closed Principle"
   },
   {
    "id": "lld-s3",
-   "title": "L \u2014 Liskov Substitution Principle"
+   "title": "L — Liskov Substitution Principle"
   },
   {
    "id": "lld-s4",
-   "title": "I \u2014 Interface Segregation Principle"
+   "title": "I — Interface Segregation Principle"
   },
   {
    "id": "lld-s5",
-   "title": "D \u2014 Dependency Inversion Principle"
+   "title": "D — Dependency Inversion Principle"
   },
   {
    "id": "lld-p1",
    "title": "Strategy pattern",
    "resources": [
     {
-     "title": "Strategy \u2014 refactoring.guru",
+     "title": "Strategy — refactoring.guru",
      "type": "docs",
      "url": "https://refactoring.guru/design-patterns/strategy",
      "free": true,
@@ -53,7 +53,7 @@
    "title": "Factory Method + Abstract Factory",
    "resources": [
     {
-     "title": "Factory Method \u2014 refactoring.guru",
+     "title": "Factory Method — refactoring.guru",
      "type": "docs",
      "url": "https://refactoring.guru/design-patterns/factory-method",
      "free": true,
@@ -67,7 +67,7 @@
    "title": "Observer pattern",
    "resources": [
     {
-     "title": "Observer \u2014 refactoring.guru",
+     "title": "Observer — refactoring.guru",
      "type": "docs",
      "url": "https://refactoring.guru/design-patterns/observer",
      "free": true,
@@ -81,7 +81,7 @@
    "title": "Singleton (thread-safe variants + why it's often an anti-pattern)",
    "resources": [
     {
-     "title": "Singleton \u2014 refactoring.guru",
+     "title": "Singleton — refactoring.guru",
      "type": "docs",
      "url": "https://refactoring.guru/design-patterns/singleton",
      "free": true,
@@ -95,7 +95,7 @@
    "title": "Builder pattern",
    "resources": [
     {
-     "title": "Builder \u2014 refactoring.guru",
+     "title": "Builder — refactoring.guru",
      "type": "docs",
      "url": "https://refactoring.guru/design-patterns/builder",
      "free": true,
@@ -109,7 +109,7 @@
    "title": "Decorator pattern",
    "resources": [
     {
-     "title": "Decorator \u2014 refactoring.guru",
+     "title": "Decorator — refactoring.guru",
      "type": "docs",
      "url": "https://refactoring.guru/design-patterns/decorator",
      "free": true,
@@ -117,6 +117,30 @@
      "verified": true
     }
    ]
+  },
+  {
+   "id": "lld-model-1",
+   "title": "State machines and valid transitions for orders, bookings and vending machines; State pattern"
+  },
+  {
+   "id": "lld-model-2",
+   "title": "Invariants: consistent balances, no double-booked seats and inaccessible expired entries"
+  },
+  {
+   "id": "lld-model-3",
+   "title": "Contracts: preconditions, postconditions, validation and error behavior"
+  },
+  {
+   "id": "lld-model-4",
+   "title": "Dependency injection and testability: separate business logic from storage, clocks, networks and notifications"
+  },
+  {
+   "id": "lld-model-5",
+   "title": "Concurrency boundaries: identify which operations must be atomic"
+  },
+  {
+   "id": "lld-model-6",
+   "title": "Extensibility trade-offs: useful interfaces versus unnecessary abstractions; Adapter for integrations"
   }
  ],
  "problems": [
@@ -125,7 +149,7 @@
    "title": "Parking lot",
    "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/parking-lot.md",
    "verified": true,
-   "note": "The canonical opener \u2014 do it first, untimed"
+   "note": "The canonical opener — do it first, untimed"
   },
   {
    "id": "lld-q2",
@@ -181,7 +205,7 @@
    "title": "Rate limiter (class-level, in-process)",
    "referenceUrl": "",
    "verified": true,
-   "note": "Token bucket + sliding window as pluggable strategies; no good single reference \u2014 build from HLD concept + Strategy pattern"
+   "note": "Token bucket + sliding window as pluggable strategies; no good single reference — build from HLD concept + Strategy pattern"
   },
   {
    "id": "lld-q10",
@@ -209,7 +233,7 @@
    "title": "Notification service",
    "referenceUrl": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/pub-sub-system.md",
    "verified": true,
-   "note": "Reference is pub-sub \u2014 extend with channels (email/SMS/push), retries, dedupe"
+   "note": "Reference is pub-sub — extend with channels (email/SMS/push), retries, dedupe"
   },
   {
    "id": "lld-q14",
@@ -223,7 +247,7 @@
    "title": "In-memory KV store (with TTL, then transactions)",
    "referenceUrl": "",
    "verified": true,
-   "note": "No single reference \u2014 classic machine-coding ask; levels: get/set \u2192 TTL \u2192 nested transactions (begin/commit/rollback)"
+   "note": "No single reference — classic machine-coding ask; levels: get/set → TTL → nested transactions (begin/commit/rollback)"
   }
  ],
  "resources": [
@@ -236,15 +260,15 @@
    "verified": true
   },
   {
-   "title": "workat.tech \u2014 machine coding practice",
+   "title": "workat.tech — machine coding practice",
    "type": "docs",
    "url": "https://workat.tech/machine-coding/practice",
    "free": true,
-   "note": "Timed problems with evaluation rubrics \u2014 the Indian machine-coding standard",
+   "note": "Timed problems with evaluation rubrics — the Indian machine-coding standard",
    "verified": true
   },
   {
-   "title": "Concept && Coding (Shrayansh Jain) \u2014 LLD playlist",
+   "title": "Concept && Coding (Shrayansh Jain) — LLD playlist",
    "type": "yt",
    "url": "https://www.youtube.com/@ConceptandCoding",
    "free": true,
@@ -252,7 +276,7 @@
    "verified": true
   },
   {
-   "title": "refactoring.guru \u2014 design patterns index",
+   "title": "refactoring.guru — design patterns index",
    "type": "docs",
    "url": "https://refactoring.guru/design-patterns",
    "free": true,
@@ -267,5 +291,5 @@
   "minutes",
   "review"
  ],
- "mockTarget": "90-minute mocks. Rubric: does it run? \u00b7 requirements covered? \u00b7 extensible (could you add feature X in 10 min)? \u00b7 naming/structure clean?"
+ "mockTarget": "90-minute mocks. Rubric: does it run? · requirements covered? · extensible (could you add feature X in 10 min)? · naming/structure clean?"
 }

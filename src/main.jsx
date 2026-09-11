@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import './index.css'
 import { StoreProvider } from './store'
 import { AuthGate, AuthProvider, useAuth } from './auth'
 import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
-import ProjectTIL from './pages/ProjectTIL'
 import SdeRoadmap from './pages/SdeRoadmap'
 import AiRoadmap from './pages/AiRoadmap'
 import AiPapers from './pages/AiPapers'
@@ -32,7 +31,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: '/', element: <Dashboard /> },
-      { path: '/project', element: <ProjectTIL /> },
+      { path: '/project', element: <Navigate to="/" replace /> },
       { path: '/sde', element: <SdeRoadmap /> },
       { path: '/ai', element: <AiRoadmap /> },
       { path: '/ai-papers', element: <AiPapers /> },

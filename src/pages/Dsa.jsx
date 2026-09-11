@@ -248,6 +248,15 @@ export default function Dsa() {
       </div>
 
       {view === 'topics' && <Grouped problems={filtered} groupKey="topic" orderKey="a2z" highlight={highlight} state={state} />}
+      <details className="rounded-lg border bg-card p-4">
+        <summary className="cursor-pointer font-semibold">Pattern coverage verification</summary>
+        <p className="text-sm text-muted-foreground mt-2">Use the existing sheets to verify these patterns; these are not confirmed omissions. Counts by category do not prove a gap because problems can sit under related topics.</p>
+        <dl className="grid gap-3 mt-3 md:grid-cols-2">
+          {dsaPatterns.verification.map((entry) => <div key={entry.area}><dt className="text-sm font-semibold">{entry.area}</dt><dd className="text-sm text-muted-foreground">{entry.topics}</dd></div>)}
+        </dl>
+        <p className="text-sm text-muted-foreground mt-3">Optional by target role/company: segment trees, Fenwick trees, advanced string algorithms and computational geometry.</p>
+      </details>
+
       {view === 'patterns' && <div className="h-[70vh] min-h-[420px] border rounded-lg bg-card sm:h-[600px]"><RoadmapGraph patterns={dsaPatterns.patterns} showT3={showT3} /></div>}
       {view === 'companies' && <Companies highlight={highlight} />}
     </div>

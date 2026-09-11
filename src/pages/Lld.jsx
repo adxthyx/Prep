@@ -62,7 +62,7 @@ export default function Lld() {
       </header>
 
       <SectionCard
-        title="Fundamentals — SOLID + core patterns"
+        title="Fundamentals — SOLID, modeling & core patterns"
         right={<ProgressBar value={fDone} total={lld.fundamentals.length} className="w-48" />}
       >
         <div className="grid md:grid-cols-2 gap-1.5">

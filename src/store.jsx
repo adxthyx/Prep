@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import config from './data/config.json'
-import { projectTil, sdeRoadmap } from './lib/registry'
+import { sdeRoadmap } from './lib/registry'
 import { todayKey, addDays } from './lib/dates'
 import {
   fetchCloudState,
@@ -18,7 +18,6 @@ import {
 
 const CLOUD_SAVE_DEBOUNCE_MS = 750
 const SR = config.spacedRepetitionDays // [3, 7, 21]
-const PROJECT_CONTENT_VERSION = projectTil.meta.contentVersion || 1
 const SCHEDULE_VERSION = 2
 const LOCAL_MODE = import.meta.env.DEV || import.meta.env.VITE_LOCAL_MODE === 'true'
 
@@ -28,15 +27,10 @@ export function createInitialState() {
   return {
     version: 1,
     scheduleVersion: SCHEDULE_VERSION,
-    projectContentVersion: PROJECT_CONTENT_VERSION,
     items: {}, // id -> { status, notes, links[], revisitStage, revisitDue, updatedAt }
-    kanban: {}, // cardId -> columnId (overrides seed column)
-    customCards: [], // user-added kanban cards {id,title,phase,column}
     applications: sdeRoadmap.applications, // rows
     mockLog: [], // {id,date,problem,minutes,review}
     stories: {}, // storyId -> field overrides
-    decisions: [], // extra decision-log entries {id,date,decision,why}
-    archNotes: null, // markdown override (null = seed)
     activity: {}, // 'YYYY-MM-DD' -> count of touches
     tierOverrides: {}, // problemId -> 1|2|3
     settings: {
@@ -75,16 +69,6 @@ function normalizeState(value) {
     }
     next.settings = migratedSettings
     next.scheduleVersion = SCHEDULE_VERSION
-  }
-  if (value.projectContentVersion !== PROJECT_CONTENT_VERSION) {
-    next.projectContentVersion = PROJECT_CONTENT_VERSION
-    next.items = Object.fromEntries(
-      Object.entries(next.items || {}).filter(([id]) => !id.startsWith('til-') && !id.startsWith('pos-'))
-    )
-    next.kanban = {}
-    next.customCards = []
-    next.decisions = []
-    next.archNotes = null
   }
   return next
 }
@@ -126,22 +110,12 @@ function reducer(state, action) {
         activity: touch(state),
       }
     }
-    case 'kanban':
-      return { ...state, kanban: { ...state.kanban, [action.cardId]: action.column }, activity: touch(state) }
-    case 'addCard': {
-      const id = `til-custom-${Date.now()}`
-      return { ...state, customCards: [...state.customCards, { id, title: action.title, phase: action.phase || '—', column: action.column || 'backlog' }], activity: touch(state) }
-    }
     case 'applications':
       return { ...state, applications: action.rows }
     case 'mockLog':
       return { ...state, mockLog: action.rows }
     case 'story':
       return { ...state, stories: { ...state.stories, [action.id]: { ...(state.stories[action.id] || {}), ...action.patch } } }
-    case 'decision':
-      return { ...state, decisions: [...state.decisions, { id: `dl-${Date.now()}`, date: todayKey(), ...action.entry }] }
-    case 'archNotes':
-      return { ...state, archNotes: action.text }
     case 'tier':
       return { ...state, tierOverrides: { ...state.tierOverrides, [action.id]: action.tier } }
     case 'settings':

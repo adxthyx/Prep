@@ -12,7 +12,7 @@
     "verified": true
    },
    {
-    "title": "takeUforward — Striver's SDE Sheet page",
+    "title": "takeUforward — Striver's 180 DSA Sheet (formerly SDE Sheet)",
     "type": "docs",
     "url": "https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/",
     "free": true,
@@ -101,11 +101,31 @@
     },
     {
      "id": "sde-db-depth-4",
-     "title": "Index design: composite column order, selectivity, covering indexes, read benefits and write costs"
+     "title": "Index design: composite column order, selectivity, covering indexes, read benefits and write costs",
+     "resources": [
+      {
+       "title": "Use The Index, Luke — The right column order in multi-column indexes",
+       "type": "book",
+       "url": "https://use-the-index-luke.com/sql/where-clause/the-equals-operator/concatenated-keys",
+       "free": true,
+       "note": "Free web edition of 'SQL Performance Explained'",
+       "verified": true
+      }
+     ]
     },
     {
      "id": "sde-db-depth-5",
-     "title": "Query execution: read an execution plan; compare scans, index access, expensive joins and sorts"
+     "title": "Query execution: read an execution plan; compare scans, index access, expensive joins and sorts",
+     "resources": [
+      {
+       "title": "Use The Index, Luke — Reading database execution plans",
+       "type": "book",
+       "url": "https://use-the-index-luke.com/sql/explain-plan",
+       "free": true,
+       "note": "MySQL, PostgreSQL, SQL Server, Oracle, Db2, SQLite",
+       "verified": true
+      }
+     ]
     },
     {
      "id": "sde-db-depth-6",
@@ -113,7 +133,17 @@
     },
     {
      "id": "sde-db-depth-7",
-     "title": "Pagination: offset versus keyset, stable ordering and concurrent inserts"
+     "title": "Pagination: offset versus keyset, stable ordering and concurrent inserts",
+     "resources": [
+      {
+       "title": "Use The Index, Luke — Paging through results",
+       "type": "book",
+       "url": "https://use-the-index-luke.com/sql/partial-results/fetch-next-page",
+       "free": true,
+       "note": "Offset vs seek (keyset) pagination",
+       "verified": true
+      }
+     ]
     },
     {
      "id": "sde-db-depth-8",
@@ -155,14 +185,6 @@
      "url": "https://www.youtube.com/@GateSmashers",
      "free": true,
      "note": "OS / DBMS / CN one-shot playlists — search subject name on channel",
-     "verified": true
-    },
-    {
-     "title": "CodeHelp by Babbar — YouTube channel",
-     "type": "yt",
-     "url": "https://www.youtube.com/@CodeHelp",
-     "free": true,
-     "note": "Love Babbar's channel — OS/DBMS/CN playlists aimed at placements",
      "verified": true
     },
     {
@@ -259,7 +281,16 @@
      "title": "Last-seat exercise: protect check-and-reserve in one process, then across multiple servers using database transactions or conditional updates"
     }
    ],
-   "resources": []
+   "resources": [
+    {
+     "title": "Operating Systems: Three Easy Pieces — Concurrency (ch. 26–33)",
+     "type": "book",
+     "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+     "free": true,
+     "note": "Threads, locks, condition variables, semaphores, concurrency bugs — free PDFs",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "sde-security",
@@ -295,7 +326,16 @@
      "title": "Secrets management, least privilege and keeping sensitive data out of logs"
     }
    ],
-   "resources": []
+   "resources": [
+    {
+     "title": "OWASP Cheat Sheet Series",
+     "type": "docs",
+     "url": "https://cheatsheetseries.owasp.org/",
+     "free": true,
+     "note": "Use: Authorization, Authentication, Session Management, JWT, Password Storage, SQL Injection, XSS, CSRF, Secrets Management",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "sde-engineering",
@@ -323,7 +363,16 @@
      "title": "CI/CD basics, backward-compatible changes, rollback and feature flags"
     }
    ],
-   "resources": []
+   "resources": [
+    {
+     "title": "The Practical Test Pyramid",
+     "type": "blog",
+     "url": "https://martinfowler.com/articles/practical-test-pyramid.html",
+     "free": true,
+     "note": "Ham Vocke on martinfowler.com — unit / integration / contract / E2E, mocks vs stubs",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "sde-sql",
@@ -545,16 +594,7 @@
      "title": "OA practice: 2 timed mock OAs before first real one (LeetCode contests work)"
     }
    ],
-   "resources": [
-    {
-     "title": "Tech Interview Handbook — applying + cold email templates",
-     "type": "docs",
-     "url": "https://www.techinterviewhandbook.org/resume/",
-     "free": true,
-     "note": "Also see 'choosing between companies'",
-     "verified": true
-    }
-   ]
+   "resources": []
   }
  ],
  "applicationColumns": [

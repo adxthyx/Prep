@@ -11,14 +11,14 @@
    "items": [
     {
      "id": "ai-f1",
-     "title": "Karpathy — Intro to Large Language Models (1hr talk)",
+     "title": "Karpathy — Deep Dive into LLMs like ChatGPT (pretraining → SFT → RL → reasoning models)",
      "resources": [
       {
-       "title": "Intro to Large Language Models",
+       "title": "Deep Dive into LLMs like ChatGPT",
        "type": "yt",
-       "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+       "url": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
        "free": true,
-       "note": "The canonical 1-hour overview",
+       "note": "~3.5 h (2025); replaces the 2023 1-hr talk, which predates reasoning models",
        "verified": true
       }
      ]
@@ -39,14 +39,14 @@
     },
     {
      "id": "ai-f3",
-     "title": "Karpathy — Neural Networks: Zero to Hero (at minimum: micrograd + makemore 1-2)",
+     "title": "Karpathy — micrograd: backprop from scratch (rest of Zero to Hero optional; ai-f2 already builds the transformer)",
      "resources": [
       {
-       "title": "Neural Networks: Zero to Hero",
-       "type": "course",
-       "url": "https://karpathy.ai/zero-to-hero.html",
+       "title": "The spelled-out intro to neural networks and backpropagation: building micrograd",
+       "type": "yt",
+       "url": "https://www.youtube.com/watch?v=VMj-3S1tku0",
        "free": true,
-       "note": "Full playlist index",
+       "note": "Lecture 1 of Zero to Hero",
        "verified": true
       }
      ]
@@ -56,18 +56,18 @@
      "title": "3Blue1Brown — neural networks series incl. transformers/attention chapters",
      "resources": [
       {
-       "title": "3Blue1Brown — Neural networks",
+       "title": "3Blue1Brown — Neural networks (playlist)",
        "type": "yt",
-       "url": "https://www.3blue1brown.com/topics/neural-networks",
+       "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
        "free": true,
-       "note": "Visual intuition, incl. 'But what is a GPT?'",
+       "note": "The GPT / attention / MLP chapters are the interview-relevant ones",
        "verified": true
       }
      ]
     },
     {
      "id": "ai-f5",
-     "title": "Vocabulary check: tokens, embeddings, attention, temperature/top-p, context window, KV cache, LoRA — explain each in 2 sentences"
+     "title": "Vocabulary check: tokens, embeddings, attention, temperature/top-p, context window, KV cache, prompt caching, reasoning tokens, LoRA — explain each in 2 sentences"
     }
    ],
    "resources": [],
@@ -80,14 +80,14 @@
    "items": [
     {
      "id": "ai-p1",
-     "title": "Anthropic prompt engineering docs end-to-end (system prompts, XML structure, few-shot, chain-of-thought)",
+     "title": "Claude prompt engineering docs end-to-end (system prompts, XML structure, few-shot, chain-of-thought)",
      "resources": [
       {
-       "title": "Anthropic — prompt engineering overview",
+       "title": "Claude Docs — Prompt engineering overview",
        "type": "docs",
-       "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+       "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
        "free": true,
-       "note": "",
+       "note": "docs.anthropic.com now 302-redirects here (not docs.claude.com); follow 'Prompting best practices'",
        "verified": true
       }
      ]
@@ -108,28 +108,28 @@
     },
     {
      "id": "ai-p3",
-     "title": "Anthropic cookbook: run 3+ notebooks (tool use, RAG, evaluations)",
+     "title": "Claude Cookbooks: run 3+ notebooks (tool use, RAG, evaluations)",
      "resources": [
       {
-       "title": "Anthropic cookbook",
+       "title": "Claude Cookbooks (formerly anthropic-cookbook)",
        "type": "github",
-       "url": "https://github.com/anthropics/anthropic-cookbook",
+       "url": "https://github.com/anthropics/claude-cookbooks",
        "free": true,
-       "note": "",
+       "note": "Repo renamed; the old URL redirects",
        "verified": true
       }
      ]
     },
     {
      "id": "ai-p4",
-     "title": "OpenAI cookbook: function calling + structured outputs recipes",
+     "title": "OpenAI function calling + structured outputs (strict mode) — reproduce one tool-calling flow",
      "resources": [
       {
-       "title": "OpenAI cookbook",
+       "title": "OpenAI — Function calling guide",
        "type": "docs",
-       "url": "https://cookbook.openai.com/",
+       "url": "https://developers.openai.com/api/docs/guides/function-calling",
        "free": true,
-       "note": "",
+       "note": "Covers strict mode (schema-constrained tool args). cookbook.openai.com now redirects to developers.openai.com/cookbook and has no dedicated recipe for this",
        "verified": true
       }
      ]
@@ -137,6 +137,34 @@
     {
      "id": "ai-p5",
      "title": "Build: one CLI tool-calling agent from scratch (no framework) — model + tools + loop"
+    },
+    {
+     "id": "ai-p6",
+     "title": "Context engineering: curate what enters the window — just-in-time retrieval, compaction, structured notes, sub-agents",
+     "resources": [
+      {
+       "title": "Effective context engineering for AI agents",
+       "type": "blog",
+       "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+       "free": true,
+       "note": "Anthropic, Sep 2025 — the reference framing for 'context engineering' questions",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-p7",
+     "title": "Tool design for agents: choosing tools, namespacing, token-efficient responses, prompt-engineering tool descriptions, evaluating tools",
+     "resources": [
+      {
+       "title": "Writing effective tools for AI agents",
+       "type": "blog",
+       "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+       "free": true,
+       "note": "Anthropic, Sep 2025",
+       "verified": true
+      }
+     ]
     }
    ],
    "resources": [],
@@ -154,12 +182,12 @@
      "title": "Chunking strategies: fixed, recursive, semantic, document-aware — tradeoffs",
      "resources": [
       {
-       "title": "Chunking Strategies Explained",
+       "title": "Chunking Strategies for LLM Applications",
        "type": "blog",
-       "url": "https://jxnl.co/writing/2024/02/05/chunking-semantically/",
+       "url": "https://www.pinecone.io/learn/chunking-strategies/",
        "free": true,
-       "verified": true,
-       "note": "Jason Liu guide on semantic chunking"
+       "note": "Pinecone, updated Jun 2025 — fixed, recursive, document-structure, semantic, contextual",
+       "verified": true
       }
      ]
     },
@@ -168,12 +196,12 @@
      "title": "Embeddings: model choice, dimensions, cosine vs dot, when embeddings fail",
      "resources": [
       {
-       "title": "OpenAI Embeddings",
+       "title": "OpenAI — Vector embeddings guide",
        "type": "docs",
-       "url": "https://platform.openai.com/docs/guides/embeddings",
-       "free": false,
-       "verified": true,
-       "note": "Dimensions, models, when embeddings fail"
+       "url": "https://developers.openai.com/api/docs/guides/embeddings",
+       "free": true,
+       "note": "Dimensions (shortening), cosine vs dot, model choice; old platform.openai.com URL redirects here",
+       "verified": true
       }
      ]
     },
@@ -196,26 +224,26 @@
      "title": "Rerankers: cross-encoders (Cohere/bge), when the extra hop pays for itself",
      "resources": [
       {
-       "title": "Reranking & Cross-Encoders",
-       "type": "github",
-       "url": "https://github.com/FlagOpen/FlagEmbedding",
+       "title": "Rerankers and Two-Stage Retrieval",
+       "type": "blog",
+       "url": "https://www.pinecone.io/learn/series/rag/rerankers/",
        "free": true,
-       "verified": true,
-       "note": "FlagEmbedding library with reranking"
+       "note": "Cross-encoders vs bi-encoders; when the extra hop pays for itself",
+       "verified": true
       }
      ]
     },
     {
      "id": "ai-r5",
-     "title": "RAG evals: recall@k, MRR, faithfulness, answer relevance — build one eval set for a toy corpus",
+     "title": "RAG retrieval evals: recall@k, MRR, nDCG — build one labeled eval set for a toy corpus (generation metrics live in ai-e3)",
      "resources": [
       {
-       "title": "RAG Metrics Guide",
+       "title": "Evaluation Measures in Information Retrieval",
        "type": "blog",
-       "url": "https://huggingface.co/spaces/allenai/WhatTheFactEval",
+       "url": "https://www.pinecone.io/learn/offline-evaluation/",
        "free": true,
-       "verified": true,
-       "note": "RAGAS: RAG Assessment metrics"
+       "note": "Recall@K, MRR, MAP@K, NDCG with worked examples",
+       "verified": true
       }
      ]
     },
@@ -235,14 +263,14 @@
     },
     {
      "id": "ai-r7",
-     "title": "DeepLearning.AI short courses: 'Building and Evaluating Advanced RAG' + 'Advanced Retrieval for AI with Chroma'",
+     "title": "Build: contextual retrieval end-to-end — baseline → contextual embeddings → BM25 hybrid → rerank; report recall@k at each step",
      "resources": [
       {
-       "title": "DeepLearning.AI short courses index",
-       "type": "course",
-       "url": "https://www.deeplearning.ai/short-courses/",
+       "title": "Claude Cookbooks — Enhancing RAG with Contextual Retrieval",
+       "type": "github",
+       "url": "https://github.com/anthropics/claude-cookbooks/blob/main/capabilities/contextual-embeddings/guide.ipynb",
        "free": true,
-       "note": "Both are free, ~1hr each",
+       "note": "Hands-on version of Anthropic's Contextual Retrieval post (Sep 2024); needs API keys",
        "verified": true
       }
      ]
@@ -256,7 +284,7 @@
   {
    "id": "ai-agents",
    "name": "Agents",
-   "desc": "LangGraph properly, plus MCP basics. Your Morning TIL project is the lab for this phase.",
+   "desc": "LangGraph (v1) properly, plus MCP in depth. Your Morning TIL project is the lab for this phase.",
    "items": [
     {
      "id": "ai-a1",
@@ -277,12 +305,20 @@
      "title": "LangGraph: state design, reducers, checkpointing — explain how your TIL project uses each",
      "resources": [
       {
-       "title": "LangGraph Advanced State",
+       "title": "LangGraph — Graph API (state, reducers)",
        "type": "docs",
-       "url": "https://langchain-ai.github.io/langgraph/concepts/",
+       "url": "https://docs.langchain.com/oss/python/langgraph/graph-api",
        "free": true,
-       "verified": true,
-       "note": "State design, reducers, checkpointing"
+       "note": "",
+       "verified": true
+      },
+      {
+       "title": "LangGraph — Persistence (checkpointers, threads)",
+       "type": "docs",
+       "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+       "free": true,
+       "note": "",
+       "verified": true
       }
      ]
     },
@@ -291,25 +327,25 @@
      "title": "Human-in-the-loop: interrupts, approval gates — add one to a toy graph",
      "resources": [
       {
-       "title": "Human in the Loop Workflows",
-       "type": "blog",
-       "url": "https://langchain-ai.github.io/langgraph/how-tos/human-in-the-loop/",
+       "title": "LangGraph — Interrupts",
+       "type": "docs",
+       "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
        "free": true,
-       "verified": true,
-       "note": "Interrupts and approval gates"
+       "note": "interrupt() + the 'Approve or reject' pattern; the old how-to URL is 404",
+       "verified": true
       }
      ]
     },
     {
      "id": "ai-a4",
-     "title": "Multi-agent patterns: supervisor vs swarm vs hierarchical — when each wins",
+     "title": "Multi-agent patterns: subagents (supervisor-style), handoffs (swarm-style), router, skills — when each wins",
      "resources": [
       {
-       "title": "LangGraph multi-agent concepts",
+       "title": "LangChain — Multi-agent",
        "type": "docs",
-       "url": "https://langchain-ai.github.io/langgraph/concepts/multi_agent/",
+       "url": "https://docs.langchain.com/oss/python/langchain/multi-agent",
        "free": true,
-       "note": "",
+       "note": "Current docs name the patterns subagents / handoffs / skills / router",
        "verified": true
       }
      ]
@@ -319,11 +355,25 @@
      "title": "MCP basics: what problem it solves, servers/clients/tools — build or run one server",
      "resources": [
       {
-       "title": "Model Context Protocol docs",
+       "title": "MCP — Architecture overview",
        "type": "docs",
-       "url": "https://modelcontextprotocol.io/",
+       "url": "https://modelcontextprotocol.io/docs/learn/architecture",
        "free": true,
-       "note": "",
+       "note": "Hosts/clients/servers, tools/resources/prompts, stdio vs Streamable HTTP. Current spec: 2026-07-28",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-a6",
+     "title": "MCP depth: stdio vs Streamable HTTP, OAuth authorization, untrusted tool descriptions, confused deputy / token passthrough / SSRF, and what changed in the 2026-07-28 spec (stateless requests, sampling deprecated)",
+     "resources": [
+      {
+       "title": "MCP — Security best practices",
+       "type": "docs",
+       "url": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+       "free": true,
+       "note": "Read with modelcontextprotocol.io/specification/latest for the 2026-07-28 changes",
        "verified": true
       }
      ]
@@ -333,9 +383,9 @@
     {
      "title": "LangGraph docs",
      "type": "docs",
-     "url": "https://langchain-ai.github.io/langgraph/",
+     "url": "https://docs.langchain.com/oss/python/langgraph/overview",
      "free": true,
-     "note": "",
+     "note": "Moved from langchain-ai.github.io/langgraph (old URLs redirect or 404)",
      "verified": true
     }
    ],
@@ -367,12 +417,12 @@
      "title": "LLM-as-judge: rubrics, pairwise vs pointwise, judge drift and how to calibrate",
      "resources": [
       {
-       "title": "LLM Evaluation Framework",
-       "type": "docs",
-       "url": "https://github.com/allenai/dspy",
+       "title": "Evaluating the Effectiveness of LLM-Evaluators (aka LLM-as-Judge)",
+       "type": "blog",
+       "url": "https://eugeneyan.com/writing/llm-evaluators/",
        "free": true,
-       "verified": true,
-       "note": "DSPy: systematic optimization + evaluation"
+       "note": "Eugene Yan — pairwise vs direct scoring, position/verbosity/self-preference bias, agreement with humans",
+       "verified": true
       }
      ]
     },
@@ -395,11 +445,11 @@
      "title": "LangSmith: tracing, datasets, eval runs — wire into TIL project (P5 milestone)",
      "resources": [
       {
-       "title": "LangSmith docs",
+       "title": "LangSmith — Evaluation",
        "type": "docs",
-       "url": "https://docs.smith.langchain.com/",
+       "url": "https://docs.langchain.com/langsmith/evaluation",
        "free": true,
-       "note": "Free tier is enough",
+       "note": "docs.smith.langchain.com now redirects into docs.langchain.com/langsmith. Free tier is enough; Langfuse is the open-source equivalent",
        "verified": true
       }
      ]
@@ -413,7 +463,21 @@
        "type": "docs",
        "url": "https://www.promptfoo.dev/docs/intro/",
        "free": true,
-       "note": "",
+       "note": "Acquired by OpenAI (Mar 2026); still open source and multi-provider",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-e6",
+     "title": "Agent evals: tasks + graders (code, model, human), grading outcomes vs transcripts, reliability across repeated trials; turn 20 real failures into a regression suite",
+     "resources": [
+      {
+       "title": "Demystifying evals for AI agents",
+       "type": "blog",
+       "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+       "free": true,
+       "note": "Anthropic, Jan 2026",
        "verified": true
       }
      ]
@@ -435,10 +499,18 @@
      "resources": [
       {
        "title": "Ollama docs",
-       "type": "github",
-       "url": "https://github.com/ollama/ollama/blob/main/docs/README.md",
+       "type": "docs",
+       "url": "https://docs.ollama.com/",
        "free": true,
-       "note": "",
+       "note": "Docs moved off the GitHub README",
+       "verified": true
+      },
+      {
+       "title": "A Visual Guide to Quantization",
+       "type": "blog",
+       "url": "https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-quantization",
+       "free": true,
+       "note": "Maarten Grootendorst — INT8/4-bit, GPTQ, GGUF (what the q4/q8 tags mean)",
        "verified": true
       }
      ]
@@ -448,11 +520,11 @@
      "title": "vLLM basics: PagedAttention, continuous batching, why it beats naive serving",
      "resources": [
       {
-       "title": "vLLM docs",
-       "type": "docs",
-       "url": "https://docs.vllm.ai/",
+       "title": "How continuous batching enables 23x throughput in LLM inference",
+       "type": "blog",
+       "url": "https://www.anyscale.com/blog/continuous-batching-llm-inference",
        "free": true,
-       "note": "Read the architecture overview, don't deploy",
+       "note": "Static vs continuous batching + PagedAttention, with benchmarks",
        "verified": true
       }
      ]
@@ -462,12 +534,12 @@
      "title": "Local vs API decision matrix: cost, latency, privacy, capability, ops burden — write your own one-pager (use TIL numbers)",
      "resources": [
       {
-       "title": "Inference Optimization",
-       "type": "blog",
-       "url": "https://huggingface.co/blog/quantization",
+       "title": "Artificial Analysis — model & API provider comparison",
+       "type": "docs",
+       "url": "https://artificialanalysis.ai/",
        "free": true,
-       "verified": true,
-       "note": "Quantization, batching, caching trade-offs"
+       "note": "Pull live price / speed / quality numbers for your matrix",
+       "verified": true
       }
      ]
     }
@@ -506,30 +578,22 @@
     },
     {
      "id": "ai-fde2",
-     "title": "Read: why the role exploded in the AI era (Pragmatic Engineer + market view)",
+     "title": "Read: why the role exploded in the AI era (a16z market view + how AI startups run it today)",
      "resources": [
       {
-       "title": "What are Forward Deployed Engineers, and why are they so in demand?",
+       "title": "Trading Margin for Moat: Why the Forward Deployed Engineer Is the Hottest Job in Startups",
        "type": "blog",
-       "url": "https://newsletter.pragmaticengineer.com/p/forward-deployed-engineers",
+       "url": "https://a16z.com/services-led-growth/",
        "free": true,
-       "note": "Pragmatic Engineer deep-dive",
+       "note": "a16z, Jun 2025",
        "verified": true
       },
       {
-       "title": "WTF is a forward-deployed engineer?",
-       "type": "blog",
-       "url": "https://thomasotter.substack.com/p/wtf-is-a-forward-deployed-engineer",
-       "free": true,
-       "note": "Skeptical/practical take — good balance",
-       "verified": true
-      },
-      {
-       "title": "Forward-Deployed Engineer Role: Palantir & More",
+       "title": "What a Forward-Deployed Engineer Actually Does at Palantir, Runway, and Greptile",
        "type": "blog",
        "url": "https://www.paraform.com/blog/forward-deployed-engineer-palantir-runway-greptile",
        "free": true,
-       "note": "How AI startups (Runway, Greptile) run the role today",
+       "note": "Paraform, Apr 2026",
        "verified": true
       }
      ]
@@ -539,12 +603,12 @@
      "title": "Discovery practice: for 3 imaginary customers, write the 5 questions that find the REAL problem behind the stated ask",
      "resources": [
       {
-       "title": "User Discovery Questions",
-       "type": "github",
-       "url": "https://github.com/stanfordmlgroup/discovery-questions",
+       "title": "How to Talk to Users — Eric Migicovsky (YC)",
+       "type": "yt",
+       "url": "https://www.youtube.com/watch?v=MT4Ig2uqjTc",
        "free": true,
-       "verified": false,
-       "note": "Sample discovery question frameworks"
+       "note": "Discovery questions that surface the real problem behind a stated ask",
+       "verified": true
       }
      ]
     },
@@ -553,12 +617,12 @@
      "title": "Scoping: practice cutting a vague ask into a 2-week demoable slice (write 2 examples)",
      "resources": [
       {
-       "title": "Scoping AI Projects",
-       "type": "blog",
-       "url": "https://www.anthropic.com/engineering/building-effective-agents",
+       "title": "Shape Up — Ch. 3: Set Boundaries",
+       "type": "book",
+       "url": "https://basecamp.com/shapeup/1.2-chapter-03",
        "free": true,
-       "verified": true,
-       "note": "Anthropic: workflows vs agents scope"
+       "note": "Appetite; fixed time, variable scope — free online (Basecamp)",
+       "verified": true
       }
      ]
     },
@@ -567,12 +631,12 @@
      "title": "Demo craft: 10-min demo structure — hook with the pain, show the wow in 2 min, end with the roadmap",
      "resources": [
       {
-       "title": "Demo Best Practices",
+       "title": "Peter Cohan on How to Get the End Result in a Software Demo",
        "type": "blog",
-       "url": "https://martinfowler.com/articles/patterns-for-testing.html",
+       "url": "https://www.reprise.com/resources/blog/peter-cohan-on-how-to-get-the-end-result-in-a-software-demo",
        "free": true,
-       "verified": true,
-       "note": "Storytelling & demo structure"
+       "note": "'Do the Last Thing First' — show the result before the steps. Vendor blog; full method in the book Great Demo! (paid)",
+       "verified": true
       }
      ]
     },
@@ -581,12 +645,12 @@
      "title": "Stakeholder communication: explain your TIL architecture twice — once to an engineer, once to a PM/exec (record + review both)",
      "resources": [
       {
-       "title": "Stakeholder Communication",
+       "title": "How to present to executives",
        "type": "blog",
-       "url": "https://www.inc.com/inc-masters/how-to-speak-to-executives.html",
+       "url": "https://lethain.com/present-to-executives/",
        "free": true,
-       "verified": true,
-       "note": "Executive comms for tech"
+       "note": "Will Larson — SCQA, pre-wiring, bring solutions with problems",
+       "verified": true
       }
      ]
     }
@@ -616,10 +680,11 @@
      "title": "Design a RAG system over a company's internal wiki (stale docs, permissions, 50k pages)",
      "resources": [
       {
-       "title": "RAG System Design",
+       "title": "RAG with Access Control",
        "type": "blog",
-       "url": "https://jxnl.co/writing/2024/05/22/systematically-improving-your-rag/",
+       "url": "https://www.pinecone.io/learn/rag-access-control/",
        "free": true,
+       "note": "Pinecone, Jan 2026 — pre- vs post-filtering against a ReBAC permission system",
        "verified": true
       }
      ]
@@ -629,12 +694,12 @@
      "title": "Design an eval pipeline for a customer-support bot before AND after launch",
      "resources": [
       {
-       "title": "Evaluation Pipeline Architecture",
-       "type": "github",
-       "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+       "title": "A Field Guide to Rapidly Improving AI Products",
+       "type": "blog",
+       "url": "https://hamel.dev/blog/posts/field-guide/",
        "free": true,
-       "verified": true,
-       "note": "Real evaluation harness"
+       "note": "Hamel Husain — error analysis, data viewer, synthetic data, keeping evals trustworthy",
+       "verified": true
       }
      ]
     },
@@ -643,12 +708,12 @@
      "title": "Design a document-processing agent: invoices in 12 formats → structured data, 99% accuracy needed",
      "resources": [
       {
-       "title": "Guardrails & Safety",
-       "type": "github",
-       "url": "https://github.com/guardrailsai/guardrails",
+       "title": "Instructor — structured outputs with validation and retries",
+       "type": "docs",
+       "url": "https://python.useinstructor.com/",
        "free": true,
-       "verified": true,
-       "note": "Guardrails framework"
+       "note": "Pydantic schemas + re-ask on validation failure: the core of a 99%-accuracy extraction design",
+       "verified": true
       }
      ]
     },
@@ -657,12 +722,12 @@
      "title": "Design guardrails for an LLM feature in a fintech app (prompt injection, PII, hallucinated numbers)",
      "resources": [
       {
-       "title": "Cost Reduction in LLM Inference",
-       "type": "blog",
-       "url": "https://scale.com/blog/llm-inference-quantization",
+       "title": "OWASP Top 10 for LLM Applications (2025)",
+       "type": "docs",
+       "url": "https://genai.owasp.org/llm-top-10/",
        "free": true,
-       "verified": true,
-       "note": "Quantization, caching, distillation"
+       "note": "Prompt injection, sensitive info disclosure, excessive agency, improper output handling",
+       "verified": true
       }
      ]
     },
@@ -671,12 +736,12 @@
      "title": "Cut LLM cost of a summarization feature by 10x without killing quality (routing, caching, distillation)",
      "resources": [
       {
-       "title": "Multi-Modal Integration",
-       "type": "github",
-       "url": "https://github.com/haotian-liu/LLaVA",
+       "title": "FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance",
+       "type": "paper",
+       "url": "https://arxiv.org/abs/2305.05176",
        "free": true,
-       "verified": true,
-       "note": "LLaVA: vision + language"
+       "note": "Chen et al., 2023 — prompt adaptation, caching/approximation, model cascades (routing)",
+       "verified": true
       }
      ]
     },
@@ -685,12 +750,12 @@
      "title": "Design semantic search + rerank for an e-commerce catalog (typos, synonyms, vernacular queries)",
      "resources": [
       {
-       "title": "Fine-tuning & Adaptation",
-       "type": "github",
-       "url": "https://github.com/huggingface/peft",
+       "title": "System Design for Recommendations and Search",
+       "type": "blog",
+       "url": "https://eugeneyan.com/writing/system-design-for-discovery/",
        "free": true,
-       "verified": true,
-       "note": "PEFT: Parameter-Efficient Fine-Tuning"
+       "note": "Eugene Yan — offline/online × retrieval/ranking pattern",
+       "verified": true
       }
      ]
     },
@@ -699,12 +764,12 @@
      "title": "Design a code-review assistant for a 200-dev org (context, noise control, measuring usefulness)",
      "resources": [
       {
-       "title": "Memory & Long Context",
-       "type": "github",
-       "url": "https://github.com/openai/gpt-fast",
+       "title": "How to Make LLMs Shut Up",
+       "type": "blog",
+       "url": "https://www.greptile.com/blog/make-llms-shut-up",
        "free": true,
-       "verified": false,
-       "note": "Token management & long context"
+       "note": "Greptile — measure the 'address rate' of review comments; prompting and LLM-judge filtering failed, an embedding filter lifted it from 19% to 55%+",
+       "verified": true
       }
      ]
     },
@@ -713,12 +778,12 @@
      "title": "Design a meeting-notes → action-items pipeline with human approval before task creation",
      "resources": [
       {
-       "title": "Caching & KV Optimization",
-       "type": "blog",
-       "url": "https://www.anyscale.com/blog/kv-cache",
+       "title": "12-Factor Agents",
+       "type": "github",
+       "url": "https://github.com/humanlayer/12-factor-agents",
        "free": true,
-       "verified": true,
-       "note": "KV cache design patterns"
+       "note": "Factor 7: contact humans with tool calls (approval before side effects)",
+       "verified": true
       }
      ]
     },
@@ -727,12 +792,12 @@
      "title": "Design a multi-tenant RAG SaaS: isolation, per-tenant evals, noisy-neighbor cost control",
      "resources": [
       {
-       "title": "Orchestration Patterns",
-       "type": "github",
-       "url": "https://github.com/ray-project/ray/tree/master/rllib",
+       "title": "Multi-Tenancy in Vector Databases",
+       "type": "blog",
+       "url": "https://www.pinecone.io/learn/series/vector-databases-in-production-for-busy-engineers/vector-database-multi-tenancy/",
        "free": true,
-       "verified": true,
-       "note": "Ray for distributed inference"
+       "note": "Namespaces vs per-tenant indexes vs metadata filtering; noisy neighbours",
+       "verified": true
       }
      ]
     },
@@ -741,17 +806,40 @@
      "title": "API model → local model migration plan for a chat feature (when does it make sense, rollout, rollback)",
      "resources": [
       {
-       "title": "Production LLM Inference",
-       "type": "course",
-       "url": "https://www.deeplearning.ai/short-courses/llm-short-courses/",
+       "title": "Building A Generative AI Platform",
+       "type": "blog",
+       "url": "https://huyenchip.com/2024/07/25/genai-platform.html",
        "free": true,
-       "verified": true,
-       "note": "DeepLearning.AI LLM courses"
+       "note": "Chip Huyen — model gateway/router (swap + rollback path), caching, guardrails, observability",
+       "verified": true
+      }
+     ]
+    },
+    {
+     "id": "ai-d11",
+     "title": "Design a support agent that takes actions (refunds, plan changes) via tools/MCP: permissions, approval thresholds, audit trail, and reliability measured with pass^k",
+     "resources": [
+      {
+       "title": "τ-Bench: Benchmarking AI agents for the real-world",
+       "type": "blog",
+       "url": "https://sierra.ai/blog/benchmarking-ai-agents",
+       "free": true,
+       "note": "Sierra — introduces pass^k (same task solved k times in a row)",
+       "verified": true
       }
      ]
     }
    ],
-   "resources": [],
+   "resources": [
+    {
+     "title": "Patterns for Building LLM-based Systems & Products",
+     "type": "blog",
+     "url": "https://eugeneyan.com/writing/llm-patterns/",
+     "free": true,
+     "note": "Eugene Yan — evals, RAG, fine-tuning, caching, guardrails, defensive UX, feedback: a checklist for every prompt below",
+     "verified": true
+    }
+   ],
    "prereqs": [
     "ai-storytelling"
    ]

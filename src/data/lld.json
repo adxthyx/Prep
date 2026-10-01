@@ -9,11 +9,11 @@
    "title": "S — Single Responsibility Principle",
    "resources": [
     {
-     "title": "SRP (refactoring.guru book excerpt not free; use article)",
+     "title": "SOLID Principles with Real Life Examples (GfG)",
      "type": "blog",
-     "url": "https://www.geeksforgeeks.org/system-design/single-responsibility-in-solid-design-principle/",
+     "url": "https://www.geeksforgeeks.org/system-design/solid-principle-in-programming-understand-with-real-life-examples/",
      "free": true,
-     "note": "",
+     "note": "Covers all five — use it for lld-s2…s5 too",
      "verified": true
     }
    ]
@@ -120,7 +120,17 @@
   },
   {
    "id": "lld-model-1",
-   "title": "State machines and valid transitions for orders, bookings and vending machines; State pattern"
+   "title": "State machines and valid transitions for orders, bookings and vending machines; State pattern",
+   "resources": [
+    {
+     "title": "State — refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/state",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "lld-model-2",
@@ -140,7 +150,17 @@
   },
   {
    "id": "lld-model-6",
-   "title": "Extensibility trade-offs: useful interfaces versus unnecessary abstractions; Adapter for integrations"
+   "title": "Extensibility trade-offs: useful interfaces versus unnecessary abstractions; Adapter for integrations",
+   "resources": [
+    {
+     "title": "Adapter — refactoring.guru",
+     "type": "docs",
+     "url": "https://refactoring.guru/design-patterns/adapter",
+     "free": true,
+     "note": "",
+     "verified": true
+    }
+   ]
   }
  ],
  "problems": [
@@ -245,9 +265,9 @@
   {
    "id": "lld-q15",
    "title": "In-memory KV store (with TTL, then transactions)",
-   "referenceUrl": "",
+   "referenceUrl": "https://workat.tech/machine-coding/practice/design-key-value-store-6gz6cq124k65/index.html",
    "verified": true,
-   "note": "No single reference — classic machine-coding ask; levels: get/set → TTL → nested transactions (begin/commit/rollback)"
+   "note": "workat.tech problem statement (get/put/delete/search, typed attributes, thread-safe) — no TTL or transactions; add those levels yourself: TTL → nested transactions (begin/commit/rollback)"
   }
  ],
  "resources": [
@@ -268,11 +288,11 @@
    "verified": true
   },
   {
-   "title": "Concept && Coding (Shrayansh Jain) — LLD playlist",
+   "title": "Concept && Coding (Shrayansh Jain) — Low Level Design from Basics to Advanced",
    "type": "yt",
-   "url": "https://www.youtube.com/@ConceptandCoding",
+   "url": "https://www.youtube.com/playlist?list=PL6W8uoQQ2c61X_9e6Net0WdYZidm7zooW",
    "free": true,
-   "note": "Full LLD interview playlist on the channel",
+   "note": "The old @ConceptandCoding URL resolves to a different channel ('Concept&Coding'); this is Shrayansh's LLD playlist",
    "verified": true
   },
   {

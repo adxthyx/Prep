@@ -9,12 +9,12 @@
    "title": "Vertical vs horizontal scaling",
    "resources": [
     {
-     "title": "ByteByteGo: Scaling",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "ByteByteGo — How to scale a website to support millions of users",
+     "type": "blog",
+     "url": "https://bytebytego.com/guides/how-to-scale-a-website-to-support-millions-of-users",
      "free": true,
-     "verified": true,
-     "note": "Search playlist for 'scaling'"
+     "note": "Free guide (Alex Xu Vol 1 Ch 1 in short)",
+     "verified": true
     }
    ]
   },
@@ -36,12 +36,12 @@
    "title": "Caching: cache-aside vs write-through vs write-back; eviction (LRU/LFU/TTL)",
    "resources": [
     {
-     "title": "ByteByteGo: Caching",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Caching",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/core-concepts/caching",
      "free": true,
-     "verified": true,
-     "note": "Popular video on cache patterns"
+     "note": "Cache-aside / write-through / write-behind, eviction, stampede, hot keys",
+     "verified": true
     }
    ]
   },
@@ -50,10 +50,11 @@
    "title": "Cache problems: stampede, hot keys, invalidation",
    "resources": [
     {
-     "title": "system-design-primer: Cache",
-     "type": "github",
-     "url": "https://github.com/donnemartin/system-design-primer#cache",
+     "title": "Caching challenges and strategies (Amazon Builders' Library)",
+     "type": "docs",
+     "url": "https://aws.amazon.com/builders-library/caching-challenges-and-strategies/",
      "free": true,
+     "note": "Thundering herd, hot keys, TTLs, stale data, negative caching",
      "verified": true
     }
    ]
@@ -63,10 +64,11 @@
    "title": "CDN: what it caches, push vs pull, when it matters",
    "resources": [
     {
-     "title": "ByteByteGo: CDN",
+     "title": "ByteByteGo: What Is A CDN? How Does It Work?",
      "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "url": "https://www.youtube.com/watch?v=RI9np1LWzqw",
      "free": true,
+     "note": "",
      "verified": true
     }
    ]
@@ -89,10 +91,11 @@
    "title": "Sharding: hash vs range, resharding pain, consistent hashing",
    "resources": [
     {
-     "title": "Consistent Hashing — ByteByteGo",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Sharding",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/core-concepts/sharding",
      "free": true,
+     "note": "Hash vs range, resharding, hot spots; links to its consistent-hashing page",
      "verified": true
     }
    ]
@@ -115,23 +118,11 @@
    "title": "SQL vs NoSQL: when each, document vs KV vs wide-column vs graph",
    "resources": [
     {
-     "title": "ByteByteGo: SQL vs NoSQL",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Data Modeling",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/core-concepts/data-modeling",
      "free": true,
-     "verified": true
-    }
-   ]
-  },
-  {
-   "id": "hld-c10",
-   "title": "Indexes: what they cost on writes, composite indexes",
-   "resources": [
-    {
-     "title": "system-design-primer: Indexes",
-     "type": "github",
-     "url": "https://github.com/donnemartin/system-design-primer#indexes",
-     "free": true,
+     "note": "Relational vs document vs key-value vs wide-column vs graph",
      "verified": true
     }
    ]
@@ -141,10 +132,11 @@
    "title": "CAP theorem + PACELC in one breath; eventual vs strong consistency",
    "resources": [
     {
-     "title": "ByteByteGo: CAP Theorem",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — CAP Theorem",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/core-concepts/cap-theorem",
      "free": true,
+     "note": "No PACELC section — add it yourself: else (no partition), latency vs consistency",
      "verified": true
     }
    ]
@@ -154,10 +146,11 @@
    "title": "Message queues: Kafka vs RabbitMQ vs SQS mental model; pub/sub vs work queue; at-most-once/at-least-once delivery, acknowledgments, redelivery, ordering, consumer failures and poison messages",
    "resources": [
     {
-     "title": "ByteByteGo: Message Queues",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Kafka deep dive",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/deep-dives/kafka",
      "free": true,
+     "note": "At-least-once, consumer groups, partition ordering, retries + DLQ; brief SQS contrast",
      "verified": true
     }
    ]
@@ -167,12 +160,12 @@
    "title": "Idempotency: idempotency keys, why retries demand it; business-operation deduplication boundaries and carefully qualified exactly-once claims",
    "resources": [
     {
-     "title": "Stripe: Idempotency",
-     "type": "docs",
-     "url": "https://stripe.com/docs/idempotency",
+     "title": "Designing robust and predictable APIs with idempotency",
+     "type": "blog",
+     "url": "https://stripe.com/blog/idempotency",
      "free": true,
-     "verified": true,
-     "note": "Real-world example from Stripe"
+     "note": "Stripe (Brandur Leach) — idempotency keys, retries, backoff + jitter",
+     "verified": true
     }
    ]
   },
@@ -181,10 +174,11 @@
    "title": "Rate limiting: token bucket, sliding window, where to enforce",
    "resources": [
     {
-     "title": "system-design-primer: Rate Limiting",
-     "type": "github",
-     "url": "https://github.com/donnemartin/system-design-primer#rate-limiter",
+     "title": "Scaling your API with rate limiters",
+     "type": "blog",
+     "url": "https://stripe.com/blog/rate-limiters",
      "free": true,
+     "note": "Stripe — token bucket, concurrency limiter, load shedders, where to hook them in",
      "verified": true
     }
    ]
@@ -194,10 +188,11 @@
    "title": "WebSockets vs long polling vs SSE",
    "resources": [
     {
-     "title": "ByteByteGo: WebSockets",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "WebSockets vs Server-Sent-Events vs Long-Polling vs WebRTC vs WebTransport",
+     "type": "blog",
+     "url": "https://rxdb.info/articles/websockets-sse-polling-webrtc-webtransport.html",
      "free": true,
+     "note": "RxDB, updated Jul 2026 — tradeoffs and limits of each",
      "verified": true
     }
    ]
@@ -207,10 +202,11 @@
    "title": "API design: REST semantics, pagination, versioning, HTTP status codes",
    "resources": [
     {
-     "title": "REST API Best Practices",
+     "title": "Hello Interview — API Design",
      "type": "docs",
-     "url": "https://restfulapi.net/",
+     "url": "https://www.hellointerview.com/learn/system-design/core-concepts/api-design",
      "free": true,
+     "note": "REST semantics, offset vs cursor pagination, versioning, status codes, idempotency",
      "verified": true
     }
    ]
@@ -220,10 +216,11 @@
    "title": "API gateway vs reverse proxy vs load balancer (untangle the three)",
    "resources": [
     {
-     "title": "ByteByteGo: API Gateway vs Reverse Proxy",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "ByteByteGo — Reverse Proxy vs API Gateway vs Load Balancer",
+     "type": "blog",
+     "url": "https://bytebytego.com/guides/reverse-proxy-vs-api-gateway-vs-load-balancer",
      "free": true,
+     "note": "Free guide",
      "verified": true
     }
    ]
@@ -233,10 +230,11 @@
    "title": "Microservices vs monolith: real tradeoffs at small-team scale",
    "resources": [
     {
-     "title": "ByteByteGo: Microservices",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Monolith First",
+     "type": "blog",
+     "url": "https://martinfowler.com/bliki/MonolithFirst.html",
      "free": true,
+     "note": "Martin Fowler — why small teams should start with a monolith",
      "verified": true
     }
    ]
@@ -255,27 +253,15 @@
    ]
   },
   {
-   "id": "hld-c20",
-   "title": "Blob/media pipeline: upload → transcode → CDN (the YouTube-lite spine)",
-   "resources": [
-    {
-     "title": "ByteByteGo: Video Streaming",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
-     "free": true,
-     "verified": true
-    }
-   ]
-  },
-  {
    "id": "hld-c21",
    "title": "Back-of-envelope: QPS, storage, bandwidth — memorize the powers-of-ten table",
    "resources": [
     {
-     "title": "Capacity Planning: Powers of 10",
-     "type": "docs",
-     "url": "https://github.com/donnemartin/system-design-primer#powers-of-ten",
+     "title": "system-design-primer: Powers of two table + latency numbers",
+     "type": "github",
+     "url": "https://github.com/donnemartin/system-design-primer#powers-of-two-table",
      "free": true,
+     "note": "The old #powers-of-ten anchor does not exist; latency numbers are the next section",
      "verified": true
     }
    ]
@@ -285,10 +271,11 @@
    "title": "Availability math: 99.9 vs 99.99, SLA/SLO/SLI, single points of failure",
    "resources": [
     {
-     "title": "ByteByteGo: Availability",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Google SRE Book — Service Level Objectives",
+     "type": "book",
+     "url": "https://sre.google/sre-book/service-level-objectives/",
      "free": true,
+     "note": "SLI vs SLO vs SLA, 'nines'",
      "verified": true
     }
    ]
@@ -298,10 +285,11 @@
    "title": "Distributed ID generation: auto-increment vs UUID vs Snowflake",
    "resources": [
     {
-     "title": "ByteByteGo: Distributed ID Generation",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "ByteByteGo — Explaining 5 unique ID generators",
+     "type": "blog",
+     "url": "https://bytebytego.com/guides/explaining-5-unique-id-generators-in-distributed-systems",
      "free": true,
+     "note": "UUID, Snowflake, DB auto-increment, DB segment, Redis",
      "verified": true
     }
    ]
@@ -312,11 +300,11 @@
    "resources": [
     {
      "title": "Saga Pattern",
-     "type": "github",
+     "type": "docs",
      "url": "https://microservices.io/patterns/data/saga.html",
      "free": true,
-     "verified": true,
-     "note": "Chris Richardson's Microservices.io"
+     "note": "Chris Richardson's Microservices.io",
+     "verified": true
     }
    ]
   },
@@ -325,37 +313,98 @@
    "title": "Observability: metrics vs logs vs traces; what you'd alert on",
    "resources": [
     {
-     "title": "ByteByteGo: Observability",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Google SRE Book — Monitoring Distributed Systems",
+     "type": "book",
+     "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
      "free": true,
+     "note": "Four golden signals; alert on symptoms, not causes",
      "verified": true
     }
    ]
   },
   {
    "id": "hld-failure-1",
-   "title": "Timeouts and retries: retryable failures, exponential backoff, jitter, retry budgets and retry storms"
+   "title": "Timeouts and retries: retryable failures, exponential backoff, jitter, retry budgets and retry storms",
+   "resources": [
+    {
+     "title": "Exponential Backoff And Jitter",
+     "type": "blog",
+     "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+     "free": true,
+     "note": "Marc Brooker (AWS) — full/equal/decorrelated jitter, retry contention; retry budgets are in hld-failure-2's resource",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "hld-failure-2",
-   "title": "Overload: backpressure, bounded queues, load shedding, circuit breakers and bulkheads"
+   "title": "Overload: backpressure, bounded queues, load shedding, circuit breakers and bulkheads",
+   "resources": [
+    {
+     "title": "Google SRE Book — Addressing Cascading Failures",
+     "type": "book",
+     "url": "https://sre.google/sre-book/addressing-cascading-failures/",
+     "free": true,
+     "note": "Load shedding, queue management, retry budgets, graceful degradation",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "hld-failure-3",
-   "title": "Cache correctness: stale reads, concurrent updates and read-your-writes expectations"
+   "title": "Cache correctness: stale reads, concurrent updates and read-your-writes expectations",
+   "resources": [
+    {
+     "title": "Cache Made Consistent (Meta)",
+     "type": "blog",
+     "url": "https://engineering.fb.com/2022/06/08/core-infra/cache-made-consistent/",
+     "free": true,
+     "note": "The fill-vs-invalidate race that leaves stale entries forever, and how Meta measures it",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "hld-failure-4",
-   "title": "Failover: database leader, cache, broker and dependency failures; recovery behavior"
+   "title": "Failover: database leader, cache, broker and dependency failures; recovery behavior",
+   "resources": [
+    {
+     "title": "system-design-primer: Fail-over",
+     "type": "github",
+     "url": "https://github.com/donnemartin/system-design-primer#fail-over",
+     "free": true,
+     "note": "Active-passive vs active-active; pair with hld-c8 replication",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "hld-failure-5",
-   "title": "Data lifecycle: retention, deletion, backups and restoring service after data loss"
+   "title": "Data lifecycle: retention, deletion, backups and restoring service after data loss",
+   "resources": [
+    {
+     "title": "Google SRE Book — Data Integrity: What You Read Is What You Wrote",
+     "type": "book",
+     "url": "https://sre.google/sre-book/data-integrity/",
+     "free": true,
+     "note": "Backups vs restores, retention, soft delete, recovery drills",
+     "verified": true
+    }
+   ]
   },
   {
    "id": "hld-failure-6",
-   "title": "Coordination basics: leases and leader election conceptually"
+   "title": "Coordination basics: leases and leader election conceptually",
+   "resources": [
+    {
+     "title": "How to do distributed locking",
+     "type": "blog",
+     "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html",
+     "free": true,
+     "note": "Martin Kleppmann — leases, fencing tokens, why timing-based locks are unsafe",
+     "verified": true
+    }
+   ]
   }
  ],
  "questions": [
@@ -365,18 +414,11 @@
    "hint": "ID generation, 301 vs 302, read-heavy caching, analytics",
    "resources": [
     {
-     "title": "Alex Xu Vol 1 Ch 8",
-     "type": "book",
-     "url": "",
-     "free": false,
-     "verified": false,
-     "note": "Buy 'System Design Interview Vol 1' Ch 8"
-    },
-    {
-     "title": "ByteByteGo: URL Shortener",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Design Bitly",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly",
      "free": true,
+     "note": "Free full breakdown",
      "verified": true
     }
    ]
@@ -387,18 +429,11 @@
    "hint": "Token bucket in Redis, race conditions, fail-open vs fail-closed",
    "resources": [
     {
-     "title": "Alex Xu Vol 1 Ch 4",
-     "type": "book",
-     "url": "",
-     "free": false,
-     "verified": false,
-     "note": "Buy 'System Design Interview Vol 1' Ch 4"
-    },
-    {
-     "title": "system-design-primer: Rate Limiter",
-     "type": "github",
-     "url": "https://github.com/donnemartin/system-design-primer#rate-limiter",
+     "title": "Hello Interview — Design a Distributed Rate Limiter",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/distributed-rate-limiter",
      "free": true,
+     "note": "Token bucket vs sliding windows, Redis + Lua atomicity, fail-open vs fail-closed",
      "verified": true
     }
    ]
@@ -409,18 +444,11 @@
    "hint": "WebSockets, message ordering, delivery receipts, fan-out",
    "resources": [
     {
-     "title": "Alex Xu Vol 1 Ch 12",
-     "type": "book",
-     "url": "",
-     "free": false,
-     "verified": false,
-     "note": "Buy 'System Design Interview Vol 1' Ch 12"
-    },
-    {
-     "title": "ByteByteGo: Chat System",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Design WhatsApp",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp",
      "free": true,
+     "note": "Free full breakdown",
      "verified": true
     }
    ]
@@ -431,18 +459,11 @@
    "hint": "Push vs pull fan-out, celebrity problem, ranking, pagination",
    "resources": [
     {
-     "title": "Alex Xu Vol 1 Ch 11",
-     "type": "book",
-     "url": "",
-     "free": false,
-     "verified": false,
-     "note": "Buy 'System Design Interview Vol 1' Ch 11"
-    },
-    {
-     "title": "Gaurav Sen: News Feed",
-     "type": "yt",
-     "url": "https://www.youtube.com/@gkcs",
+     "title": "Hello Interview — Design FB News Feed",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed",
      "free": true,
+     "note": "Fan-out on write vs read, celebrity hybrid, cursor pagination",
      "verified": true
     }
    ]
@@ -459,13 +480,6 @@
      "free": false,
      "verified": false,
      "note": "Buy 'System Design Interview Vol 1' Ch 10"
-    },
-    {
-     "title": "ByteByteGo: Notification System",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
-     "free": true,
-     "verified": true
     }
    ]
   },
@@ -475,17 +489,11 @@
    "hint": "Geohashing/quadtree, driver location updates, matching, surge",
    "resources": [
     {
-     "title": "Gaurav Sen: Uber System Design",
-     "type": "yt",
-     "url": "https://www.youtube.com/@gkcs",
+     "title": "Hello Interview — Design Uber",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/uber",
      "free": true,
-     "verified": true
-    },
-    {
-     "title": "Geohashing",
-     "type": "github",
-     "url": "https://github.com/davisb10/geohashing",
-     "free": true,
+     "note": "Geohash/quadtree, adaptive location updates, matching with locks",
      "verified": true
     }
    ]
@@ -496,18 +504,11 @@
    "hint": "Upload pipeline, transcoding queue, CDN, view counts",
    "resources": [
     {
-     "title": "Alex Xu Vol 1 Ch 14",
-     "type": "book",
-     "url": "",
-     "free": false,
-     "verified": false,
-     "note": "Buy 'System Design Interview Vol 1' Ch 14"
-    },
-    {
-     "title": "ByteByteGo: YouTube",
-     "type": "yt",
-     "url": "https://www.youtube.com/@ByteByteGo",
+     "title": "Hello Interview — Design YouTube",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube",
      "free": true,
+     "note": "Presigned/multipart upload, transcoding DAG, adaptive bitrate + CDN",
      "verified": true
     }
    ]
@@ -518,18 +519,11 @@
    "hint": "Frontier queue, politeness, dedupe (bloom filter), freshness",
    "resources": [
     {
-     "title": "Alex Xu Vol 1 Ch 9",
-     "type": "book",
-     "url": "",
-     "free": false,
-     "verified": false,
-     "note": "Buy 'System Design Interview Vol 1' Ch 9"
-    },
-    {
-     "title": "system-design-primer: Web Crawler",
-     "type": "github",
-     "url": "https://github.com/donnemartin/system-design-primer#web-crawler",
+     "title": "Hello Interview — Design a Web Crawler",
+     "type": "docs",
+     "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler",
      "free": true,
+     "note": "Frontier queue, politeness, dedupe, pipelined fault tolerance",
      "verified": true
     }
    ]
@@ -550,22 +544,6 @@
    "url": "https://github.com/donnemartin/system-design-primer",
    "free": true,
    "note": "Reference, not a course — dip in per concept",
-   "verified": true
-  },
-  {
-   "title": "ByteByteGo",
-   "type": "yt",
-   "url": "https://www.youtube.com/@ByteByteGo",
-   "free": true,
-   "note": "Alex Xu's channel — short visual explainers",
-   "verified": true
-  },
-  {
-   "title": "Gaurav Sen — system design playlist",
-   "type": "yt",
-   "url": "https://www.youtube.com/@gkcs",
-   "free": true,
-   "note": "Classic Indian-interview-style HLD walkthroughs",
    "verified": true
   },
   {

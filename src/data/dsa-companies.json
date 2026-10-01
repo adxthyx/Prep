@@ -1,8 +1,8 @@
 {
  "meta": {
-  "origin": "github.com/snehasishroy/leetcode-companywise-interview-questions (snapshot May 2026)",
+  "origin": "github.com/snehasishroy/leetcode-companywise-interview-questions (snapshot 12 Jul 2026)",
   "note": "Top 50 by LeetCode frequency per company. Edit this file to add/remove companies: add {name, window, problems:[{slug,title,difficulty,frequency,url}]}.",
-  "fetchedAt": "2026-07-11"
+  "fetchedAt": "2026-10-02"
  },
  "companies": [
   {
@@ -18,11 +18,18 @@
      "url": "https://leetcode.com/problems/two-sum/"
     },
     {
-     "slug": "lru-cache",
-     "title": "LRU Cache",
-     "difficulty": "Medium",
+     "slug": "trapping-rain-water",
+     "title": "Trapping Rain Water",
+     "difficulty": "Hard",
      "frequency": 87.5,
-     "url": "https://leetcode.com/problems/lru-cache/"
+     "url": "https://leetcode.com/problems/trapping-rain-water/"
+    },
+    {
+     "slug": "best-time-to-buy-and-sell-stock",
+     "title": "Best Time to Buy and Sell Stock",
+     "difficulty": "Easy",
+     "frequency": 87.5,
+     "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
     },
     {
      "slug": "add-two-numbers",
@@ -46,25 +53,39 @@
      "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
     },
     {
-     "slug": "merge-k-sorted-lists",
-     "title": "Merge k Sorted Lists",
-     "difficulty": "Hard",
+     "slug": "longest-palindromic-substring",
+     "title": "Longest Palindromic Substring",
+     "difficulty": "Medium",
      "frequency": 75.0,
-     "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
+     "url": "https://leetcode.com/problems/longest-palindromic-substring/"
     },
     {
-     "slug": "trapping-rain-water",
-     "title": "Trapping Rain Water",
-     "difficulty": "Hard",
+     "slug": "3sum",
+     "title": "3Sum",
+     "difficulty": "Medium",
      "frequency": 75.0,
-     "url": "https://leetcode.com/problems/trapping-rain-water/"
+     "url": "https://leetcode.com/problems/3sum/"
     },
     {
-     "slug": "best-time-to-buy-and-sell-stock",
-     "title": "Best Time to Buy and Sell Stock",
-     "difficulty": "Easy",
+     "slug": "search-in-rotated-sorted-array",
+     "title": "Search in Rotated Sorted Array",
+     "difficulty": "Medium",
      "frequency": 75.0,
-     "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+     "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+    },
+    {
+     "slug": "group-anagrams",
+     "title": "Group Anagrams",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/group-anagrams/"
+    },
+    {
+     "slug": "lru-cache",
+     "title": "LRU Cache",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/lru-cache/"
     },
     {
      "slug": "number-of-islands",
@@ -81,18 +102,25 @@
      "url": "https://leetcode.com/problems/course-schedule/"
     },
     {
-     "slug": "rotting-oranges",
-     "title": "Rotting Oranges",
+     "slug": "koko-eating-bananas",
+     "title": "Koko Eating Bananas",
      "difficulty": "Medium",
      "frequency": 75.0,
-     "url": "https://leetcode.com/problems/rotting-oranges/"
+     "url": "https://leetcode.com/problems/koko-eating-bananas/"
     },
     {
-     "slug": "longest-palindromic-substring",
-     "title": "Longest Palindromic Substring",
+     "slug": "fruit-into-baskets",
+     "title": "Fruit Into Baskets",
      "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/longest-palindromic-substring/"
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/fruit-into-baskets/"
+    },
+    {
+     "slug": "maximum-coins-from-k-consecutive-bags",
+     "title": "Maximum Coins From K Consecutive Bags",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/maximum-coins-from-k-consecutive-bags/"
     },
     {
      "slug": "palindrome-number",
@@ -109,27 +137,6 @@
      "url": "https://leetcode.com/problems/container-with-most-water/"
     },
     {
-     "slug": "longest-common-prefix",
-     "title": "Longest Common Prefix",
-     "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/longest-common-prefix/"
-    },
-    {
-     "slug": "3sum",
-     "title": "3Sum",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/3sum/"
-    },
-    {
-     "slug": "letter-combinations-of-a-phone-number",
-     "title": "Letter Combinations of a Phone Number",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
-    },
-    {
      "slug": "4sum",
      "title": "4Sum",
      "difficulty": "Medium",
@@ -137,46 +144,18 @@
      "url": "https://leetcode.com/problems/4sum/"
     },
     {
-     "slug": "valid-parentheses",
-     "title": "Valid Parentheses",
-     "difficulty": "Easy",
+     "slug": "merge-k-sorted-lists",
+     "title": "Merge k Sorted Lists",
+     "difficulty": "Hard",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/valid-parentheses/"
+     "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
     },
     {
-     "slug": "generate-parentheses",
-     "title": "Generate Parentheses",
+     "slug": "rotate-image",
+     "title": "Rotate Image",
      "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/generate-parentheses/"
-    },
-    {
-     "slug": "remove-duplicates-from-sorted-array",
-     "title": "Remove Duplicates from Sorted Array",
-     "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
-    },
-    {
-     "slug": "search-in-rotated-sorted-array",
-     "title": "Search in Rotated Sorted Array",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
-    },
-    {
-     "slug": "group-anagrams",
-     "title": "Group Anagrams",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/group-anagrams/"
-    },
-    {
-     "slug": "maximum-subarray",
-     "title": "Maximum Subarray",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/maximum-subarray/"
+     "url": "https://leetcode.com/problems/rotate-image/"
     },
     {
      "slug": "merge-intervals",
@@ -184,13 +163,6 @@
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/merge-intervals/"
-    },
-    {
-     "slug": "climbing-stairs",
-     "title": "Climbing Stairs",
-     "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/climbing-stairs/"
     },
     {
      "slug": "subsets",
@@ -214,25 +186,18 @@
      "url": "https://leetcode.com/problems/copy-list-with-random-pointer/"
     },
     {
+     "slug": "majority-element",
+     "title": "Majority Element",
+     "difficulty": "Easy",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/majority-element/"
+    },
+    {
      "slug": "house-robber",
      "title": "House Robber",
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/house-robber/"
-    },
-    {
-     "slug": "lowest-common-ancestor-of-a-binary-tree",
-     "title": "Lowest Common Ancestor of a Binary Tree",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
-    },
-    {
-     "slug": "meeting-rooms-ii",
-     "title": "Meeting Rooms II",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/meeting-rooms-ii/"
     },
     {
      "slug": "top-k-frequent-elements",
@@ -263,39 +228,53 @@
      "url": "https://leetcode.com/problems/reorganize-string/"
     },
     {
-     "slug": "koko-eating-bananas",
-     "title": "Koko Eating Bananas",
+     "slug": "rotting-oranges",
+     "title": "Rotting Oranges",
      "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/koko-eating-bananas/"
+     "url": "https://leetcode.com/problems/rotting-oranges/"
     },
     {
-     "slug": "find-the-index-of-the-first-occurrence-in-a-string",
-     "title": "Find the Index of the First Occurrence in a String",
+     "slug": "minimum-window-substring",
+     "title": "Minimum Window Substring",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/minimum-window-substring/"
+    },
+    {
+     "slug": "sort-colors",
+     "title": "Sort Colors",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/sort-colors/"
+    },
+    {
+     "slug": "coin-change",
+     "title": "Coin Change",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/coin-change/"
+    },
+    {
+     "slug": "longest-common-prefix",
+     "title": "Longest Common Prefix",
      "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/longest-common-prefix/"
     },
     {
-     "slug": "concatenation-of-array",
-     "title": "Concatenation of Array",
+     "slug": "letter-combinations-of-a-phone-number",
+     "title": "Letter Combinations of a Phone Number",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+    },
+    {
+     "slug": "valid-parentheses",
+     "title": "Valid Parentheses",
      "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/concatenation-of-array/"
-    },
-    {
-     "slug": "asteroid-collision",
-     "title": "Asteroid Collision",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/asteroid-collision/"
-    },
-    {
-     "slug": "next-permutation",
-     "title": "Next Permutation",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/next-permutation/"
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/valid-parentheses/"
     },
     {
      "slug": "merge-two-sorted-lists",
@@ -305,18 +284,25 @@
      "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
     },
     {
-     "slug": "jump-game-ii",
-     "title": "Jump Game II",
-     "difficulty": "Medium",
+     "slug": "remove-duplicates-from-sorted-array",
+     "title": "Remove Duplicates from Sorted Array",
+     "difficulty": "Easy",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/jump-game-ii/"
+     "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
     },
     {
-     "slug": "rotate-image",
-     "title": "Rotate Image",
+     "slug": "maximum-subarray",
+     "title": "Maximum Subarray",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/rotate-image/"
+     "url": "https://leetcode.com/problems/maximum-subarray/"
+    },
+    {
+     "slug": "spiral-matrix",
+     "title": "Spiral Matrix",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/spiral-matrix/"
     },
     {
      "slug": "unique-paths",
@@ -326,6 +312,20 @@
      "url": "https://leetcode.com/problems/unique-paths/"
     },
     {
+     "slug": "climbing-stairs",
+     "title": "Climbing Stairs",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/climbing-stairs/"
+    },
+    {
+     "slug": "word-search",
+     "title": "Word Search",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/word-search/"
+    },
+    {
      "slug": "largest-rectangle-in-histogram",
      "title": "Largest Rectangle in Histogram",
      "difficulty": "Hard",
@@ -333,25 +333,25 @@
      "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
     },
     {
-     "slug": "single-number",
-     "title": "Single Number",
+     "slug": "pascals-triangle",
+     "title": "Pascal's Triangle",
      "difficulty": "Easy",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/single-number/"
+     "url": "https://leetcode.com/problems/pascals-triangle/"
     },
     {
-     "slug": "majority-element",
-     "title": "Majority Element",
-     "difficulty": "Easy",
+     "slug": "word-ladder",
+     "title": "Word Ladder",
+     "difficulty": "Hard",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/majority-element/"
+     "url": "https://leetcode.com/problems/word-ladder/"
     },
     {
-     "slug": "kth-largest-element-in-an-array",
-     "title": "Kth Largest Element in an Array",
+     "slug": "lowest-common-ancestor-of-a-binary-tree",
+     "title": "Lowest Common Ancestor of a Binary Tree",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+     "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
     },
     {
      "slug": "product-of-array-except-self",
@@ -375,6 +375,13 @@
      "url": "https://leetcode.com/problems/two-sum/"
     },
     {
+     "slug": "palindrome-number",
+     "title": "Palindrome Number",
+     "difficulty": "Easy",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/palindrome-number/"
+    },
+    {
      "slug": "add-two-numbers",
      "title": "Add Two Numbers",
      "difficulty": "Medium",
@@ -389,11 +396,11 @@
      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
     },
     {
-     "slug": "palindrome-number",
-     "title": "Palindrome Number",
-     "difficulty": "Easy",
+     "slug": "reverse-integer",
+     "title": "Reverse Integer",
+     "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/palindrome-number/"
+     "url": "https://leetcode.com/problems/reverse-integer/"
     },
     {
      "slug": "container-with-most-water",
@@ -445,13 +452,6 @@
      "url": "https://leetcode.com/problems/trapping-rain-water/"
     },
     {
-     "slug": "merge-intervals",
-     "title": "Merge Intervals",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/merge-intervals/"
-    },
-    {
      "slug": "merge-sorted-array",
      "title": "Merge Sorted Array",
      "difficulty": "Easy",
@@ -473,11 +473,11 @@
      "url": "https://leetcode.com/problems/majority-element/"
     },
     {
-     "slug": "number-of-islands",
-     "title": "Number of Islands",
+     "slug": "koko-eating-bananas",
+     "title": "Koko Eating Bananas",
      "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/number-of-islands/"
+     "url": "https://leetcode.com/problems/koko-eating-bananas/"
     },
     {
      "slug": "median-of-two-sorted-arrays",
@@ -501,6 +501,13 @@
      "url": "https://leetcode.com/problems/maximum-subarray/"
     },
     {
+     "slug": "spiral-matrix",
+     "title": "Spiral Matrix",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/spiral-matrix/"
+    },
+    {
      "slug": "best-time-to-buy-and-sell-stock",
      "title": "Best Time to Buy and Sell Stock",
      "difficulty": "Easy",
@@ -508,25 +515,11 @@
      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
     },
     {
-     "slug": "create-hello-world-function",
-     "title": "Create Hello World Function",
+     "slug": "merge-two-sorted-lists",
+     "title": "Merge Two Sorted Lists",
      "difficulty": "Easy",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/create-hello-world-function/"
-    },
-    {
-     "slug": "combine-two-tables",
-     "title": "Combine Two Tables",
-     "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/combine-two-tables/"
-    },
-    {
-     "slug": "top-k-frequent-elements",
-     "title": "Top K Frequent Elements",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/top-k-frequent-elements/"
+     "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
     },
     {
      "slug": "concatenation-of-array",
@@ -534,13 +527,6 @@
      "difficulty": "Easy",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/concatenation-of-array/"
-    },
-    {
-     "slug": "reverse-integer",
-     "title": "Reverse Integer",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/reverse-integer/"
     },
     {
      "slug": "4sum",
@@ -557,13 +543,6 @@
      "url": "https://leetcode.com/problems/remove-element/"
     },
     {
-     "slug": "next-permutation",
-     "title": "Next Permutation",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/next-permutation/"
-    },
-    {
      "slug": "search-in-rotated-sorted-array",
      "title": "Search in Rotated Sorted Array",
      "difficulty": "Medium",
@@ -571,11 +550,25 @@
      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
     },
     {
-     "slug": "sort-colors",
-     "title": "Sort Colors",
+     "slug": "powx-n",
+     "title": "Pow(x, n)",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/sort-colors/"
+     "url": "https://leetcode.com/problems/powx-n/"
+    },
+    {
+     "slug": "merge-intervals",
+     "title": "Merge Intervals",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/merge-intervals/"
+    },
+    {
+     "slug": "climbing-stairs",
+     "title": "Climbing Stairs",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/climbing-stairs/"
     },
     {
      "slug": "lru-cache",
@@ -583,6 +576,20 @@
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/lru-cache/"
+    },
+    {
+     "slug": "rotate-array",
+     "title": "Rotate Array",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/rotate-array/"
+    },
+    {
+     "slug": "number-of-islands",
+     "title": "Number of Islands",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/number-of-islands/"
     },
     {
      "slug": "reverse-linked-list",
@@ -613,18 +620,18 @@
      "url": "https://leetcode.com/problems/longest-increasing-subsequence/"
     },
     {
-     "slug": "koko-eating-bananas",
-     "title": "Koko Eating Bananas",
+     "slug": "longest-repeating-character-replacement",
+     "title": "Longest Repeating Character Replacement",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/koko-eating-bananas/"
+     "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
     },
     {
-     "slug": "letter-combinations-of-a-phone-number",
-     "title": "Letter Combinations of a Phone Number",
-     "difficulty": "Medium",
+     "slug": "recyclable-and-low-fat-products",
+     "title": "Recyclable and Low Fat Products",
+     "difficulty": "Easy",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+     "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/"
     },
     {
      "slug": "generate-parentheses",
@@ -634,11 +641,11 @@
      "url": "https://leetcode.com/problems/generate-parentheses/"
     },
     {
-     "slug": "find-the-index-of-the-first-occurrence-in-a-string",
-     "title": "Find the Index of the First Occurrence in a String",
-     "difficulty": "Easy",
+     "slug": "single-element-in-a-sorted-array",
+     "title": "Single Element in a Sorted Array",
+     "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+     "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
     },
     {
      "slug": "subarray-sum-equals-k",
@@ -662,11 +669,11 @@
      "url": "https://leetcode.com/problems/rotate-image/"
     },
     {
-     "slug": "spiral-matrix",
-     "title": "Spiral Matrix",
-     "difficulty": "Medium",
+     "slug": "n-queens",
+     "title": "N-Queens",
+     "difficulty": "Hard",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/spiral-matrix/"
+     "url": "https://leetcode.com/problems/n-queens/"
     },
     {
      "slug": "jump-game",
@@ -676,11 +683,18 @@
      "url": "https://leetcode.com/problems/jump-game/"
     },
     {
-     "slug": "pascals-triangle",
-     "title": "Pascal's Triangle",
+     "slug": "sqrtx",
+     "title": "Sqrt(x)",
      "difficulty": "Easy",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/pascals-triangle/"
+     "url": "https://leetcode.com/problems/sqrtx/"
+    },
+    {
+     "slug": "largest-rectangle-in-histogram",
+     "title": "Largest Rectangle in Histogram",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
     },
     {
      "slug": "valid-palindrome",
@@ -690,13 +704,6 @@
      "url": "https://leetcode.com/problems/valid-palindrome/"
     },
     {
-     "slug": "house-robber",
-     "title": "House Robber",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/house-robber/"
-    },
-    {
      "slug": "happy-number",
      "title": "Happy Number",
      "difficulty": "Easy",
@@ -704,18 +711,11 @@
      "url": "https://leetcode.com/problems/happy-number/"
     },
     {
-     "slug": "course-schedule",
-     "title": "Course Schedule",
-     "difficulty": "Medium",
+     "slug": "create-hello-world-function",
+     "title": "Create Hello World Function",
+     "difficulty": "Easy",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/course-schedule/"
-    },
-    {
-     "slug": "meeting-rooms-ii",
-     "title": "Meeting Rooms II",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/meeting-rooms-ii/"
+     "url": "https://leetcode.com/problems/create-hello-world-function/"
     }
    ]
   },
@@ -732,13 +732,6 @@
      "url": "https://leetcode.com/problems/two-sum/"
     },
     {
-     "slug": "longest-substring-without-repeating-characters",
-     "title": "Longest Substring Without Repeating Characters",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-    },
-    {
      "slug": "add-two-numbers",
      "title": "Add Two Numbers",
      "difficulty": "Medium",
@@ -753,53 +746,11 @@
      "url": "https://leetcode.com/problems/longest-palindromic-substring/"
     },
     {
-     "slug": "trapping-rain-water",
-     "title": "Trapping Rain Water",
-     "difficulty": "Hard",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/trapping-rain-water/"
-    },
-    {
-     "slug": "merge-intervals",
-     "title": "Merge Intervals",
+     "slug": "longest-substring-without-repeating-characters",
+     "title": "Longest Substring Without Repeating Characters",
      "difficulty": "Medium",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/merge-intervals/"
-    },
-    {
-     "slug": "lru-cache",
-     "title": "LRU Cache",
-     "difficulty": "Medium",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/lru-cache/"
-    },
-    {
-     "slug": "number-of-islands",
-     "title": "Number of Islands",
-     "difficulty": "Medium",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/number-of-islands/"
-    },
-    {
-     "slug": "subarray-sum-equals-k",
-     "title": "Subarray Sum Equals K",
-     "difficulty": "Medium",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
-    },
-    {
-     "slug": "generate-parentheses",
-     "title": "Generate Parentheses",
-     "difficulty": "Medium",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/generate-parentheses/"
-    },
-    {
-     "slug": "longest-common-prefix",
-     "title": "Longest Common Prefix",
-     "difficulty": "Easy",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/longest-common-prefix/"
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
     },
     {
      "slug": "container-with-most-water",
@@ -830,11 +781,25 @@
      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
     },
     {
+     "slug": "trapping-rain-water",
+     "title": "Trapping Rain Water",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/trapping-rain-water/"
+    },
+    {
      "slug": "maximum-subarray",
      "title": "Maximum Subarray",
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/maximum-subarray/"
+    },
+    {
+     "slug": "merge-intervals",
+     "title": "Merge Intervals",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/merge-intervals/"
     },
     {
      "slug": "best-time-to-buy-and-sell-stock",
@@ -844,18 +809,25 @@
      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
     },
     {
-     "slug": "n-queens",
-     "title": "N-Queens",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/n-queens/"
-    },
-    {
-     "slug": "reverse-integer",
-     "title": "Reverse Integer",
+     "slug": "lru-cache",
+     "title": "LRU Cache",
      "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/reverse-integer/"
+     "url": "https://leetcode.com/problems/lru-cache/"
+    },
+    {
+     "slug": "number-of-islands",
+     "title": "Number of Islands",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/number-of-islands/"
+    },
+    {
+     "slug": "subarray-sum-equals-k",
+     "title": "Subarray Sum Equals K",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
     },
     {
      "slug": "sliding-window-maximum",
@@ -865,25 +837,18 @@
      "url": "https://leetcode.com/problems/sliding-window-maximum/"
     },
     {
-     "slug": "merge-k-sorted-lists",
-     "title": "Merge k Sorted Lists",
-     "difficulty": "Hard",
+     "slug": "longest-common-prefix",
+     "title": "Longest Common Prefix",
+     "difficulty": "Easy",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
+     "url": "https://leetcode.com/problems/longest-common-prefix/"
     },
     {
-     "slug": "meeting-rooms-ii",
-     "title": "Meeting Rooms II",
-     "difficulty": "Medium",
+     "slug": "climbing-stairs",
+     "title": "Climbing Stairs",
+     "difficulty": "Easy",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/meeting-rooms-ii/"
-    },
-    {
-     "slug": "minimum-edge-reversals-so-every-node-is-reachable",
-     "title": "Minimum Edge Reversals So Every Node Is Reachable",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/"
+     "url": "https://leetcode.com/problems/climbing-stairs/"
     },
     {
      "slug": "fibonacci-number",
@@ -893,53 +858,39 @@
      "url": "https://leetcode.com/problems/fibonacci-number/"
     },
     {
-     "slug": "final-prices-with-a-special-discount-in-a-shop",
-     "title": "Final Prices With a Special Discount in a Shop",
-     "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/"
-    },
-    {
-     "slug": "happy-number",
-     "title": "Happy Number",
-     "difficulty": "Easy",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/happy-number/"
-    },
-    {
-     "slug": "koko-eating-bananas",
-     "title": "Koko Eating Bananas",
+     "slug": "longest-consecutive-sequence",
+     "title": "Longest Consecutive Sequence",
      "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/koko-eating-bananas/"
+     "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
     },
     {
-     "slug": "minimum-window-substring",
-     "title": "Minimum Window Substring",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/minimum-window-substring/"
-    },
-    {
-     "slug": "longest-increasing-subsequence",
-     "title": "Longest Increasing Subsequence",
+     "slug": "unique-paths",
+     "title": "Unique Paths",
      "difficulty": "Medium",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/longest-increasing-subsequence/"
+     "url": "https://leetcode.com/problems/unique-paths/"
     },
     {
-     "slug": "find-median-from-data-stream",
-     "title": "Find Median from Data Stream",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/find-median-from-data-stream/"
-    },
-    {
-     "slug": "merge-sorted-array",
-     "title": "Merge Sorted Array",
+     "slug": "balanced-binary-tree",
+     "title": "Balanced Binary Tree",
      "difficulty": "Easy",
      "frequency": 62.5,
-     "url": "https://leetcode.com/problems/merge-sorted-array/"
+     "url": "https://leetcode.com/problems/balanced-binary-tree/"
+    },
+    {
+     "slug": "search-a-2d-matrix",
+     "title": "Search a 2D Matrix",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/search-a-2d-matrix/"
+    },
+    {
+     "slug": "palindrome-number",
+     "title": "Palindrome Number",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/palindrome-number/"
     },
     {
      "slug": "roman-to-integer",
@@ -954,6 +905,13 @@
      "difficulty": "Easy",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/valid-parentheses/"
+    },
+    {
+     "slug": "merge-two-sorted-lists",
+     "title": "Merge Two Sorted Lists",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
     },
     {
      "slug": "remove-duplicates-from-sorted-array",
@@ -984,18 +942,18 @@
      "url": "https://leetcode.com/problems/reverse-linked-list/"
     },
     {
-     "slug": "rotate-array",
-     "title": "Rotate Array",
+     "slug": "generate-parentheses",
+     "title": "Generate Parentheses",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/rotate-array/"
+     "url": "https://leetcode.com/problems/generate-parentheses/"
     },
     {
-     "slug": "next-greater-element-i",
-     "title": "Next Greater Element I",
-     "difficulty": "Easy",
+     "slug": "reverse-integer",
+     "title": "Reverse Integer",
+     "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/next-greater-element-i/"
+     "url": "https://leetcode.com/problems/reverse-integer/"
     },
     {
      "slug": "longest-repeating-character-replacement",
@@ -1005,18 +963,25 @@
      "url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
     },
     {
+     "slug": "merge-k-sorted-lists",
+     "title": "Merge k Sorted Lists",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/merge-k-sorted-lists/"
+    },
+    {
+     "slug": "minimum-edge-reversals-so-every-node-is-reachable",
+     "title": "Minimum Edge Reversals So Every Node Is Reachable",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/"
+    },
+    {
      "slug": "sort-colors",
      "title": "Sort Colors",
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/sort-colors/"
-    },
-    {
-     "slug": "climbing-stairs",
-     "title": "Climbing Stairs",
-     "difficulty": "Easy",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/climbing-stairs/"
     },
     {
      "slug": "copy-list-with-random-pointer",
@@ -1026,20 +991,6 @@
      "url": "https://leetcode.com/problems/copy-list-with-random-pointer/"
     },
     {
-     "slug": "create-hello-world-function",
-     "title": "Create Hello World Function",
-     "difficulty": "Easy",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/create-hello-world-function/"
-    },
-    {
-     "slug": "binary-tree-level-order-traversal",
-     "title": "Binary Tree Level Order Traversal",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
-    },
-    {
      "slug": "zigzag-conversion",
      "title": "Zigzag Conversion",
      "difficulty": "Medium",
@@ -1047,25 +998,18 @@
      "url": "https://leetcode.com/problems/zigzag-conversion/"
     },
     {
-     "slug": "letter-combinations-of-a-phone-number",
-     "title": "Letter Combinations of a Phone Number",
+     "slug": "reorder-list",
+     "title": "Reorder List",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
+     "url": "https://leetcode.com/problems/reorder-list/"
     },
     {
-     "slug": "valid-anagram",
-     "title": "Valid Anagram",
+     "slug": "final-prices-with-a-special-discount-in-a-shop",
+     "title": "Final Prices With a Special Discount in a Shop",
      "difficulty": "Easy",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/valid-anagram/"
-    },
-    {
-     "slug": "integer-to-english-words",
-     "title": "Integer to English Words",
-     "difficulty": "Hard",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/integer-to-english-words/"
+     "url": "https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/"
     },
     {
      "slug": "single-element-in-a-sorted-array",
@@ -1073,6 +1017,62 @@
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
+    },
+    {
+     "slug": "koko-eating-bananas",
+     "title": "Koko Eating Bananas",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/koko-eating-bananas/"
+    },
+    {
+     "slug": "lfu-cache",
+     "title": "LFU Cache",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/lfu-cache/"
+    },
+    {
+     "slug": "contains-duplicate",
+     "title": "Contains Duplicate",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/contains-duplicate/"
+    },
+    {
+     "slug": "minimum-window-substring",
+     "title": "Minimum Window Substring",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/minimum-window-substring/"
+    },
+    {
+     "slug": "largest-rectangle-in-histogram",
+     "title": "Largest Rectangle in Histogram",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+    },
+    {
+     "slug": "maximum-number-of-events-that-can-be-attended",
+     "title": "Maximum Number of Events That Can Be Attended",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/"
+    },
+    {
+     "slug": "min-stack",
+     "title": "Min Stack",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/min-stack/"
+    },
+    {
+     "slug": "merge-sorted-array",
+     "title": "Merge Sorted Array",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/merge-sorted-array/"
     }
    ]
   },
@@ -1089,53 +1089,11 @@
      "url": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/"
     },
     {
-     "slug": "container-with-most-water",
-     "title": "Container With Most Water",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/container-with-most-water/"
-    },
-    {
-     "slug": "the-score-of-students-solving-math-expression",
-     "title": "The Score of Students Solving Math Expression",
-     "difficulty": "Hard",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/the-score-of-students-solving-math-expression/"
-    },
-    {
-     "slug": "minimum-cost-to-reach-city-with-discounts",
-     "title": "Minimum Cost to Reach City With Discounts",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/"
-    },
-    {
-     "slug": "numbers-with-same-consecutive-differences",
-     "title": "Numbers With Same Consecutive Differences",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/numbers-with-same-consecutive-differences/"
-    },
-    {
-     "slug": "triples-with-bitwise-and-equal-to-zero",
-     "title": "Triples with Bitwise AND Equal To Zero",
-     "difficulty": "Hard",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/"
-    },
-    {
      "slug": "minimum-number-of-coins-to-be-added",
      "title": "Minimum Number of Coins to be Added",
      "difficulty": "Medium",
      "frequency": 87.5,
      "url": "https://leetcode.com/problems/minimum-number-of-coins-to-be-added/"
-    },
-    {
-     "slug": "minimum-limit-of-balls-in-a-bag",
-     "title": "Minimum Limit of Balls in a Bag",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/"
     },
     {
      "slug": "design-movie-rental-system",
@@ -1145,25 +1103,18 @@
      "url": "https://leetcode.com/problems/design-movie-rental-system/"
     },
     {
-     "slug": "rotting-oranges",
-     "title": "Rotting Oranges",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/rotting-oranges/"
-    },
-    {
-     "slug": "transform-array-to-all-equal-elements",
-     "title": "Transform Array to All Equal Elements",
-     "difficulty": "Medium",
-     "frequency": 87.5,
-     "url": "https://leetcode.com/problems/transform-array-to-all-equal-elements/"
-    },
-    {
      "slug": "two-sum",
      "title": "Two Sum",
      "difficulty": "Easy",
      "frequency": 75.0,
      "url": "https://leetcode.com/problems/two-sum/"
+    },
+    {
+     "slug": "container-with-most-water",
+     "title": "Container With Most Water",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/container-with-most-water/"
     },
     {
      "slug": "trapping-rain-water",
@@ -1180,11 +1131,18 @@
      "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
     },
     {
-     "slug": "asteroid-collision",
-     "title": "Asteroid Collision",
+     "slug": "the-score-of-students-solving-math-expression",
+     "title": "The Score of Students Solving Math Expression",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/the-score-of-students-solving-math-expression/"
+    },
+    {
+     "slug": "minimum-cost-to-reach-city-with-discounts",
+     "title": "Minimum Cost to Reach City With Discounts",
      "difficulty": "Medium",
      "frequency": 75.0,
-     "url": "https://leetcode.com/problems/asteroid-collision/"
+     "url": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/"
     },
     {
      "slug": "koko-eating-bananas",
@@ -1194,11 +1152,46 @@
      "url": "https://leetcode.com/problems/koko-eating-bananas/"
     },
     {
+     "slug": "numbers-with-same-consecutive-differences",
+     "title": "Numbers With Same Consecutive Differences",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/numbers-with-same-consecutive-differences/"
+    },
+    {
+     "slug": "triples-with-bitwise-and-equal-to-zero",
+     "title": "Triples with Bitwise AND Equal To Zero",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/"
+    },
+    {
+     "slug": "minimum-limit-of-balls-in-a-bag",
+     "title": "Minimum Limit of Balls in a Bag",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/"
+    },
+    {
      "slug": "gas-station",
      "title": "Gas Station",
      "difficulty": "Medium",
      "frequency": 75.0,
      "url": "https://leetcode.com/problems/gas-station/"
+    },
+    {
+     "slug": "rotting-oranges",
+     "title": "Rotting Oranges",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/rotting-oranges/"
+    },
+    {
+     "slug": "transform-array-to-all-equal-elements",
+     "title": "Transform Array to All Equal Elements",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/transform-array-to-all-equal-elements/"
     },
     {
      "slug": "find-the-least-frequent-digit",
@@ -1208,32 +1201,18 @@
      "url": "https://leetcode.com/problems/find-the-least-frequent-digit/"
     },
     {
-     "slug": "dungeon-game",
-     "title": "Dungeon Game",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/dungeon-game/"
-    },
-    {
-     "slug": "course-schedule",
-     "title": "Course Schedule",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/course-schedule/"
-    },
-    {
-     "slug": "kth-largest-element-in-an-array",
-     "title": "Kth Largest Element in an Array",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
-    },
-    {
      "slug": "create-maximum-number",
      "title": "Create Maximum Number",
      "difficulty": "Hard",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/create-maximum-number/"
+    },
+    {
+     "slug": "asteroid-collision",
+     "title": "Asteroid Collision",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/asteroid-collision/"
     },
     {
      "slug": "cherry-pickup-ii",
@@ -1255,13 +1234,6 @@
      "difficulty": "Hard",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/cut-off-trees-for-golf-event/"
-    },
-    {
-     "slug": "maximum-performance-of-a-team",
-     "title": "Maximum Performance of a Team",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/maximum-performance-of-a-team/"
     },
     {
      "slug": "find-median-from-data-stream",
@@ -1292,6 +1264,13 @@
      "url": "https://leetcode.com/problems/next-permutation/"
     },
     {
+     "slug": "unique-paths",
+     "title": "Unique Paths",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/unique-paths/"
+    },
+    {
      "slug": "rectangle-area-ii",
      "title": "Rectangle Area II",
      "difficulty": "Hard",
@@ -1313,18 +1292,32 @@
      "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/"
     },
     {
-     "slug": "longest-substring-without-repeating-characters",
-     "title": "Longest Substring Without Repeating Characters",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-    },
-    {
      "slug": "edit-distance",
      "title": "Edit Distance",
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/edit-distance/"
+    },
+    {
+     "slug": "dungeon-game",
+     "title": "Dungeon Game",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/dungeon-game/"
+    },
+    {
+     "slug": "course-schedule",
+     "title": "Course Schedule",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/course-schedule/"
+    },
+    {
+     "slug": "kth-largest-element-in-an-array",
+     "title": "Kth Largest Element in an Array",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
     },
     {
      "slug": "amount-of-time-for-binary-tree-to-be-infected",
@@ -1339,6 +1332,13 @@
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
+    },
+    {
+     "slug": "smallest-range-covering-elements-from-k-lists",
+     "title": "Smallest Range Covering Elements from K Lists",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/"
     },
     {
      "slug": "maximum-width-of-binary-tree",
@@ -1362,13 +1362,6 @@
      "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/"
     },
     {
-     "slug": "car-pooling",
-     "title": "Car Pooling",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/car-pooling/"
-    },
-    {
      "slug": "candy",
      "title": "Candy",
      "difficulty": "Hard",
@@ -1383,11 +1376,18 @@
      "url": "https://leetcode.com/problems/next-greater-element-i/"
     },
     {
-     "slug": "merge-intervals",
-     "title": "Merge Intervals",
+     "slug": "sort-colors",
+     "title": "Sort Colors",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/merge-intervals/"
+     "url": "https://leetcode.com/problems/sort-colors/"
+    },
+    {
+     "slug": "maximum-performance-of-a-team",
+     "title": "Maximum Performance of a Team",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/maximum-performance-of-a-team/"
     },
     {
      "slug": "rotate-image",
@@ -1404,13 +1404,6 @@
      "url": "https://leetcode.com/problems/evaluate-division/"
     },
     {
-     "slug": "word-ladder",
-     "title": "Word Ladder",
-     "difficulty": "Hard",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/word-ladder/"
-    },
-    {
      "slug": "generate-parentheses",
      "title": "Generate Parentheses",
      "difficulty": "Medium",
@@ -1418,18 +1411,25 @@
      "url": "https://leetcode.com/problems/generate-parentheses/"
     },
     {
-     "slug": "unique-paths",
-     "title": "Unique Paths",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/unique-paths/"
-    },
-    {
      "slug": "critical-connections-in-a-network",
      "title": "Critical Connections in a Network",
      "difficulty": "Hard",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/critical-connections-in-a-network/"
+    },
+    {
+     "slug": "cheapest-flights-within-k-stops",
+     "title": "Cheapest Flights Within K Stops",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+    },
+    {
+     "slug": "trapping-rain-water-ii",
+     "title": "Trapping Rain Water II",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/trapping-rain-water-ii/"
     }
    ]
   },
@@ -1444,13 +1444,6 @@
      "difficulty": "Hard",
      "frequency": 100.0,
      "url": "https://leetcode.com/problems/number-of-islands-ii/"
-    },
-    {
-     "slug": "longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit",
-     "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
-     "difficulty": "Medium",
-     "frequency": 100.0,
-     "url": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/"
     },
     {
      "slug": "first-unique-number",
@@ -1472,6 +1465,13 @@
      "difficulty": "Hard",
      "frequency": 100.0,
      "url": "https://leetcode.com/problems/count-paths-that-can-form-a-palindrome-in-a-tree/"
+    },
+    {
+     "slug": "longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit",
+     "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+     "difficulty": "Medium",
+     "frequency": 87.5,
+     "url": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/"
     },
     {
      "slug": "construct-quad-tree",
@@ -1502,6 +1502,13 @@
      "url": "https://leetcode.com/problems/alien-dictionary/"
     },
     {
+     "slug": "final-prices-with-a-special-discount-in-a-shop",
+     "title": "Final Prices With a Special Discount in a Shop",
+     "difficulty": "Easy",
+     "frequency": 87.5,
+     "url": "https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/"
+    },
+    {
      "slug": "the-earliest-moment-when-everyone-become-friends",
      "title": "The Earliest Moment When Everyone Become Friends",
      "difficulty": "Medium",
@@ -1514,6 +1521,13 @@
      "difficulty": "Medium",
      "frequency": 75.0,
      "url": "https://leetcode.com/problems/word-search/"
+    },
+    {
+     "slug": "number-of-islands",
+     "title": "Number of Islands",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/number-of-islands/"
     },
     {
      "slug": "kth-smallest-element-in-a-bst",
@@ -1530,11 +1544,11 @@
      "url": "https://leetcode.com/problems/design-hit-counter/"
     },
     {
-     "slug": "final-prices-with-a-special-discount-in-a-shop",
-     "title": "Final Prices With a Special Discount in a Shop",
-     "difficulty": "Easy",
+     "slug": "minimum-operations-to-reduce-an-integer-to-0",
+     "title": "Minimum Operations to Reduce an Integer to 0",
+     "difficulty": "Medium",
      "frequency": 75.0,
-     "url": "https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/"
+     "url": "https://leetcode.com/problems/minimum-operations-to-reduce-an-integer-to-0/"
     },
     {
      "slug": "leftmost-column-with-at-least-a-one",
@@ -1551,25 +1565,11 @@
      "url": "https://leetcode.com/problems/find-peak-element/"
     },
     {
-     "slug": "number-of-islands",
-     "title": "Number of Islands",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/number-of-islands/"
-    },
-    {
      "slug": "word-search-ii",
      "title": "Word Search II",
      "difficulty": "Hard",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/word-search-ii/"
-    },
-    {
-     "slug": "evaluate-division",
-     "title": "Evaluate Division",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/evaluate-division/"
     },
     {
      "slug": "find-the-closest-palindrome",
@@ -1593,13 +1593,6 @@
      "url": "https://leetcode.com/problems/lru-cache/"
     },
     {
-     "slug": "meeting-rooms-iii",
-     "title": "Meeting Rooms III",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/meeting-rooms-iii/"
-    },
-    {
      "slug": "split-array-largest-sum",
      "title": "Split Array Largest Sum",
      "difficulty": "Hard",
@@ -1607,32 +1600,11 @@
      "url": "https://leetcode.com/problems/split-array-largest-sum/"
     },
     {
-     "slug": "minimum-operations-to-reduce-an-integer-to-0",
-     "title": "Minimum Operations to Reduce an Integer to 0",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/minimum-operations-to-reduce-an-integer-to-0/"
-    },
-    {
-     "slug": "course-schedule",
-     "title": "Course Schedule",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/course-schedule/"
-    },
-    {
      "slug": "making-a-large-island",
      "title": "Making A Large Island",
      "difficulty": "Hard",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/making-a-large-island/"
-    },
-    {
-     "slug": "maximum-number-of-points-from-grid-queries",
-     "title": "Maximum Number of Points From Grid Queries",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/maximum-number-of-points-from-grid-queries/"
     },
     {
      "slug": "time-based-key-value-store",
@@ -1656,6 +1628,20 @@
      "url": "https://leetcode.com/problems/exam-room/"
     },
     {
+     "slug": "shuffle-an-array",
+     "title": "Shuffle an Array",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/shuffle-an-array/"
+    },
+    {
+     "slug": "evaluate-division",
+     "title": "Evaluate Division",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/evaluate-division/"
+    },
+    {
      "slug": "shortest-bridge",
      "title": "Shortest Bridge",
      "difficulty": "Medium",
@@ -1677,11 +1663,11 @@
      "url": "https://leetcode.com/problems/meeting-rooms-ii/"
     },
     {
-     "slug": "word-break",
-     "title": "Word Break",
-     "difficulty": "Medium",
+     "slug": "meeting-rooms-iii",
+     "title": "Meeting Rooms III",
+     "difficulty": "Hard",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/word-break/"
+     "url": "https://leetcode.com/problems/meeting-rooms-iii/"
     },
     {
      "slug": "rotting-oranges",
@@ -1691,18 +1677,25 @@
      "url": "https://leetcode.com/problems/rotting-oranges/"
     },
     {
-     "slug": "count-primes",
-     "title": "Count Primes",
+     "slug": "course-schedule",
+     "title": "Course Schedule",
      "difficulty": "Medium",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/count-primes/"
+     "url": "https://leetcode.com/problems/course-schedule/"
     },
     {
-     "slug": "cheapest-flights-within-k-stops",
-     "title": "Cheapest Flights Within K Stops",
-     "difficulty": "Medium",
+     "slug": "find-all-people-with-secret",
+     "title": "Find All People With Secret",
+     "difficulty": "Hard",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+     "url": "https://leetcode.com/problems/find-all-people-with-secret/"
+    },
+    {
+     "slug": "rearranging-fruits",
+     "title": "Rearranging Fruits",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/rearranging-fruits/"
     },
     {
      "slug": "ipo",
@@ -1710,6 +1703,20 @@
      "difficulty": "Hard",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/ipo/"
+    },
+    {
+     "slug": "maximum-number-of-points-from-grid-queries",
+     "title": "Maximum Number of Points From Grid Queries",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/maximum-number-of-points-from-grid-queries/"
+    },
+    {
+     "slug": "boundary-of-binary-tree",
+     "title": "Boundary of Binary Tree",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/boundary-of-binary-tree/"
     },
     {
      "slug": "minimum-jumps-to-reach-end-via-prime-teleportation",
@@ -1726,6 +1733,34 @@
      "url": "https://leetcode.com/problems/course-schedule-ii/"
     },
     {
+     "slug": "24-game",
+     "title": "24 Game",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/24-game/"
+    },
+    {
+     "slug": "longest-palindromic-substring",
+     "title": "Longest Palindromic Substring",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/longest-palindromic-substring/"
+    },
+    {
+     "slug": "minimum-knight-moves",
+     "title": "Minimum Knight Moves",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/minimum-knight-moves/"
+    },
+    {
+     "slug": "longest-subsequence-with-limited-sum",
+     "title": "Longest Subsequence With Limited Sum",
+     "difficulty": "Easy",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/longest-subsequence-with-limited-sum/"
+    },
+    {
      "slug": "maximum-number-of-alloys",
      "title": "Maximum Number of Alloys",
      "difficulty": "Medium",
@@ -1733,60 +1768,25 @@
      "url": "https://leetcode.com/problems/maximum-number-of-alloys/"
     },
     {
-     "slug": "count-the-number-of-infection-sequences",
-     "title": "Count the Number of Infection Sequences",
+     "slug": "vertical-order-traversal-of-a-binary-tree",
+     "title": "Vertical Order Traversal of a Binary Tree",
      "difficulty": "Hard",
      "frequency": 50.0,
-     "url": "https://leetcode.com/problems/count-the-number-of-infection-sequences/"
+     "url": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/"
     },
     {
-     "slug": "basic-calculator-ii",
-     "title": "Basic Calculator II",
-     "difficulty": "Medium",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/basic-calculator-ii/"
-    },
-    {
-     "slug": "minimum-difference-in-sums-after-removal-of-elements",
-     "title": "Minimum Difference in Sums After Removal of Elements",
+     "slug": "find-k-th-smallest-pair-distance",
+     "title": "Find K-th Smallest Pair Distance",
      "difficulty": "Hard",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements/"
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/"
     },
     {
-     "slug": "open-the-lock",
-     "title": "Open the Lock",
+     "slug": "design-a-leaderboard",
+     "title": "Design A Leaderboard",
      "difficulty": "Medium",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/open-the-lock/"
-    },
-    {
-     "slug": "top-k-frequent-elements",
-     "title": "Top K Frequent Elements",
-     "difficulty": "Medium",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/top-k-frequent-elements/"
-    },
-    {
-     "slug": "find-all-people-with-secret",
-     "title": "Find All People With Secret",
-     "difficulty": "Hard",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/find-all-people-with-secret/"
-    },
-    {
-     "slug": "rearranging-fruits",
-     "title": "Rearranging Fruits",
-     "difficulty": "Hard",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/rearranging-fruits/"
-    },
-    {
-     "slug": "boundary-of-binary-tree",
-     "title": "Boundary of Binary Tree",
-     "difficulty": "Medium",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/boundary-of-binary-tree/"
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/design-a-leaderboard/"
     }
    ]
   },
@@ -1978,18 +1978,18 @@
      "url": "https://leetcode.com/problems/logger-rate-limiter/"
     },
     {
-     "slug": "koko-eating-bananas",
-     "title": "Koko Eating Bananas",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/koko-eating-bananas/"
-    },
-    {
      "slug": "top-k-frequent-elements",
      "title": "Top K Frequent Elements",
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/top-k-frequent-elements/"
+    },
+    {
+     "slug": "longest-consecutive-sequence",
+     "title": "Longest Consecutive Sequence",
+     "difficulty": "Medium",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
     },
     {
      "slug": "can-place-flowers",
@@ -2034,13 +2034,6 @@
      "url": "https://leetcode.com/problems/design-file-system/"
     },
     {
-     "slug": "majority-element-ii",
-     "title": "Majority Element II",
-     "difficulty": "Medium",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/majority-element-ii/"
-    },
-    {
      "slug": "longest-increasing-subsequence",
      "title": "Longest Increasing Subsequence",
      "difficulty": "Medium",
@@ -2053,6 +2046,13 @@
      "difficulty": "Medium",
      "frequency": 37.5,
      "url": "https://leetcode.com/problems/design-hit-counter/"
+    },
+    {
+     "slug": "koko-eating-bananas",
+     "title": "Koko Eating Bananas",
+     "difficulty": "Medium",
+     "frequency": 37.5,
+     "url": "https://leetcode.com/problems/koko-eating-bananas/"
     },
     {
      "slug": "find-k-closest-elements",
@@ -2074,13 +2074,6 @@
      "difficulty": "Medium",
      "frequency": 37.5,
      "url": "https://leetcode.com/problems/boats-to-save-people/"
-    },
-    {
-     "slug": "longest-consecutive-sequence",
-     "title": "Longest Consecutive Sequence",
-     "difficulty": "Medium",
-     "frequency": 37.5,
-     "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
     },
     {
      "slug": "pairs-of-songs-with-total-durations-divisible-by-60",
@@ -2144,6 +2137,13 @@
      "difficulty": "Hard",
      "frequency": 37.5,
      "url": "https://leetcode.com/problems/last-day-where-you-can-still-cross/"
+    },
+    {
+     "slug": "lru-cache",
+     "title": "LRU Cache",
+     "difficulty": "Medium",
+     "frequency": 37.5,
+     "url": "https://leetcode.com/problems/lru-cache/"
     }
    ]
   },
@@ -2265,13 +2265,6 @@
      "url": "https://leetcode.com/problems/count-good-meals/"
     },
     {
-     "slug": "sort-colors",
-     "title": "Sort Colors",
-     "difficulty": "Medium",
-     "frequency": 75.0,
-     "url": "https://leetcode.com/problems/sort-colors/"
-    },
-    {
      "slug": "next-greater-element-i",
      "title": "Next Greater Element I",
      "difficulty": "Easy",
@@ -2307,6 +2300,13 @@
      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
     },
     {
+     "slug": "sort-colors",
+     "title": "Sort Colors",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/sort-colors/"
+    },
+    {
      "slug": "merge-sorted-array",
      "title": "Merge Sorted Array",
      "difficulty": "Easy",
@@ -2314,11 +2314,32 @@
      "url": "https://leetcode.com/problems/merge-sorted-array/"
     },
     {
+     "slug": "maximum-profit-in-job-scheduling",
+     "title": "Maximum Profit in Job Scheduling",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/"
+    },
+    {
      "slug": "first-missing-positive",
      "title": "First Missing Positive",
      "difficulty": "Hard",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/first-missing-positive/"
+    },
+    {
+     "slug": "subarray-sum-equals-k",
+     "title": "Subarray Sum Equals K",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
+    },
+    {
+     "slug": "median-of-two-sorted-arrays",
+     "title": "Median of Two Sorted Arrays",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
     },
     {
      "slug": "integer-to-roman",
@@ -2335,11 +2356,53 @@
      "url": "https://leetcode.com/problems/daily-temperatures/"
     },
     {
+     "slug": "immediate-food-delivery-ii",
+     "title": "Immediate Food Delivery II",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/immediate-food-delivery-ii/"
+    },
+    {
      "slug": "fair-candy-swap",
      "title": "Fair Candy Swap",
      "difficulty": "Easy",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/fair-candy-swap/"
+    },
+    {
+     "slug": "maximum-score-from-removing-substrings",
+     "title": "Maximum Score From Removing Substrings",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/maximum-score-from-removing-substrings/"
+    },
+    {
+     "slug": "k-closest-points-to-origin",
+     "title": "K Closest Points to Origin",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
+    },
+    {
+     "slug": "minimum-number-of-work-sessions-to-finish-the-tasks",
+     "title": "Minimum Number of Work Sessions to Finish the Tasks",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/"
+    },
+    {
+     "slug": "two-city-scheduling",
+     "title": "Two City Scheduling",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/two-city-scheduling/"
+    },
+    {
+     "slug": "trapping-rain-water",
+     "title": "Trapping Rain Water",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/trapping-rain-water/"
     },
     {
      "slug": "minimum-window-substring",
@@ -2349,11 +2412,53 @@
      "url": "https://leetcode.com/problems/minimum-window-substring/"
     },
     {
+     "slug": "maximum-product-subarray",
+     "title": "Maximum Product Subarray",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/maximum-product-subarray/"
+    },
+    {
+     "slug": "sum-of-two-integers",
+     "title": "Sum of Two Integers",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/sum-of-two-integers/"
+    },
+    {
+     "slug": "lru-cache",
+     "title": "LRU Cache",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/lru-cache/"
+    },
+    {
+     "slug": "maximum-subarray",
+     "title": "Maximum Subarray",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/maximum-subarray/"
+    },
+    {
      "slug": "koko-eating-bananas",
      "title": "Koko Eating Bananas",
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/koko-eating-bananas/"
+    },
+    {
+     "slug": "longest-substring-without-repeating-characters",
+     "title": "Longest Substring Without Repeating Characters",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+    },
+    {
+     "slug": "distinct-subsequences",
+     "title": "Distinct Subsequences",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/distinct-subsequences/"
     },
     {
      "slug": "unique-binary-search-trees",
@@ -2370,157 +2475,24 @@
      "url": "https://leetcode.com/problems/count-days-without-meetings/"
     },
     {
-     "slug": "valid-parentheses",
-     "title": "Valid Parentheses",
-     "difficulty": "Easy",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/valid-parentheses/"
-    },
-    {
-     "slug": "merge-two-sorted-lists",
-     "title": "Merge Two Sorted Lists",
-     "difficulty": "Easy",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/merge-two-sorted-lists/"
-    },
-    {
-     "slug": "maximum-profit-in-job-scheduling",
-     "title": "Maximum Profit in Job Scheduling",
-     "difficulty": "Hard",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/"
-    },
-    {
-     "slug": "subarray-sum-equals-k",
-     "title": "Subarray Sum Equals K",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
-    },
-    {
-     "slug": "median-of-two-sorted-arrays",
-     "title": "Median of Two Sorted Arrays",
-     "difficulty": "Hard",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/"
-    },
-    {
-     "slug": "immediate-food-delivery-ii",
-     "title": "Immediate Food Delivery II",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/immediate-food-delivery-ii/"
-    },
-    {
-     "slug": "maximum-score-from-removing-substrings",
-     "title": "Maximum Score From Removing Substrings",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/maximum-score-from-removing-substrings/"
-    },
-    {
-     "slug": "k-closest-points-to-origin",
-     "title": "K Closest Points to Origin",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/k-closest-points-to-origin/"
-    },
-    {
-     "slug": "minimum-number-of-work-sessions-to-finish-the-tasks",
-     "title": "Minimum Number of Work Sessions to Finish the Tasks",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/"
-    },
-    {
-     "slug": "two-city-scheduling",
-     "title": "Two City Scheduling",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/two-city-scheduling/"
-    },
-    {
-     "slug": "continuous-subarray-sum",
-     "title": "Continuous Subarray Sum",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/continuous-subarray-sum/"
-    },
-    {
-     "slug": "trapping-rain-water",
-     "title": "Trapping Rain Water",
-     "difficulty": "Hard",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/trapping-rain-water/"
-    },
-    {
-     "slug": "maximum-product-subarray",
-     "title": "Maximum Product Subarray",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/maximum-product-subarray/"
-    },
-    {
-     "slug": "sum-of-two-integers",
-     "title": "Sum of Two Integers",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/sum-of-two-integers/"
-    },
-    {
-     "slug": "lru-cache",
-     "title": "LRU Cache",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/lru-cache/"
-    },
-    {
-     "slug": "maximum-subarray",
-     "title": "Maximum Subarray",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/maximum-subarray/"
-    },
-    {
-     "slug": "two-sum",
-     "title": "Two Sum",
-     "difficulty": "Easy",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/two-sum/"
-    },
-    {
-     "slug": "longest-substring-without-repeating-characters",
-     "title": "Longest Substring Without Repeating Characters",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
-    },
-    {
-     "slug": "distinct-subsequences",
-     "title": "Distinct Subsequences",
-     "difficulty": "Hard",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/distinct-subsequences/"
-    },
-    {
      "slug": "longest-palindromic-substring",
      "title": "Longest Palindromic Substring",
      "difficulty": "Medium",
-     "frequency": 50.0,
+     "frequency": 62.5,
      "url": "https://leetcode.com/problems/longest-palindromic-substring/"
     },
     {
      "slug": "design-twitter",
      "title": "Design Twitter",
      "difficulty": "Medium",
-     "frequency": 50.0,
+     "frequency": 62.5,
      "url": "https://leetcode.com/problems/design-twitter/"
     },
     {
      "slug": "longest-consecutive-sequence",
      "title": "Longest Consecutive Sequence",
      "difficulty": "Medium",
-     "frequency": 50.0,
+     "frequency": 62.5,
      "url": "https://leetcode.com/problems/longest-consecutive-sequence/"
     }
    ]
@@ -2587,11 +2559,32 @@
      "url": "https://leetcode.com/problems/number-of-islands/"
     },
     {
+     "slug": "maximum-subarray",
+     "title": "Maximum Subarray",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/maximum-subarray/"
+    },
+    {
      "slug": "longest-substring-without-repeating-characters",
      "title": "Longest Substring Without Repeating Characters",
      "difficulty": "Medium",
      "frequency": 75.0,
      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+    },
+    {
+     "slug": "single-element-in-a-sorted-array",
+     "title": "Single Element in a Sorted Array",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
+    },
+    {
+     "slug": "the-skyline-problem",
+     "title": "The Skyline Problem",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/the-skyline-problem/"
     },
     {
      "slug": "exchange-seats",
@@ -2615,25 +2608,11 @@
      "url": "https://leetcode.com/problems/lfu-cache/"
     },
     {
-     "slug": "self-crossing",
-     "title": "Self Crossing",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/self-crossing/"
-    },
-    {
      "slug": "snakes-and-ladders",
      "title": "Snakes and Ladders",
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/snakes-and-ladders/"
-    },
-    {
-     "slug": "maximum-subarray",
-     "title": "Maximum Subarray",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/maximum-subarray/"
     },
     {
      "slug": "single-number-iii",
@@ -2648,13 +2627,6 @@
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/maximal-square/"
-    },
-    {
-     "slug": "single-element-in-a-sorted-array",
-     "title": "Single Element in a Sorted Array",
-     "difficulty": "Medium",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
     },
     {
      "slug": "isomorphic-strings",
@@ -2676,13 +2648,6 @@
      "difficulty": "Hard",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/rearrange-string-k-distance-apart/"
-    },
-    {
-     "slug": "the-skyline-problem",
-     "title": "The Skyline Problem",
-     "difficulty": "Hard",
-     "frequency": 62.5,
-     "url": "https://leetcode.com/problems/the-skyline-problem/"
     },
     {
      "slug": "permutations",
@@ -2718,6 +2683,20 @@
      "difficulty": "Medium",
      "frequency": 62.5,
      "url": "https://leetcode.com/problems/merge-intervals/"
+    },
+    {
+     "slug": "container-with-most-water",
+     "title": "Container With Most Water",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/container-with-most-water/"
+    },
+    {
+     "slug": "russian-doll-envelopes",
+     "title": "Russian Doll Envelopes",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/russian-doll-envelopes/"
     }
    ]
   },
@@ -2853,6 +2832,20 @@
      "url": "https://leetcode.com/problems/subarray-sum-equals-k/"
     },
     {
+     "slug": "gas-station",
+     "title": "Gas Station",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/gas-station/"
+    },
+    {
+     "slug": "asteroid-collision",
+     "title": "Asteroid Collision",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/asteroid-collision/"
+    },
+    {
      "slug": "cherry-pickup-ii",
      "title": "Cherry Pickup II",
      "difficulty": "Hard",
@@ -2865,13 +2858,6 @@
      "difficulty": "Hard",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/max-points-on-a-line/"
-    },
-    {
-     "slug": "asteroid-collision",
-     "title": "Asteroid Collision",
-     "difficulty": "Medium",
-     "frequency": 50.0,
-     "url": "https://leetcode.com/problems/asteroid-collision/"
     },
     {
      "slug": "first-missing-positive",
@@ -2998,6 +2984,370 @@
      "difficulty": "Medium",
      "frequency": 50.0,
      "url": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/"
+    },
+    {
+     "slug": "trapping-rain-water",
+     "title": "Trapping Rain Water",
+     "difficulty": "Hard",
+     "frequency": 50.0,
+     "url": "https://leetcode.com/problems/trapping-rain-water/"
+    }
+   ]
+  },
+  {
+   "name": "PhonePe",
+   "key": "phonepe",
+   "window": "all time",
+   "problems": [
+    {
+     "slug": "maximum-tastiness-of-candy-basket",
+     "title": "Maximum Tastiness of Candy Basket",
+     "difficulty": "Medium",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/"
+    },
+    {
+     "slug": "check-if-point-is-reachable",
+     "title": "Check if Point Is Reachable",
+     "difficulty": "Hard",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/check-if-point-is-reachable/"
+    },
+    {
+     "slug": "simple-bank-system",
+     "title": "Simple Bank System",
+     "difficulty": "Medium",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/simple-bank-system/"
+    },
+    {
+     "slug": "smallest-string-with-swaps",
+     "title": "Smallest String With Swaps",
+     "difficulty": "Medium",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/smallest-string-with-swaps/"
+    },
+    {
+     "slug": "viewers-turned-streamers",
+     "title": "Viewers Turned Streamers",
+     "difficulty": "Hard",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/viewers-turned-streamers/"
+    },
+    {
+     "slug": "find-beautiful-indices-in-the-given-array-ii",
+     "title": "Find Beautiful Indices in the Given Array II",
+     "difficulty": "Hard",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/find-beautiful-indices-in-the-given-array-ii/"
+    },
+    {
+     "slug": "smallest-range-covering-elements-from-k-lists",
+     "title": "Smallest Range Covering Elements from K Lists",
+     "difficulty": "Hard",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/"
+    },
+    {
+     "slug": "count-the-number-of-arrays-with-k-matching-adjacent-elements",
+     "title": "Count the Number of Arrays with K Matching Adjacent Elements",
+     "difficulty": "Hard",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/count-the-number-of-arrays-with-k-matching-adjacent-elements/"
+    },
+    {
+     "slug": "maximum-amount-of-money-robot-can-earn",
+     "title": "Maximum Amount of Money Robot Can Earn",
+     "difficulty": "Medium",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/maximum-amount-of-money-robot-can-earn/"
+    },
+    {
+     "slug": "frequencies-of-shortest-supersequences",
+     "title": "Frequencies of Shortest Supersequences",
+     "difficulty": "Hard",
+     "frequency": 100.0,
+     "url": "https://leetcode.com/problems/frequencies-of-shortest-supersequences/"
+    },
+    {
+     "slug": "longest-palindromic-substring",
+     "title": "Longest Palindromic Substring",
+     "difficulty": "Medium",
+     "frequency": 87.5,
+     "url": "https://leetcode.com/problems/longest-palindromic-substring/"
+    },
+    {
+     "slug": "minimum-number-of-days-to-make-m-bouquets",
+     "title": "Minimum Number of Days to Make m Bouquets",
+     "difficulty": "Medium",
+     "frequency": 87.5,
+     "url": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/"
+    },
+    {
+     "slug": "trapping-rain-water",
+     "title": "Trapping Rain Water",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/trapping-rain-water/"
+    },
+    {
+     "slug": "jump-game-ii",
+     "title": "Jump Game II",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/jump-game-ii/"
+    },
+    {
+     "slug": "house-robber",
+     "title": "House Robber",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/house-robber/"
+    },
+    {
+     "slug": "bus-routes",
+     "title": "Bus Routes",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/bus-routes/"
+    },
+    {
+     "slug": "maximum-profit-in-job-scheduling",
+     "title": "Maximum Profit in Job Scheduling",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/"
+    },
+    {
+     "slug": "remove-k-digits",
+     "title": "Remove K Digits",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/remove-k-digits/"
+    },
+    {
+     "slug": "decoded-string-at-index",
+     "title": "Decoded String at Index",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/decoded-string-at-index/"
+    },
+    {
+     "slug": "most-stones-removed-with-same-row-or-column",
+     "title": "Most Stones Removed with Same Row or Column",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/"
+    },
+    {
+     "slug": "reachable-nodes-in-subdivided-graph",
+     "title": "Reachable Nodes In Subdivided Graph",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/"
+    },
+    {
+     "slug": "sum-of-distances-in-tree",
+     "title": "Sum of Distances in Tree",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/sum-of-distances-in-tree/"
+    },
+    {
+     "slug": "kth-smallest-element-in-a-sorted-matrix",
+     "title": "Kth Smallest Element in a Sorted Matrix",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/"
+    },
+    {
+     "slug": "make-lexicographically-smallest-array-by-swapping-elements",
+     "title": "Make Lexicographically Smallest Array by Swapping Elements",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements/"
+    },
+    {
+     "slug": "matchsticks-to-square",
+     "title": "Matchsticks to Square",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/matchsticks-to-square/"
+    },
+    {
+     "slug": "lru-cache",
+     "title": "LRU Cache",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/lru-cache/"
+    },
+    {
+     "slug": "number-of-flowers-in-full-bloom",
+     "title": "Number of Flowers in Full Bloom",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/number-of-flowers-in-full-bloom/"
+    },
+    {
+     "slug": "zuma-game",
+     "title": "Zuma Game",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/zuma-game/"
+    },
+    {
+     "slug": "distribute-candies-among-children-ii",
+     "title": "Distribute Candies Among Children II",
+     "difficulty": "Medium",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/distribute-candies-among-children-ii/"
+    },
+    {
+     "slug": "collect-coins-in-a-tree",
+     "title": "Collect Coins in a Tree",
+     "difficulty": "Hard",
+     "frequency": 75.0,
+     "url": "https://leetcode.com/problems/collect-coins-in-a-tree/"
+    },
+    {
+     "slug": "longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit",
+     "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/"
+    },
+    {
+     "slug": "burst-balloons",
+     "title": "Burst Balloons",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/burst-balloons/"
+    },
+    {
+     "slug": "queue-reconstruction-by-height",
+     "title": "Queue Reconstruction by Height",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/queue-reconstruction-by-height/"
+    },
+    {
+     "slug": "rotting-oranges",
+     "title": "Rotting Oranges",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/rotting-oranges/"
+    },
+    {
+     "slug": "make-sum-divisible-by-p",
+     "title": "Make Sum Divisible by P",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/make-sum-divisible-by-p/"
+    },
+    {
+     "slug": "maximal-square",
+     "title": "Maximal Square",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/maximal-square/"
+    },
+    {
+     "slug": "split-array-into-consecutive-subsequences",
+     "title": "Split Array into Consecutive Subsequences",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/split-array-into-consecutive-subsequences/"
+    },
+    {
+     "slug": "asteroid-collision",
+     "title": "Asteroid Collision",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/asteroid-collision/"
+    },
+    {
+     "slug": "maximum-performance-of-a-team",
+     "title": "Maximum Performance of a Team",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/maximum-performance-of-a-team/"
+    },
+    {
+     "slug": "ways-to-make-a-fair-array",
+     "title": "Ways to Make a Fair Array",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/ways-to-make-a-fair-array/"
+    },
+    {
+     "slug": "group-anagrams",
+     "title": "Group Anagrams",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/group-anagrams/"
+    },
+    {
+     "slug": "evaluate-division",
+     "title": "Evaluate Division",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/evaluate-division/"
+    },
+    {
+     "slug": "loud-and-rich",
+     "title": "Loud and Rich",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/loud-and-rich/"
+    },
+    {
+     "slug": "determine-if-two-strings-are-close",
+     "title": "Determine if Two Strings Are Close",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/determine-if-two-strings-are-close/"
+    },
+    {
+     "slug": "minimum-edge-reversals-so-every-node-is-reachable",
+     "title": "Minimum Edge Reversals So Every Node Is Reachable",
+     "difficulty": "Hard",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/"
+    },
+    {
+     "slug": "number-of-operations-to-make-network-connected",
+     "title": "Number of Operations to Make Network Connected",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/"
+    },
+    {
+     "slug": "gas-station",
+     "title": "Gas Station",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/gas-station/"
+    },
+    {
+     "slug": "furthest-building-you-can-reach",
+     "title": "Furthest Building You Can Reach",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/furthest-building-you-can-reach/"
+    },
+    {
+     "slug": "3sum",
+     "title": "3Sum",
+     "difficulty": "Medium",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/3sum/"
+    },
+    {
+     "slug": "valid-parentheses",
+     "title": "Valid Parentheses",
+     "difficulty": "Easy",
+     "frequency": 62.5,
+     "url": "https://leetcode.com/problems/valid-parentheses/"
     }
    ]
   }

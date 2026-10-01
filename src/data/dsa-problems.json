@@ -23,7 +23,7 @@
       },
       "claude-picks": {
         "name": "Claude Picks",
-        "origin": "curated by Claude at build time; verified:false entries constructed from memory — review",
+        "origin": "curated by Claude at build time; all 30 URLs verified 2026-10-01; 21 not in any refreshed company top-50 list are T3",
         "count": 30
       }
     },
@@ -334,10 +334,11 @@
       "verified": true,
       "companies": [
         "amazon",
-        "google"
+        "google",
+        "microsoft"
       ],
       "aliasTitle": "Check Palindrome",
-      "tier": 3
+      "tier": 1
     },
     {
       "id": "dsa-gcdorhcf",
@@ -872,7 +873,7 @@
         "google",
         "microsoft"
       ],
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-rotate-array",
@@ -892,11 +893,11 @@
       "solutionUrl": "",
       "verified": true,
       "companies": [
-        "microsoft",
+        "google",
         "razorpay"
       ],
       "aliasTitle": "Left Rotate an array by one place",
-      "tier": 3
+      "tier": 2
     },
     {
       "id": "dsa-move-zeroes",
@@ -1006,7 +1007,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Maximum Consecutive Ones",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-subarray-sum-equals-k",
@@ -1075,9 +1076,7 @@
       },
       "solutionUrl": "https://youtu.be/qMPX1AOa83k",
       "verified": true,
-      "companies": [
-        "amazon"
-      ],
+      "companies": [],
       "aliasTitle": "Find the number that appears once, and other numbers twice.",
       "tier": 2
     },
@@ -1102,7 +1101,9 @@
       },
       "solutionUrl": "https://youtu.be/ZYpYur0znng",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "microsoft"
+      ],
       "aliasTitle": "Search an element in a 2D matrix",
       "tier": 2
     },
@@ -1153,8 +1154,7 @@
         "google",
         "microsoft",
         "flipkart",
-        "atlassian",
-        "swiggy"
+        "atlassian"
       ],
       "tier": 1
     },
@@ -1178,12 +1178,13 @@
       "solutionUrl": "https://www.youtube.com/watch?v=oaVa-9wmpns&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=2",
       "verified": true,
       "companies": [
-        "google",
+        "amazon",
         "microsoft",
+        "flipkart",
         "swiggy"
       ],
       "aliasTitle": "Sort an array of 0’s 1’s and 2’s",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-majority-element",
@@ -1337,12 +1338,10 @@
       "solutionUrl": "https://www.youtube.com/watch?v=LuLCLgMElus&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=9",
       "verified": true,
       "companies": [
-        "amazon",
-        "google",
         "microsoft",
         "flipkart"
       ],
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-leadersinanarrayproblem",
@@ -1389,6 +1388,7 @@
       "companies": [
         "amazon",
         "google",
+        "microsoft",
         "atlassian",
         "swiggy"
       ],
@@ -1473,6 +1473,7 @@
       "solutionUrl": "https://youtu.be/BJnMZNwUk1M",
       "verified": true,
       "companies": [
+        "amazon",
         "google"
       ],
       "aliasTitle": "Print the matrix in spiral manner",
@@ -1498,9 +1499,9 @@
       "solutionUrl": "https://www.youtube.com/watch?v=6FLvhQjZqvM&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=8",
       "verified": true,
       "companies": [
-        "google"
+        "amazon"
       ],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-majority-element-ii",
@@ -1521,11 +1522,9 @@
       },
       "solutionUrl": "https://www.youtube.com/watch?v=yDbkQd9t2ig&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=17",
       "verified": true,
-      "companies": [
-        "atlassian"
-      ],
+      "companies": [],
       "aliasTitle": "Majority Element (n/3 times)",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-3sum",
@@ -1553,7 +1552,8 @@
         "amazon",
         "google",
         "microsoft",
-        "zomato"
+        "zomato",
+        "phonepe"
       ],
       "aliasTitle": "3-Sum Problem",
       "tier": 1
@@ -1650,7 +1650,6 @@
         "amazon",
         "google",
         "microsoft",
-        "flipkart",
         "uber",
         "atlassian",
         "razorpay",
@@ -1684,7 +1683,7 @@
         "swiggy"
       ],
       "aliasTitle": "Merge two sorted arrays without extra space",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-findtherepeatingandmissingnumber",
@@ -1746,7 +1745,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=S6rsAlj_iB4&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=19",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-maximum-product-subarray",
@@ -2006,10 +2005,11 @@
       "solutionUrl": "https://www.youtube.com/watch?v=PzszoiY5XMQ&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=64",
       "verified": true,
       "companies": [
+        "google",
         "microsoft",
         "zomato"
       ],
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-findkthelementoftwosortedarrays",
@@ -2092,7 +2092,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=63fPPOdIr2c&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=62",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-findsquarerootofanumberinlogn",
@@ -2180,7 +2180,9 @@
       },
       "solutionUrl": "",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "phonepe"
+      ],
       "aliasTitle": "Minimum days to make M bouquets",
       "tier": 3
     },
@@ -2253,7 +2255,7 @@
         "google",
         "swiggy"
       ],
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-aggressivecows",
@@ -2275,7 +2277,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=wSOfYesTBRk&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=70",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-bookallocationproblem",
@@ -2319,7 +2321,7 @@
         "uber"
       ],
       "pickNote": "Canonical binary-search-on-answer",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-kth-missing-positive-number",
@@ -2423,7 +2425,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Reverse words in a given string / Palindrome Check",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-largest-odd-number-in-string",
@@ -2470,7 +2472,7 @@
         "google",
         "microsoft"
       ],
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-isomorphic-strings",
@@ -2494,7 +2496,7 @@
         "sprinklr"
       ],
       "aliasTitle": "Isomorphic String",
-      "tier": 3
+      "tier": 2
     },
     {
       "id": "dsa-rotate-string",
@@ -2540,8 +2542,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=9UtInBqnCgA",
       "verified": true,
       "companies": [
-        "google",
-        "microsoft"
+        "google"
       ],
       "aliasTitle": "Check if two strings are anagram of each other",
       "tier": 1
@@ -2636,7 +2637,7 @@
       "companies": [],
       "pickNote": "Edge-case discipline; classic screen filter",
       "aliasTitle": "Implement Atoi",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-countnumberofsubstrings",
@@ -2684,7 +2685,9 @@
         "amazon",
         "google",
         "microsoft",
-        "swiggy"
+        "uber",
+        "swiggy",
+        "phonepe"
       ],
       "aliasTitle": "Longest Palindromic Substring[Do it without DP]",
       "tier": 1
@@ -2771,7 +2774,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Deleting a node in LinkedList",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-findthelengthofthelinkedlistlearntravers",
@@ -2914,7 +2917,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Middle of a LinkedList [Tortoise Hare Method]",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-reverse-linked-list",
@@ -2992,7 +2995,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Find the starting point in LL",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-lengthofloopinll",
@@ -3035,7 +3038,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Check if LL is palindrome or not",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-odd-even-linked-list",
@@ -3167,7 +3170,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Find the intersection point of Y LL",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-add1toanumberrepresentedbyll",
@@ -3216,7 +3219,7 @@
         "microsoft"
       ],
       "aliasTitle": "Add 2 numbers in LL",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-deletealloccurrencesofakeyindll",
@@ -3324,7 +3327,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Rotate a LL",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-flatteningofll",
@@ -3395,7 +3398,9 @@
       },
       "solutionUrl": "https://youtu.be/l0YC3876qxg",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "google"
+      ],
       "tier": 2
     },
     {
@@ -3498,7 +3503,6 @@
       "solutionUrl": "https://youtu.be/s9fokUqJ76A",
       "verified": true,
       "companies": [
-        "amazon",
         "google",
         "microsoft",
         "flipkart"
@@ -3727,9 +3731,7 @@
       "solutionUrl": "https://youtu.be/0snEunUacZY",
       "verified": true,
       "companies": [
-        "amazon",
-        "google",
-        "microsoft"
+        "amazon"
       ],
       "tier": 2
     },
@@ -3778,6 +3780,7 @@
       "solutionUrl": "https://youtu.be/pfiQ_PS1g8E",
       "verified": true,
       "companies": [
+        "amazon",
         "uber",
         "atlassian"
       ],
@@ -3805,7 +3808,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=i05Ju7AftcM&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=57",
       "verified": true,
       "companies": [
-        "microsoft"
+        "google"
       ],
       "aliasTitle": "N Queen",
       "tier": 2
@@ -3830,7 +3833,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=bLGZhJlt4y0&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=60",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-word-break",
@@ -3852,9 +3855,7 @@
       },
       "solutionUrl": "https://youtu.be/Sx9NNgInc3A",
       "verified": true,
-      "companies": [
-        "uber"
-      ],
+      "companies": [],
       "tier": 1
     },
     {
@@ -3877,7 +3878,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=wuVwUK25Rfc&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=59",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-sudoku-solver",
@@ -3900,7 +3901,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Sudoko Solver",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-expression-add-operators",
@@ -4202,9 +4203,7 @@
       },
       "solutionUrl": "",
       "verified": true,
-      "companies": [
-        "uber"
-      ],
+      "companies": [],
       "aliasTitle": "Sieve of Eratosthenes",
       "tier": 3
     },
@@ -4248,7 +4247,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=GYptUgnIM_I&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=68",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-implementqueueusingarrays",
@@ -4270,7 +4269,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=M6GnoUDpqEE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=72",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-implement-stack-using-queues",
@@ -4293,7 +4292,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Implement Stack using Queue",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-implement-queue-using-stacks",
@@ -4316,7 +4315,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Implement Queue using Stack",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-implementstackusinglinkedlist",
@@ -4384,7 +4383,7 @@
         "amazon",
         "google",
         "microsoft",
-        "swiggy"
+        "phonepe"
       ],
       "tier": 1
     },
@@ -4409,7 +4408,9 @@
       },
       "solutionUrl": "https://youtu.be/V09NfaGf2ao",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "microsoft"
+      ],
       "aliasTitle": "Implement Min Stack",
       "tier": 2
     },
@@ -4553,7 +4554,6 @@
       "solutionUrl": "https://www.youtube.com/watch?v=Du881K7Jtk8&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=75",
       "verified": true,
       "companies": [
-        "microsoft",
         "flipkart",
         "swiggy"
       ],
@@ -4580,7 +4580,7 @@
       "verified": true,
       "companies": [],
       "pickNote": "Circular monotonic stack; A2Z-adjacent but sharper",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-nextsmallerelement",
@@ -4602,7 +4602,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=Li08Xq-7gck",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-numberofngestotheright",
@@ -4650,7 +4650,9 @@
         "google",
         "microsoft",
         "flipkart",
-        "swiggy"
+        "swiggy",
+        "sprinklr",
+        "phonepe"
       ],
       "tier": 1
     },
@@ -4678,7 +4680,7 @@
       ],
       "pickNote": "Contribution technique; separates rote from understanding",
       "aliasTitle": "Sum of subarray minimum",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-online-stock-span",
@@ -4703,7 +4705,7 @@
       "companies": [],
       "pickNote": "Monotonic stack in streaming form",
       "aliasTitle": "Stock span problem",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-asteroid-collision",
@@ -4723,11 +4725,11 @@
       "solutionUrl": "",
       "verified": true,
       "companies": [
-        "amazon",
         "flipkart",
-        "sprinklr"
+        "sprinklr",
+        "phonepe"
       ],
-      "tier": 3
+      "tier": 1
     },
     {
       "id": "dsa-sum-of-subarray-ranges",
@@ -4766,7 +4768,9 @@
       },
       "solutionUrl": "",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "phonepe"
+      ],
       "tier": 3
     },
     {
@@ -4792,10 +4796,12 @@
       "verified": true,
       "companies": [
         "amazon",
+        "google",
+        "microsoft",
         "flipkart"
       ],
       "aliasTitle": "Largest rectangle in a histogram",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-maximal-rectangle",
@@ -4867,7 +4873,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=CiiXBvrX-5A",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-rotting-oranges",
@@ -4893,10 +4899,11 @@
       "companies": [
         "amazon",
         "flipkart",
-        "uber"
+        "uber",
+        "phonepe"
       ],
       "aliasTitle": "Rotten Oranges",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-lru-cache",
@@ -4924,8 +4931,10 @@
         "google",
         "microsoft",
         "uber",
+        "atlassian",
         "razorpay",
-        "swiggy"
+        "swiggy",
+        "phonepe"
       ],
       "aliasTitle": "LRU cache (IMPORTANT)",
       "tier": 1
@@ -4951,10 +4960,11 @@
       "solutionUrl": "https://www.youtube.com/watch?v=0PSB9y8ehbk&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=79",
       "verified": true,
       "companies": [
+        "microsoft",
         "zomato"
       ],
       "pickNote": "Step up from LRU; tests real data-structure composition",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-longest-substring-without-repeating-characters",
@@ -4982,7 +4992,6 @@
         "amazon",
         "google",
         "microsoft",
-        "flipkart",
         "atlassian",
         "swiggy",
         "zomato"
@@ -5051,6 +5060,7 @@
       "verified": true,
       "companies": [
         "amazon",
+        "google",
         "microsoft"
       ],
       "tier": 1
@@ -5139,7 +5149,7 @@
         "sprinklr"
       ],
       "aliasTitle": "Maximum point you can obtain from cards",
-      "tier": 3
+      "tier": 2
     },
     {
       "id": "dsa-longest-substring-with-at-most-k-distinct-characters",
@@ -5182,7 +5192,7 @@
       "companies": [],
       "pickNote": "atMost(K) - atMost(K-1) trick",
       "aliasTitle": "Subarray with k different integers",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-minimum-window-substring",
@@ -5205,6 +5215,7 @@
       "solutionUrl": "https://youtu.be/jSto0O4AJbM",
       "verified": true,
       "companies": [
+        "amazon",
         "microsoft",
         "swiggy"
       ],
@@ -5332,7 +5343,6 @@
       "solutionUrl": "https://www.youtube.com/watch?v=aXJ-p3Qa4TY",
       "verified": true,
       "companies": [
-        "amazon",
         "flipkart"
       ],
       "aliasTitle": "Kth largest element in an array [use priority queue]",
@@ -5447,7 +5457,7 @@
       "verified": true,
       "companies": [],
       "pickNote": "Greedy frequency math; Amazon staple",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-hand-of-straights",
@@ -5561,7 +5571,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=yNLu2kJUjjU",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-find-median-from-data-stream",
@@ -5586,7 +5596,6 @@
       "solutionUrl": "https://www.youtube.com/watch?v=1LkOrc-Le-Y",
       "verified": true,
       "companies": [
-        "microsoft",
         "flipkart",
         "sprinklr"
       ],
@@ -5616,8 +5625,6 @@
       "verified": true,
       "companies": [
         "amazon",
-        "google",
-        "uber",
         "atlassian"
       ],
       "aliasTitle": "K most frequent elements",
@@ -5663,7 +5670,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=F_DDzYnxO14&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=49",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-greedyalgorithmtofindminimum",
@@ -5748,7 +5755,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=II6ziNnub1Q&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=45",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-jump-game",
@@ -5795,8 +5802,8 @@
       "solutionUrl": "https://youtu.be/dJ7sWiOoK7g",
       "verified": true,
       "companies": [
-        "amazon",
-        "atlassian"
+        "atlassian",
+        "phonepe"
       ],
       "aliasTitle": "Jump Game 2",
       "tier": 2
@@ -5821,7 +5828,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=dxVcMDI7vyI&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=46",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-jobsequencingproblem",
@@ -5843,7 +5850,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=LjPx4wQaRIs&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=47",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-candy",
@@ -6054,7 +6061,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Preorder Traversal of Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-binary-tree-inorder-traversal",
@@ -6077,7 +6084,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Inorder Traversal of Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-binary-tree-postorder-traversal",
@@ -6100,7 +6107,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Post-order Traversal of Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-binary-tree-level-order-traversal",
@@ -6124,9 +6131,7 @@
       },
       "solutionUrl": "https://youtu.be/EoAsWbO7sqg",
       "verified": true,
-      "companies": [
-        "microsoft"
-      ],
+      "companies": [],
       "aliasTitle": "Level order Traversal / Level order traversal in spiral form",
       "tier": 1
     },
@@ -6197,7 +6202,9 @@
       },
       "solutionUrl": "https://youtu.be/Yt50Jfbd8Po",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "microsoft"
+      ],
       "aliasTitle": "Check if the Binary tree is height-balanced or not",
       "tier": 2
     },
@@ -6298,7 +6305,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Zig Zag Traversal of Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-boundary-of-binary-tree",
@@ -6342,9 +6349,11 @@
       },
       "solutionUrl": "https://youtu.be/q_a6lpbKJdw",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "uber"
+      ],
       "aliasTitle": "Vertical Order Traversal of Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-topviewofbinarytree",
@@ -6366,7 +6375,7 @@
       "solutionUrl": "https://youtu.be/Et9OCDNvJ78",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-bottomviewofbinarytree",
@@ -6388,7 +6397,7 @@
       "solutionUrl": "https://youtu.be/0FtVY6I4pB8",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-binary-tree-right-side-view",
@@ -6434,7 +6443,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Symmetric Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-roottonodepathinbinarytree",
@@ -6505,7 +6514,7 @@
         "flipkart"
       ],
       "aliasTitle": "Maximum width of a Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-checkforchildrensumproperty",
@@ -6527,7 +6536,7 @@
       "solutionUrl": "https://youtu.be/fnmisPM6cVo",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-all-nodes-distance-k-in-binary-tree",
@@ -6658,7 +6667,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Construct the Binary Tree from Postorder and Inorder Traversal",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-serialize-and-deserialize-binary-tree",
@@ -6705,7 +6714,7 @@
       "solutionUrl": "https://youtu.be/sWf7k1x9XR4",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-introductiontobinarysearchtree",
@@ -6747,7 +6756,7 @@
       "solutionUrl": "https://youtu.be/KcNt6v_56cc",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-findminmaxinbst",
@@ -6952,7 +6961,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Construct a BST from a preorder traversal",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-inorder-successor-in-bst",
@@ -6996,7 +7005,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Merge 2 BST’s",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-two-sum-iv-input-is-a-bst",
@@ -7019,7 +7028,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Two Sum In BST | Check if there exists a pair with Sum K",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-recover-binary-search-tree",
@@ -7162,7 +7171,7 @@
       "solutionUrl": "https://youtu.be/-tgVpUgsQ5k",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-dfs",
@@ -7184,7 +7193,7 @@
       "solutionUrl": "https://youtu.be/Qzf1a--rhp8",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-number-of-provinces",
@@ -7247,7 +7256,7 @@
       "solutionUrl": "https://youtu.be/C-2_uSRli8o",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-cycledetectioninunirectedgraphbfs",
@@ -7374,7 +7383,7 @@
       "solutionUrl": "https://youtu.be/h9iTnkgv05E",
       "verified": true,
       "companies": [
-        "flipkart"
+        "amazon"
       ],
       "aliasTitle": "Word ladder – 1",
       "tier": 2
@@ -7442,7 +7451,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Bipartite Graph (DFS)",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-course-schedule-ii",
@@ -7553,7 +7562,6 @@
       "verified": true,
       "companies": [
         "amazon",
-        "google",
         "flipkart",
         "uber",
         "swiggy",
@@ -7708,7 +7716,7 @@
       "companies": [],
       "pickNote": "Plain BFS done fast; common OA",
       "aliasTitle": "Shortest path in a binary maze",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-path-with-minimum-effort",
@@ -7750,7 +7758,7 @@
       "solutionUrl": "https://youtu.be/5eIK3zUdYmE",
       "verified": true,
       "companies": [
-        "uber"
+        "flipkart"
       ],
       "tier": 2
     },
@@ -7994,7 +8002,9 @@
       },
       "solutionUrl": "",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "phonepe"
+      ],
       "tier": 3
     },
     {
@@ -8014,7 +8024,9 @@
       },
       "solutionUrl": "",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "phonepe"
+      ],
       "aliasTitle": "Most stones removed with same rows or columns",
       "tier": 3
     },
@@ -8038,7 +8050,7 @@
       "verified": true,
       "companies": [],
       "pickNote": "Union-Find on real-world data; frequent at Amazon/Google",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-number-of-islands-ii",
@@ -8212,6 +8224,7 @@
       "verified": true,
       "companies": [
         "amazon",
+        "google",
         "microsoft"
       ],
       "tier": 1
@@ -8340,6 +8353,7 @@
       "verified": true,
       "companies": [
         "amazon",
+        "microsoft",
         "flipkart",
         "razorpay"
       ],
@@ -8388,7 +8402,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Minimum path sum in Grid (DP 10)",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-triangle",
@@ -8600,7 +8614,9 @@
       },
       "solutionUrl": "https://www.youtube.com/watch?v=myPeWb3Y68A",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "amazon"
+      ],
       "aliasTitle": "Minimum Coins (DP – 20)",
       "tier": 1
     },
@@ -8630,8 +8646,8 @@
     {
       "id": "dsa-coin-change-2",
       "title": "Coin Change 2",
-      "url": "https://leetcode.com/problems/coin-change-2/",
-      "lcSlug": "coin-change-2",
+      "url": "https://leetcode.com/problems/coin-change-ii/",
+      "lcSlug": "coin-change-ii",
       "difficulty": "",
       "topic": "Dynamic Programming",
       "subtopic": "DP on Subsequence",
@@ -8890,7 +8906,7 @@
         "sprinklr"
       ],
       "aliasTitle": "Edit Distance | (DP-33)",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-wildcard-matching",
@@ -9044,7 +9060,6 @@
       "verified": true,
       "companies": [
         "google",
-        "microsoft",
         "atlassian"
       ],
       "aliasTitle": "Longest Increasing Subsequence |(DP-41)",
@@ -9236,7 +9251,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Minimum Cost to Cut the Stick|(DP-50)",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-burst-balloons",
@@ -9257,7 +9272,9 @@
       },
       "solutionUrl": "https://youtu.be/Yz4LlDSlkns",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "phonepe"
+      ],
       "aliasTitle": "Burst Balloons|(DP-51)",
       "tier": 2
     },
@@ -9391,7 +9408,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=K5pcpkEMCN0&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=2",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-longeststringwithallprefixes",
@@ -9413,7 +9430,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=AWnBa91lThI&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=3",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-numberofdistinctsubstringsinastring",
@@ -9435,7 +9452,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=RV0QeTyHZxo&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=4",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-bitprerequisitesfortrieproblems",
@@ -9477,7 +9494,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=EIhAwfHubE8&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=6",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-maximum-xor-with-an-element-from-array",
@@ -9499,7 +9516,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=Q8LhG9Pi5KM&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=7",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-minimum-add-to-make-parentheses-valid",
@@ -9542,7 +9559,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=1YUqtoT9YoE",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-hashinginstringstheory",
@@ -9584,7 +9601,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=BQ9E-2umSWc",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-zfunction",
@@ -9626,7 +9643,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=V5-7GzOfADQ",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-shortest-palindrome",
@@ -9729,7 +9746,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=5nMGY4VUoRY&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=3",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-inversionofarray",
@@ -9749,7 +9766,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=kQ1mJlwW-c0",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-longestsubarraywith0sum",
@@ -9769,7 +9786,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=xmguZ6GbatA&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=23",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-countnumberofsubarrayswithgivenxor",
@@ -9789,7 +9806,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=lO9R5CaGRPY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=25",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-merge-two-sorted-lists",
@@ -9813,7 +9830,8 @@
       "verified": true,
       "companies": [
         "amazon",
-        "swiggy"
+        "google",
+        "microsoft"
       ],
       "aliasTitle": "Merge two sorted linked list",
       "tier": 1
@@ -9836,7 +9854,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=ysytSSXpAI0&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=38",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-greedyalgorithmtofindminimumnumberofcoin",
@@ -9856,7 +9874,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=mVg9CfJvayM&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=48",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-activityselectionitisthesameasnmeetingin",
@@ -9876,7 +9894,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=II6ziNnub1Q&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=45",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-subsetsums",
@@ -9896,7 +9914,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=rYkfBRtMJr8&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=52",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-permutation-sequence",
@@ -9917,7 +9935,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "K-th permutation Sequence",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-permutations",
@@ -9962,7 +9980,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=LmHWIsBQBU4",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-thenthrootofaninteger",
@@ -9982,7 +10000,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=WjpswYrS2nY&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=62",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-search-in-rotated-sorted-array",
@@ -10031,7 +10049,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=nv7F4PiLUzo&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=66",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-allocateminimumnumberofpages",
@@ -10051,7 +10069,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=gYmWHvRHu-s&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=69",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-maxheapminheapimplementation",
@@ -10071,7 +10089,7 @@
       "solutionUrl": "https://www.geeksforgeeks.org/binary-heap/",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-mergeksortedarrays",
@@ -10091,7 +10109,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=VV19JFP6-0c",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-sortastack",
@@ -10111,7 +10129,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=MOGBRkkOhkY",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-findthemaximumofminimumsofeverywindowsiz",
@@ -10131,13 +10149,13 @@
       "solutionUrl": "https://www.youtube.com/watch?v=CK8PIAF-m2E",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-implement-strstr",
       "title": "Implement Strstr",
-      "url": "https://leetcode.com/problems/implement-strstr/",
-      "lcSlug": "implement-strstr",
+      "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+      "lcSlug": "find-the-index-of-the-first-occurrence-in-a-string",
       "difficulty": "",
       "topic": "Strings",
       "subtopic": "",
@@ -10152,7 +10170,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Z-Function",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-minimumcharactersneededtobeinsertedinthe",
@@ -10172,7 +10190,7 @@
       "solutionUrl": "https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-compare-version-numbers",
@@ -10192,7 +10210,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=MTSetP6kcRI",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-morrispreordertraversal",
@@ -10212,7 +10230,7 @@
       "solutionUrl": "https://youtu.be/80Zug6D1_r4",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-leftviewofbinarytree",
@@ -10232,7 +10250,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=KV4mRzTjlAk&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=25",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-preorderinorderpostorderinasingletravers",
@@ -10252,7 +10270,7 @@
       "solutionUrl": "https://youtu.be/ySp2epYvgTE",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-roottonodepathinabinarytree",
@@ -10272,7 +10290,7 @@
       "solutionUrl": "https://youtu.be/fmflMqVOC7k",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-boundarytraversalofbinarytree",
@@ -10292,7 +10310,7 @@
       "solutionUrl": "https://youtu.be/0ca1nvR0be4",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-checkifbinarytreeisthemirrorofitselforno",
@@ -10312,7 +10330,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=lLdyqkdFNi0",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-populating-next-right-pointers-in-each-node",
@@ -10333,7 +10351,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Populate Next Right pointers of Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-convert-sorted-array-to-binary-search-tree",
@@ -10354,7 +10372,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Construct BST from given keys",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-findtheinorderpredecessorsuccessorofagiv",
@@ -10374,7 +10392,7 @@
       "solutionUrl": "https://youtu.be/SXKAD2svfmI",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-floorinabst",
@@ -10394,7 +10412,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=xm_W1ub-K-w&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=43",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-ceilinabst",
@@ -10414,7 +10432,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=KSsk8AhdOZA&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=42",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-findkthlargestelementinbst",
@@ -10434,7 +10452,7 @@
       "solutionUrl": "https://youtu.be/9TJYWh0adfk",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-maximum-sum-bst-in-binary-tree",
@@ -10455,7 +10473,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Size of the largest BST in a Binary Tree",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-distinctnumbersinwindow",
@@ -10475,7 +10493,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=j48e8ac7r20",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-clone-graph",
@@ -10519,7 +10537,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=rZv_jHZva34&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=14",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-topologicalsortdfs",
@@ -10539,7 +10557,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=Yh6EFazXipA&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=13",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-number-of-islands",
@@ -10589,7 +10607,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "Strongly Connected Component(using KosaRaju's algo)",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-dijkstrasalgorithm",
@@ -10609,7 +10627,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=jbhuqIASjoM&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=18",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-bellmanfordalgo",
@@ -10629,7 +10647,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=75yC1vbS8S8&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=28",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-floydwarshallalgorithm",
@@ -10649,7 +10667,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=oNI0rf2P9gE",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-mstusingprimsalgo",
@@ -10669,7 +10687,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=HnD676J56ak&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=20",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-mstusingkruskalsalgo",
@@ -10689,7 +10707,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=1KRmCzBl_mQ&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=24",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-ones-and-zeroes",
@@ -10710,7 +10728,7 @@
       "verified": true,
       "companies": [],
       "aliasTitle": "0-1 Knapsack",
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-maximumsumincreasingsubsequence",
@@ -10730,7 +10748,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=R7DrJsTkK8w",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-matrixchainmultiplication",
@@ -10750,7 +10768,7 @@
       "solutionUrl": "https://youtu.be/vRVfmbCFW7Y",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-eggdropping",
@@ -10770,7 +10788,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=gr2NtY-2QUY",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-wordbreak",
@@ -10790,7 +10808,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=th4OnoGasMU",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-palindromepartitioningmcmvariation",
@@ -10810,7 +10828,7 @@
       "solutionUrl": "https://youtu.be/_H8V5hJUGd0",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-maximumprofitinjobscheduling",
@@ -10830,7 +10848,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=ZOP43iB_E_8",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-powerset",
@@ -10850,7 +10868,7 @@
       "solutionUrl": "https://www.youtube.com/watch?v=b7AYbpM5YrE&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=67",
       "verified": true,
       "companies": [],
-      "tier": 2
+      "tier": 3
     },
     {
       "id": "dsa-contains-duplicate",
@@ -10871,7 +10889,8 @@
       "solutionUrl": "https://youtu.be/3OamzN90kPg",
       "verified": true,
       "companies": [
-        "google"
+        "google",
+        "microsoft"
       ],
       "tier": 1
     },
@@ -10897,7 +10916,8 @@
         "amazon",
         "google",
         "microsoft",
-        "atlassian"
+        "atlassian",
+        "phonepe"
       ],
       "tier": 1
     },
@@ -11008,7 +11028,8 @@
         "google",
         "microsoft",
         "flipkart",
-        "razorpay"
+        "razorpay",
+        "zomato"
       ],
       "tier": 1
     },
@@ -11116,7 +11137,7 @@
         "uber"
       ],
       "pickNote": "Design + binary search on timestamps",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-reorder-list",
@@ -11136,7 +11157,9 @@
       },
       "solutionUrl": "https://youtu.be/S5bfdUTrKLM",
       "verified": true,
-      "companies": [],
+      "companies": [
+        "microsoft"
+      ],
       "tier": 1
     },
     {
@@ -11494,7 +11517,7 @@
       "verified": true,
       "companies": [
         "amazon",
-        "google"
+        "phonepe"
       ],
       "tier": 1
     },
@@ -11621,7 +11644,7 @@
       "verified": true,
       "companies": [],
       "pickNote": "DFS + memo on grid; Google classic",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-regular-expression-matching",
@@ -11663,9 +11686,11 @@
       "solutionUrl": "https://youtu.be/lJwbPZGo05A",
       "verified": true,
       "companies": [
-        "flipkart"
+        "flipkart",
+        "sprinklr",
+        "phonepe"
       ],
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "dsa-merge-triplets-to-form-target-triplet",
@@ -11747,9 +11772,6 @@
       "solutionUrl": "https://youtu.be/FdzJmTCVyJU",
       "verified": true,
       "companies": [
-        "amazon",
-        "google",
-        "microsoft",
         "uber",
         "atlassian"
       ],
@@ -11794,7 +11816,6 @@
       "verified": true,
       "companies": [
         "google",
-        "microsoft",
         "swiggy"
       ],
       "tier": 2
@@ -11959,10 +11980,12 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "uber"
+      ],
       "pickNote": "Hash + array swap-delete trick; loved in phone screens",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-random-pick-with-weight",
@@ -11978,10 +12001,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Prefix sums + binary search; extremely common at FAANG",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-basic-calculator-ii",
@@ -11997,10 +12020,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Expression parsing without eval; frequent at Meta/Amazon",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-decode-string",
@@ -12016,10 +12039,12 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "razorpay"
+      ],
       "pickNote": "Nested stack decode; common everywhere",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-design-browser-history",
@@ -12035,10 +12060,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Clean OOP + two stacks; machine-coding adjacent",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-design-underground-system",
@@ -12054,10 +12079,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Hash map aggregation design; common OA question",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-snapshot-array",
@@ -12073,10 +12098,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Versioned data; Google favorite",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-evaluate-division",
@@ -12092,8 +12117,12 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "flipkart",
+        "uber",
+        "phonepe"
+      ],
       "pickNote": "Weighted graph BFS/DFS; Google classic",
       "tier": 1
     },
@@ -12111,10 +12140,13 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "uber",
+        "phonepe"
+      ],
       "pickNote": "BFS on route-graph modeling; tests abstraction",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-maximum-frequency-stack",
@@ -12130,10 +12162,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Freq-group stacks; beautiful design problem",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-reorganize-string",
@@ -12149,10 +12181,12 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "amazon"
+      ],
       "pickNote": "Greedy + heap; frequent at Amazon",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-kth-smallest-element-in-a-sorted-matrix",
@@ -12168,10 +12202,12 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "phonepe"
+      ],
       "pickNote": "Binary search on answer space",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-sliding-window-median",
@@ -12187,10 +12223,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Two-heap window; hard-round differentiator",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-maximum-profit-in-job-scheduling",
@@ -12206,10 +12242,13 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "swiggy",
+        "phonepe"
+      ],
       "pickNote": "DP + binary search; modern FAANG favorite",
-      "tier": 1
+      "tier": 2
     },
     {
       "id": "dsa-word-break-ii",
@@ -12225,10 +12264,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Backtracking + memo; follow-up to Word Break",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-concatenated-words",
@@ -12244,10 +12283,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Word Break at scale; Amazon favorite",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-count-of-smaller-numbers-after-self",
@@ -12263,10 +12302,10 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
+      "verified": true,
       "companies": [],
       "pickNote": "Merge-sort/BIT counting; hard-round classic",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "dsa-first-missing-positive",
@@ -12282,8 +12321,12 @@
       ],
       "orders": {},
       "solutionUrl": "",
-      "verified": false,
-      "companies": [],
+      "verified": true,
+      "companies": [
+        "swiggy",
+        "zomato",
+        "sprinklr"
+      ],
       "pickNote": "Index-as-hash trick; O(1) space reasoning",
       "tier": 1
     }

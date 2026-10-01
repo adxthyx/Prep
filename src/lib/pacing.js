@@ -1,23 +1,19 @@
 import { todayKey, daysUntil, addDays, DAY } from './dates'
 import { dsaProblems, sdeRoadmap, hld, aiRoadmap, aiPapers } from './registry'
 
+const problemTier = (state, p) => state.tierOverrides?.[p.id] ?? p.tier ?? 3
+
 export function activeMilestone(state, config) {
   const today = todayKey()
   const settings = state.settings || {}
 
   // Tier 1: DSA(tier===1) + sde-cs phase
-  const dsa1 = dsaProblems.problems.filter((p) => {
-    const tier = state.tierOverrides?.[p.id] ?? p.tier ?? 3
-    return tier === 1
-  })
+  const dsa1 = dsaProblems.problems.filter((p) => problemTier(state, p) === 1)
   const sdecs = sdeRoadmap.phases.find((p) => p.id === 'sde-cs')?.items || []
   const t1Items = [...dsa1.map((p) => ({ id: p.id, tier: 1, module: 'dsa' })), ...sdecs.map((it) => ({ id: it.id, tier: 1, module: 'sde' }))]
 
   // Tier 2: DSA(tier===2) + HLD(concepts + questions)
-  const dsa2 = dsaProblems.problems.filter((p) => {
-    const tier = state.tierOverrides?.[p.id] ?? p.tier ?? 3
-    return tier === 2
-  })
+  const dsa2 = dsaProblems.problems.filter((p) => problemTier(state, p) === 2)
   const hldItems = [...(hld.concepts || []), ...(hld.questions || [])].map((x) => ({ id: x.id, tier: 2, module: 'hld' }))
   const t2Items = [...dsa2.map((p) => ({ id: p.id, tier: 2, module: 'dsa' })), ...hldItems]
 
@@ -40,9 +36,9 @@ export function activeMilestone(state, config) {
     return { label: 'Tier 2 + HLD classics', target: t2Target, items: t2Items, tier: 2 }
   }
 
-  // Fallback: everything not done
+  // Fallback: everything not done (Tier 3 DSA is reference only, never paced)
   const allItems = [
-    ...dsaProblems.problems.map((p) => ({ id: p.id, module: 'dsa' })),
+    ...dsaProblems.problems.filter((p) => problemTier(state, p) !== 3).map((p) => ({ id: p.id, module: 'dsa' })),
     ...sdeRoadmap.phases.flatMap((ph) => ph.items.map((it) => ({ id: it.id, module: 'sde' }))),
     ...aiRoadmap.phases.flatMap((ph) => ph.items.map((it) => ({ id: it.id, module: 'ai' }))),
     ...aiPapers.categories.flatMap((category) =>
@@ -95,11 +91,15 @@ export function todaysPlan(state, milestone) {
   // Deterministic shuffle seeded by today (not random per-render)
   const dayParts = today.split('-').map((x) => parseInt(x))
   const seed = dayParts[0] * 10000 + dayParts[1] * 100 + dayParts[2]
-  const shuffled = [...availableInMilestone].sort((a, b) => {
-    const hashA = ((seed * 7919 + (a.id.charCodeAt(0) || 0)) % 10007)
-    const hashB = ((seed * 7919 + (b.id.charCodeAt(0) || 0)) % 10007)
-    return hashA - hashB
-  })
+  const hash = (id) => {
+    let h = seed >>> 0
+    for (let i = 0; i < id.length; i++) h = Math.imul(h ^ id.charCodeAt(i), 2654435761) >>> 0
+    return h ^ (h >>> 16)
+  }
+  const shuffled = availableInMilestone
+    .map((item) => ({ item, h: hash(item.id) }))
+    .sort((a, b) => a.h - b.h)
+    .map((x) => x.item)
 
   const added = shuffled.slice(0, needed).map((x) => x.id)
   return baseItems.concat(added)

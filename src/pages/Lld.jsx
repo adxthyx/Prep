@@ -83,7 +83,7 @@ export default function Lld() {
               key={p.id}
               id={p.id}
               title={p.title}
-              resources={p.referenceUrl ? [{ title: 'Reference solution', type: 'github', url: p.referenceUrl, free: true, note: p.note, verified: p.verified }] : (p.note ? [{ title: 'How to approach', type: 'docs', url: '', free: true, note: p.note, verified: true }] : [])}
+              resources={p.referenceUrl ? [{ ...(p.referenceUrl.includes('github.com') ? { title: 'Reference solution', type: 'github' } : { title: 'Problem statement', type: 'docs' }), url: p.referenceUrl, free: true, note: p.note, verified: p.verified }] : (p.note ? [{ title: 'How to approach', type: 'docs', url: '', free: true, note: p.note, verified: true }] : [])}
             />
           ))}
         </div>

@@ -1,78 +1,17 @@
 import { Link } from 'react-router-dom'
-import { useStore, getItem, dueRevisits, inProgress, config } from '../store'
-import { ITEMS, MODULES, moduleItemIds, dsaProblems, sdeRoadmap, hld } from '../lib/registry'
-import { daysUntil, streakFrom, todayKey, formatDate, parseDay, DAY } from '../lib/dates'
+import { useStore, getItem, dueRevisits, config } from '../store'
+import { ITEMS, MODULES, moduleItemIds } from '../lib/registry'
+import { streakFrom, todayKey, formatDate } from '../lib/dates'
 import { activeMilestone, todaysPlan, burnUpSeries, dailyQuota } from '../lib/pacing'
 import Heatmap from '../components/Heatmap'
 import BurnUpChart from '../components/BurnUpChart'
 import { StatusPill } from '../components/ui'
 
-/** Signature element: the Launch Rail — the whole 4-month sprint as one burn line. */
-function LaunchRail({ state }) {
-  const start = config.studyStart
-  const shortDate = (date) => new Date(`${date}T00:00:00`).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' }).toUpperCase()
-  const marks = [
-    { key: start, label: 'study starts', short: shortDate(start) },
-    { key: state.settings?.tier1Target || config.tier1Target, label: 'T1 target', short: shortDate(state.settings?.tier1Target || config.tier1Target) },
-    { key: state.settings?.tier2Target || config.tier2Target, label: 'T2 target', short: shortDate(state.settings?.tier2Target || config.tier2Target) },
-    { key: config.hikesDeadline, label: `${config.hikesTarget} hikes`, short: shortDate(config.hikesDeadline) },
-    { key: config.studyDeadline, label: 'study complete', short: shortDate(config.studyDeadline) },
-    { key: config.jobSearchStart, label: 'job search starts', short: shortDate(config.jobSearchStart) },
-    { key: config.jobSearchEnd, label: 'search window ends', short: shortDate(config.jobSearchEnd) },
-  ]
-  const total = parseDay(config.jobSearchEnd) - parseDay(start)
-  const done = Math.min(Math.max(parseDay(todayKey()) - parseDay(start), 0), total)
-  const pct = (done / total) * 100
-  return (
-    <div className="overflow-hidden rounded-lg border bg-card p-4">
-      <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-2">
-        <h2 className="font-bold">Mission timeline</h2>
-        <span className="font-mono text-xs text-muted-foreground">{Math.round(pct)}% of runway burned</span>
-      </div>
-      <div className="relative mx-2 mb-8">
-        <div className="h-1 rounded-full bg-surface" />
-        <div className="absolute top-0 h-1 rounded-full bg-brand-gradient" style={{ width: `${pct}%` }} />
-        {/* today marker */}
-        <div className="absolute -top-1.5" style={{ left: `${pct}%` }}>
-          <div className="h-4 w-4 -ml-2 rounded-full bg-brand ring-4 ring-brand/20 animate-pulse" />
-        </div>
-        {marks.map((m, index) => {
-          const p = ((parseDay(m.key) - parseDay(start)) / total) * 100
-          const labelPosition = index === 0 ? '' : index === marks.length - 1 ? '-translate-x-full' : '-translate-x-1/2'
-          return (
-            <div key={m.key} className="absolute top-0" style={{ left: `${p}%` }}>
-              <div className={`h-3 w-0.5 -mt-1 ${p <= pct ? 'bg-brand' : 'bg-muted-foreground/40'}`} />
-              <div className={`absolute top-3.5 text-center whitespace-nowrap ${labelPosition}`}>
-                <div className="font-mono text-[10px] text-foreground/80">{m.short}</div>
-                <div className="text-[10px] text-muted-foreground hidden sm:block">{m.label}</div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-function Countdown({ n, unit, label, accent }) {
-  return (
-    <div className="rounded-lg border bg-card p-4 text-center">
-      <div className={`font-mono text-4xl font-bold ${accent}`}>{n}</div>
-      <div className="font-mono text-[11px] text-muted-foreground mt-1">{unit}</div>
-      <div className="text-xs text-foreground/80 mt-1">{label}</div>
-    </div>
-  )
-}
-
 export default function Dashboard() {
   const { state, dispatch } = useStore()
 
-  const toStudy = daysUntil(config.studyDeadline)
-  const toHikes = daysUntil(config.hikesDeadline)
-  const toJobSearch = daysUntil(config.jobSearchStart)
-  const jobSearchOpen = daysUntil(config.jobSearchEnd) >= 0 && toJobSearch <= 0
   const streak = streakFrom(state.activity)
-  const totalDone = Object.values(state.items || {}).filter((i) => i.status === 'done').length
+  const revisitsDue = dueRevisits(state, ITEMS).length
 
   // Pacing engine (with fallbacks)
   let milestone, quota, planItemIds, burnUp
@@ -92,46 +31,17 @@ export default function Dashboard() {
   try {
   return (
     <div className="space-y-4">
-      <header className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div className="min-w-0 sm:flex-1">
-          <h1 className="text-2xl font-bold">
-            Mission Control<span className="text-brand">.</span>
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            {new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long' })} — {totalDone} items done all-time
-          </p>
-        </div>
-        <div className="flex self-start items-center gap-2 rounded-lg border bg-card px-3 py-2">
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex items-center gap-2 rounded-lg border bg-card px-3 py-2">
           <span className="text-xl">{streak > 0 ? '🔥' : '🪵'}</span>
           <div>
             <div className="font-mono font-bold leading-none">{streak} day{streak === 1 ? '' : 's'}</div>
             <div className="text-[10px] text-muted-foreground">streak</div>
           </div>
         </div>
-      </header>
-
-      <LaunchRail state={state} />
-
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4">
-        <Countdown
-          n={toStudy > 0 ? toStudy : 0}
-          unit="DAYS"
-          label={toStudy > 0 ? `until study deadline (${formatDate(config.studyDeadline)})` : 'study deadline reached'}
-          accent={toStudy > 14 ? 'text-downvote' : 'text-brand'}
-        />
-        <Countdown
-          n={toHikes > 0 ? toHikes : 0}
-          unit="DAYS"
-          label={toHikes > 0 ? `${config.hikesTarget} hikes by ${formatDate(config.hikesDeadline)}` : `${config.hikesTarget} hikes deadline reached`}
-          accent={toHikes > 14 ? 'text-brand' : 'text-yellow-400'}
-        />
-        <Countdown
-          n={toJobSearch > 0 ? toJobSearch : 0}
-          unit="DAYS"
-          label={toJobSearch > 0 ? `until job search starts (${formatDate(config.jobSearchStart)})` : jobSearchOpen ? 'job search window is open' : 'job search window ended'}
-          accent="text-brand"
-        />
-        <Countdown n={planItemIds.filter((id) => state.items?.[id]?.status === 'revisit' && state.items[id]?.revisitDue <= todayKey()).length} unit="DUE" label="revisits due today" accent="text-yellow-400" />
+        <span className={`rounded-full border px-2 py-0.5 font-mono text-[11px] ${revisitsDue > 0 ? 'border-yellow-400/40 bg-yellow-400/10 text-yellow-400' : 'text-muted-foreground'}`}>
+          {revisitsDue} revisit{revisitsDue === 1 ? '' : 's'} due today
+        </span>
       </div>
 
       {/* per-module progress */}
@@ -169,17 +79,14 @@ export default function Dashboard() {
             <div className="text-xs text-muted-foreground">items/day needed</div>
           </div>
         </div>
-        <div className="space-y-1 text-xs text-muted-foreground font-mono">
-          <div>{quota.remaining} remaining · {quota.daysLeft} days left</div>
-          <div className="text-foreground">{Math.round((quota.remaining / milestone.items.length) * 100)}% of milestone</div>
-        </div>
+        <div className="text-xs text-muted-foreground font-mono">{quota.remaining} remaining · {quota.daysLeft} days left</div>
       </div>
 
       <div className="grid min-w-0 grid-cols-1 gap-4 lg:grid-cols-2">
         {/* Today's plan */}
         <div className="min-w-0 rounded-lg border bg-card p-4">
           <h2 className="font-bold mb-1">Today's plan</h2>
-          <p className="text-xs text-muted-foreground mb-3">{planItemIds.length} items (revisits first, then balanced fill)</p>
+          <p className="text-xs text-muted-foreground mb-3">{planItemIds.length} items</p>
           <div className="space-y-1.5 max-h-96 overflow-y-auto pr-1">
             {planItemIds.map((id, i) => {
               const item = ITEMS.get(id)
@@ -216,13 +123,9 @@ export default function Dashboard() {
         <div className="min-w-0 space-y-4">
           <div className="rounded-lg border bg-card p-4">
             <h2 className="font-bold mb-1">Activity</h2>
-            <p className="text-xs text-muted-foreground mb-3">Every status change / review counts. Don't break the chain.</p>
+            <p className="text-xs text-muted-foreground mb-3">Every status change / review counts.</p>
             <Heatmap activity={state.activity} />
-            <div className="mt-4 space-y-1 text-xs text-muted-foreground font-mono">
-              <div>revisit intervals: {config.spacedRepetitionDays.join('d → ')}d → repeat</div>
-              <div>study deadline: {formatDate(config.studyDeadline)} · {config.hikesTarget} hikes by: {formatDate(config.hikesDeadline)}</div>
-              <div>job search: {formatDate(config.jobSearchStart)} – {formatDate(config.jobSearchEnd)}</div>
-            </div>
+            <div className="mt-4 text-xs text-muted-foreground font-mono">revisit intervals: {config.spacedRepetitionDays.join('d → ')}d → repeat</div>
           </div>
 
           <BurnUpChart series={burnUp} />

@@ -104,11 +104,20 @@ function Grouped({ problems, groupKey, orderKey, highlight, state }) {
   )
 }
 
+// Company lists use LeetCode's current slug; master ids keep the slug they were created with,
+// so renamed problems (e.g. coin-change-2 → coin-change-ii) resolve via lcSlug.
+const MASTER_BY_SLUG = new Map()
+for (const m of dsaProblems.problems) {
+  MASTER_BY_SLUG.set(m.id.slice(4), m)
+  if (m.lcSlug) MASTER_BY_SLUG.set(m.lcSlug, m)
+}
+const companyRowId = (slug) => MASTER_BY_SLUG.get(slug)?.id ?? `dsa-${slug}`
+
 function Companies({ highlight }) {
   const { state } = useStore()
   const [active, setActive] = useState(dsaCompanies.companies[0].key)
   const c = dsaCompanies.companies.find((x) => x.key === active)
-  const done = c.problems.filter((p) => getItem(state, `dsa-${p.slug}`).status === 'done').length
+  const done = c.problems.filter((p) => getItem(state, companyRowId(p.slug)).status === 'done').length
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap gap-1.5">
@@ -130,9 +139,8 @@ function Companies({ highlight }) {
       </div>
       <div className="space-y-1">
         {c.problems.map((p, i) => {
-          const id = `dsa-${p.slug}`
-          const master = dsaProblems.problems.find((m) => m.id === id)
-          const row = master || { id, title: p.title, url: p.url, difficulty: p.difficulty, sources: [], orders: {}, companies: [] }
+          const master = MASTER_BY_SLUG.get(p.slug)
+          const row = master || { id: `dsa-${p.slug}`, title: p.title, url: p.url, difficulty: p.difficulty, sources: [], orders: {}, companies: [] }
           return (
             <div key={p.slug} className="flex items-center gap-2">
               <span className="font-mono text-[10px] text-muted-foreground w-8 text-right shrink-0">{Math.round(p.frequency)}%</span>

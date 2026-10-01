@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { useStore, exportState, parseBackupFile, config } from '../store'
+import { useStore, exportState, parseBackupFile } from '../store'
 import { useAuth } from '../auth'
-import { daysUntil } from '../lib/dates'
 // import CommandPalette from './CommandPalette'
 
 const NAV = [
@@ -16,13 +15,6 @@ const NAV = [
   { to: '/settings', label: 'Settings', icon: '⚙' },
 ]
 
-function phaseNow() {
-  const toStudyDeadline = daysUntil(config.studyDeadline)
-  const toJobSearchEnd = daysUntil(config.jobSearchEnd)
-  if (toStudyDeadline >= 0) return { label: 'PHASE: STUDY', color: 'text-downvote' }
-  if (toJobSearchEnd >= 0) return { label: 'PHASE: JOB SEARCH', color: 'text-brand' }
-  return { label: 'PHASE: POST-SEARCH', color: 'text-green-400' }
-}
 
 export default function Layout() {
   const { state, sync, flushPending, retrySync, acceptCloudState, restoreBackup } = useStore()
@@ -66,7 +58,6 @@ export default function Layout() {
     return () => window.removeEventListener('keydown', onKey)
   }, [navigate])
 
-  const phase = phaseNow()
 
   const handleImport = async (file) => {
     try {
@@ -105,7 +96,6 @@ export default function Layout() {
         <div className="min-w-0 flex-1 font-bold leading-tight">
           <span className="text-brand-gradient">Prep</span> Command
         </div>
-        <div className={`hidden shrink-0 font-mono text-[9px] sm:block ${phase.color}`}>{phase.label}</div>
       </header>
 
       {navOpen && (
@@ -125,7 +115,6 @@ export default function Layout() {
             <div className="font-bold text-lg leading-tight">
               <span className="text-brand-gradient">Prep</span> Command
             </div>
-            <div className={`font-mono text-[11px] mt-1 ${phase.color}`}>{phase.label}</div>
           </div>
           <button
             type="button"

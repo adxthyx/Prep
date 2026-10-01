@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useStore, config } from '../store'
-import { formatDate } from '../lib/dates'
 
 export default function Settings() {
   const { state, dispatch, sync, history, retrySync, refreshHistory, restoreHistory } = useStore()
@@ -66,21 +65,7 @@ export default function Settings() {
             onChange={(e) => updateSetting('studyDeadline', e.target.value)}
             className="w-full max-w-xs rounded-lg border bg-background px-3 py-2"
           />
-          <p className="text-xs text-muted-foreground mt-1">Finish the study plan by this date. Current target: {formatDate(config.studyDeadline)}.</p>
-        </div>
-
-        <div className="border-t pt-4 space-y-3">
-          <h2 className="text-sm font-semibold">Next season</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-lg bg-surface p-3">
-              <div className="text-xs text-muted-foreground">Fitness target</div>
-              <div className="mt-1 font-semibold">{config.hikesTarget} hikes by {new Date(`${config.hikesDeadline}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
-            </div>
-            <div className="rounded-lg bg-surface p-3">
-              <div className="text-xs text-muted-foreground">Job search window</div>
-              <div className="mt-1 font-semibold">{new Date(`${config.jobSearchStart}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })} – {new Date(`${config.jobSearchEnd}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
-            </div>
-          </div>
+          <p className="text-xs text-muted-foreground mt-1">Finish the study plan by this date.</p>
         </div>
 
         <div className="border-t pt-4">
@@ -88,7 +73,7 @@ export default function Settings() {
             <input type="checkbox" checked={settings.showT3 || false} onChange={(e) => updateSetting('showT3', e.target.checked)} />
             <span className="text-sm">Show Tier 3 problems in roadmap graph</span>
           </label>
-          <p className="text-xs text-muted-foreground mt-1 ml-6">Include additional problems beyond Tier 1/2 in the pattern graph and pacing calculations.</p>
+          <p className="text-xs text-muted-foreground mt-1 ml-6">Include additional problems beyond Tier 1/2 in the pattern graph. Pacing never counts Tier 3.</p>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 # Prep Command Center 🚀
 
-Local, single-user mission control for the Aug 2026 → Feb 2027 study-to-job-search plan: SDE1/SDE2 + AI/FDE roadmaps, DSA (Striver A2Z + SDE sheet + NeetCode 150 deduped), HLD, LLD — with study complete by Jan 7, two hikes by Dec 31, and one-click backup.
+Local, single-user mission control for the Aug 2026 → Feb 2027 study-to-job-search plan: SDE1/SDE2 + AI/FDE roadmaps, DSA (Striver A2Z + SDE sheet + NeetCode 150 deduped), HLD, LLD — with tier pacing and one-click backup.
 
 No auth, no cloud, no API keys. Everything runs and stays on this machine.
 
@@ -19,13 +19,13 @@ Open the URL Vite prints (default `http://localhost:5173`). That's it.
 
 | File | Contents |
 |---|---|
-| `src/data/dsa-problems.json` | 559 deduped problems (Striver A2Z 434 + SDE 183 + NeetCode 150 + Blind 75 flags + 30 Claude picks), with topic/pattern/difficulty/orders/companies |
-| `src/data/dsa-companies.json` | Top-50-by-frequency LeetCode lists for 10 companies |
+| `src/data/dsa-problems.json` | 559 deduped problems (Striver A2Z 434 + SDE 183 + NeetCode 150 + Blind 75 flags + 30 Claude picks), with topic/pattern/difficulty/orders/companies. Tier rule: T1 = Blind 75 or in ≥3 company lists; T2 = rest of NeetCode 150 or in ≥2 lists; T3 = reference only, not paced (95 / 78 / 386) |
+| `src/data/dsa-companies.json` | Top-50-by-frequency LeetCode lists for 11 companies (12 Jul 2026 snapshot; refresh again in early January) |
 | `src/data/sde-roadmap.json` | CS core, language depth, concurrency, security, testing/debugging, SQL, resume, ownership and applications |
 | `src/data/ai-roadmap.json` | AI-FDE track: foundations → RAG → agents → evals → serving → FDE craft → storytelling → design prompts |
 | `src/data/hld.json` | Core concepts and distributed failure handling + 8 classic questions + optional reservation extension |
 | `src/data/lld.json` | SOLID + modeling + patterns, 15 machine-coding problems with reference solutions, mock-log config |
-| `src/data/config.json` | Study, hike and job-search dates + spaced-repetition intervals |
+| `src/data/config.json` | Seed targets (Tier 1, Tier 2, study deadline) + spaced-repetition intervals |
 
 **Your progress** (statuses, notes, links, applications, mocks, stories, activity/streak) is stored per user in Supabase Postgres. `localStorage` key `prep-command-center-v1` remains a fast/offline cache; cloud writes use optimistic revision checks and automatic server-side history. Seeds and progress remain separate, so seed files can be edited or reordered without losing progress as long as item `id`s stay stable. See [`SUPABASE_SETUP.md`](SUPABASE_SETUP.md) for setup and recovery behavior.
 
@@ -50,7 +50,7 @@ Edit `src/data/dsa-companies.json` and append to `companies`:
 }
 ```
 
-Grab fresh CSVs from [snehasishroy/leetcode-companywise-interview-questions](https://github.com/snehasishroy/leetcode-companywise-interview-questions) (this repo's lists are the May 2026 snapshot). If a problem's `slug` matches one in the master list, its status syncs both ways automatically.
+Grab fresh CSVs from [snehasishroy/leetcode-companywise-interview-questions](https://github.com/snehasishroy/leetcode-companywise-interview-questions) (this repo's lists are the 12 Jul 2026 snapshot). If a problem's `slug` matches one in the master list, its status syncs both ways automatically.
 
 ## Spaced repetition
 
@@ -66,7 +66,7 @@ Fetched at build time (2026-07-11) from real sources — see `meta.sources` insi
 - Company lists — via [snehasishroy/leetcode-companywise-interview-questions](https://github.com/snehasishroy/leetcode-companywise-interview-questions)
 - LLD reference solutions — [ashishps1/awesome-low-level-design](https://github.com/ashishps1/awesome-low-level-design)
 
-Every resource URL was checked with HTTP requests at build time. Anything marked `"verified": false` (shown as an amber *unverified* chip in the UI) couldn't be machine-verified — titles are correct, double-check the link. The ~18 `claude-picks` DSA problems added beyond the fetched lists carry `verified: false` on principle since their URLs were constructed from memory.
+Every resource URL was checked with HTTP requests at build time. Anything marked `"verified": false` (shown as an amber *unverified* chip in the UI) couldn't be machine-verified — titles are correct, double-check the link. All 30 `claude-picks` DSA problem URLs were verified on 2026-10-01; the 21 that appear in no refreshed company top-50 list sit in T3.
 
 ## Keyboard shortcuts
 
